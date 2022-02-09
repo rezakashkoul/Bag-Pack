@@ -9,21 +9,27 @@
 /* Begin PBXBuildFile section */
 		F700B53427B3F22900BDCD37 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F700B53327B3F22900BDCD37 /* AppDelegate.swift */; };
 		F700B53627B3F22900BDCD37 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F700B53527B3F22900BDCD37 /* SceneDelegate.swift */; };
-		F700B53827B3F22900BDCD37 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F700B53727B3F22900BDCD37 /* ViewController.swift */; };
+		F700B53827B3F22900BDCD37 /* DashboradController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F700B53727B3F22900BDCD37 /* DashboradController.swift */; };
 		F700B53B27B3F22900BDCD37 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F700B53927B3F22900BDCD37 /* Main.storyboard */; };
 		F700B53D27B3F22A00BDCD37 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F700B53C27B3F22A00BDCD37 /* Assets.xcassets */; };
 		F700B54027B3F22A00BDCD37 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F700B53E27B3F22A00BDCD37 /* LaunchScreen.storyboard */; };
+		F700B54827B3F48B00BDCD37 /* NoteController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F700B54727B3F48B00BDCD37 /* NoteController.swift */; };
+		F700B54A27B3F4A300BDCD37 /* EssentialController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F700B54927B3F4A300BDCD37 /* EssentialController.swift */; };
+		F700B54C27B3F51C00BDCD37 /* CostController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F700B54B27B3F51C00BDCD37 /* CostController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		F700B53027B3F22900BDCD37 /* Bag-Pack.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Bag-Pack.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F700B53327B3F22900BDCD37 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F700B53527B3F22900BDCD37 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		F700B53727B3F22900BDCD37 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		F700B53727B3F22900BDCD37 /* DashboradController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboradController.swift; sourceTree = "<group>"; };
 		F700B53A27B3F22900BDCD37 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F700B53C27B3F22A00BDCD37 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F700B53F27B3F22A00BDCD37 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F700B54127B3F22A00BDCD37 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F700B54727B3F48B00BDCD37 /* NoteController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteController.swift; sourceTree = "<group>"; };
+		F700B54927B3F4A300BDCD37 /* EssentialController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EssentialController.swift; sourceTree = "<group>"; };
+		F700B54B27B3F51C00BDCD37 /* CostController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CostController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,13 +64,24 @@
 			children = (
 				F700B53327B3F22900BDCD37 /* AppDelegate.swift */,
 				F700B53527B3F22900BDCD37 /* SceneDelegate.swift */,
-				F700B53727B3F22900BDCD37 /* ViewController.swift */,
+				F700B54D27B3F56300BDCD37 /* Controllers */,
 				F700B53927B3F22900BDCD37 /* Main.storyboard */,
 				F700B53C27B3F22A00BDCD37 /* Assets.xcassets */,
 				F700B53E27B3F22A00BDCD37 /* LaunchScreen.storyboard */,
 				F700B54127B3F22A00BDCD37 /* Info.plist */,
 			);
 			path = "Bag-Pack";
+			sourceTree = "<group>";
+		};
+		F700B54D27B3F56300BDCD37 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				F700B53727B3F22900BDCD37 /* DashboradController.swift */,
+				F700B54727B3F48B00BDCD37 /* NoteController.swift */,
+				F700B54927B3F4A300BDCD37 /* EssentialController.swift */,
+				F700B54B27B3F51C00BDCD37 /* CostController.swift */,
+			);
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -138,7 +155,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F700B53827B3F22900BDCD37 /* ViewController.swift in Sources */,
+				F700B54A27B3F4A300BDCD37 /* EssentialController.swift in Sources */,
+				F700B53827B3F22900BDCD37 /* DashboradController.swift in Sources */,
+				F700B54C27B3F51C00BDCD37 /* CostController.swift in Sources */,
+				F700B54827B3F48B00BDCD37 /* NoteController.swift in Sources */,
 				F700B53427B3F22900BDCD37 /* AppDelegate.swift in Sources */,
 				F700B53627B3F22900BDCD37 /* SceneDelegate.swift in Sources */,
 			);
