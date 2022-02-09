@@ -16,6 +16,8 @@
 		F700B54827B3F48B00BDCD37 /* NoteController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F700B54727B3F48B00BDCD37 /* NoteController.swift */; };
 		F700B54A27B3F4A300BDCD37 /* EssentialController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F700B54927B3F4A300BDCD37 /* EssentialController.swift */; };
 		F700B54C27B3F51C00BDCD37 /* CostController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F700B54B27B3F51C00BDCD37 /* CostController.swift */; };
+		F700B55427B42B9400BDCD37 /* DashboardTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F700B55227B42B9400BDCD37 /* DashboardTableViewCell.swift */; };
+		F700B55527B42B9400BDCD37 /* DashboardTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F700B55327B42B9400BDCD37 /* DashboardTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +32,8 @@
 		F700B54727B3F48B00BDCD37 /* NoteController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteController.swift; sourceTree = "<group>"; };
 		F700B54927B3F4A300BDCD37 /* EssentialController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EssentialController.swift; sourceTree = "<group>"; };
 		F700B54B27B3F51C00BDCD37 /* CostController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CostController.swift; sourceTree = "<group>"; };
+		F700B55227B42B9400BDCD37 /* DashboardTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardTableViewCell.swift; sourceTree = "<group>"; };
+		F700B55327B42B9400BDCD37 /* DashboardTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DashboardTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +70,7 @@
 				F700B53527B3F22900BDCD37 /* SceneDelegate.swift */,
 				F700B54D27B3F56300BDCD37 /* Controllers */,
 				F700B53927B3F22900BDCD37 /* Main.storyboard */,
+				F700B55627B42B9A00BDCD37 /* DashboardTableViewCell */,
 				F700B53C27B3F22A00BDCD37 /* Assets.xcassets */,
 				F700B53E27B3F22A00BDCD37 /* LaunchScreen.storyboard */,
 				F700B54127B3F22A00BDCD37 /* Info.plist */,
@@ -82,6 +87,15 @@
 				F700B54727B3F48B00BDCD37 /* NoteController.swift */,
 			);
 			path = Controllers;
+			sourceTree = "<group>";
+		};
+		F700B55627B42B9A00BDCD37 /* DashboardTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				F700B55227B42B9400BDCD37 /* DashboardTableViewCell.swift */,
+				F700B55327B42B9400BDCD37 /* DashboardTableViewCell.xib */,
+			);
+			path = DashboardTableViewCell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -144,6 +158,7 @@
 			files = (
 				F700B54027B3F22A00BDCD37 /* LaunchScreen.storyboard in Resources */,
 				F700B53D27B3F22A00BDCD37 /* Assets.xcassets in Resources */,
+				F700B55527B42B9400BDCD37 /* DashboardTableViewCell.xib in Resources */,
 				F700B53B27B3F22900BDCD37 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -161,6 +176,7 @@
 				F700B54827B3F48B00BDCD37 /* NoteController.swift in Sources */,
 				F700B53427B3F22900BDCD37 /* AppDelegate.swift in Sources */,
 				F700B53627B3F22900BDCD37 /* SceneDelegate.swift in Sources */,
+				F700B55427B42B9400BDCD37 /* DashboardTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

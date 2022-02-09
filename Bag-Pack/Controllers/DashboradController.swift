@@ -19,14 +19,15 @@ class DashboradController: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
         setupUI()
-        
     }
     
     func setupUI() {
         navigationItem.title = "Bag-Pack"
         navigationController?.navigationBar.prefersLargeTitles = true
+        tableView.register(UINib(nibName: "DashboardTableViewCell", bundle: nil), forCellReuseIdentifier: "DashboardTableViewCell")
         setNoDataInfoIfAbsenceNotExists()
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addButtonTapped))
+        travelList = ["reza" , "hossein"]
     }
     
     func setNoDataInfoIfAbsenceNotExists() {
@@ -55,7 +56,7 @@ class DashboradController: UIViewController {
 extension DashboradController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "TableViewCell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "DashboardTableViewCell", for: indexPath)
         
         return cell
     }
