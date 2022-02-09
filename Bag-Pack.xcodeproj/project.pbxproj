@@ -77,9 +77,9 @@
 			isa = PBXGroup;
 			children = (
 				F700B53727B3F22900BDCD37 /* DashboradController.swift */,
-				F700B54727B3F48B00BDCD37 /* NoteController.swift */,
 				F700B54927B3F4A300BDCD37 /* EssentialController.swift */,
 				F700B54B27B3F51C00BDCD37 /* CostController.swift */,
+				F700B54727B3F48B00BDCD37 /* NoteController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
