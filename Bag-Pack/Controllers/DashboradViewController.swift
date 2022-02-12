@@ -1,5 +1,5 @@
 //
-//  DashboradController.swift
+//  DashboradViewController.swift
 //  Bag-Pack
 //
 //  Created by Reza Kashkoul on 20/Bahman/1400 .
@@ -7,7 +7,7 @@
 
 import UIKit
 
-class DashboradController: UIViewController {
+class DashboradViewController: UIViewController {
      
     @IBOutlet weak var tableView: UITableView!
     
@@ -46,14 +46,14 @@ class DashboradController: UIViewController {
     }
     
     @objc private func addButtonTapped () {
-        let vc = storyboard?.instantiateViewController(withIdentifier: "MainTabBarController") as! UITabBarController
+        let vc = storyboard?.instantiateViewController(withIdentifier: "EssentialController") as! EssentialViewController
         navigationController?.pushViewController(vc, animated: true)
     }
     
 }
 
 //TableView Setup
-extension DashboradController: UITableViewDelegate, UITableViewDataSource {
+extension DashboradViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "DashboardTableViewCell", for: indexPath)

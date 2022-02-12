@@ -9,10 +9,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Dashborad Controller-->
+        <!--Dashborad View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController storyboardIdentifier="DashboradController" id="BYZ-38-t0r" customClass="DashboradController" customModule="Bag_Pack" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="DashboradController" id="BYZ-38-t0r" customClass="DashboradViewController" customModule="Bag_Pack" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -61,15 +61,30 @@
         <!--Item-->
         <scene sceneID="3F4-GG-zoB">
             <objects>
-                <viewController storyboardIdentifier="EssentialController" id="aPl-eZ-GUb" customClass="EssentialController" customModule="Bag_Pack" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="EssentialController" id="aPl-eZ-GUb" customClass="EssentialViewController" customModule="Bag_Pack" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Dji-uc-twH">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="bhu-KI-e6v">
+                                <rect key="frame" x="0.0" y="44" width="390" height="717"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="5fq-gd-udU"/>
-                        <color key="backgroundColor" systemColor="systemTealColor"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="5fq-gd-udU" firstAttribute="trailing" secondItem="bhu-KI-e6v" secondAttribute="trailing" id="1SR-Hc-r1a"/>
+                            <constraint firstItem="5fq-gd-udU" firstAttribute="bottom" secondItem="bhu-KI-e6v" secondAttribute="bottom" id="TLV-bG-dO3"/>
+                            <constraint firstItem="bhu-KI-e6v" firstAttribute="top" secondItem="5fq-gd-udU" secondAttribute="top" id="VHE-gb-2w8"/>
+                            <constraint firstItem="bhu-KI-e6v" firstAttribute="leading" secondItem="5fq-gd-udU" secondAttribute="leading" id="gvE-Zy-zbw"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Item" id="dVY-gv-9bK"/>
                     <navigationItem key="navigationItem" id="ud2-bZ-zvE"/>
+                    <connections>
+                        <outlet property="tableView" destination="bhu-KI-e6v" id="O4g-iE-awJ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hpc-KS-sIv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -78,7 +93,7 @@
         <!--Item-->
         <scene sceneID="6HI-iH-hA8">
             <objects>
-                <viewController storyboardIdentifier="CostController" id="BQI-Nk-OHL" customClass="CostController" customModule="Bag_Pack" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CostController" id="BQI-Nk-OHL" customClass="CostViewController" customModule="Bag_Pack" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="yux-8O-Zqd">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -95,12 +110,28 @@
         <!--Item-->
         <scene sceneID="Qgy-HC-Fnb">
             <objects>
-                <viewController storyboardIdentifier="NoteController" id="nKN-7E-Jcd" customClass="NoteController" customModule="Bag_Pack" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="NoteController" id="nKN-7E-Jcd" customClass="NoteViewController" customModule="Bag_Pack" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="T6j-pJ-liJ">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="pp1-sq-D9c">
+                                <rect key="frame" x="0.0" y="44" width="390" height="717"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <color key="textColor" systemColor="labelColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="h7e-uV-j6D"/>
-                        <color key="backgroundColor" systemColor="systemYellowColor"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="pp1-sq-D9c" firstAttribute="top" secondItem="h7e-uV-j6D" secondAttribute="top" id="2Kl-jv-9ZL"/>
+                            <constraint firstItem="h7e-uV-j6D" firstAttribute="trailing" secondItem="pp1-sq-D9c" secondAttribute="trailing" id="ToL-If-hRH"/>
+                            <constraint firstItem="h7e-uV-j6D" firstAttribute="bottom" secondItem="pp1-sq-D9c" secondAttribute="bottom" id="heL-P9-bAy"/>
+                            <constraint firstItem="pp1-sq-D9c" firstAttribute="leading" secondItem="h7e-uV-j6D" secondAttribute="leading" id="uL2-SJ-xbV"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Item" id="EDl-eA-uc4"/>
                     <navigationItem key="navigationItem" id="aoO-gA-3gu"/>
@@ -131,17 +162,14 @@
         </scene>
     </scenes>
     <resources>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemBrownColor">
             <color red="0.63529411764705879" green="0.51764705882352946" blue="0.36862745098039218" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-        <systemColor name="systemTealColor">
-            <color red="0.18823529411764706" green="0.69019607843137254" blue="0.7803921568627451" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-        <systemColor name="systemYellowColor">
-            <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

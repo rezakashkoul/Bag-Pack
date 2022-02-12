@@ -1,5 +1,5 @@
 //
-//  CostController.swift
+//  CostViewController.swift
 //  Bag-Pack
 //
 //  Created by Reza Kashkoul on 20/Bahman/1400 .
@@ -7,7 +7,7 @@
 
 import UIKit
 
-class CostController: UIViewController {
+class CostViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,7 +19,7 @@ class CostController: UIViewController {
     }
     
     func setupUI() {
-        navigationController?.visibleViewController?.title = "Costs"
+        navigationItem.title = "Costs"
         navigationController?.navigationBar.prefersLargeTitles = true
     }
     
