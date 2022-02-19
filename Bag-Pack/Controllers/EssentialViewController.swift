@@ -30,7 +30,12 @@ class EssentialViewController: UIViewController {
         navigationItem.title = "Essential"
         navigationController?.navigationBar.prefersLargeTitles = true
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addNewItemToCheckList))
+        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Dashboard", style: .done, target: self, action: #selector(backButton))
         showNoDataForTableView()
+    }
+    
+    @objc private func backButton() {
+        tabBarController?.navigationController?.popViewController(animated: true)
     }
     
     @objc private func addNewItemToCheckList() {

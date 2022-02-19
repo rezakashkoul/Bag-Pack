@@ -15,10 +15,21 @@ class DashboradViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         tableView.delegate = self
         tableView.dataSource = self
         setupUI()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.setNavigationBarHidden(false, animated: animated)
+
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        navigationController?.setNavigationBarHidden(true, animated: animated)
+
     }
     
     func setupUI() {
@@ -46,8 +57,8 @@ class DashboradViewController: UIViewController {
     }
     
     @objc private func addButtonTapped () {
-        let vc = storyboard?.instantiateViewController(withIdentifier: "EssentialController") as! EssentialViewController
-        navigationController?.pushViewController(vc, animated: true)
+        let vc = storyboard?.instantiateViewController(withIdentifier: "MainTabBarController")
+        navigationController?.pushViewController(vc!, animated: true)
     }
     
 }
