@@ -15,18 +15,13 @@ class DashboardTests: XCTestCase {
 
     override class func setUp() {
         super.setUp()
-        
-
     }
 
     override class func tearDown() {
         super.tearDown()
     }
     
-    func testIsTravelFetchaDateAPIWorks() {
-        
-//        travel.fetchTravelData()
-        
+    func testIsTravelFetchDateAPIWorks() {
         NetworkManager.shared.getTravelData(useMockData: useMockData) { result in
             switch result {
             case .success(let travel):
@@ -37,7 +32,6 @@ class DashboardTests: XCTestCase {
         }
     }
     
-//    func testAddButtonAction() {
-//        XCTAssertNil(dashboard.addButtonTapped())
-//    }
+    
+
 }

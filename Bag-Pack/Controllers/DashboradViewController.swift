@@ -37,7 +37,6 @@ class DashboradViewController: UIViewController {
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         navigationController?.setNavigationBarHidden(true, animated: animated)
-        
     }
     
     func setupUI() {
@@ -63,7 +62,7 @@ class DashboradViewController: UIViewController {
         }
     }
     
-    @objc func addButtonTapped () {
+    @objc private func addButtonTapped () {
         let vc = storyboard?.instantiateViewController(withIdentifier: "MainTabBarController")
         navigationController?.pushViewController(vc!, animated: true)
     }
