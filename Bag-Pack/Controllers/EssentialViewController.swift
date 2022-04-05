@@ -53,8 +53,9 @@ class EssentialViewController: UIViewController {
         alert.addAction(UIAlertAction(title: "Add", style: .default, handler: { item in
             if !aTextField.text!.isEmpty && !self.list.contains(where: {$0 == aTextField.text?.lowercased()}) {
                 self.list.append(aTextField.text!)
-                DispatchQueue.main.async {
-                    self.tableView.reloadData()
+                DispatchQueue.main.async { [self] in
+                    showNoDataForTableView()
+                    tableView.reloadData()
                 }
             }
         }))

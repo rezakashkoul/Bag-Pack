@@ -1,0 +1,706 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 55;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		01F49C5409E13D755EEEF609C28ACF65 /* NFXImageBodyDetailsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5B4D32DA43F8167DBC28C5D1E927823 /* NFXImageBodyDetailsController.swift */; };
+		03A3C6313E9B3F808CE58B8E59C60A8B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
+		05F58074CA58FAAB4D73F760EA4A720C /* NFXAuthenticationChallengeSender.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1503FE10AE315635F78F724C9140A718 /* NFXAuthenticationChallengeSender.swift */; };
+		0B1D134E63D8AC5BB8DA03EFD8E275B7 /* NFXListCell_iOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = A55648FF307FDDE7DD34FDFA90C0F121 /* NFXListCell_iOS.swift */; };
+		0B30E555275EE33F2687F6E53E9BB607 /* NFXRawBodyDetailsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B538BA3CD4D3E68213D2F07B5D7CA07 /* NFXRawBodyDetailsController.swift */; };
+		2243734875956C8AACB62C7F4CF0BAE2 /* NFXProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = E396747924EB13E068781F260002DBFB /* NFXProtocol.swift */; };
+		235D4AC0385EB689286CF73FD2322DDE /* NFXSettingsController_iOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AE72086749836C24BC7FC72DF9FBEAB /* NFXSettingsController_iOS.swift */; };
+		28DE4996A11689C813E9390FCA3E42F3 /* netfox-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = A4241FA4FADD23D506AB55C2529DEA12 /* netfox-dummy.m */; };
+		2D7DD6FE6F9B04DD71F4ABD8586BF60D /* Pods-Bag-Pack-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 5C5C12A9635331D31683D0B5C472945F /* Pods-Bag-Pack-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		2E2D822DE6E67FEA76286FAE9829D0ED /* NFXGenericController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7BD4B5FD0C5C9910FE2F8F1A25BB5A4 /* NFXGenericController.swift */; };
+		31C9FADE6F92F6F4ADE5F62CBF2240C4 /* NFXInfoController_iOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE1B6AC1B6C568F73776EE77C9CB602 /* NFXInfoController_iOS.swift */; };
+		33095A0332AACCF0414E8BCD28D2E3DA /* NFXConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F53E25BEB527BD648759C385F86DEC07 /* NFXConstants.swift */; };
+		358C6D72298D99A8ECED1B139AD4ED44 /* NFXWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5796C6463AFA7BDEEB3C871F9A88993 /* NFXWindowController.swift */; };
+		361D98B58CAEB16830FE0752A45C4139 /* NFXStatisticsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1974F708BECD6A6D3A2F9F77EDB1EC5 /* NFXStatisticsController.swift */; };
+		397AD3CF956066DA9EBA562EA66EA484 /* NFXAssets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F217F853678D04ECD2E4B02C832671A /* NFXAssets.swift */; };
+		4204E981117688B0E01EEA0F1FE87DAE /* netfox-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 5EB91A6144BAD21E0A3AB4596BF9C1C8 /* netfox-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		547B7DFD9DB62CB90842FF4F83027858 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
+		5F29FF949F392A77247B52BC94B4AD6E /* NFXStatisticsController_iOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84142A61F9613A399581648358D2E8E4 /* NFXStatisticsController_iOS.swift */; };
+		6E95EEBA6F924E2212D57A2D3C3FA5E3 /* Pods-Bag-Pack-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 62655BF4EE187A0C88018A454327072D /* Pods-Bag-Pack-dummy.m */; };
+		74FFFBA8C689977F5C4E6ECC1F2F60DB /* NFXListController_iOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D69593A6FC7084731B1E46306009A02 /* NFXListController_iOS.swift */; };
+		82297B407F0256EBB4D63B4B5CF78B68 /* NFXHTTPModelManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 036FC262633C13E446508009901A453E /* NFXHTTPModelManager.swift */; };
+		82A3B4F3F92D3BB41998B1377A180004 /* NFXHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41FCF6C5A5133F90964774C75E3448A6 /* NFXHelper.swift */; };
+		92B6D0A72C3E0135A176930935DDF598 /* NFXInfoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0449EF73B86A514EFAA5CF586F438125 /* NFXInfoController.swift */; };
+		95C0BFD1E62093CBDBE11079CF9C6F69 /* NFXListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B8987039D59F7BE685E9012638CF3C2 /* NFXListController.swift */; };
+		965C12EDC497629220F40ADA2D18ECF5 /* NFXHelper_iOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBC2AE9246D0E9F5D6BA89F1A84E8F6F /* NFXHelper_iOS.swift */; };
+		9E378D16D186C796F69C8FBAB04B78F5 /* NFXSettingsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED632FF979EA64DFC03FEF6CCB7ADE6A /* NFXSettingsController.swift */; };
+		B6B1FEC65DA50FF7E3DDB3AF3CAE5B65 /* NFXDetailsController_iOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0F08AB618CE362CA0D8ED53FC66BB49 /* NFXDetailsController_iOS.swift */; };
+		E2C68BF5D75267037FD0D835E748C12C /* NFX.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0025267D0E9F8624E1250A92ACED23A9 /* NFX.swift */; };
+		EAF937C5ABD7BCF6581C643A3164B751 /* NFXHTTPModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1A9101DEFB0AC469AD06E0816794A86 /* NFXHTTPModel.swift */; };
+		F406EF4522F88320606CB252EFE548D1 /* NFXDetailsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 893382EA5B5B91636537181C922981A1 /* NFXDetailsController.swift */; };
+		F59D154EC8F5725EE0A74F08AA829223 /* NFXGenericBodyDetailsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9601115A2DD414EB0C6CB0ADC3338CE7 /* NFXGenericBodyDetailsController.swift */; };
+		F941F3B34E489A8A9B7AE1E3BA29CB8F /* NFXURLDetailsControllerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 868DEF9E7AC2D4659167D50551348EB5 /* NFXURLDetailsControllerViewController.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		0077333CC09F0583739C9AB8A0B5606A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 33426EFE1931E100B59ABF41FD14377D;
+			remoteInfo = netfox;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		0025267D0E9F8624E1250A92ACED23A9 /* NFX.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NFX.swift; path = netfox/Core/NFX.swift; sourceTree = "<group>"; };
+		036FC262633C13E446508009901A453E /* NFXHTTPModelManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NFXHTTPModelManager.swift; path = netfox/Core/NFXHTTPModelManager.swift; sourceTree = "<group>"; };
+		0449EF73B86A514EFAA5CF586F438125 /* NFXInfoController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NFXInfoController.swift; path = netfox/Core/NFXInfoController.swift; sourceTree = "<group>"; };
+		0FF6816FB0A64DEA04D7773DF0295432 /* Pods-Bag-Pack */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "Pods-Bag-Pack"; path = Pods_Bag_Pack.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1503FE10AE315635F78F724C9140A718 /* NFXAuthenticationChallengeSender.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NFXAuthenticationChallengeSender.swift; path = netfox/Core/NFXAuthenticationChallengeSender.swift; sourceTree = "<group>"; };
+		37FD12319279C4CF17E4026D2B238DB0 /* netfox-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "netfox-Info.plist"; sourceTree = "<group>"; };
+		3D69593A6FC7084731B1E46306009A02 /* NFXListController_iOS.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NFXListController_iOS.swift; path = netfox/iOS/NFXListController_iOS.swift; sourceTree = "<group>"; };
+		41FCF6C5A5133F90964774C75E3448A6 /* NFXHelper.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NFXHelper.swift; path = netfox/Core/NFXHelper.swift; sourceTree = "<group>"; };
+		4B538BA3CD4D3E68213D2F07B5D7CA07 /* NFXRawBodyDetailsController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NFXRawBodyDetailsController.swift; path = netfox/Core/NFXRawBodyDetailsController.swift; sourceTree = "<group>"; };
+		4F217F853678D04ECD2E4B02C832671A /* NFXAssets.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NFXAssets.swift; path = netfox/Core/NFXAssets.swift; sourceTree = "<group>"; };
+		4F491E8EB86E6FBE11F409FEDA9C12DE /* Pods-Bag-Pack-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Bag-Pack-acknowledgements.markdown"; sourceTree = "<group>"; };
+		58378A3DCDB1194153151E2DFE88E56F /* netfox.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = netfox.modulemap; sourceTree = "<group>"; };
+		5C5C12A9635331D31683D0B5C472945F /* Pods-Bag-Pack-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Bag-Pack-umbrella.h"; sourceTree = "<group>"; };
+		5EB91A6144BAD21E0A3AB4596BF9C1C8 /* netfox-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "netfox-umbrella.h"; sourceTree = "<group>"; };
+		62655BF4EE187A0C88018A454327072D /* Pods-Bag-Pack-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Bag-Pack-dummy.m"; sourceTree = "<group>"; };
+		6B8987039D59F7BE685E9012638CF3C2 /* NFXListController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NFXListController.swift; path = netfox/Core/NFXListController.swift; sourceTree = "<group>"; };
+		70671C7268AAC276E6D12C7311675E31 /* Pods-Bag-Pack-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Bag-Pack-acknowledgements.plist"; sourceTree = "<group>"; };
+		73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		79D6B0197276000C760CC2FA49C6D559 /* netfox.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = netfox.release.xcconfig; sourceTree = "<group>"; };
+		84142A61F9613A399581648358D2E8E4 /* NFXStatisticsController_iOS.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NFXStatisticsController_iOS.swift; path = netfox/iOS/NFXStatisticsController_iOS.swift; sourceTree = "<group>"; };
+		868DEF9E7AC2D4659167D50551348EB5 /* NFXURLDetailsControllerViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NFXURLDetailsControllerViewController.swift; path = netfox/iOS/NFXURLDetailsControllerViewController.swift; sourceTree = "<group>"; };
+		893382EA5B5B91636537181C922981A1 /* NFXDetailsController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NFXDetailsController.swift; path = netfox/Core/NFXDetailsController.swift; sourceTree = "<group>"; };
+		8C3256A7802988717549E04D8B79223F /* Pods-Bag-Pack.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Bag-Pack.debug.xcconfig"; sourceTree = "<group>"; };
+		8D23922FE3C9A7C4BD82FFC505970B9D /* Pods-Bag-Pack-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Bag-Pack-Info.plist"; sourceTree = "<group>"; };
+		8E4BF66BBE48A3C68DC8E709EE6AE2DE /* netfox.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = netfox.debug.xcconfig; sourceTree = "<group>"; };
+		9601115A2DD414EB0C6CB0ADC3338CE7 /* NFXGenericBodyDetailsController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NFXGenericBodyDetailsController.swift; path = netfox/Core/NFXGenericBodyDetailsController.swift; sourceTree = "<group>"; };
+		9AE72086749836C24BC7FC72DF9FBEAB /* NFXSettingsController_iOS.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NFXSettingsController_iOS.swift; path = netfox/iOS/NFXSettingsController_iOS.swift; sourceTree = "<group>"; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		A07E28E74CD423D3B85EB1094D9F56A1 /* Pods-Bag-Pack.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Bag-Pack.release.xcconfig"; sourceTree = "<group>"; };
+		A1974F708BECD6A6D3A2F9F77EDB1EC5 /* NFXStatisticsController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NFXStatisticsController.swift; path = netfox/Core/NFXStatisticsController.swift; sourceTree = "<group>"; };
+		A4241FA4FADD23D506AB55C2529DEA12 /* netfox-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "netfox-dummy.m"; sourceTree = "<group>"; };
+		A55648FF307FDDE7DD34FDFA90C0F121 /* NFXListCell_iOS.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NFXListCell_iOS.swift; path = netfox/iOS/NFXListCell_iOS.swift; sourceTree = "<group>"; };
+		A5796C6463AFA7BDEEB3C871F9A88993 /* NFXWindowController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NFXWindowController.swift; path = netfox/Core/NFXWindowController.swift; sourceTree = "<group>"; };
+		A7BD4B5FD0C5C9910FE2F8F1A25BB5A4 /* NFXGenericController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NFXGenericController.swift; path = netfox/Core/NFXGenericController.swift; sourceTree = "<group>"; };
+		B5B4D32DA43F8167DBC28C5D1E927823 /* NFXImageBodyDetailsController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NFXImageBodyDetailsController.swift; path = netfox/Core/NFXImageBodyDetailsController.swift; sourceTree = "<group>"; };
+		BA7B8540B15B50675F397FEB8C44C1CC /* Pods-Bag-Pack.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-Bag-Pack.modulemap"; sourceTree = "<group>"; };
+		BF1952EA0085A4CE36B4AE041BE60B82 /* netfox */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = netfox; path = netfox.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CBC2AE9246D0E9F5D6BA89F1A84E8F6F /* NFXHelper_iOS.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NFXHelper_iOS.swift; path = netfox/iOS/NFXHelper_iOS.swift; sourceTree = "<group>"; };
+		D7B02FA31929EA2A1AF211FE98EBBE16 /* Pods-Bag-Pack-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Bag-Pack-frameworks.sh"; sourceTree = "<group>"; };
+		DAE1B6AC1B6C568F73776EE77C9CB602 /* NFXInfoController_iOS.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NFXInfoController_iOS.swift; path = netfox/iOS/NFXInfoController_iOS.swift; sourceTree = "<group>"; };
+		E0F08AB618CE362CA0D8ED53FC66BB49 /* NFXDetailsController_iOS.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NFXDetailsController_iOS.swift; path = netfox/iOS/NFXDetailsController_iOS.swift; sourceTree = "<group>"; };
+		E396747924EB13E068781F260002DBFB /* NFXProtocol.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NFXProtocol.swift; path = netfox/Core/NFXProtocol.swift; sourceTree = "<group>"; };
+		ED632FF979EA64DFC03FEF6CCB7ADE6A /* NFXSettingsController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NFXSettingsController.swift; path = netfox/Core/NFXSettingsController.swift; sourceTree = "<group>"; };
+		F1A9101DEFB0AC469AD06E0816794A86 /* NFXHTTPModel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NFXHTTPModel.swift; path = netfox/Core/NFXHTTPModel.swift; sourceTree = "<group>"; };
+		F2F3BCC14A7CCA8B92C6502AE7B2E35D /* netfox-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "netfox-prefix.pch"; sourceTree = "<group>"; };
+		F53E25BEB527BD648759C385F86DEC07 /* NFXConstants.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NFXConstants.swift; path = netfox/Core/NFXConstants.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		3CCD13A63A6BAEB2C06BCEC502EFF973 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				547B7DFD9DB62CB90842FF4F83027858 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5103A0C004E78246B9C76DF2426B3108 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				03A3C6313E9B3F808CE58B8E59C60A8B /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		12F6B001175EC6C469BE01AB05771649 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				DF61E3261BB5A823F917E99FFFCFB855 /* netfox */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		578452D2E740E91742655AC8F1636D1F /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		6B01EB3500FED88547AA5FCD7E77306E /* Pods-Bag-Pack */ = {
+			isa = PBXGroup;
+			children = (
+				BA7B8540B15B50675F397FEB8C44C1CC /* Pods-Bag-Pack.modulemap */,
+				4F491E8EB86E6FBE11F409FEDA9C12DE /* Pods-Bag-Pack-acknowledgements.markdown */,
+				70671C7268AAC276E6D12C7311675E31 /* Pods-Bag-Pack-acknowledgements.plist */,
+				62655BF4EE187A0C88018A454327072D /* Pods-Bag-Pack-dummy.m */,
+				D7B02FA31929EA2A1AF211FE98EBBE16 /* Pods-Bag-Pack-frameworks.sh */,
+				8D23922FE3C9A7C4BD82FFC505970B9D /* Pods-Bag-Pack-Info.plist */,
+				5C5C12A9635331D31683D0B5C472945F /* Pods-Bag-Pack-umbrella.h */,
+				8C3256A7802988717549E04D8B79223F /* Pods-Bag-Pack.debug.xcconfig */,
+				A07E28E74CD423D3B85EB1094D9F56A1 /* Pods-Bag-Pack.release.xcconfig */,
+			);
+			name = "Pods-Bag-Pack";
+			path = "Target Support Files/Pods-Bag-Pack";
+			sourceTree = "<group>";
+		};
+		77125F783EFA81CCFFBD536ABB653C85 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				58378A3DCDB1194153151E2DFE88E56F /* netfox.modulemap */,
+				A4241FA4FADD23D506AB55C2529DEA12 /* netfox-dummy.m */,
+				37FD12319279C4CF17E4026D2B238DB0 /* netfox-Info.plist */,
+				F2F3BCC14A7CCA8B92C6502AE7B2E35D /* netfox-prefix.pch */,
+				5EB91A6144BAD21E0A3AB4596BF9C1C8 /* netfox-umbrella.h */,
+				8E4BF66BBE48A3C68DC8E709EE6AE2DE /* netfox.debug.xcconfig */,
+				79D6B0197276000C760CC2FA49C6D559 /* netfox.release.xcconfig */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/netfox";
+			sourceTree = "<group>";
+		};
+		A8EE3DC09309586DF20A71500CAF5461 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				BF1952EA0085A4CE36B4AE041BE60B82 /* netfox */,
+				0FF6816FB0A64DEA04D7773DF0295432 /* Pods-Bag-Pack */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		CF1408CF629C7361332E53B88F7BD30C = {
+			isa = PBXGroup;
+			children = (
+				9D940727FF8FB9C785EB98E56350EF41 /* Podfile */,
+				D210D550F4EA176C3123ED886F8F87F5 /* Frameworks */,
+				12F6B001175EC6C469BE01AB05771649 /* Pods */,
+				A8EE3DC09309586DF20A71500CAF5461 /* Products */,
+				F79AC1D8BBE567B49E4241DBB293E1CE /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		D210D550F4EA176C3123ED886F8F87F5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				578452D2E740E91742655AC8F1636D1F /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		DF61E3261BB5A823F917E99FFFCFB855 /* netfox */ = {
+			isa = PBXGroup;
+			children = (
+				0025267D0E9F8624E1250A92ACED23A9 /* NFX.swift */,
+				4F217F853678D04ECD2E4B02C832671A /* NFXAssets.swift */,
+				1503FE10AE315635F78F724C9140A718 /* NFXAuthenticationChallengeSender.swift */,
+				F53E25BEB527BD648759C385F86DEC07 /* NFXConstants.swift */,
+				893382EA5B5B91636537181C922981A1 /* NFXDetailsController.swift */,
+				E0F08AB618CE362CA0D8ED53FC66BB49 /* NFXDetailsController_iOS.swift */,
+				9601115A2DD414EB0C6CB0ADC3338CE7 /* NFXGenericBodyDetailsController.swift */,
+				A7BD4B5FD0C5C9910FE2F8F1A25BB5A4 /* NFXGenericController.swift */,
+				41FCF6C5A5133F90964774C75E3448A6 /* NFXHelper.swift */,
+				CBC2AE9246D0E9F5D6BA89F1A84E8F6F /* NFXHelper_iOS.swift */,
+				F1A9101DEFB0AC469AD06E0816794A86 /* NFXHTTPModel.swift */,
+				036FC262633C13E446508009901A453E /* NFXHTTPModelManager.swift */,
+				B5B4D32DA43F8167DBC28C5D1E927823 /* NFXImageBodyDetailsController.swift */,
+				0449EF73B86A514EFAA5CF586F438125 /* NFXInfoController.swift */,
+				DAE1B6AC1B6C568F73776EE77C9CB602 /* NFXInfoController_iOS.swift */,
+				A55648FF307FDDE7DD34FDFA90C0F121 /* NFXListCell_iOS.swift */,
+				6B8987039D59F7BE685E9012638CF3C2 /* NFXListController.swift */,
+				3D69593A6FC7084731B1E46306009A02 /* NFXListController_iOS.swift */,
+				E396747924EB13E068781F260002DBFB /* NFXProtocol.swift */,
+				4B538BA3CD4D3E68213D2F07B5D7CA07 /* NFXRawBodyDetailsController.swift */,
+				ED632FF979EA64DFC03FEF6CCB7ADE6A /* NFXSettingsController.swift */,
+				9AE72086749836C24BC7FC72DF9FBEAB /* NFXSettingsController_iOS.swift */,
+				A1974F708BECD6A6D3A2F9F77EDB1EC5 /* NFXStatisticsController.swift */,
+				84142A61F9613A399581648358D2E8E4 /* NFXStatisticsController_iOS.swift */,
+				868DEF9E7AC2D4659167D50551348EB5 /* NFXURLDetailsControllerViewController.swift */,
+				A5796C6463AFA7BDEEB3C871F9A88993 /* NFXWindowController.swift */,
+				77125F783EFA81CCFFBD536ABB653C85 /* Support Files */,
+			);
+			name = netfox;
+			path = netfox;
+			sourceTree = "<group>";
+		};
+		F79AC1D8BBE567B49E4241DBB293E1CE /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				6B01EB3500FED88547AA5FCD7E77306E /* Pods-Bag-Pack */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		65291404637D07A5ED182E253AD0F838 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4204E981117688B0E01EEA0F1FE87DAE /* netfox-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D44DA14F50A204ECC1788B10B7877CF9 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2D7DD6FE6F9B04DD71F4ABD8586BF60D /* Pods-Bag-Pack-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		33426EFE1931E100B59ABF41FD14377D /* netfox */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 14A279E0E52265F9827871C7B385FECF /* Build configuration list for PBXNativeTarget "netfox" */;
+			buildPhases = (
+				65291404637D07A5ED182E253AD0F838 /* Headers */,
+				A523093938D8319B6178E9E35BB18477 /* Sources */,
+				5103A0C004E78246B9C76DF2426B3108 /* Frameworks */,
+				1A6389CB6438FF76B4F60C2F69618033 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = netfox;
+			productName = netfox;
+			productReference = BF1952EA0085A4CE36B4AE041BE60B82 /* netfox */;
+			productType = "com.apple.product-type.framework";
+		};
+		DABC4F58D30F7609499EDDEDFE0C7BE3 /* Pods-Bag-Pack */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 812C62761778A1828B8ED1FCC4603A6A /* Build configuration list for PBXNativeTarget "Pods-Bag-Pack" */;
+			buildPhases = (
+				D44DA14F50A204ECC1788B10B7877CF9 /* Headers */,
+				6FE200E29392B5ACB5959043029CC69E /* Sources */,
+				3CCD13A63A6BAEB2C06BCEC502EFF973 /* Frameworks */,
+				4ADC32954BBD6C8367D69B2E59A1FC7A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				54AC3374C0652154550D39720C4D1A18 /* PBXTargetDependency */,
+			);
+			name = "Pods-Bag-Pack";
+			productName = Pods_Bag_Pack;
+			productReference = 0FF6816FB0A64DEA04D7773DF0295432 /* Pods-Bag-Pack */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		BFDFE7DC352907FC980B868725387E98 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1240;
+				LastUpgradeCheck = 1240;
+			};
+			buildConfigurationList = 4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */;
+			compatibilityVersion = "Xcode 13.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				Base,
+				en,
+			);
+			mainGroup = CF1408CF629C7361332E53B88F7BD30C;
+			productRefGroup = A8EE3DC09309586DF20A71500CAF5461 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				33426EFE1931E100B59ABF41FD14377D /* netfox */,
+				DABC4F58D30F7609499EDDEDFE0C7BE3 /* Pods-Bag-Pack */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		1A6389CB6438FF76B4F60C2F69618033 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4ADC32954BBD6C8367D69B2E59A1FC7A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		6FE200E29392B5ACB5959043029CC69E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6E95EEBA6F924E2212D57A2D3C3FA5E3 /* Pods-Bag-Pack-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A523093938D8319B6178E9E35BB18477 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				28DE4996A11689C813E9390FCA3E42F3 /* netfox-dummy.m in Sources */,
+				E2C68BF5D75267037FD0D835E748C12C /* NFX.swift in Sources */,
+				397AD3CF956066DA9EBA562EA66EA484 /* NFXAssets.swift in Sources */,
+				05F58074CA58FAAB4D73F760EA4A720C /* NFXAuthenticationChallengeSender.swift in Sources */,
+				33095A0332AACCF0414E8BCD28D2E3DA /* NFXConstants.swift in Sources */,
+				F406EF4522F88320606CB252EFE548D1 /* NFXDetailsController.swift in Sources */,
+				B6B1FEC65DA50FF7E3DDB3AF3CAE5B65 /* NFXDetailsController_iOS.swift in Sources */,
+				F59D154EC8F5725EE0A74F08AA829223 /* NFXGenericBodyDetailsController.swift in Sources */,
+				2E2D822DE6E67FEA76286FAE9829D0ED /* NFXGenericController.swift in Sources */,
+				82A3B4F3F92D3BB41998B1377A180004 /* NFXHelper.swift in Sources */,
+				965C12EDC497629220F40ADA2D18ECF5 /* NFXHelper_iOS.swift in Sources */,
+				EAF937C5ABD7BCF6581C643A3164B751 /* NFXHTTPModel.swift in Sources */,
+				82297B407F0256EBB4D63B4B5CF78B68 /* NFXHTTPModelManager.swift in Sources */,
+				01F49C5409E13D755EEEF609C28ACF65 /* NFXImageBodyDetailsController.swift in Sources */,
+				92B6D0A72C3E0135A176930935DDF598 /* NFXInfoController.swift in Sources */,
+				31C9FADE6F92F6F4ADE5F62CBF2240C4 /* NFXInfoController_iOS.swift in Sources */,
+				0B1D134E63D8AC5BB8DA03EFD8E275B7 /* NFXListCell_iOS.swift in Sources */,
+				95C0BFD1E62093CBDBE11079CF9C6F69 /* NFXListController.swift in Sources */,
+				74FFFBA8C689977F5C4E6ECC1F2F60DB /* NFXListController_iOS.swift in Sources */,
+				2243734875956C8AACB62C7F4CF0BAE2 /* NFXProtocol.swift in Sources */,
+				0B30E555275EE33F2687F6E53E9BB607 /* NFXRawBodyDetailsController.swift in Sources */,
+				9E378D16D186C796F69C8FBAB04B78F5 /* NFXSettingsController.swift in Sources */,
+				235D4AC0385EB689286CF73FD2322DDE /* NFXSettingsController_iOS.swift in Sources */,
+				361D98B58CAEB16830FE0752A45C4139 /* NFXStatisticsController.swift in Sources */,
+				5F29FF949F392A77247B52BC94B4AD6E /* NFXStatisticsController_iOS.swift in Sources */,
+				F941F3B34E489A8A9B7AE1E3BA29CB8F /* NFXURLDetailsControllerViewController.swift in Sources */,
+				358C6D72298D99A8ECED1B139AD4ED44 /* NFXWindowController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		54AC3374C0652154550D39720C4D1A18 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = netfox;
+			target = 33426EFE1931E100B59ABF41FD14377D /* netfox */;
+			targetProxy = 0077333CC09F0583739C9AB8A0B5606A /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		3AB8740B6727C3F8E0C14CF99275D28B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8C3256A7802988717549E04D8B79223F /* Pods-Bag-Pack.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-Bag-Pack/Pods-Bag-Pack-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-Bag-Pack/Pods-Bag-Pack.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		88794DE2C9B2840391901E4DFE13298F /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A07E28E74CD423D3B85EB1094D9F56A1 /* Pods-Bag-Pack.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-Bag-Pack/Pods-Bag-Pack-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-Bag-Pack/Pods-Bag-Pack.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		903A0004D3E6651EFD5D2E16214D101B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Release;
+		};
+		B4EFE046ACF8F37157F6E322C7FCFC28 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_DEBUG=1",
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+		BD05C31B9C4C10943E8FE140E37311A6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8E4BF66BBE48A3C68DC8E709EE6AE2DE /* netfox.debug.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/netfox/netfox-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/netfox/netfox-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/netfox/netfox.modulemap";
+				PRODUCT_MODULE_NAME = netfox;
+				PRODUCT_NAME = netfox;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		FE417CB1982DDFAA8AD674217609A905 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 79D6B0197276000C760CC2FA49C6D559 /* netfox.release.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/netfox/netfox-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/netfox/netfox-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/netfox/netfox.modulemap";
+				PRODUCT_MODULE_NAME = netfox;
+				PRODUCT_NAME = netfox;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		14A279E0E52265F9827871C7B385FECF /* Build configuration list for PBXNativeTarget "netfox" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BD05C31B9C4C10943E8FE140E37311A6 /* Debug */,
+				FE417CB1982DDFAA8AD674217609A905 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B4EFE046ACF8F37157F6E322C7FCFC28 /* Debug */,
+				903A0004D3E6651EFD5D2E16214D101B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		812C62761778A1828B8ED1FCC4603A6A /* Build configuration list for PBXNativeTarget "Pods-Bag-Pack" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3AB8740B6727C3F8E0C14CF99275D28B /* Debug */,
+				88794DE2C9B2840391901E4DFE13298F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+}

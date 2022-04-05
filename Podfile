@@ -6,5 +6,6 @@ target 'Bag-Pack' do
   use_frameworks!
 
   # Pods for Bag-Pack
+pod 'netfox'
 
 end

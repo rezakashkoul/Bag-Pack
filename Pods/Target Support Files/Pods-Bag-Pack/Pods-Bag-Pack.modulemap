@@ -1,0 +1,6 @@
+framework module Pods_Bag_Pack {
+  umbrella header "Pods-Bag-Pack-umbrella.h"
+
+  export *
+  module * { export * }
+}

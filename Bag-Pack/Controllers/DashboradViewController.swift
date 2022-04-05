@@ -6,30 +6,38 @@
 //
 
 import UIKit
+import netfox
 
 class DashboradViewController: UIViewController {
-     
+    
     @IBOutlet weak var tableView: UITableView!
     
-    var travelList = [String]()
+    var travelList: [Travel] = [] {
+        didSet {
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
         setupUI()
+        fetchTravelData()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationController?.setNavigationBarHidden(false, animated: animated)
-
+        
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         navigationController?.setNavigationBarHidden(true, animated: animated)
-
+        
     }
     
     func setupUI() {
@@ -38,7 +46,6 @@ class DashboradViewController: UIViewController {
         tableView.register(UINib(nibName: "DashboardTableViewCell", bundle: nil), forCellReuseIdentifier: "DashboardTableViewCell")
         setNoDataInfoIfAbsenceNotExists()
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addButtonTapped))
-        travelList = ["reza" , "hossein"]
     }
     
     func setNoDataInfoIfAbsenceNotExists() {
@@ -56,19 +63,72 @@ class DashboradViewController: UIViewController {
         }
     }
     
-    @objc private func addButtonTapped () {
+    @objc func addButtonTapped () {
         let vc = storyboard?.instantiateViewController(withIdentifier: "MainTabBarController")
         navigationController?.pushViewController(vc!, animated: true)
     }
     
+    func fetchTravelData() {
+        NetworkManager.shared.getTravelData(useMockData: useMockData) { result in
+            switch result {
+            case .success(let travelList):
+                self.travelList = travelList
+            case .failure(let error):
+                print(error.localizedDescription)
+                self.showAlertAndHandleEvent(error)
+            }
+        }
+    }
+    
+    func showAlertAndHandleEvent(_ error: ApplicationError) {
+        switch error {
+        case .badURL, .decode:
+            AlertManager.shared.showAlert(parent: self, title: "Network failure", body: "Please check your Internet", buttonTitles: [], style: .alert, showCancelButton: true, completion: {index in
+                self.showAlertAndHandleEvent(.badURL)
+            })
+        case .general:
+            print(error)
+            AlertManager.shared.showAlert(parent: self, title: "Error", body: "Please check your Internet", buttonTitles: ["Try again"], style: .alert, showCancelButton: true, completion: {index in
+                if let index = index {
+                    if index == 0 {
+                        self.fetchTravelData()
+                    }
+                } else {
+                    
+                }
+                
+            })
+        case .timeout:
+            print(error)
+            AlertManager.shared.showAlert(parent: self, title: "Request timeout", body: "Please try again", buttonTitles: ["Try again", "More"], style: .alert, showCancelButton: true, completion: {index in
+                if index == 0 {
+                    self.fetchTravelData()
+                } else {
+                    NFX.sharedInstance().show()
+                }
+            })
+        case .noData:
+            print("No data ", error)
+        }
+    }
+    
+    
+    
+    
 }
 
-//TableView Setup
+//MARK: Setup tableView
+
 extension DashboradViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "DashboardTableViewCell", for: indexPath)
-        
+        let cell = (tableView.dequeueReusableCell(withIdentifier: "DashboardTableViewCell", for: indexPath) as! DashboardTableViewCell)
+        cell.travelTitleLabel.text = travelList[indexPath.row].title
+        cell.climateLabel.text = travelList[indexPath.row].climate
+        cell.currencyRateLabel.text = travelList[indexPath.row].currency
+        cell.dateLabel.text = travelList[indexPath.row].date
+        cell.placeLabel.text = travelList[indexPath.row].place
+        cell.travelLengthLabel.text = travelList[indexPath.row].travelLength.description
         return cell
     }
     
