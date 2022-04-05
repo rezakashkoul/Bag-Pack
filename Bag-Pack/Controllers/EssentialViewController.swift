@@ -11,7 +11,17 @@ class EssentialViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     
-    var list = [String]()
+    var essentialList: [String] = [] {
+        willSet{
+            showNoDataForTableView()
+
+        }
+        didSet{
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,10 +49,17 @@ class EssentialViewController: UIViewController {
     }
     
     @objc private func addNewItemToCheckList() {
-        showAlert()
+        showAlert { text in
+            guard let text = text else { return }
+            self.essentialList.append(text)
+            DispatchQueue.main.async { [self] in
+                showNoDataForTableView()
+//                    tableView.reloadData()
+            }
+        }
     }
     
-    func showAlert() {
+    func showAlert(comple: @escaping (String?)->()) {
         var aTextField = UITextField()
         let alert = UIAlertController(title: "Add new item", message: "", preferredStyle: .alert)
         alert.addTextField { textField in
@@ -51,12 +68,8 @@ class EssentialViewController: UIViewController {
         }
         alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: .none))
         alert.addAction(UIAlertAction(title: "Add", style: .default, handler: { item in
-            if !aTextField.text!.isEmpty && !self.list.contains(where: {$0 == aTextField.text?.lowercased()}) {
-                self.list.append(aTextField.text!)
-                DispatchQueue.main.async { [self] in
-                    showNoDataForTableView()
-                    tableView.reloadData()
-                }
+            if !aTextField.text!.isEmpty && !self.essentialList.contains(where: {$0 == aTextField.text?.lowercased()}) {
+                comple(aTextField.text)
             }
         }))
         present(alert, animated: true, completion: nil)
@@ -69,7 +82,7 @@ class EssentialViewController: UIViewController {
         noDataLabel.textColor = UIColor.systemBlue
         noDataLabel.textAlignment = .center
         DispatchQueue.main.async { [self] in
-            if list.isEmpty {
+            if essentialList.isEmpty {
                 tableView.backgroundView = noDataLabel
             } else {
                 tableView.backgroundView = nil
@@ -97,11 +110,11 @@ extension EssentialViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "EssentialTableViewCell", for: indexPath)
-        cell.textLabel?.text = list[indexPath.row]
+        cell.textLabel?.text = essentialList[indexPath.row]
         return cell
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return list.count
+        return essentialList.count
     }
 }

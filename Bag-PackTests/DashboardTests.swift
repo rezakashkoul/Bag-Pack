@@ -21,7 +21,7 @@ class DashboardTests: XCTestCase {
         super.tearDown()
     }
     
-    func testIsTravelFetchDateAPIWorks() {
+    func test_isTravelFetchDateAPIWorks() {
         NetworkManager.shared.getTravelData(useMockData: useMockData) { result in
             switch result {
             case .success(let travel):
@@ -32,6 +32,4 @@ class DashboardTests: XCTestCase {
         }
     }
     
-    
-
 }

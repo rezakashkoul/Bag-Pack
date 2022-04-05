@@ -17,6 +17,7 @@
 		EBF1664227FC46A300D8AC4A /* GlobalVariables.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBF1664127FC46A300D8AC4A /* GlobalVariables.swift */; };
 		EBF1664427FC481A00D8AC4A /* MockData.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBF1664327FC481A00D8AC4A /* MockData.swift */; };
 		EBF1664627FC4C5800D8AC4A /* AlertManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBF1664527FC4C5800D8AC4A /* AlertManager.swift */; };
+		EBF1664827FC8E3700D8AC4A /* EssentialTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBF1664727FC8E3700D8AC4A /* EssentialTests.swift */; };
 		F700B53427B3F22900BDCD37 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F700B53327B3F22900BDCD37 /* AppDelegate.swift */; };
 		F700B53627B3F22900BDCD37 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F700B53527B3F22900BDCD37 /* SceneDelegate.swift */; };
 		F700B53827B3F22900BDCD37 /* DashboradViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F700B53727B3F22900BDCD37 /* DashboradViewController.swift */; };
@@ -54,6 +55,7 @@
 		EBF1664127FC46A300D8AC4A /* GlobalVariables.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalVariables.swift; sourceTree = "<group>"; };
 		EBF1664327FC481A00D8AC4A /* MockData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockData.swift; sourceTree = "<group>"; };
 		EBF1664527FC4C5800D8AC4A /* AlertManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertManager.swift; sourceTree = "<group>"; };
+		EBF1664727FC8E3700D8AC4A /* EssentialTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EssentialTests.swift; sourceTree = "<group>"; };
 		F700B53027B3F22900BDCD37 /* Bag-Pack.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Bag-Pack.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F700B53327B3F22900BDCD37 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F700B53527B3F22900BDCD37 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -119,6 +121,7 @@
 			children = (
 				EB95016427FADA8B00AC10FA /* Bag_PackTests.swift */,
 				EBF1663F27FC387E00D8AC4A /* DashboardTests.swift */,
+				EBF1664727FC8E3700D8AC4A /* EssentialTests.swift */,
 			);
 			path = "Bag-PackTests";
 			sourceTree = "<group>";
@@ -340,6 +343,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EBF1664027FC387E00D8AC4A /* DashboardTests.swift in Sources */,
+				EBF1664827FC8E3700D8AC4A /* EssentialTests.swift in Sources */,
 				EB95016527FADA8B00AC10FA /* Bag_PackTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
