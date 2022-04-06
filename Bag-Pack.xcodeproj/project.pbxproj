@@ -10,6 +10,8 @@
 		B0B09B917CE347EF839FB5E5 /* Pods_Bag_Pack.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D16D155FC6D0F403A62F531 /* Pods_Bag_Pack.framework */; };
 		EB0A818427FDBF1800314D58 /* NoteTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB0A818327FDBF1800314D58 /* NoteTests.swift */; };
 		EB0A818627FDC8AB00314D58 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB0A818527FDC8AB00314D58 /* Extensions.swift */; };
+		EB0A818F27FDD00000314D58 /* CostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB0A818D27FDD00000314D58 /* CostTableViewCell.swift */; };
+		EB0A819027FDD00000314D58 /* CostTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EB0A818E27FDD00000314D58 /* CostTableViewCell.xib */; };
 		EB91DC4A27B7DA6600D094A0 /* EssentialTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB91DC4827B7DA6600D094A0 /* EssentialTableViewCell.swift */; };
 		EB91DC4B27B7DA6600D094A0 /* EssentialTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EB91DC4927B7DA6600D094A0 /* EssentialTableViewCell.xib */; };
 		EB95016D27FAEBFE00AC10FA /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB95016C27FAEBFE00AC10FA /* NetworkManager.swift */; };
@@ -48,6 +50,8 @@
 		BF3E2555C1B7B906CA9930E2 /* Pods-Bag-Pack.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Bag-Pack.debug.xcconfig"; path = "Target Support Files/Pods-Bag-Pack/Pods-Bag-Pack.debug.xcconfig"; sourceTree = "<group>"; };
 		EB0A818327FDBF1800314D58 /* NoteTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteTests.swift; sourceTree = "<group>"; };
 		EB0A818527FDC8AB00314D58 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		EB0A818D27FDD00000314D58 /* CostTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CostTableViewCell.swift; sourceTree = "<group>"; };
+		EB0A818E27FDD00000314D58 /* CostTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CostTableViewCell.xib; sourceTree = "<group>"; };
 		EB91DC4827B7DA6600D094A0 /* EssentialTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EssentialTableViewCell.swift; sourceTree = "<group>"; };
 		EB91DC4927B7DA6600D094A0 /* EssentialTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EssentialTableViewCell.xib; sourceTree = "<group>"; };
 		EB95016227FADA8B00AC10FA /* Bag-PackTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Bag-PackTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -150,6 +154,15 @@
 			path = Global;
 			sourceTree = "<group>";
 		};
+		EB0A819127FDD00A00314D58 /* CostTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				EB0A818D27FDD00000314D58 /* CostTableViewCell.swift */,
+				EB0A818E27FDD00000314D58 /* CostTableViewCell.xib */,
+			);
+			path = CostTableViewCell;
+			sourceTree = "<group>";
+		};
 		EB91DC4C27B7DA7000D094A0 /* EssentialTableViewCell */ = {
 			isa = PBXGroup;
 			children = (
@@ -209,6 +222,7 @@
 				EB0A818B27FDC90900314D58 /* Helpers */,
 				F700B54D27B3F56300BDCD37 /* Controllers */,
 				EB91DC4C27B7DA7000D094A0 /* EssentialTableViewCell */,
+				EB0A819127FDD00A00314D58 /* CostTableViewCell */,
 				F700B55627B42B9A00BDCD37 /* DashboardTableViewCell */,
 				EB0A818C27FDC91800314D58 /* Global */,
 				F700B53927B3F22900BDCD37 /* Main.storyboard */,
@@ -332,6 +346,7 @@
 				F700B53D27B3F22A00BDCD37 /* Assets.xcassets in Resources */,
 				F700B55527B42B9400BDCD37 /* DashboardTableViewCell.xib in Resources */,
 				F700B53B27B3F22900BDCD37 /* Main.storyboard in Resources */,
+				EB0A819027FDD00000314D58 /* CostTableViewCell.xib in Resources */,
 				EB91DC4B27B7DA6600D094A0 /* EssentialTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -398,6 +413,7 @@
 				EB95016D27FAEBFE00AC10FA /* NetworkManager.swift in Sources */,
 				EBF1664427FC481A00D8AC4A /* MockData.swift in Sources */,
 				F700B54A27B3F4A300BDCD37 /* EssentialViewController.swift in Sources */,
+				EB0A818F27FDD00000314D58 /* CostTableViewCell.swift in Sources */,
 				F700B53827B3F22900BDCD37 /* DashboradViewController.swift in Sources */,
 				EB91DC4A27B7DA6600D094A0 /* EssentialTableViewCell.swift in Sources */,
 				EBF1664627FC4C5800D8AC4A /* AlertManager.swift in Sources */,

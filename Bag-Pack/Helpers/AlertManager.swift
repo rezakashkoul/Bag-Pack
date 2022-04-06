@@ -50,4 +50,37 @@ class AlertManager {
         parent.present(alert, animated: true)
     }
     
+    func showCompleteFormOfAlert(parent: UIViewController, title: String, message: String, placeHolders: [String], buttonTitles: [String], style: UIAlertController.Style = .actionSheet, showCancelButton: Bool = true, completion: @escaping (Int?)->(), textCompletion: @escaping ([String])->()) {
+        let alert = UIAlertController(title: title, message: "\n" + message, preferredStyle: style)
+        var textField = UITextField()
+        
+        for i in 0..<placeHolders.count {
+            
+            alert.addTextField { closureTextField in
+                textField = closureTextField
+                textField.placeholder = placeHolders[i]
+                var texts: [String] = []
+                if let text = closureTextField.text {
+                    texts.append(text)
+                }
+                textCompletion(texts)
+            }
+        }
+        
+
+        for i in 0..<buttonTitles.count {
+            let action = UIAlertAction(title: buttonTitles[i], style: .default) { _ in
+                completion(i)
+            }
+            alert.addAction(action)
+        }
+        if showCancelButton {
+            let action = UIAlertAction(title: "Cancel", style: .cancel) { _ in
+                completion(nil)
+            }
+            alert.addAction(action)
+        }
+        parent.present(alert, animated: true)
+    }
+    
 }

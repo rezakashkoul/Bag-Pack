@@ -14,6 +14,8 @@ class NoteViewController: UIViewController, UITextViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         textView.delegate = self
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .save, target: self, action: #selector(saveTrip))
+
 //        textView.keyboardDismissMode = .onDrag
     }
     
@@ -38,6 +40,10 @@ class NoteViewController: UIViewController, UITextViewDelegate {
     }
     @objc private func backButton() {
         tabBarController?.navigationController?.popViewController(animated: true)
+    }
+    
+    @objc private func saveTrip() {
+        print("Save the trip")
     }
     
     
