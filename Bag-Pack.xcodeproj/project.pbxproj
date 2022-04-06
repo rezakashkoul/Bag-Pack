@@ -10,7 +10,6 @@
 		B0B09B917CE347EF839FB5E5 /* Pods_Bag_Pack.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D16D155FC6D0F403A62F531 /* Pods_Bag_Pack.framework */; };
 		EB91DC4A27B7DA6600D094A0 /* EssentialTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB91DC4827B7DA6600D094A0 /* EssentialTableViewCell.swift */; };
 		EB91DC4B27B7DA6600D094A0 /* EssentialTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EB91DC4927B7DA6600D094A0 /* EssentialTableViewCell.xib */; };
-		EB95016527FADA8B00AC10FA /* Bag_PackTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB95016427FADA8B00AC10FA /* Bag_PackTests.swift */; };
 		EB95016D27FAEBFE00AC10FA /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB95016C27FAEBFE00AC10FA /* NetworkManager.swift */; };
 		EBF1663E27FC368900D8AC4A /* TravelModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBF1663D27FC368900D8AC4A /* TravelModel.swift */; };
 		EBF1664027FC387E00D8AC4A /* DashboardTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBF1663F27FC387E00D8AC4A /* DashboardTests.swift */; };
@@ -48,7 +47,6 @@
 		EB91DC4827B7DA6600D094A0 /* EssentialTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EssentialTableViewCell.swift; sourceTree = "<group>"; };
 		EB91DC4927B7DA6600D094A0 /* EssentialTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EssentialTableViewCell.xib; sourceTree = "<group>"; };
 		EB95016227FADA8B00AC10FA /* Bag-PackTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Bag-PackTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		EB95016427FADA8B00AC10FA /* Bag_PackTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bag_PackTests.swift; sourceTree = "<group>"; };
 		EB95016C27FAEBFE00AC10FA /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		EBF1663D27FC368900D8AC4A /* TravelModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TravelModel.swift; sourceTree = "<group>"; };
 		EBF1663F27FC387E00D8AC4A /* DashboardTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardTests.swift; sourceTree = "<group>"; };
@@ -119,7 +117,6 @@
 		EB95016327FADA8B00AC10FA /* Bag-PackTests */ = {
 			isa = PBXGroup;
 			children = (
-				EB95016427FADA8B00AC10FA /* Bag_PackTests.swift */,
 				EBF1663F27FC387E00D8AC4A /* DashboardTests.swift */,
 				EBF1664727FC8E3700D8AC4A /* EssentialTests.swift */,
 			);
@@ -344,7 +341,6 @@
 			files = (
 				EBF1664027FC387E00D8AC4A /* DashboardTests.swift in Sources */,
 				EBF1664827FC8E3700D8AC4A /* EssentialTests.swift in Sources */,
-				EB95016527FADA8B00AC10FA /* Bag_PackTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

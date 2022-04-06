@@ -11,12 +11,27 @@ import XCTest
 
 class EssentialTests: XCTestCase {
     
-    func test_showAlertFunctionality() {
-        let storyboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-        let vc = storyboard.instantiateViewController(withIdentifier: "EssentialViewController")  as! EssentialViewController
-        vc.showAlert(comple: { text in
-            XCTAssertFalse(text?.isEmpty ?? true)
-        })
+    var essential = EssentialViewController()
+    
+    override func setUp() {
+        super.setUp()
     }
+    
+    override class func tearDown() {
+        super.tearDown()
+    }
+    
+//    func test_showAlertFunctionality() {
+//        let storyboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+//        let vc = storyboard.instantiateViewController(withIdentifier: "EssentialViewController")  as! EssentialViewController
+//        vc.showAlert(completion: { text in
+//            XCTAssertFalse(text?.isEmpty ?? true)
+//        })
+//    }
+    
+//    func test_essentialListIsNotEmpty() {
+//        XCTAssertTrue(essential.essentialList.isEmpty)
+//    }
+    
     
 }

@@ -14,7 +14,6 @@ class EssentialViewController: UIViewController {
     var essentialList: [String] = [] {
         willSet{
             showNoDataForTableView()
-
         }
         didSet{
             DispatchQueue.main.async {
@@ -32,6 +31,7 @@ class EssentialViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         setupUI()
+        loadEssentialList()
     }
     
     func setupUI() {
@@ -49,30 +49,15 @@ class EssentialViewController: UIViewController {
     }
     
     @objc private func addNewItemToCheckList() {
-        showAlert { text in
-            guard let text = text else { return }
-            self.essentialList.append(text)
-            DispatchQueue.main.async { [self] in
-                showNoDataForTableView()
-//                    tableView.reloadData()
-            }
-        }
+        showAlertWithTextFieldToAddItems()
     }
     
-    func showAlert(comple: @escaping (String?)->()) {
-        var aTextField = UITextField()
-        let alert = UIAlertController(title: "Add new item", message: "", preferredStyle: .alert)
-        alert.addTextField { textField in
-            textField.placeholder = "Write an item to remember"
-            aTextField = textField
+    func showAlertWithTextFieldToAddItems() {
+        AlertManager.shared.showAlertWithTextField(parent: self, title: "Add new item", placeHolder: "Write an item to remember", buttonTitle: "Add", style: .alert, showCancelButton: true) { text in
+            guard let text = text , text != "" else { return }
+            self.essentialList.append(text)
+            self.saveEssentialList()
         }
-        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: .none))
-        alert.addAction(UIAlertAction(title: "Add", style: .default, handler: { item in
-            if !aTextField.text!.isEmpty && !self.essentialList.contains(where: {$0 == aTextField.text?.lowercased()}) {
-                comple(aTextField.text)
-            }
-        }))
-        present(alert, animated: true, completion: nil)
     }
     
     func showNoDataForTableView() {
@@ -105,7 +90,7 @@ class EssentialViewController: UIViewController {
 }
 
 
-//TableView Setup
+//MARK: - Setup TableView
 extension EssentialViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -116,5 +101,49 @@ extension EssentialViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return essentialList.count
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            tableView.beginUpdates()
+            essentialList.remove(at: indexPath.row)
+            tableView.deleteRows(at: [indexPath], with: .fade)
+            tableView.endUpdates()
+            saveEssentialList()
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
+        
+        if tableView.isEditing == false {
+            return .delete
+        } else {
+            return .none
+        }
+    }
+}
+
+//MARK: - Save/Load list to userDefault
+extension EssentialViewController {
+    
+    func saveEssentialList() {
+        do {
+            let encoder = JSONEncoder()
+            let data = try encoder.encode(essentialList)
+            UserDefaults.standard.set(data, forKey: "essential")
+        } catch {
+            print("Unable to Encode essentialList (\(error))")
+        }
+    }
+    
+    func loadEssentialList() {
+        if let data = UserDefaults.standard.data(forKey: "essential") {
+            do {
+                let decoder = JSONDecoder()
+                essentialList = try decoder.decode([String].self, from: data)
+            } catch {
+                print("Unable to Decode essentialList (\(error))")
+            }
+        }
     }
 }

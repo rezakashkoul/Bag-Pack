@@ -29,5 +29,25 @@ class AlertManager {
         parent.present(alert, animated: true)
     }
     
+    func showAlertWithTextField(parent: UIViewController, title: String, placeHolder: String, buttonTitle: String, style: UIAlertController.Style = .alert, showCancelButton: Bool = true, completion: @escaping (String?)->()) {
+        
+        let alert = UIAlertController(title: title, message: "", preferredStyle: style)
+        var textField = UITextField()
+        alert.addTextField { text in
+            textField = text
+            textField.placeholder = placeHolder
+        }
+        let action = UIAlertAction(title: buttonTitle, style: .default) { _ in
+            completion(textField.text)
+        }
+        alert.addAction(action)
+        if showCancelButton {
+            let action = UIAlertAction(title: "Cancel", style: .cancel) { _ in
+                completion(nil)
+            }
+            alert.addAction(action)
+        }
+        parent.present(alert, animated: true)
+    }
     
 }
