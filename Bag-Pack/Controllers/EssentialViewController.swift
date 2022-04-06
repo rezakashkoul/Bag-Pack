@@ -49,12 +49,15 @@ class EssentialViewController: UIViewController {
     }
     
     @objc private func addNewItemToCheckList() {
-        showAlertWithTextFieldToAddItems()
+        showAlertWithTextFieldToAddItems { text in
+            print(text)
+        }
     }
     
-    func showAlertWithTextFieldToAddItems() {
+    func showAlertWithTextFieldToAddItems(completion: @escaping (String) -> ()) {
         AlertManager.shared.showAlertWithTextField(parent: self, title: "Add new item", placeHolder: "Write an item to remember", buttonTitle: "Add", style: .alert, showCancelButton: true) { text in
             guard let text = text , text != "" else { return }
+            completion(text)
             self.essentialList.append(text)
             self.saveEssentialList()
         }
@@ -94,8 +97,9 @@ class EssentialViewController: UIViewController {
 extension EssentialViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "EssentialTableViewCell", for: indexPath)
-        cell.textLabel?.text = essentialList[indexPath.row]
+        let cell = tableView.dequeueReusableCell(withIdentifier: "EssentialTableViewCell", for: indexPath) as! EssentialTableViewCell
+        cell.itemNumberLabel?.text = "\(indexPath.row+1)."
+        cell.itemNameLabel?.text = essentialList[indexPath.row]
         return cell
     }
     
