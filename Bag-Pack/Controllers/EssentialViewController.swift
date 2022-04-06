@@ -31,7 +31,7 @@ class EssentialViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         setupUI()
-        loadEssentialList()
+        essentialList = loadEssentialList()
     }
     
     func setupUI() {
@@ -55,11 +55,11 @@ class EssentialViewController: UIViewController {
     }
     
     func showAlertWithTextFieldToAddItems(completion: @escaping (String) -> ()) {
-        AlertManager.shared.showAlertWithTextField(parent: self, title: "Add new item", placeHolder: "Write an item to remember", buttonTitle: "Add", style: .alert, showCancelButton: true) { text in
+        AlertManager.shared.showAlertWithTextField(parent: self, title: "Add new item", placeHolder: "Write an item to remember", buttonTitle: "Add", style: .alert, showCancelButton: true) { [self] text in
             guard let text = text , text != "" else { return }
             completion(text)
-            self.essentialList.append(text)
-            self.saveEssentialList()
+            essentialList.append(text)
+            saveEssentialList(essentialList)
         }
     }
     
@@ -78,20 +78,7 @@ class EssentialViewController: UIViewController {
         }
     }
     
-    func setTabBarStyle() {
-        tabBarController?.tabBar.items![0].title = "Essential"
-        tabBarController?.tabBar.items![0].image = UIImage(named: "essential")
-        tabBarController?.tabBar.items![0].selectedImage = UIImage(named: "essential_filled")
-        tabBarController?.tabBar.items![1].title = "Costs"
-        tabBarController?.tabBar.items![1].image = UIImage(named: "cost")
-        tabBarController?.tabBar.items![1].selectedImage = UIImage(named: "cost_filled")
-        tabBarController?.tabBar.items![2].title = "Note and Points"
-        tabBarController?.tabBar.items![2].image = UIImage(named: "notes")
-        tabBarController?.tabBar.items![2].selectedImage = UIImage(named: "notes_filled")
-    }
-    
 }
-
 
 //MARK: - Setup TableView
 extension EssentialViewController: UITableViewDelegate, UITableViewDataSource {
@@ -113,7 +100,7 @@ extension EssentialViewController: UITableViewDelegate, UITableViewDataSource {
             essentialList.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .fade)
             tableView.endUpdates()
-            saveEssentialList()
+            saveEssentialList(essentialList)
         }
     }
     
@@ -130,24 +117,41 @@ extension EssentialViewController: UITableViewDelegate, UITableViewDataSource {
 //MARK: - Save/Load list to userDefault
 extension EssentialViewController {
     
-    func saveEssentialList() {
+    func saveEssentialList(_ list: [String]){
         do {
             let encoder = JSONEncoder()
-            let data = try encoder.encode(essentialList)
+            let data = try encoder.encode(list)
             UserDefaults.standard.set(data, forKey: "essential")
         } catch {
             print("Unable to Encode essentialList (\(error))")
         }
     }
     
-    func loadEssentialList() {
+    func loadEssentialList()-> [String] {
         if let data = UserDefaults.standard.data(forKey: "essential") {
             do {
                 let decoder = JSONDecoder()
-                essentialList = try decoder.decode([String].self, from: data)
+                return try decoder.decode([String].self, from: data)
             } catch {
                 print("Unable to Decode essentialList (\(error))")
+                return []
             }
         }
+        return []
+    }
+}
+
+//MARK: Setup tabbar style
+extension EssentialViewController {
+    func setTabBarStyle() {
+        tabBarController?.tabBar.items![0].title = "Essential"
+        tabBarController?.tabBar.items![0].image = UIImage(named: "essential")
+        tabBarController?.tabBar.items![0].selectedImage = UIImage(named: "essential_filled")
+        tabBarController?.tabBar.items![1].title = "Costs"
+        tabBarController?.tabBar.items![1].image = UIImage(named: "cost")
+        tabBarController?.tabBar.items![1].selectedImage = UIImage(named: "cost_filled")
+        tabBarController?.tabBar.items![2].title = "Note and Points"
+        tabBarController?.tabBar.items![2].image = UIImage(named: "notes")
+        tabBarController?.tabBar.items![2].selectedImage = UIImage(named: "notes_filled")
     }
 }
