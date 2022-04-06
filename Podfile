@@ -7,5 +7,5 @@ target 'Bag-Pack' do
 
   # Pods for Bag-Pack
 pod 'netfox'
-
+pod 'IQKeyboardManagerSwift'
 end

@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		B0B09B917CE347EF839FB5E5 /* Pods_Bag_Pack.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D16D155FC6D0F403A62F531 /* Pods_Bag_Pack.framework */; };
+		EB0A818427FDBF1800314D58 /* NoteTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB0A818327FDBF1800314D58 /* NoteTests.swift */; };
 		EB91DC4A27B7DA6600D094A0 /* EssentialTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB91DC4827B7DA6600D094A0 /* EssentialTableViewCell.swift */; };
 		EB91DC4B27B7DA6600D094A0 /* EssentialTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EB91DC4927B7DA6600D094A0 /* EssentialTableViewCell.xib */; };
 		EB95016D27FAEBFE00AC10FA /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB95016C27FAEBFE00AC10FA /* NetworkManager.swift */; };
@@ -44,6 +45,7 @@
 		2D16D155FC6D0F403A62F531 /* Pods_Bag_Pack.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Bag_Pack.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8DBC46D2AA935D72779AD19E /* Pods-Bag-Pack.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Bag-Pack.release.xcconfig"; path = "Target Support Files/Pods-Bag-Pack/Pods-Bag-Pack.release.xcconfig"; sourceTree = "<group>"; };
 		BF3E2555C1B7B906CA9930E2 /* Pods-Bag-Pack.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Bag-Pack.debug.xcconfig"; path = "Target Support Files/Pods-Bag-Pack/Pods-Bag-Pack.debug.xcconfig"; sourceTree = "<group>"; };
+		EB0A818327FDBF1800314D58 /* NoteTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteTests.swift; sourceTree = "<group>"; };
 		EB91DC4827B7DA6600D094A0 /* EssentialTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EssentialTableViewCell.swift; sourceTree = "<group>"; };
 		EB91DC4927B7DA6600D094A0 /* EssentialTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EssentialTableViewCell.xib; sourceTree = "<group>"; };
 		EB95016227FADA8B00AC10FA /* Bag-PackTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Bag-PackTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -119,6 +121,7 @@
 			children = (
 				EBF1663F27FC387E00D8AC4A /* DashboardTests.swift */,
 				EBF1664727FC8E3700D8AC4A /* EssentialTests.swift */,
+				EB0A818327FDBF1800314D58 /* NoteTests.swift */,
 			);
 			path = "Bag-PackTests";
 			sourceTree = "<group>";
@@ -339,6 +342,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EB0A818427FDBF1800314D58 /* NoteTests.swift in Sources */,
 				EBF1664027FC387E00D8AC4A /* DashboardTests.swift in Sources */,
 				EBF1664827FC8E3700D8AC4A /* EssentialTests.swift in Sources */,
 			);
