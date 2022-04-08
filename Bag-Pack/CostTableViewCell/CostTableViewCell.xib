@@ -18,13 +18,13 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vt6-Mh-ID7">
-                        <rect key="frame" x="16" y="43" width="42" height="21"/>
+                        <rect key="frame" x="16" y="43" width="266" height="21"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tWH-Tz-qdK">
-                        <rect key="frame" x="63" y="43" width="357" height="21"/>
+                        <rect key="frame" x="287" y="43" width="133" height="21"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
@@ -33,6 +33,7 @@
                 <constraints>
                     <constraint firstItem="tWH-Tz-qdK" firstAttribute="centerY" secondItem="Vt6-Mh-ID7" secondAttribute="centerY" id="2Uy-ET-gx0"/>
                     <constraint firstAttribute="trailing" secondItem="tWH-Tz-qdK" secondAttribute="trailing" constant="16" id="Epf-b4-Wxg"/>
+                    <constraint firstItem="tWH-Tz-qdK" firstAttribute="width" secondItem="Vt6-Mh-ID7" secondAttribute="width" multiplier="0.5" id="PFF-8g-M5Z"/>
                     <constraint firstItem="Vt6-Mh-ID7" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="SEv-5t-cIs"/>
                     <constraint firstItem="Vt6-Mh-ID7" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="WaE-SM-gry"/>
                     <constraint firstItem="tWH-Tz-qdK" firstAttribute="leading" secondItem="Vt6-Mh-ID7" secondAttribute="trailing" constant="5" id="Win-a8-GWZ"/>

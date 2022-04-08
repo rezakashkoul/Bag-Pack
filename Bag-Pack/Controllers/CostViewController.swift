@@ -11,7 +11,7 @@ class CostViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     
-    var costList: [(String, Double)] = [] {
+    var items: [String: String] = [:] {
         didSet{
             DispatchQueue.main.async {
                 self.tableView.reloadData()
@@ -29,7 +29,7 @@ class CostViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         setupUI()
-        costList = loadCostList()
+        items = loadCostList()
     }
     
     func setupUI() {
@@ -44,7 +44,7 @@ class CostViewController: UIViewController {
     
     @objc private func addNewItemToCostList() {
         showAlertWithTextFieldToAddItems { text in
-            print(text)
+//            print(text)
         }
     }
     
@@ -57,8 +57,15 @@ class CostViewController: UIViewController {
 //        }
     //    }
     
-    func showAlertWithTextFieldToAddItems(completion: @escaping (String) -> ()) {
+    func showAlertWithTextFieldToAddItems(completion: @escaping ([String]) -> ()) {
         
+        AlertManager.shared.showCompleteFormOfAlert(parent: self, title: "Add items", message: "", placeHolders: ["Title","Price"], buttonTitles: ["Add"], style: .alert, showCancelButton: true) { index in
+            print(index)
+        } textCompletion: { texts in
+            print(texts[0])
+            print(texts[1])
+        }
+
     }
     
     
@@ -69,22 +76,24 @@ extension CostViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "CostTableViewCell", for: indexPath) as! CostTableViewCell
-        cell.itemNumberLabel?.text = "\(indexPath.row+1)."
-        cell.itemNameLabel?.text = costList[indexPath.row]
+        let names = Array(items.keys)
+        let costs = Array(items.values)
+        cell.itemNameLabel?.text = names[indexPath.row]
+        cell.itemCostLabel?.text = costs[indexPath.row]
         return cell
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return costList.count
+        return items.count
     }
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             tableView.beginUpdates()
-            costList.remove(at: indexPath.row)
+//            costList.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .fade)
             tableView.endUpdates()
-            saveCostList(costList)
+            saveCostList(items)
         }
     }
     
@@ -101,7 +110,7 @@ extension CostViewController: UITableViewDelegate, UITableViewDataSource {
 //MARK: - Save/Load list to userDefault
 extension CostViewController {
 
-    func saveCostList(_ list: [(String, Double)]){
+    func saveCostList(_ list: [String: String]){
         do {
             let encoder = JSONEncoder()
             let data = try encoder.encode(list)
@@ -111,17 +120,17 @@ extension CostViewController {
         }
     }
     
-    func loadCostList()-> [(String, Double)] {
+    func loadCostList()-> [String: String] {
         if let data = UserDefaults.standard.data(forKey: "cost") {
             do {
                 let decoder = JSONDecoder()
-                return try decoder.decode([(String, Double)].self, from: data)
+                return try decoder.decode([String: String].self, from: data)
             } catch {
                 print("Unable to Decode costlList (\(error))")
-                return []
+                return [:]
             }
         }
-        return []
+        return [:]
     }
 }
 //
