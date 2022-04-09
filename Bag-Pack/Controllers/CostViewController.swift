@@ -43,29 +43,18 @@ class CostViewController: UIViewController {
     }
     
     @objc private func addNewItemToCostList() {
-        showAlertWithTextFieldToAddItems { text in
-//            print(text)
-        }
+        
+        showAddItemAlert()
+        
     }
     
-//    func showAlertWithTextFieldToAddItems(completion: @escaping (String) -> ()) {
-//        AlertManager.shared.showAlertWithTextField(parent: self, title: "Add new item", placeHolder: "Write an item to remember", buttonTitle: "Add", style: .alert, showCancelButton: true) { [self] text in
-//            guard let text = text , text != "" else { return }
-//            completion(text)
-//            costList.append(text)
-//            saveCostList(costList)
-//        }
-    //    }
-    
-    func showAlertWithTextFieldToAddItems(completion: @escaping ([String]) -> ()) {
-        
-        AlertManager.shared.showCompleteFormOfAlert(parent: self, title: "Add items", message: "", placeHolders: ["Title","Price"], buttonTitles: ["Add"], style: .alert, showCancelButton: true) { index in
-            print(index)
+    func showAddItemAlert() {
+        AlertManager.shared.showCompleteFormOfAlert(parent: self, title: "Add items", message: "", placeHolders: ["Title","Price"], buttonTitles: ["Add"], style: .alert, showCancelButton: true) { _ in
         } textCompletion: { texts in
-            print(texts[0])
-            print(texts[1])
+            print(texts)
+            self.items[texts[0]] = texts[1]
+            print(self.items)
         }
-
     }
     
     
@@ -76,8 +65,9 @@ extension CostViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "CostTableViewCell", for: indexPath) as! CostTableViewCell
-        let names = Array(items.keys)
-        let costs = Array(items.values)
+        
+        let names = Array(items.keys.sorted())
+        let costs = Array(items.values.sorted())
         cell.itemNameLabel?.text = names[indexPath.row]
         cell.itemCostLabel?.text = costs[indexPath.row]
         return cell
@@ -90,7 +80,7 @@ extension CostViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             tableView.beginUpdates()
-//            costList.remove(at: indexPath.row)
+            //            costList.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .fade)
             tableView.endUpdates()
             saveCostList(items)
@@ -109,7 +99,7 @@ extension CostViewController: UITableViewDelegate, UITableViewDataSource {
 
 //MARK: - Save/Load list to userDefault
 extension CostViewController {
-
+    
     func saveCostList(_ list: [String: String]){
         do {
             let encoder = JSONEncoder()

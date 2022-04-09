@@ -51,32 +51,33 @@ class AlertManager {
     }
     
     func showCompleteFormOfAlert(parent: UIViewController, title: String, message: String, placeHolders: [String], buttonTitles: [String], style: UIAlertController.Style = .actionSheet, showCancelButton: Bool = true, completion: @escaping (Int?)->(), textCompletion: @escaping ([String])->()) {
+        
         let alert = UIAlertController(title: title, message: "\n" + message, preferredStyle: style)
         var textField = UITextField()
         var texts: [String] = []
-
+        
         for i in 0..<placeHolders.count {
-            
             alert.addTextField { closureTextField in
                 textField = closureTextField
                 textField.placeholder = placeHolders[i]
-//                if let text = closureTextField.text {
-//                    texts.append(text)
-//                }
+                if i == 1 {
+                    textField.keyboardType = .numberPad
+                } else {
+                    textField.keyboardType = .default
+                }
             }
         }
-
+        
         for i in 0..<buttonTitles.count {
             let action = UIAlertAction(title: buttonTitles[i], style: .default) { _ in
-                completion(i)
                 
                 for j in 0..<placeHolders.count {
-                    texts.append(textField.text!)
-                    print(texts[j])
+                    let textFields = alert.textFields
+                    guard textFields?[j].text != "" && textFields?[j].text != nil && textFields?[j].text != " " else {return}
+                    texts.append(textFields![j].text!)
                 }
                 textCompletion(texts)
-                
-                
+                completion(i)
             }
             alert.addAction(action)
         }
