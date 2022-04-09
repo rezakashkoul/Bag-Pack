@@ -12,3 +12,7 @@ struct Travel: Codable {
     let title, place, date, climate, currency : String
     let travelLength: Int
 }
+
+struct CostDetails: Codable {
+    var title, price: String
+}
