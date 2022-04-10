@@ -38,7 +38,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1085" y="803"/>
+            <point key="canvasLocation" x="1052" y="788"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="CxY-3s-Njd">
@@ -56,7 +56,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gDN-0e-MJs" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="289" y="803"/>
+            <point key="canvasLocation" x="51" y="826"/>
         </scene>
         <!--Essential View Controller-->
         <scene sceneID="3F4-GG-zoB">
@@ -92,7 +92,7 @@
         <!--Cost View Controller-->
         <scene sceneID="6HI-iH-hA8">
             <objects>
-                <viewController storyboardIdentifier="CostController" id="BQI-Nk-OHL" customClass="CostViewController" customModule="Bag_Pack" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CostViewController" id="BQI-Nk-OHL" customClass="CostViewController" customModule="Bag_Pack" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="yux-8O-Zqd">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -152,7 +152,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="M34-Qb-d48" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3843" y="1495"/>
+            <point key="canvasLocation" x="5700" y="1494.3127962085307"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="t90-rR-hXI">
@@ -212,6 +212,37 @@
             </objects>
             <point key="canvasLocation" x="2912" y="804"/>
         </scene>
+        <!--Settings View Controller-->
+        <scene sceneID="HaR-5U-Bqm">
+            <objects>
+                <viewController storyboardIdentifier="SettingsViewController" id="Qme-Fo-cEn" customClass="SettingsViewController" customModule="Bag_Pack" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="i2U-aa-AMd">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="76q-qX-cbF">
+                                <rect key="frame" x="0.0" y="44" width="390" height="800"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="KJl-dY-4EF"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="76q-qX-cbF" firstAttribute="top" secondItem="KJl-dY-4EF" secondAttribute="top" id="RGJ-uD-AmN"/>
+                            <constraint firstItem="KJl-dY-4EF" firstAttribute="trailing" secondItem="76q-qX-cbF" secondAttribute="trailing" id="WDi-ED-e2l"/>
+                            <constraint firstItem="76q-qX-cbF" firstAttribute="leading" secondItem="KJl-dY-4EF" secondAttribute="leading" id="Zxn-eG-ZrQ"/>
+                            <constraint firstAttribute="bottom" secondItem="76q-qX-cbF" secondAttribute="bottom" id="yHG-BS-PR6"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="KfN-hK-IjO"/>
+                    <connections>
+                        <outlet property="tableView" destination="76q-qX-cbF" id="oHt-jM-5QA"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Q1m-6f-Ywh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="560" y="1534"/>
+        </scene>
         <!--Item-->
         <scene sceneID="yZj-Fj-d8l">
             <objects>
@@ -229,7 +260,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="C8N-t1-2g4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2914" y="1495"/>
+            <point key="canvasLocation" x="4772.3076923076924" y="1494.3127962085307"/>
         </scene>
     </scenes>
     <resources>

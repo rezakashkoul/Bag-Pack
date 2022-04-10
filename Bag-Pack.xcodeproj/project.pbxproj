@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		B0B09B917CE347EF839FB5E5 /* Pods_Bag_Pack.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D16D155FC6D0F403A62F531 /* Pods_Bag_Pack.framework */; };
+		EB06254F2802FF8E001C248C /* CostTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB06254E2802FF8E001C248C /* CostTests.swift */; };
+		EB062551280302B4001C248C /* SettingsTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB062550280302B4001C248C /* SettingsTest.swift */; };
+		EB0625542803033D001C248C /* SettingsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB0625522803033D001C248C /* SettingsTableViewCell.swift */; };
+		EB0625552803033D001C248C /* SettingsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EB0625532803033D001C248C /* SettingsTableViewCell.xib */; };
 		EB0A818427FDBF1800314D58 /* NoteTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB0A818327FDBF1800314D58 /* NoteTests.swift */; };
 		EB0A818627FDC8AB00314D58 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB0A818527FDC8AB00314D58 /* Extensions.swift */; };
 		EB0A818F27FDD00000314D58 /* CostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB0A818D27FDD00000314D58 /* CostTableViewCell.swift */; };
@@ -15,6 +19,7 @@
 		EB91DC4A27B7DA6600D094A0 /* EssentialTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB91DC4827B7DA6600D094A0 /* EssentialTableViewCell.swift */; };
 		EB91DC4B27B7DA6600D094A0 /* EssentialTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EB91DC4927B7DA6600D094A0 /* EssentialTableViewCell.xib */; };
 		EB95016D27FAEBFE00AC10FA /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB95016C27FAEBFE00AC10FA /* NetworkManager.swift */; };
+		EBB058962802DFCD00743B1A /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBB058952802DFCD00743B1A /* SettingsViewController.swift */; };
 		EBF1663E27FC368900D8AC4A /* TravelModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBF1663D27FC368900D8AC4A /* TravelModel.swift */; };
 		EBF1664027FC387E00D8AC4A /* DashboardTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBF1663F27FC387E00D8AC4A /* DashboardTests.swift */; };
 		EBF1664227FC46A300D8AC4A /* GlobalVariables.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBF1664127FC46A300D8AC4A /* GlobalVariables.swift */; };
@@ -48,6 +53,10 @@
 		2D16D155FC6D0F403A62F531 /* Pods_Bag_Pack.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Bag_Pack.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8DBC46D2AA935D72779AD19E /* Pods-Bag-Pack.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Bag-Pack.release.xcconfig"; path = "Target Support Files/Pods-Bag-Pack/Pods-Bag-Pack.release.xcconfig"; sourceTree = "<group>"; };
 		BF3E2555C1B7B906CA9930E2 /* Pods-Bag-Pack.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Bag-Pack.debug.xcconfig"; path = "Target Support Files/Pods-Bag-Pack/Pods-Bag-Pack.debug.xcconfig"; sourceTree = "<group>"; };
+		EB06254E2802FF8E001C248C /* CostTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CostTests.swift; sourceTree = "<group>"; };
+		EB062550280302B4001C248C /* SettingsTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTest.swift; sourceTree = "<group>"; };
+		EB0625522803033D001C248C /* SettingsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewCell.swift; sourceTree = "<group>"; };
+		EB0625532803033D001C248C /* SettingsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingsTableViewCell.xib; sourceTree = "<group>"; };
 		EB0A818327FDBF1800314D58 /* NoteTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteTests.swift; sourceTree = "<group>"; };
 		EB0A818527FDC8AB00314D58 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		EB0A818D27FDD00000314D58 /* CostTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CostTableViewCell.swift; sourceTree = "<group>"; };
@@ -56,6 +65,7 @@
 		EB91DC4927B7DA6600D094A0 /* EssentialTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EssentialTableViewCell.xib; sourceTree = "<group>"; };
 		EB95016227FADA8B00AC10FA /* Bag-PackTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Bag-PackTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EB95016C27FAEBFE00AC10FA /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		EBB058952802DFCD00743B1A /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		EBF1663D27FC368900D8AC4A /* TravelModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TravelModel.swift; sourceTree = "<group>"; };
 		EBF1663F27FC387E00D8AC4A /* DashboardTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardTests.swift; sourceTree = "<group>"; };
 		EBF1664127FC46A300D8AC4A /* GlobalVariables.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalVariables.swift; sourceTree = "<group>"; };
@@ -111,6 +121,15 @@
 				2D16D155FC6D0F403A62F531 /* Pods_Bag_Pack.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		EB06254D2802FBFE001C248C /* SettingsTable */ = {
+			isa = PBXGroup;
+			children = (
+				EB0625522803033D001C248C /* SettingsTableViewCell.swift */,
+				EB0625532803033D001C248C /* SettingsTableViewCell.xib */,
+			);
+			path = SettingsTable;
 			sourceTree = "<group>";
 		};
 		EB0A818727FDC8C700314D58 /* NetworkManager */ = {
@@ -178,6 +197,8 @@
 				EBF1663F27FC387E00D8AC4A /* DashboardTests.swift */,
 				EBF1664727FC8E3700D8AC4A /* EssentialTests.swift */,
 				EB0A818327FDBF1800314D58 /* NoteTests.swift */,
+				EB06254E2802FF8E001C248C /* CostTests.swift */,
+				EB062550280302B4001C248C /* SettingsTest.swift */,
 			);
 			path = "Bag-PackTests";
 			sourceTree = "<group>";
@@ -222,6 +243,7 @@
 				EB0A818B27FDC90900314D58 /* Helpers */,
 				F700B54D27B3F56300BDCD37 /* Controllers */,
 				EB91DC4C27B7DA7000D094A0 /* EssentialTableViewCell */,
+				EB06254D2802FBFE001C248C /* SettingsTable */,
 				EB0A819127FDD00A00314D58 /* CostTableViewCell */,
 				F700B55627B42B9A00BDCD37 /* DashboardTableViewCell */,
 				EB0A818C27FDC91800314D58 /* Global */,
@@ -239,6 +261,7 @@
 				F700B54927B3F4A300BDCD37 /* EssentialViewController.swift */,
 				F700B54B27B3F51C00BDCD37 /* CostViewController.swift */,
 				F700B54727B3F48B00BDCD37 /* NoteViewController.swift */,
+				EBB058952802DFCD00743B1A /* SettingsViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -342,6 +365,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EB0625552803033D001C248C /* SettingsTableViewCell.xib in Resources */,
 				F700B54027B3F22A00BDCD37 /* LaunchScreen.storyboard in Resources */,
 				F700B53D27B3F22A00BDCD37 /* Assets.xcassets in Resources */,
 				F700B55527B42B9400BDCD37 /* DashboardTableViewCell.xib in Resources */,
@@ -401,7 +425,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				EB0A818427FDBF1800314D58 /* NoteTests.swift in Sources */,
+				EB062551280302B4001C248C /* SettingsTest.swift in Sources */,
 				EBF1664027FC387E00D8AC4A /* DashboardTests.swift in Sources */,
+				EB06254F2802FF8E001C248C /* CostTests.swift in Sources */,
 				EBF1664827FC8E3700D8AC4A /* EssentialTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -417,9 +443,11 @@
 				F700B53827B3F22900BDCD37 /* DashboradViewController.swift in Sources */,
 				EB91DC4A27B7DA6600D094A0 /* EssentialTableViewCell.swift in Sources */,
 				EBF1664627FC4C5800D8AC4A /* AlertManager.swift in Sources */,
+				EBB058962802DFCD00743B1A /* SettingsViewController.swift in Sources */,
 				F700B54C27B3F51C00BDCD37 /* CostViewController.swift in Sources */,
 				F700B54827B3F48B00BDCD37 /* NoteViewController.swift in Sources */,
 				EBF1664227FC46A300D8AC4A /* GlobalVariables.swift in Sources */,
+				EB0625542803033D001C248C /* SettingsTableViewCell.swift in Sources */,
 				F700B53427B3F22900BDCD37 /* AppDelegate.swift in Sources */,
 				EBF1663E27FC368900D8AC4A /* TravelModel.swift in Sources */,
 				F700B53627B3F22900BDCD37 /* SceneDelegate.swift in Sources */,

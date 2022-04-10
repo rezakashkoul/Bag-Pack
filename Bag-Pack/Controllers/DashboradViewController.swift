@@ -45,6 +45,7 @@ class DashboradViewController: UIViewController {
         tableView.register(UINib(nibName: "DashboardTableViewCell", bundle: nil), forCellReuseIdentifier: "DashboardTableViewCell")
         setNoDataInfoIfAbsenceNotExists()
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addButtonTapped))
+        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Settings", style: .done, target: self, action: #selector(goToSettings))
     }
     
     func setNoDataInfoIfAbsenceNotExists() {
@@ -65,6 +66,11 @@ class DashboradViewController: UIViewController {
     @objc private func addButtonTapped () {
         let vc = storyboard?.instantiateViewController(withIdentifier: "MainTabBarController")
         navigationController?.pushViewController(vc!, animated: true)
+    }
+    
+    @objc private func goToSettings() {
+        let vc = storyboard?.instantiateViewController(withIdentifier: "SettingsViewController") as! SettingsViewController
+        navigationController?.pushViewController(vc, animated: true)
     }
     
     func fetchTravelData() {

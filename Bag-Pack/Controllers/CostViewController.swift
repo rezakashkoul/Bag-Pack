@@ -39,16 +39,19 @@ class CostViewController: UIViewController {
         navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Dashboard", style: .done, target: self, action: #selector(backButton))
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addNewItemToCostList))
     }
+    
     @objc private func backButton() {
         tabBarController?.navigationController?.popViewController(animated: true)
     }
     
     @objc private func addNewItemToCostList() {
-        showAddItemAlert()
+        showAddItemAlert(completion: {_ in
+            return
+        })
         
     }
     
-    func showAddItemAlert() {
+    func showAddItemAlert(completion: @escaping ([CostDetails]) -> ()) {
         AlertManager.shared.showCompleteFormOfAlert(parent: self, title: "Add items", message: "", placeHolders: ["Title of purchase","Price"], buttonTitles: ["Add"], style: .alert, showCancelButton: true) { _ in
         } textCompletion: { [self] texts in
             print(texts)
@@ -57,6 +60,7 @@ class CostViewController: UIViewController {
                 print(item)
                 if items.filter({$0.title.lowercased() == item.title.lowercased()}).isEmpty {
                 items.append(item)
+                    completion(items)
                 saveCostList(items)
                 }
             }
