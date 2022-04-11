@@ -67,7 +67,7 @@ class EssentialViewController: UIViewController {
         let noDataLabel : UILabel = UILabel()
         noDataLabel.frame = CGRect(x: 0, y: 0 , width: (self.tableView.bounds.width), height: (self.tableView.bounds.height))
         noDataLabel.text = "There's no record"
-        noDataLabel.textColor = UIColor.systemBlue
+        noDataLabel.textColor = appGlobalTintColor
         noDataLabel.textAlignment = .center
         DispatchQueue.main.async { [self] in
             if essentialList.isEmpty {

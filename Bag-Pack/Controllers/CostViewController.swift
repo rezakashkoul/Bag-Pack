@@ -12,6 +12,9 @@ class CostViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     
     var items: [CostDetails] = [] {
+        willSet {
+            showNoDataForTableView()
+        }
         didSet{
             items = items.sorted(by: {$0.title < $1.title})
             DispatchQueue.main.async {
@@ -38,6 +41,22 @@ class CostViewController: UIViewController {
         navigationController?.navigationBar.prefersLargeTitles = true
         navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Dashboard", style: .done, target: self, action: #selector(backButton))
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addNewItemToCostList))
+        showNoDataForTableView()
+    }
+    
+    func showNoDataForTableView() {
+        let noDataLabel : UILabel = UILabel()
+        noDataLabel.frame = CGRect(x: 0, y: 0 , width: (self.tableView.bounds.width), height: (self.tableView.bounds.height))
+        noDataLabel.text = "There's no record"
+        noDataLabel.textColor = appGlobalTintColor
+        noDataLabel.textAlignment = .center
+        DispatchQueue.main.async { [self] in
+            if items.isEmpty {
+                tableView.backgroundView = noDataLabel
+            } else {
+                tableView.backgroundView = nil
+            }
+        }
     }
     
     @objc private func backButton() {
@@ -59,9 +78,9 @@ class CostViewController: UIViewController {
                 let item = CostDetails(title: texts[0], price: texts[1])
                 print(item)
                 if items.filter({$0.title.lowercased() == item.title.lowercased()}).isEmpty {
-                items.append(item)
+                    items.append(item)
                     completion(items)
-                saveCostList(items)
+                    saveCostList(items)
                 }
             }
         }

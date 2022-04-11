@@ -63,7 +63,7 @@ extension SettingsViewController: UITableViewDelegate, UITableViewDataSource {
         
         if indexPath.row == 0 {
             cell.colorView.isHidden = false
-            cell.colorView.backgroundColor = appGlobalTintColor ?? .red
+            cell.colorView.backgroundColor = appGlobalTintColor ?? .systemBlue
         } else {
             cell.colorView.isHidden = true
         }
