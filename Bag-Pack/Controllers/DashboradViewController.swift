@@ -8,6 +8,7 @@
 import UIKit
 import netfox
 
+@available(iOS 14.0, *)
 class DashboradViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
@@ -22,6 +23,7 @@ class DashboradViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         tableView.delegate = self
         tableView.dataSource = self
         setupUI()
@@ -30,12 +32,25 @@ class DashboradViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+
         navigationController?.setNavigationBarHidden(false, animated: animated)
-        
     }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        view.window?.tintColor = appGlobalTintColor
+        if isDarkMode {
+            view.window?.overrideUserInterfaceStyle = .light
+        } else {
+            view.window?.overrideUserInterfaceStyle = .dark
+        }
+    }
+    
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
+
         navigationController?.setNavigationBarHidden(true, animated: animated)
     }
     
@@ -46,6 +61,7 @@ class DashboradViewController: UIViewController {
         setNoDataInfoIfAbsenceNotExists()
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addButtonTapped))
         navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Settings", style: .done, target: self, action: #selector(goToSettings))
+        tableView.allowsSelection = false
     }
     
     func setNoDataInfoIfAbsenceNotExists() {
@@ -99,9 +115,8 @@ class DashboradViewController: UIViewController {
                         self.fetchTravelData()
                     }
                 } else {
-                    
+        //
                 }
-                
             })
         case .timeout:
             print(error)
@@ -117,13 +132,11 @@ class DashboradViewController: UIViewController {
         }
     }
     
-    
-    
-    
 }
 
 //MARK: Setup tableView
 
+@available(iOS 14.0, *)
 extension DashboradViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

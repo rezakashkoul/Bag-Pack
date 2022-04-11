@@ -22,7 +22,10 @@
                         <rect key="frame" x="16" y="4" width="612" height="155"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vOt-Og-ZlG">
-                                <rect key="frame" x="0.0" y="67.5" width="474" height="20.5"/>
+                                <rect key="frame" x="0.0" y="61.5" width="474" height="32"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="32" id="yoe-6I-OnC"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -38,7 +41,7 @@
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="87f-7S-bz3">
                                 <rect key="frame" x="563" y="62" width="51" height="31"/>
                                 <connections>
-                                    <action selector="themeSwitch:" destination="KGk-i7-Jjw" eventType="valueChanged" id="Fcm-8l-ISi"/>
+                                    <action selector="themeSwitchAction:" destination="KGk-i7-Jjw" eventType="valueChanged" id="EjN-7Y-1ac"/>
                                 </connections>
                             </switch>
                         </subviews>
@@ -56,6 +59,7 @@
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
                 <outlet property="colorView" destination="PZN-aq-RD9" id="J8N-EZ-EcO"/>
+                <outlet property="themeSwitch" destination="87f-7S-bz3" id="hJ2-mZ-d75"/>
                 <outlet property="titleLabel" destination="vOt-Og-ZlG" id="CjF-iu-Hqo"/>
             </connections>
             <point key="canvasLocation" x="33" y="154"/>
