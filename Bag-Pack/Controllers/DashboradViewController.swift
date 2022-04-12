@@ -40,9 +40,9 @@ class DashboradViewController: UIViewController {
         
         view.window?.tintColor = appGlobalTintColor
         if isDarkMode {
-            view.window?.overrideUserInterfaceStyle = .light
-        } else {
             view.window?.overrideUserInterfaceStyle = .dark
+        } else {
+            view.window?.overrideUserInterfaceStyle = .light
         }
     }
     

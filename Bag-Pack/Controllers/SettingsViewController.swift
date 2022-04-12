@@ -11,7 +11,7 @@ class SettingsViewController: UIViewController, SettingsTableViewCellDelegate {
     
     @IBOutlet weak var tableView: UITableView!
     
-    let items = ["Tint Color", "Dark Theme", "Common Currencies" , "Reset Application Data", "App Version"]
+    let items = ["Tint Color", "Dark Theme", "Common Currencies" , "Reset Application Data", "Reset Settings", "App Version"]
     
     var picker: Any?
     
@@ -40,27 +40,52 @@ class SettingsViewController: UIViewController, SettingsTableViewCellDelegate {
         title = "Settings"
     }
     
-    func darkModeSwitchIsChanged(switchState: Bool) {
+    func changeTheme() {
         if #available(iOS 13.0, *) {
             if isDarkMode {
-                view.window?.overrideUserInterfaceStyle = .light
-            } else {
                 view.window?.overrideUserInterfaceStyle = .dark
+            } else {
+                view.window?.overrideUserInterfaceStyle = .light
             }
         } else {
         }
     }
     
-    func cleanData() {
-        UserDefaults.standard.set(nil, forKey: "settings")
+    func darkModeSwitchIsChanged(switchState: Bool) {
+        changeTheme()
+    }
+    
+    func resetAppData() {
         UserDefaults.standard.set(nil, forKey: "note")
         UserDefaults.standard.set(nil, forKey: "cost")
         UserDefaults.standard.set(nil, forKey: "essential")
+        UserDefaults.standard.set(nil, forKey: "color")
         UserDefaults.standard.set(nil, forKey: "unit")
+        UserDefaults.standard.set(nil, forKey: "theme")
         appGlobalTintColor = nil
         appCurrencyUnit = .dollar
         if #available(iOS 14.0, *) {
             changeSystemTintColor()
+            changeTheme()
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
+        } else {
+            // Fallback on earlier versions
+        }
+        
+        // and clean model data
+    }
+    
+    func resetAppSettings() {
+        UserDefaults.standard.set(nil, forKey: "color")
+        UserDefaults.standard.set(nil, forKey: "unit")
+        UserDefaults.standard.set(nil, forKey: "theme")
+        appGlobalTintColor = nil
+        appCurrencyUnit = .dollar
+        if #available(iOS 14.0, *) {
+            changeSystemTintColor()
+            changeTheme()
             DispatchQueue.main.async {
                 self.tableView.reloadData()
             }
@@ -90,6 +115,7 @@ extension SettingsViewController: UITableViewDelegate, UITableViewDataSource {
         }
         if indexPath.row == 1 {
             cell.themeSwitch.isHidden = false
+            cell.themeSwitch.isOn = isDarkMode
         } else {
             cell.themeSwitch.isHidden = true
         }
@@ -99,7 +125,7 @@ extension SettingsViewController: UITableViewDelegate, UITableViewDataSource {
         } else {
             cell.currencySegment.isHidden = true
         }
-        if indexPath.row == 4 {
+        if indexPath.row == 5 {
             let appVersion = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String
             cell.versionLabel.isHidden = false
             cell.versionLabel.text = appVersion
@@ -115,6 +141,8 @@ extension SettingsViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        tableView.deselectRow(at: indexPath, animated: true)
         if indexPath.row == 0 {
             if #available(iOS 14.0, *) {
                 openPicker()
@@ -123,10 +151,19 @@ extension SettingsViewController: UITableViewDelegate, UITableViewDataSource {
             }
         }
         if indexPath.row == 3 {
-            AlertManager.shared.showAlert(parent: self, title: "Reset application data", body: "By doing this you'll clean every data and entries", buttonTitles: ["Do it anyway"], style: .alert, showCancelButton: true) { _ in
-                self.cleanData()
+            AlertManager.shared.showAlert(parent: self, title: "Reset entire data", body: "By doing this you'll clean every data and entries", buttonTitles: ["Reset data"], style: .alert, showCancelButton: true) { buttonIndex in
+                if buttonIndex == 0 {
+                    self.resetAppData()
+                }
             }
             
+        }
+        if indexPath.row == 4 {
+            AlertManager.shared.showAlert(parent: self, title: "Reset application Settings", body: "You're about to reset app settings...", buttonTitles: ["Reset Settings"], style: .alert, showCancelButton: true) { buttonIndex in
+                if buttonIndex == 0 {
+                    self.resetAppSettings()
+                }
+            }
         }
     }
 }
