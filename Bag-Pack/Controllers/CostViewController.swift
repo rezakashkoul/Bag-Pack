@@ -13,7 +13,7 @@ class CostViewController: UIViewController {
     
     var items: [CostDetails] = [] {
         willSet {
-            showNoDataForTableView()
+            tableView.setNoDataInTableViewIFNotExists(tableView: tableView, data: items)
         }
         didSet{
             items = items.sorted(by: {$0.title < $1.title})
@@ -41,22 +41,7 @@ class CostViewController: UIViewController {
         navigationController?.navigationBar.prefersLargeTitles = true
         navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Dashboard", style: .done, target: self, action: #selector(backButton))
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addNewItemToCostList))
-        showNoDataForTableView()
-    }
-    
-    func showNoDataForTableView() {
-        let noDataLabel : UILabel = UILabel()
-        noDataLabel.frame = CGRect(x: 0, y: 0 , width: (self.tableView.bounds.width), height: (self.tableView.bounds.height))
-        noDataLabel.text = "There's no record"
-        noDataLabel.textColor = appGlobalTintColor
-        noDataLabel.textAlignment = .center
-        DispatchQueue.main.async { [self] in
-            if items.isEmpty {
-                tableView.backgroundView = noDataLabel
-            } else {
-                tableView.backgroundView = nil
-            }
-        }
+        tableView.setNoDataInTableViewIFNotExists(tableView: tableView, data: items)
     }
     
     @objc private func backButton() {

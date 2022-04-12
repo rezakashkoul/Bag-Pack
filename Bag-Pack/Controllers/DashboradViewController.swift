@@ -56,26 +56,11 @@ class DashboradViewController: UIViewController {
     func setupUI() {
         navigationItem.title = "Bag-Pack"
         navigationController?.navigationBar.prefersLargeTitles = true
-        tableView.register(UINib(nibName: "DashboardTableViewCell", bundle: nil), forCellReuseIdentifier: "DashboardTableViewCell")
-        setNoDataInfoIfAbsenceNotExists()
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addButtonTapped))
         navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Settings", style: .done, target: self, action: #selector(goToSettings))
+        tableView.register(UINib(nibName: "DashboardTableViewCell", bundle: nil), forCellReuseIdentifier: "DashboardTableViewCell")
+        tableView.setNoDataInTableViewIFNotExists(tableView: tableView, data: travelList)
         tableView.allowsSelection = false
-    }
-    
-    func setNoDataInfoIfAbsenceNotExists() {
-        let noDataLabel : UILabel = UILabel()
-        noDataLabel.frame = CGRect(x: 0, y: 0 , width: (self.tableView.bounds.width), height: (self.tableView.bounds.height))
-        noDataLabel.text = "There's no record"
-        noDataLabel.textColor = UIColor.systemBlue
-        noDataLabel.textAlignment = .center
-        DispatchQueue.main.async { [self] in
-            if travelList.isEmpty {
-                tableView.backgroundView = noDataLabel
-            } else {
-                tableView.backgroundView = nil
-            }
-        }
     }
     
     @objc private func addButtonTapped () {

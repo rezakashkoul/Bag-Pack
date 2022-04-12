@@ -14,7 +14,7 @@ class NoteViewController: UIViewController, UITextViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         textView.delegate = self
-//        textView.keyboardDismissMode = .onDrag
+        textView.keyboardDismissMode = .onDrag
     }
     
     override func viewWillAppear(_ animated: Bool) {

@@ -57,7 +57,7 @@ extension UITextView: UITextViewDelegate {
         placeholderLabel.text = placeholderText
         placeholderLabel.sizeToFit()
         placeholderLabel.font = self.font
-        placeholderLabel.textColor = UIColor.lightGray
+        placeholderLabel.textColor = appGlobalTintColor
         placeholderLabel.tag = 100
         placeholderLabel.isHidden = !self.text.isEmpty
         self.addSubview(placeholderLabel)
@@ -97,3 +97,20 @@ extension UserDefaults {
     }
 }
 
+extension UITableView {
+    
+    func setNoDataInTableViewIFNotExists<T: Decodable>(tableView: UITableView, data: [T]) {
+        let noDataLabel : UILabel = UILabel()
+        noDataLabel.frame = CGRect(x: 0, y: 0 , width: (tableView.bounds.width), height: (tableView.bounds.height))
+        noDataLabel.text = "There's no record"
+        noDataLabel.textColor = appGlobalTintColor
+        noDataLabel.textAlignment = .center
+        DispatchQueue.main.async {
+            if data.isEmpty {
+                tableView.backgroundView = noDataLabel
+            } else {
+                tableView.backgroundView = nil
+            }
+        }
+    }
+}

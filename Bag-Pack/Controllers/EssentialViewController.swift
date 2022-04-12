@@ -13,7 +13,7 @@ class EssentialViewController: UIViewController {
     
     var essentialList: [String] = [] {
         willSet{
-            showNoDataForTableView()
+            tableView.setNoDataInTableViewIFNotExists(tableView: tableView, data: essentialList)
         }
         didSet{
             DispatchQueue.main.async {
@@ -41,7 +41,8 @@ class EssentialViewController: UIViewController {
         navigationController?.navigationBar.prefersLargeTitles = true
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addNewItemToCheckList))
         navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Dashboard", style: .done, target: self, action: #selector(backButton))
-        showNoDataForTableView()
+        tableView.setNoDataInTableViewIFNotExists(tableView: tableView, data: essentialList)
+
     }
     
     @objc private func backButton() {
@@ -60,21 +61,6 @@ class EssentialViewController: UIViewController {
             completion(text)
             essentialList.append(text)
             saveEssentialList(essentialList)
-        }
-    }
-    
-    func showNoDataForTableView() {
-        let noDataLabel : UILabel = UILabel()
-        noDataLabel.frame = CGRect(x: 0, y: 0 , width: (self.tableView.bounds.width), height: (self.tableView.bounds.height))
-        noDataLabel.text = "There's no record"
-        noDataLabel.textColor = appGlobalTintColor
-        noDataLabel.textAlignment = .center
-        DispatchQueue.main.async { [self] in
-            if essentialList.isEmpty {
-                tableView.backgroundView = noDataLabel
-            } else {
-                tableView.backgroundView = nil
-            }
         }
     }
     
