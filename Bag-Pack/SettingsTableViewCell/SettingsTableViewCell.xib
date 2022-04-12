@@ -21,11 +21,31 @@
                     <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="loD-9g-gPB">
                         <rect key="frame" x="16" y="4" width="612" height="155"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vOt-Og-ZlG">
-                                <rect key="frame" x="0.0" y="61.5" width="474" height="32"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="249" verticalHuggingPriority="251" text="title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vOt-Og-ZlG">
+                                <rect key="frame" x="0.0" y="52.5" width="253" height="50"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="32" id="yoe-6I-OnC"/>
+                                    <constraint firstAttribute="height" constant="50" id="yoe-6I-OnC"/>
                                 </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="zOO-Vb-TCC">
+                                <rect key="frame" x="273" y="62" width="146" height="32"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="31" id="K2f-ii-yYc"/>
+                                </constraints>
+                                <segments>
+                                    <segment title="$"/>
+                                    <segment title="€"/>
+                                    <segment title="Rials"/>
+                                </segments>
+                                <connections>
+                                    <action selector="currencySegmentAction:" destination="KGk-i7-Jjw" eventType="valueChanged" id="Ntf-Ye-XxR"/>
+                                </connections>
+                            </segmentedControl>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1.0.0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JR6-Tn-3YL">
+                                <rect key="frame" x="439" y="67.5" width="35" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -59,8 +79,10 @@
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
                 <outlet property="colorView" destination="PZN-aq-RD9" id="J8N-EZ-EcO"/>
+                <outlet property="currencySegment" destination="zOO-Vb-TCC" id="biY-ez-xuX"/>
                 <outlet property="themeSwitch" destination="87f-7S-bz3" id="hJ2-mZ-d75"/>
                 <outlet property="titleLabel" destination="vOt-Og-ZlG" id="CjF-iu-Hqo"/>
+                <outlet property="versionLabel" destination="JR6-Tn-3YL" id="6qC-gr-rxs"/>
             </connections>
             <point key="canvasLocation" x="33" y="154"/>
         </tableViewCell>

@@ -17,6 +17,22 @@ var isDarkMode: Bool {
         UserDefaults.standard.set(newValue, forKey: "theme")
     }
 }
+var appCurrencyUnit: CurrencyUnits? {
+    get {
+        CurrencyUnits(rawValue: UserDefaults.standard.integer(forKey: "unit")) ?? .dollar
+    }
+    set{
+        UserDefaults.standard.set(newValue?.rawValue, forKey: "unit")
+    }
+}
+var appGlobalTintColor: UIColor? {
+    get {
+        UserDefaults.standard.colorForKey(key: "color")
+    }
+    set {
+        UserDefaults.standard.setColor(color: newValue, forKey: "color")
+    }
+}
 
 enum ApplicationError: Error {
     case general
@@ -26,12 +42,9 @@ enum ApplicationError: Error {
     case badURL
 }
 
-var appGlobalTintColor: UIColor? {
-    get {
-        UserDefaults.standard.colorForKey(key: "color")
-    }
-    set {
-        UserDefaults.standard.setColor(color: newValue, forKey: "color")
-    }
+enum CurrencyUnits: Int {
+    case dollar = 0
+    case euro = 1
+    case rial = 2
 }
 

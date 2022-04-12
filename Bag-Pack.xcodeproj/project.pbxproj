@@ -123,13 +123,13 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		EB06254D2802FBFE001C248C /* SettingsTable */ = {
+		EB06254D2802FBFE001C248C /* SettingsTableViewCell */ = {
 			isa = PBXGroup;
 			children = (
 				EB0625522803033D001C248C /* SettingsTableViewCell.swift */,
 				EB0625532803033D001C248C /* SettingsTableViewCell.xib */,
 			);
-			path = SettingsTable;
+			path = SettingsTableViewCell;
 			sourceTree = "<group>";
 		};
 		EB0A818727FDC8C700314D58 /* NetworkManager */ = {
@@ -243,7 +243,7 @@
 				EB0A818B27FDC90900314D58 /* Helpers */,
 				F700B54D27B3F56300BDCD37 /* Controllers */,
 				EB91DC4C27B7DA7000D094A0 /* EssentialTableViewCell */,
-				EB06254D2802FBFE001C248C /* SettingsTable */,
+				EB06254D2802FBFE001C248C /* SettingsTableViewCell */,
 				EB0A819127FDD00A00314D58 /* CostTableViewCell */,
 				F700B55627B42B9A00BDCD37 /* DashboardTableViewCell */,
 				EB0A818C27FDC91800314D58 /* Global */,
@@ -661,7 +661,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = "1.0.5 Beta";
 				PRODUCT_BUNDLE_IDENTIFIER = "rezakashkoul.Bag-Pack";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -691,7 +691,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = "1.0.5 Beta";
 				PRODUCT_BUNDLE_IDENTIFIER = "rezakashkoul.Bag-Pack";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;

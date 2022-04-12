@@ -51,6 +51,27 @@ class SettingsViewController: UIViewController, SettingsTableViewCellDelegate {
         }
     }
     
+    func cleanData() {
+        UserDefaults.standard.set(nil, forKey: "settings")
+        UserDefaults.standard.set(nil, forKey: "note")
+        UserDefaults.standard.set(nil, forKey: "cost")
+        UserDefaults.standard.set(nil, forKey: "essential")
+        UserDefaults.standard.set(nil, forKey: "unit")
+        appGlobalTintColor = nil
+        appCurrencyUnit = .dollar
+        if #available(iOS 14.0, *) {
+            changeSystemTintColor()
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
+        } else {
+            // Fallback on earlier versions
+        }
+        
+        // and clean model data
+    }
+    
+    
 } 
 
 //MARK: - Setup TableView
@@ -67,11 +88,23 @@ extension SettingsViewController: UITableViewDelegate, UITableViewDataSource {
         } else {
             cell.colorView.isHidden = true
         }
-        
         if indexPath.row == 1 {
             cell.themeSwitch.isHidden = false
         } else {
             cell.themeSwitch.isHidden = true
+        }
+        if indexPath.row == 2 {
+            cell.currencySegment.isHidden = false
+            cell.currencySegment.selectedSegmentIndex = appCurrencyUnit?.rawValue ?? 0
+        } else {
+            cell.currencySegment.isHidden = true
+        }
+        if indexPath.row == 4 {
+            let appVersion = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String
+            cell.versionLabel.isHidden = false
+            cell.versionLabel.text = appVersion
+        } else {
+            cell.versionLabel.isHidden = true
         }
         
         return cell
@@ -82,13 +115,18 @@ extension SettingsViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        tableView.allowsSelection = false
         if indexPath.row == 0 {
             if #available(iOS 14.0, *) {
                 openPicker()
             } else {
                 
             }
+        }
+        if indexPath.row == 3 {
+            AlertManager.shared.showAlert(parent: self, title: "Reset application data", body: "By doing this you'll clean every data and entries", buttonTitles: ["Do it anyway"], style: .alert, showCancelButton: true) { _ in
+                self.cleanData()
+            }
+            
         }
     }
 }
@@ -98,11 +136,8 @@ extension SettingsViewController: UIColorPickerViewControllerDelegate {
     
     func colorPickerViewControllerDidFinish(_ viewController: UIColorPickerViewController) {
         appGlobalTintColor = viewController.selectedColor
-        view.window?.tintColor = appGlobalTintColor
-        if let appdelegate = UIApplication.shared.delegate as? AppDelegate {
-            appdelegate.window = view.window
-            appdelegate.window?.makeKeyAndVisible()
-        }
+        changeSystemTintColor()
+        
         DispatchQueue.main.async {
             self.tableView.reloadData()
         }
@@ -121,32 +156,12 @@ extension SettingsViewController: UIColorPickerViewControllerDelegate {
         (picker as! UIColorPickerViewController).selectedColor = appGlobalTintColor ?? .systemBlue
         self.present((picker as! UIColorPickerViewController), animated: true, completion: nil)
     }
-}
-
-//MARK: - Save/Load Settings to userDefault
-extension SettingsViewController {
     
-    func saveSettings(_ value: [String]){
-        do {
-            let encoder = JSONEncoder()
-            let data = try encoder.encode(value)
-            UserDefaults.standard.set(data, forKey: "settings")
-        } catch {
-            print("Unable to Encode Settings (\(error))")
+    func changeSystemTintColor() {
+        view.window?.tintColor = appGlobalTintColor
+        if let appdelegate = UIApplication.shared.delegate as? AppDelegate {
+            appdelegate.window = view.window
+            appdelegate.window?.makeKeyAndVisible()
         }
     }
-    
-    func loadSettings()-> [String] {
-        if let data = UserDefaults.standard.data(forKey: "settings") {
-            do {
-                let decoder = JSONDecoder()
-                return try decoder.decode([String].self, from: data)
-            } catch {
-                print("Unable to Decode Settings (\(error))")
-                return []
-            }
-        }
-        return []
-    }
 }
-
