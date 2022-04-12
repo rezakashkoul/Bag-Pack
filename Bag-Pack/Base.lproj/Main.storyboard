@@ -4,6 +4,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -56,7 +57,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gDN-0e-MJs" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="51" y="826"/>
+            <point key="canvasLocation" x="357" y="788"/>
         </scene>
         <!--Essential View Controller-->
         <scene sceneID="3F4-GG-zoB">
@@ -152,7 +153,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="M34-Qb-d48" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5700" y="1494.3127962085307"/>
+            <point key="canvasLocation" x="3820" y="1509"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="t90-rR-hXI">
@@ -241,7 +242,88 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Q1m-6f-Ywh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="560" y="1534"/>
+            <point key="canvasLocation" x="357" y="1476"/>
+        </scene>
+        <!--New Entry View Controller-->
+        <scene sceneID="VyE-y9-Yiq">
+            <objects>
+                <viewController storyboardIdentifier="NewEntryViewController" id="iK4-IL-iVx" customClass="NewEntryViewController" customModule="Bag_Pack" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="yVT-U0-s5O">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="PtN-o6-gF9">
+                                <rect key="frame" x="16" y="76" width="358" height="236"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Travel Title" textAlignment="natural" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jHa-ik-V5R">
+                                        <rect key="frame" x="0.0" y="0.0" width="358" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="NWc-1Z-IOO"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="no" spellCheckingType="no" returnKeyType="next"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Place Name" textAlignment="natural" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Oaf-Oj-r4l">
+                                        <rect key="frame" x="0.0" y="62" width="358" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="Ei2-qJ-URk"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="no" spellCheckingType="no" returnKeyType="next"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Desired Budget" textAlignment="natural" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8iX-Oc-VNw">
+                                        <rect key="frame" x="0.0" y="124" width="358" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="0M9-Gz-P1W"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="no" spellCheckingType="no" keyboardType="numberPad" returnKeyType="next"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Day(s)" textAlignment="natural" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cSa-qJ-ifG">
+                                        <rect key="frame" x="0.0" y="186" width="358" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="h6v-3N-m41"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="no" spellCheckingType="no" keyboardType="numberPad" returnKeyType="done"/>
+                                    </textField>
+                                </subviews>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hnG-WR-Jma">
+                                <rect key="frame" x="16" y="324" width="358" height="50"/>
+                                <color key="backgroundColor" name="AccentColor"/>
+                                <color key="tintColor" systemColor="labelColor"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Let's Go!"/>
+                                <connections>
+                                    <action selector="confirmButtonAction:" destination="iK4-IL-iVx" eventType="touchUpInside" id="Sld-I9-XZu"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="R6m-SN-zYO"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="R6m-SN-zYO" firstAttribute="trailing" secondItem="hnG-WR-Jma" secondAttribute="trailing" constant="16" id="7fF-Ds-d4u"/>
+                            <constraint firstItem="PtN-o6-gF9" firstAttribute="leading" secondItem="R6m-SN-zYO" secondAttribute="leading" constant="16" id="7qD-K3-qn5"/>
+                            <constraint firstItem="hnG-WR-Jma" firstAttribute="top" secondItem="PtN-o6-gF9" secondAttribute="bottom" constant="12" id="8Tf-Ul-a7z"/>
+                            <constraint firstItem="PtN-o6-gF9" firstAttribute="top" secondItem="R6m-SN-zYO" secondAttribute="top" constant="32" id="FHO-o2-das"/>
+                            <constraint firstItem="hnG-WR-Jma" firstAttribute="width" secondItem="cSa-qJ-ifG" secondAttribute="width" id="TSR-Em-alK"/>
+                            <constraint firstItem="hnG-WR-Jma" firstAttribute="height" secondItem="cSa-qJ-ifG" secondAttribute="height" id="oNi-Fl-DZa"/>
+                            <constraint firstItem="hnG-WR-Jma" firstAttribute="leading" secondItem="R6m-SN-zYO" secondAttribute="leading" constant="16" id="pQ1-iL-HeF"/>
+                            <constraint firstItem="R6m-SN-zYO" firstAttribute="trailing" secondItem="PtN-o6-gF9" secondAttribute="trailing" constant="16" id="vWq-Ub-Bfw"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="budgetTextField" destination="8iX-Oc-VNw" id="jVJ-th-VP0"/>
+                        <outlet property="confirmButton" destination="hnG-WR-Jma" id="4Tr-fG-8dp"/>
+                        <outlet property="daysTextField" destination="cSa-qJ-ifG" id="TuR-nE-7P4"/>
+                        <outlet property="placeTextField" destination="Oaf-Oj-r4l" id="4j6-OP-aoo"/>
+                        <outlet property="titleTextField" destination="jHa-ik-V5R" id="QXW-UQ-Er5"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eya-lj-Vm7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1224.6153846153845" y="1481.5165876777251"/>
         </scene>
         <!--Item-->
         <scene sceneID="yZj-Fj-d8l">
@@ -260,10 +342,13 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="C8N-t1-2g4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4772.3076923076924" y="1494.3127962085307"/>
+            <point key="canvasLocation" x="2911" y="1518"/>
         </scene>
     </scenes>
     <resources>
+        <namedColor name="AccentColor">
+            <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

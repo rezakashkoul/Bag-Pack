@@ -14,6 +14,9 @@ class DashboradViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     
     var travelList: [Travel] = [] {
+        willSet {
+//            tableView.setNoDataInTableViewIFNotExists(tableView: tableView, data: travelList)
+        }
         didSet {
             DispatchQueue.main.async {
                 self.tableView.reloadData()
@@ -56,16 +59,21 @@ class DashboradViewController: UIViewController {
     func setupUI() {
         navigationItem.title = "Bag-Pack"
         navigationController?.navigationBar.prefersLargeTitles = true
-        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addButtonTapped))
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "New", style: .done, target: self, action: #selector(newButtonTapped))
         navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Settings", style: .done, target: self, action: #selector(goToSettings))
         tableView.register(UINib(nibName: "DashboardTableViewCell", bundle: nil), forCellReuseIdentifier: "DashboardTableViewCell")
-        tableView.setNoDataInTableViewIFNotExists(tableView: tableView, data: travelList)
+//        tableView.setNoDataInTableViewIFNotExists(tableView: tableView, data: travelList)
         tableView.allowsSelection = false
     }
     
-    @objc private func addButtonTapped () {
-        let vc = storyboard?.instantiateViewController(withIdentifier: "MainTabBarController")
-        navigationController?.pushViewController(vc!, animated: true)
+//    @objc private func addButtonTapped () {
+//        let vc = storyboard?.instantiateViewController(withIdentifier: "MainTabBarController")
+//        navigationController?.pushViewController(vc!, animated: true)
+//    }
+    
+    @objc private func newButtonTapped () {
+        let vc = storyboard?.instantiateViewController(withIdentifier: "NewEntryViewController") as! NewEntryViewController
+        navigationController?.present(vc, animated: true)
     }
     
     @objc private func goToSettings() {

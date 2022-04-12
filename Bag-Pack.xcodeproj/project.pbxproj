@@ -16,6 +16,7 @@
 		EB0A818627FDC8AB00314D58 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB0A818527FDC8AB00314D58 /* Extensions.swift */; };
 		EB0A818F27FDD00000314D58 /* CostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB0A818D27FDD00000314D58 /* CostTableViewCell.swift */; };
 		EB0A819027FDD00000314D58 /* CostTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EB0A818E27FDD00000314D58 /* CostTableViewCell.xib */; };
+		EB6468492805AF4A00CBB4C4 /* NewEntryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB6468482805AF4A00CBB4C4 /* NewEntryViewController.swift */; };
 		EB91DC4A27B7DA6600D094A0 /* EssentialTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB91DC4827B7DA6600D094A0 /* EssentialTableViewCell.swift */; };
 		EB91DC4B27B7DA6600D094A0 /* EssentialTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EB91DC4927B7DA6600D094A0 /* EssentialTableViewCell.xib */; };
 		EB95016D27FAEBFE00AC10FA /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB95016C27FAEBFE00AC10FA /* NetworkManager.swift */; };
@@ -61,6 +62,7 @@
 		EB0A818527FDC8AB00314D58 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		EB0A818D27FDD00000314D58 /* CostTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CostTableViewCell.swift; sourceTree = "<group>"; };
 		EB0A818E27FDD00000314D58 /* CostTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CostTableViewCell.xib; sourceTree = "<group>"; };
+		EB6468482805AF4A00CBB4C4 /* NewEntryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewEntryViewController.swift; sourceTree = "<group>"; };
 		EB91DC4827B7DA6600D094A0 /* EssentialTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EssentialTableViewCell.swift; sourceTree = "<group>"; };
 		EB91DC4927B7DA6600D094A0 /* EssentialTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EssentialTableViewCell.xib; sourceTree = "<group>"; };
 		EB95016227FADA8B00AC10FA /* Bag-PackTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Bag-PackTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -258,6 +260,7 @@
 			isa = PBXGroup;
 			children = (
 				F700B53727B3F22900BDCD37 /* DashboradViewController.swift */,
+				EB6468482805AF4A00CBB4C4 /* NewEntryViewController.swift */,
 				F700B54927B3F4A300BDCD37 /* EssentialViewController.swift */,
 				F700B54B27B3F51C00BDCD37 /* CostViewController.swift */,
 				F700B54727B3F48B00BDCD37 /* NoteViewController.swift */,
@@ -446,6 +449,7 @@
 				EBB058962802DFCD00743B1A /* SettingsViewController.swift in Sources */,
 				F700B54C27B3F51C00BDCD37 /* CostViewController.swift in Sources */,
 				F700B54827B3F48B00BDCD37 /* NoteViewController.swift in Sources */,
+				EB6468492805AF4A00CBB4C4 /* NewEntryViewController.swift in Sources */,
 				EBF1664227FC46A300D8AC4A /* GlobalVariables.swift in Sources */,
 				EB0625542803033D001C248C /* SettingsTableViewCell.swift in Sources */,
 				F700B53427B3F22900BDCD37 /* AppDelegate.swift in Sources */,
