@@ -4,7 +4,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
-        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -252,8 +251,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="PtN-o6-gF9">
-                                <rect key="frame" x="16" y="76" width="358" height="236"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="PtN-o6-gF9">
+                                <rect key="frame" x="16" y="60" width="358" height="248"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Travel Title" textAlignment="natural" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jHa-ik-V5R">
                                         <rect key="frame" x="0.0" y="0.0" width="358" height="50"/>
@@ -264,7 +263,7 @@
                                         <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="no" spellCheckingType="no" returnKeyType="next"/>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Place Name" textAlignment="natural" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Oaf-Oj-r4l">
-                                        <rect key="frame" x="0.0" y="62" width="358" height="50"/>
+                                        <rect key="frame" x="0.0" y="66" width="358" height="50"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="Ei2-qJ-URk"/>
                                         </constraints>
@@ -272,7 +271,7 @@
                                         <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="no" spellCheckingType="no" returnKeyType="next"/>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Desired Budget" textAlignment="natural" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8iX-Oc-VNw">
-                                        <rect key="frame" x="0.0" y="124" width="358" height="50"/>
+                                        <rect key="frame" x="0.0" y="132" width="358" height="50"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="0M9-Gz-P1W"/>
                                         </constraints>
@@ -280,7 +279,7 @@
                                         <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="no" spellCheckingType="no" keyboardType="numberPad" returnKeyType="next"/>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Day(s)" textAlignment="natural" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cSa-qJ-ifG">
-                                        <rect key="frame" x="0.0" y="186" width="358" height="50"/>
+                                        <rect key="frame" x="0.0" y="198" width="358" height="50"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="h6v-3N-m41"/>
                                         </constraints>
@@ -290,9 +289,9 @@
                                 </subviews>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hnG-WR-Jma">
-                                <rect key="frame" x="16" y="324" width="358" height="50"/>
-                                <color key="backgroundColor" name="AccentColor"/>
-                                <color key="tintColor" systemColor="labelColor"/>
+                                <rect key="frame" x="16" y="320" width="358" height="50"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="tintColor" systemColor="tintColor"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Let's Go!"/>
                                 <connections>
@@ -306,7 +305,7 @@
                             <constraint firstItem="R6m-SN-zYO" firstAttribute="trailing" secondItem="hnG-WR-Jma" secondAttribute="trailing" constant="16" id="7fF-Ds-d4u"/>
                             <constraint firstItem="PtN-o6-gF9" firstAttribute="leading" secondItem="R6m-SN-zYO" secondAttribute="leading" constant="16" id="7qD-K3-qn5"/>
                             <constraint firstItem="hnG-WR-Jma" firstAttribute="top" secondItem="PtN-o6-gF9" secondAttribute="bottom" constant="12" id="8Tf-Ul-a7z"/>
-                            <constraint firstItem="PtN-o6-gF9" firstAttribute="top" secondItem="R6m-SN-zYO" secondAttribute="top" constant="32" id="FHO-o2-das"/>
+                            <constraint firstItem="PtN-o6-gF9" firstAttribute="top" secondItem="R6m-SN-zYO" secondAttribute="top" constant="16" id="FHO-o2-das"/>
                             <constraint firstItem="hnG-WR-Jma" firstAttribute="width" secondItem="cSa-qJ-ifG" secondAttribute="width" id="TSR-Em-alK"/>
                             <constraint firstItem="hnG-WR-Jma" firstAttribute="height" secondItem="cSa-qJ-ifG" secondAttribute="height" id="oNi-Fl-DZa"/>
                             <constraint firstItem="hnG-WR-Jma" firstAttribute="leading" secondItem="R6m-SN-zYO" secondAttribute="leading" constant="16" id="pQ1-iL-HeF"/>
@@ -346,14 +345,14 @@
         </scene>
     </scenes>
     <resources>
-        <namedColor name="AccentColor">
-            <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="tintColor">
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
