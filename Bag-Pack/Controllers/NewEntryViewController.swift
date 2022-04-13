@@ -7,8 +7,9 @@
 
 import UIKit
 
-class NewEntryViewController: UIViewController {
+class NewEntryViewController: UIViewController, UITextFieldDelegate {
 
+    @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var titleTextField: UITextField!
     @IBOutlet weak var placeTextField: UITextField!
     @IBOutlet weak var budgetTextField: UITextField!
@@ -22,16 +23,18 @@ class NewEntryViewController: UIViewController {
         super.viewDidLoad()
        
         setupUI()
-
     }
 
     func setupUI() {
+        title = "New Trip"
+        descriptionLabel.textColor = appGlobalTintColor
         confirmButton.layer.cornerRadius = 15
         confirmButton.clipsToBounds = true
         confirmButton.layer.borderWidth = 2.0
         confirmButton.layer.cornerRadius = 15
-        confirmButton.layer.borderColor = appGlobalTintColor?.cgColor ?? UIColor.systemBlue.cgColor
-        titleTextField.borderStyle = .bezel
+        confirmButton.backgroundColor = appGlobalTintColor
+        confirmButton.setTitleColor(.white, for: .normal)
+        titleTextField.borderStyle = .roundedRect
         titleTextField.layer.masksToBounds = true
         titleTextField.layer.borderColor = appGlobalTintColor?.cgColor ?? UIColor.systemBlue.cgColor
         titleTextField.layer.borderWidth = 2.0
@@ -56,4 +59,6 @@ class NewEntryViewController: UIViewController {
         daysTextField.layer.cornerRadius = 15
         daysTextField.clipsToBounds = true
     }
+    
+    
 }
