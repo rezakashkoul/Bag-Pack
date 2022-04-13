@@ -33,7 +33,6 @@ class DashboardTests: XCTestCase {
         waitForExpectations(timeout: 1.1, handler: { _ in
             XCTAssertFalse(vc.travelList.isEmpty)
         })
-
     }
     
     func test_tableViewDelegateIsConnected(){
@@ -57,5 +56,5 @@ class DashboardTests: XCTestCase {
         vc.view.layoutIfNeeded()
         return vc
     }
-        
+    
 }

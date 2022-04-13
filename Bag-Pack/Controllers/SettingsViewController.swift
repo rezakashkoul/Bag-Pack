@@ -12,7 +12,6 @@ class SettingsViewController: UIViewController, SettingsTableViewCellDelegate {
     @IBOutlet weak var tableView: UITableView!
     
     let items = ["Tint Color", "Dark Theme", "Common Currencies" , "Reset Application Data", "Reset Settings", "App Version"]
-    
     var picker: Any?
     
     override func viewDidLoad() {
@@ -55,13 +54,20 @@ class SettingsViewController: UIViewController, SettingsTableViewCellDelegate {
         changeTheme()
     }
     
-    func resetAppData() {
+    func resetApplicationData() {
         UserDefaults.standard.set(nil, forKey: "note")
         UserDefaults.standard.set(nil, forKey: "cost")
         UserDefaults.standard.set(nil, forKey: "essential")
         UserDefaults.standard.set(nil, forKey: "color")
         UserDefaults.standard.set(nil, forKey: "unit")
         UserDefaults.standard.set(nil, forKey: "theme")
+        UserDefaults.standard.set(nil, forKey: "travel")
+        
+        do {
+            UserDefaults.standard.set(nil, forKey: "travel")
+        }
+        
+        
         appGlobalTintColor = nil
         appCurrencyUnit = .dollar
         if #available(iOS 14.0, *) {
@@ -153,7 +159,7 @@ extension SettingsViewController: UITableViewDelegate, UITableViewDataSource {
         if indexPath.row == 3 {
             AlertManager.shared.showAlert(parent: self, title: "Reset entire data", body: "By doing this you'll clean every data and entries", buttonTitles: ["Reset data"], style: .alert, showCancelButton: true) { buttonIndex in
                 if buttonIndex == 0 {
-                    self.resetAppData()
+                    self.resetApplicationData()
                 }
             }
             

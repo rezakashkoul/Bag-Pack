@@ -9,7 +9,7 @@ import UIKit
 import netfox
 
 @available(iOS 14.0, *)
-class DashboradViewController: UIViewController {
+class DashboradViewController: UIViewController, NewEntryViewControllerDelegate {
     
     @IBOutlet weak var tableView: UITableView!
     
@@ -18,8 +18,9 @@ class DashboradViewController: UIViewController {
 //            tableView.setNoDataInTableViewIFNotExists(tableView: tableView, data: travelList)
         }
         didSet {
-            DispatchQueue.main.async {
-                self.tableView.reloadData()
+            travelList = loadData()
+            DispatchQueue.main.async { [self] in
+                tableView.reloadData()
             }
         }
     }
@@ -30,12 +31,13 @@ class DashboradViewController: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
         setupUI()
-        fetchTravelData()
+        //        fetchTravelData()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationController?.setNavigationBarHidden(false, animated: animated)
+        travelList = loadData()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -52,12 +54,12 @@ class DashboradViewController: UIViewController {
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-
+        
         navigationController?.setNavigationBarHidden(true, animated: animated)
     }
     
     func setupUI() {
-        navigationItem.title = "Bag-Pack"
+        navigationItem.title = "BagPack"
         navigationController?.navigationBar.prefersLargeTitles = true
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "New", style: .done, target: self, action: #selector(newButtonTapped))
         navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Settings", style: .done, target: self, action: #selector(goToSettings))
@@ -66,19 +68,22 @@ class DashboradViewController: UIViewController {
         tableView.allowsSelection = false
     }
     
-//    @objc private func addButtonTapped () {
-//        let vc = storyboard?.instantiateViewController(withIdentifier: "MainTabBarController")
-//        navigationController?.pushViewController(vc!, animated: true)
-//    }
-    
     @objc private func newButtonTapped () {
         let vc = storyboard?.instantiateViewController(withIdentifier: "NewEntryViewController") as! NewEntryViewController
+        vc.delegate = self
         navigationController?.present(vc, animated: true)
     }
     
     @objc private func goToSettings() {
         let vc = storyboard?.instantiateViewController(withIdentifier: "SettingsViewController") as! SettingsViewController
         navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    func goForFillData(tripData: Travel) {
+        travelList.append(tripData)
+        saveData(travelList)
+        let vc = storyboard?.instantiateViewController(withIdentifier: "MainTabBarController")
+        navigationController?.pushViewController(vc!, animated: true)
     }
     
     func fetchTravelData() {
@@ -107,7 +112,7 @@ class DashboradViewController: UIViewController {
                         self.fetchTravelData()
                     }
                 } else {
-        //
+                    //
                 }
             })
         case .timeout:
@@ -135,14 +140,53 @@ extension DashboradViewController: UITableViewDelegate, UITableViewDataSource {
         let cell = (tableView.dequeueReusableCell(withIdentifier: "DashboardTableViewCell", for: indexPath) as! DashboardTableViewCell)
         cell.travelTitleLabel.text = travelList[indexPath.row].title
         cell.climateLabel.text = travelList[indexPath.row].climate
-        cell.currencyRateLabel.text = travelList[indexPath.row].currency
+        cell.currencyRateLabel.text = travelList[indexPath.row].budget
         cell.dateLabel.text = travelList[indexPath.row].date
         cell.placeLabel.text = travelList[indexPath.row].place
-        cell.travelLengthLabel.text = travelList[indexPath.row].travelLength.description
+        cell.travelLengthLabel.text = travelList[indexPath.row].days.description
         return cell
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return travelList.count
     }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            travelList.remove(at: indexPath.row)
+            saveData(travelList)
+            tableView.deleteRows(at: [indexPath], with: .fade)
+        }
+    }
 }
+
+//MARK: - Save/Load list to userDefault
+@available(iOS 14.0, *)
+extension DashboradViewController {
+    
+    func saveData(_ data: [Travel]) {
+        do {
+            let encoder = JSONEncoder()
+            let data = try encoder.encode(data)
+            UserDefaults.standard.set(data, forKey: "travel")
+        } catch {
+            print("Unable to Encode travel object (\(error))")
+        }
+    }
+    
+    func loadData()-> [Travel] {
+        if let data = UserDefaults.standard.data(forKey: "travel") {
+            do {
+                let decoder = JSONDecoder()
+                return try decoder.decode([Travel].self, from: data)
+            } catch {
+                print("Unable to Decode travel object (\(error))")
+                return MockData.shared.travelMockData
+            }
+        }
+        return travelList
+    }
+}
+
+
+

@@ -45,7 +45,7 @@ class NoteViewController: UIViewController, UITextViewDelegate {
 //MARK: - Save/Load list to userDefault
 extension NoteViewController {
     
-    func saveNote(_ text: String){
+    func saveNote(_ text: String) {
         do {
             let encoder = JSONEncoder()
             let data = try encoder.encode(text)

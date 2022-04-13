@@ -9,8 +9,7 @@ import Foundation
 
 struct Travel: Codable {
     
-    let title, place, date, climate, currency : String
-    let travelLength: Int
+    let title, place, date, climate, budget, days : String
 }
 
 struct CostDetails: Codable {
