@@ -65,6 +65,9 @@ class DashboradViewController: UIViewController, NewEntryViewControllerDelegate 
         tableView.register(UINib(nibName: "DashboardTableViewCell", bundle: nil), forCellReuseIdentifier: "DashboardTableViewCell")
         tableView.setNoDataInTableViewIFNotExists(tableView: tableView, data: travelList)
         tableView.allowsSelection = false
+        if appGlobalTintColor == nil {
+            appGlobalTintColor = .systemBlue
+        }
     }
     
     @objc private func newButtonTapped () {
