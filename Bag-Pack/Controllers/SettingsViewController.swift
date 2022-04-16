@@ -62,12 +62,6 @@ class SettingsViewController: UIViewController, SettingsTableViewCellDelegate {
         UserDefaults.standard.set(nil, forKey: "unit")
         UserDefaults.standard.set(nil, forKey: "theme")
         UserDefaults.standard.set(nil, forKey: "travel")
-        
-        do {
-            UserDefaults.standard.set(nil, forKey: "travel")
-        }
-        
-        
         appGlobalTintColor = nil
         appCurrencyUnit = .dollar
         if #available(iOS 14.0, *) {

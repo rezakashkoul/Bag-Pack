@@ -191,12 +191,13 @@ extension DashboradViewController {
             do {
                 let decoder = JSONDecoder()
                 return try decoder.decode([Travel].self, from: data)
+                return travelList
             } catch {
                 print("Unable to Decode travel object (\(error))")
                 return MockData.shared.travelMockData
             }
         }
-        return travelList
+        return []
     }
 }
 

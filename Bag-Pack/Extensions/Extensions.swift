@@ -108,8 +108,10 @@ extension UITableView {
         DispatchQueue.main.async {
             if data.isEmpty {
                 tableView.backgroundView = noDataLabel
+                tableView.reloadData()
             } else {
                 tableView.backgroundView = nil
+                tableView.reloadData()
             }
         }
     }
