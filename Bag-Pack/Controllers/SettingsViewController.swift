@@ -113,32 +113,38 @@ extension SettingsViewController: UITableViewDelegate, UITableViewDataSource {
         cell.delegate = self
         cell.titleLabel.text = items[indexPath.row]
         
-        if indexPath.row == 0 {
+        switch indexPath.row {
+        case 0:
             cell.colorView.isHidden = false
             cell.colorView.backgroundColor = appGlobalTintColor ?? .systemBlue
-        } else {
-            cell.colorView.isHidden = true
-        }
-        if indexPath.row == 1 {
+            cell.themeSwitch.isHidden = true
+            cell.currencySegment.isHidden = true
+            cell.versionLabel.isHidden = true
+        case 1:
             cell.themeSwitch.isHidden = false
             cell.themeSwitch.isOn = isDarkMode
-        } else {
-            cell.themeSwitch.isHidden = true
-        }
-        if indexPath.row == 2 {
+            cell.colorView.isHidden = true
+            cell.currencySegment.isHidden = true
+            cell.versionLabel.isHidden = true
+        case 2:
             cell.currencySegment.isHidden = false
             cell.currencySegment.selectedSegmentIndex = appCurrencyUnit?.rawValue ?? 0
-        } else {
-            cell.currencySegment.isHidden = true
-        }
-        if indexPath.row == 5 {
+            cell.colorView.isHidden = true
+            cell.themeSwitch.isHidden = true
+            cell.versionLabel.isHidden = true
+        case 5:
             let appVersion = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String
             cell.versionLabel.isHidden = false
             cell.versionLabel.text = appVersion
-        } else {
+            cell.colorView.isHidden = true
+            cell.themeSwitch.isHidden = true
+            cell.currencySegment.isHidden = true
+        default:
+            cell.colorView.isHidden = true
+            cell.themeSwitch.isHidden = true
+            cell.currencySegment.isHidden = true
             cell.versionLabel.isHidden = true
         }
-        
         return cell
     }
     
@@ -147,29 +153,29 @@ extension SettingsViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
         tableView.deselectRow(at: indexPath, animated: true)
-        if indexPath.row == 0 {
+        
+        switch indexPath.row {
+        case 0:
             if #available(iOS 14.0, *) {
                 openPicker()
             } else {
                 
             }
-        }
-        if indexPath.row == 3 {
+        case 3:
             AlertManager.shared.showAlert(parent: self, title: "Reset entire data", body: "By doing this you'll clean every data and entries", buttonTitles: ["Reset data"], style: .alert, showCancelButton: true) { buttonIndex in
                 if buttonIndex == 0 {
                     self.resetApplicationData()
                 }
             }
-            
-        }
-        if indexPath.row == 4 {
+        case 4:
             AlertManager.shared.showAlert(parent: self, title: "Reset application Settings", body: "You're about to reset app settings...", buttonTitles: ["Reset Settings"], style: .alert, showCancelButton: true) { buttonIndex in
                 if buttonIndex == 0 {
                     self.resetAppSettings()
                 }
             }
+        default:
+            break
         }
     }
 }
