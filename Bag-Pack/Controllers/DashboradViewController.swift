@@ -15,10 +15,10 @@ class DashboradViewController: UIViewController, NewEntryViewControllerDelegate 
     
     var travelList: [Travel] = [] {
         willSet {
-//            tableView.setNoDataInTableViewIFNotExists(tableView: tableView, data: travelList)
+            tableView.setNoDataInTableViewIFNotExists(tableView: tableView, data: travelList)
         }
         didSet {
-            travelList = loadData()
+            tableView.setNoDataInTableViewIFNotExists(tableView: tableView, data: travelList)
             DispatchQueue.main.async { [self] in
                 tableView.reloadData()
             }
@@ -31,7 +31,7 @@ class DashboradViewController: UIViewController, NewEntryViewControllerDelegate 
         tableView.delegate = self
         tableView.dataSource = self
         setupUI()
-        //        fetchTravelData()
+//        fetchTravelData()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -51,7 +51,6 @@ class DashboradViewController: UIViewController, NewEntryViewControllerDelegate 
         }
     }
     
-    
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         
@@ -64,7 +63,7 @@ class DashboradViewController: UIViewController, NewEntryViewControllerDelegate 
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "New", style: .done, target: self, action: #selector(newButtonTapped))
         navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Settings", style: .done, target: self, action: #selector(goToSettings))
         tableView.register(UINib(nibName: "DashboardTableViewCell", bundle: nil), forCellReuseIdentifier: "DashboardTableViewCell")
-//        tableView.setNoDataInTableViewIFNotExists(tableView: tableView, data: travelList)
+        tableView.setNoDataInTableViewIFNotExists(tableView: tableView, data: travelList)
         tableView.allowsSelection = false
     }
     
@@ -80,10 +79,23 @@ class DashboradViewController: UIViewController, NewEntryViewControllerDelegate 
     }
     
     func goForFillData(tripData: Travel) {
-        travelList.append(tripData)
-        saveData(travelList)
-        let vc = storyboard?.instantiateViewController(withIdentifier: "MainTabBarController")
-        navigationController?.pushViewController(vc!, animated: true)
+        
+        if travelList.filter({
+            $0.title == tripData.title &&
+            $0.place == tripData.place &&
+            $0.days == tripData.days
+        }).isEmpty {
+            travelList.append(tripData)
+            saveData(travelList)
+            let vc = storyboard?.instantiateViewController(withIdentifier: "MainTabBarController")
+            navigationController?.pushViewController(vc!, animated: true)
+        } else {
+            AlertManager.shared.showAlert(parent: self, title: "Dublicated trip", body: "The trip you entered is already exist", buttonTitles: ["Try again"], style: .alert, showCancelButton: true) { buttonIndex in
+                if buttonIndex == 0 {
+                    self.newButtonTapped()
+                }
+            }
+        }
     }
     
     func fetchTravelData() {
@@ -154,8 +166,8 @@ extension DashboradViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             travelList.remove(at: indexPath.row)
-            saveData(travelList)
             tableView.deleteRows(at: [indexPath], with: .fade)
+            saveData(travelList)
         }
     }
 }
