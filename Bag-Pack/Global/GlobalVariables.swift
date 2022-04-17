@@ -8,6 +8,22 @@
 import Foundation
 import UIKit
 
+enum ApplicationError: Error {
+    case general
+    case timeout
+    case noData
+    case decode
+    case badURL
+}
+
+enum CurrencyUnits: Int {
+    case dollar = 0
+    case euro = 1
+    case rial = 2
+}
+
+var currentTrip: Travel?
+var allTrips: [Travel] = []
 var useMockData = true
 var isDarkMode: Bool {
     get {
@@ -34,17 +50,24 @@ var appGlobalTintColor: UIColor? {
     }
 }
 
-enum ApplicationError: Error {
-    case general
-    case timeout
-    case noData
-    case decode
-    case badURL
+func saveData() {
+    
+    do {
+        let encoder = JSONEncoder()
+        let data = try encoder.encode(allTrips)
+        UserDefaults.standard.set(data, forKey: "travel")
+    } catch {
+        print("Unable to Encode saveData (\(error))")
+    }
 }
 
-enum CurrencyUnits: Int {
-    case dollar = 0
-    case euro = 1
-    case rial = 2
+func loadData() {
+    if let data = UserDefaults.standard.data(forKey: "travel") {
+        do {
+            let decoder = JSONDecoder()
+            allTrips = try decoder.decode([Travel].self, from: data)
+        } catch {
+            print("Unable to Decode loadData (\(error))")
+        }
+    }
 }
-

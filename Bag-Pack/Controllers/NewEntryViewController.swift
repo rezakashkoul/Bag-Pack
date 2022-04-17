@@ -11,7 +11,7 @@ protocol NewEntryViewControllerDelegate: AnyObject {
     func goForFillData(tripData: Travel)
 }
 class NewEntryViewController: UIViewController, UITextFieldDelegate {
-
+    
     @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var titleTextField: UITextField!
     @IBOutlet weak var placeTextField: UITextField!
@@ -25,10 +25,11 @@ class NewEntryViewController: UIViewController, UITextFieldDelegate {
             placeTextField.text != "" &&
             budgetTextField.text != "" &&
             daysTextField.text != "" {
-            trip = Travel(title: titleTextField.text ?? "Trip", place: placeTextField.text ?? "Place" , date: "", climate: "", budget: budgetTextField.text ?? "Not specified", days: daysTextField.text ?? "Not specified")
+            currentTrip = Travel(title: titleTextField.text ?? "Trip", place: placeTextField.text ?? "Place", budget: budgetTextField.text ?? "Not specified", days: daysTextField.text ?? "Not specified", travelSubData: TravelSubData(essential: [], note: "", cost: []))
+            
             dismiss(animated: true) { [self] in
-                if let trip = trip {
-                    delegate?.goForFillData(tripData: trip)
+                if let currentTrip = currentTrip {
+                    delegate?.goForFillData(tripData: currentTrip)
                 }
             }
         } else {
@@ -37,7 +38,7 @@ class NewEntryViewController: UIViewController, UITextFieldDelegate {
         }
     }
     
-    var trip: Travel?
+    //    var trip: Travel?
     weak var delegate: NewEntryViewControllerDelegate? = nil
     
     override func viewDidLoad() {
@@ -48,7 +49,7 @@ class NewEntryViewController: UIViewController, UITextFieldDelegate {
         daysTextField.delegate = self
         setupUI()
     }
-
+    
     func setupUI() {
         title = "New Trip"
         descriptionLabel.textColor = appGlobalTintColor ?? UIColor.systemBlue
@@ -69,38 +70,42 @@ class NewEntryViewController: UIViewController, UITextFieldDelegate {
         titleTextField.layer.borderWidth = 2.0
         titleTextField.layer.cornerRadius = 15
         titleTextField.clipsToBounds = true
+        titleTextField.setPlaceHolderColor(color: .gray)
         placeTextField.borderStyle = .roundedRect
         placeTextField.layer.masksToBounds = true
         placeTextField.layer.borderColor = appGlobalTintColor?.cgColor ?? UIColor.systemBlue.cgColor
         placeTextField.layer.borderWidth = 2.0
         placeTextField.layer.cornerRadius = 15
         placeTextField.clipsToBounds = true
+        placeTextField.setPlaceHolderColor(color: .gray)
         budgetTextField.borderStyle = .roundedRect
         budgetTextField.layer.masksToBounds = true
         budgetTextField.layer.borderColor = appGlobalTintColor?.cgColor ?? UIColor.systemBlue.cgColor
         budgetTextField.layer.borderWidth = 2.0
         budgetTextField.layer.cornerRadius = 15
         budgetTextField.clipsToBounds = true
+        budgetTextField.setPlaceHolderColor(color: .gray)
         daysTextField.borderStyle = .roundedRect
         daysTextField.layer.masksToBounds = true
         daysTextField.layer.borderColor = appGlobalTintColor?.cgColor ?? UIColor.systemBlue.cgColor
         daysTextField.layer.borderWidth = 2.0
         daysTextField.layer.cornerRadius = 15
         daysTextField.clipsToBounds = true
+        daysTextField.setPlaceHolderColor(color: .gray)
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         if textField == titleTextField && titleTextField.text != "" {
-             textField.resignFirstResponder()
-             placeTextField.becomeFirstResponder()
-         } else if textField == placeTextField && placeTextField.text != "" {
-             textField.resignFirstResponder()
-             budgetTextField.becomeFirstResponder()
-         } else if textField == budgetTextField && budgetTextField.text != "" {
-             textField.resignFirstResponder()
-             daysTextField.becomeFirstResponder()
-
-         }
+            textField.resignFirstResponder()
+            placeTextField.becomeFirstResponder()
+        } else if textField == placeTextField && placeTextField.text != "" {
+            textField.resignFirstResponder()
+            budgetTextField.becomeFirstResponder()
+        } else if textField == budgetTextField && budgetTextField.text != "" {
+            textField.resignFirstResponder()
+            daysTextField.becomeFirstResponder()
+            
+        }
         return true
     }
     

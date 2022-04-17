@@ -67,6 +67,13 @@ extension UITextView: UITextViewDelegate {
     
 }
 
+extension UITextField {
+    
+    func setPlaceHolderColor(color: UIColor){
+        self.attributedPlaceholder = NSAttributedString(string: self.placeholder!, attributes: [NSAttributedString.Key.foregroundColor : color])
+    }
+}
+
 extension UserDefaults {
     
     func colorForKey(key: String) -> UIColor? {
@@ -116,3 +123,4 @@ extension UITableView {
         }
     }
 }
+

@@ -11,17 +11,6 @@ class EssentialViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     
-    var essentialList: [String] = [] {
-        willSet{
-            tableView.setNoDataInTableViewIFNotExists(tableView: tableView, data: essentialList)
-        }
-        didSet{
-            DispatchQueue.main.async {
-                self.tableView.reloadData()
-            }
-        }
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.delegate = self
@@ -31,7 +20,7 @@ class EssentialViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         setupUI()
-        essentialList = loadEssentialList()
+        loadData()
     }
     
     func setupUI() {
@@ -40,9 +29,9 @@ class EssentialViewController: UIViewController {
         navigationItem.title = "Essential"
         navigationController?.navigationBar.prefersLargeTitles = true
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addNewItemToCheckList))
-        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Dashboard", style: .done, target: self, action: #selector(backButton))
-        tableView.setNoDataInTableViewIFNotExists(tableView: tableView, data: essentialList)
-
+        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Home Page", style: .done, target: self, action: #selector(backButton))
+        //        tableView.setNoDataInTableViewIFNotExists(tableView: tableView, data: currentTrip?.travelSubData.essential)
+        
     }
     
     @objc private func backButton() {
@@ -59,8 +48,18 @@ class EssentialViewController: UIViewController {
         AlertManager.shared.showAlertWithTextField(parent: self, title: "Add new item", placeHolder: "Write an item to remember", buttonTitle: "Add", style: .alert, showCancelButton: true) { [self] text in
             guard let text = text , text != "" else { return }
             completion(text)
-            essentialList.append(text)
-            saveEssentialList(essentialList)
+            if currentTrip != nil {
+                currentTrip!.travelSubData.essential.append(text)
+                for i in 0..<allTrips.count {
+                    if allTrips[i].title == currentTrip?.title && allTrips[i].place == currentTrip?.place {
+                        allTrips[i] = currentTrip!
+                    }
+                }
+                saveData()
+                DispatchQueue.main.async {
+                    self.tableView.reloadData()
+                }
+            }
         }
     }
     
@@ -72,21 +71,21 @@ extension EssentialViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "EssentialTableViewCell", for: indexPath) as! EssentialTableViewCell
         cell.itemNumberLabel?.text = "\(indexPath.row+1)."
-        cell.itemNameLabel?.text = essentialList[indexPath.row]
+        cell.itemNameLabel?.text = currentTrip?.travelSubData.essential[indexPath.row]
         return cell
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return essentialList.count
+        return currentTrip?.travelSubData.essential.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             tableView.beginUpdates()
-            essentialList.remove(at: indexPath.row)
+            currentTrip?.travelSubData.essential.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .fade)
             tableView.endUpdates()
-            saveEssentialList(essentialList)
+            saveData()
         }
     }
     
@@ -97,33 +96,6 @@ extension EssentialViewController: UITableViewDelegate, UITableViewDataSource {
         } else {
             return .none
         }
-    }
-}
-
-//MARK: - Save/Load list to userDefault
-extension EssentialViewController {
-    
-    func saveEssentialList(_ list: [String]){
-        do {
-            let encoder = JSONEncoder()
-            let data = try encoder.encode(list)
-            UserDefaults.standard.set(data, forKey: "essential")
-        } catch {
-            print("Unable to Encode essentialList (\(error))")
-        }
-    }
-    
-    func loadEssentialList()-> [String] {
-        if let data = UserDefaults.standard.data(forKey: "essential") {
-            do {
-                let decoder = JSONDecoder()
-                return try decoder.decode([String].self, from: data)
-            } catch {
-                print("Unable to Decode essentialList (\(error))")
-                return []
-            }
-        }
-        return []
     }
 }
 

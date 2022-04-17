@@ -13,18 +13,6 @@ class DashboradViewController: UIViewController, NewEntryViewControllerDelegate 
     
     @IBOutlet weak var tableView: UITableView!
     
-    var travelList: [Travel] = [] {
-        willSet {
-            tableView.setNoDataInTableViewIFNotExists(tableView: tableView, data: travelList)
-        }
-        didSet {
-            tableView.setNoDataInTableViewIFNotExists(tableView: tableView, data: travelList)
-            DispatchQueue.main.async { [self] in
-                tableView.reloadData()
-            }
-        }
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -37,7 +25,10 @@ class DashboradViewController: UIViewController, NewEntryViewControllerDelegate 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationController?.setNavigationBarHidden(false, animated: animated)
-        travelList = loadData()
+        loadData()
+        DispatchQueue.main.async {
+            self.tableView.reloadData()
+        }
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -63,8 +54,7 @@ class DashboradViewController: UIViewController, NewEntryViewControllerDelegate 
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "New", style: .done, target: self, action: #selector(newButtonTapped))
         navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Settings", style: .done, target: self, action: #selector(goToSettings))
         tableView.register(UINib(nibName: "DashboardTableViewCell", bundle: nil), forCellReuseIdentifier: "DashboardTableViewCell")
-        tableView.setNoDataInTableViewIFNotExists(tableView: tableView, data: travelList)
-        tableView.allowsSelection = false
+        tableView.setNoDataInTableViewIFNotExists(tableView: tableView, data: allTrips)
         if appGlobalTintColor == nil {
             appGlobalTintColor = .systemBlue
         }
@@ -72,6 +62,7 @@ class DashboradViewController: UIViewController, NewEntryViewControllerDelegate 
     
     @objc private func newButtonTapped () {
         let vc = storyboard?.instantiateViewController(withIdentifier: "NewEntryViewController") as! NewEntryViewController
+        currentTrip = nil
         vc.delegate = self
         navigationController?.present(vc, animated: true)
     }
@@ -82,30 +73,40 @@ class DashboradViewController: UIViewController, NewEntryViewControllerDelegate 
     }
     
     func goForFillData(tripData: Travel) {
-        
-        if travelList.filter({
-            $0.title == tripData.title &&
-            $0.place == tripData.place &&
-            $0.days == tripData.days
-        }).isEmpty {
-            travelList.append(tripData)
-            saveData(travelList)
-            let vc = storyboard?.instantiateViewController(withIdentifier: "MainTabBarController")
-            navigationController?.pushViewController(vc!, animated: true)
-        } else {
-            AlertManager.shared.showAlert(parent: self, title: "Dublicated trip", body: "The trip you entered is already exist", buttonTitles: ["Try again"], style: .alert, showCancelButton: true) { buttonIndex in
-                if buttonIndex == 0 {
-                    self.newButtonTapped()
-                }
-            }
+        allTrips.append(currentTrip!)
+        saveData()
+        DispatchQueue.main.async {
+            self.tableView.reloadData()
         }
+        let vc = storyboard?.instantiateViewController(withIdentifier: "MainTabBarController")
+        navigationController?.pushViewController(vc!, animated: true)
+//        if allTrips?.filter({
+//            $0.title.lowercased() == tripData.title.lowercased() &&
+//            $0.place.lowercased() == tripData.place.lowercased() &&
+//            $0.days.lowercased() == tripData.days.lowercased()
+//        }).count == 0 {
+//            allTrips?.append(tripData)
+//            saveData()
+//            DispatchQueue.main.async {
+//                self.tableView.reloadData()
+//            }
+//
+//            let vc = storyboard?.instantiateViewController(withIdentifier: "MainTabBarController")
+//            navigationController?.pushViewController(vc!, animated: true)
+//        } else {
+//            AlertManager.shared.showAlert(parent: self, title: "Dublicated trip", body: "The trip you entered is already exist", buttonTitles: ["Try again"], style: .alert, showCancelButton: true) { buttonIndex in
+//                if buttonIndex == 0 {
+//                    self.newButtonTapped()
+//                }
+//            }
+//        }
     }
     
     func fetchTravelData() {
         NetworkManager.shared.getTravelData(useMockData: useMockData) { result in
             switch result {
             case .success(let travelList):
-                self.travelList = travelList
+                allTrips = travelList
             case .failure(let error):
                 print(error.localizedDescription)
                 self.showAlertAndHandleEvent(error)
@@ -147,62 +148,38 @@ class DashboradViewController: UIViewController, NewEntryViewControllerDelegate 
 }
 
 //MARK: Setup tableView
-
+ 
 @available(iOS 14.0, *)
 extension DashboradViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = (tableView.dequeueReusableCell(withIdentifier: "DashboardTableViewCell", for: indexPath) as! DashboardTableViewCell)
-        cell.travelTitleLabel.text = travelList[indexPath.row].title
-        cell.climateLabel.text = travelList[indexPath.row].climate
-        cell.currencyRateLabel.text = travelList[indexPath.row].budget
-        cell.dateLabel.text = travelList[indexPath.row].date
-        cell.placeLabel.text = travelList[indexPath.row].place
-        cell.travelLengthLabel.text = travelList[indexPath.row].days.description
+        cell.travelTitleLabel.text = allTrips[indexPath.row].title
+//        cell.climateLabel.text = travelList[indexPath.row].climate
+        cell.currencyRateLabel.text = allTrips[indexPath.row].budget
+//        cell.dateLabel.text = travelList[indexPath.row].date
+        cell.placeLabel.text = allTrips[indexPath.row].place
+        cell.travelLengthLabel.text = allTrips[indexPath.row].days.description
         return cell
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return travelList.count
+        return allTrips.count
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        
+        let vc = storyboard?.instantiateViewController(withIdentifier: "MainTabBarController")
+        currentTrip = allTrips[indexPath.row]
+        navigationController?.pushViewController(vc!, animated: true)
     }
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            travelList.remove(at: indexPath.row)
+            allTrips.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .fade)
-            saveData(travelList)
+            saveData()
         }
     }
 }
-
-//MARK: - Save/Load list to userDefault
-@available(iOS 14.0, *)
-extension DashboradViewController {
-    
-    func saveData(_ data: [Travel]) {
-        do {
-            let encoder = JSONEncoder()
-            let data = try encoder.encode(data)
-            UserDefaults.standard.set(data, forKey: "travel")
-        } catch {
-            print("Unable to Encode travel object (\(error))")
-        }
-    }
-    
-    func loadData()-> [Travel] {
-        if let data = UserDefaults.standard.data(forKey: "travel") {
-            do {
-                let decoder = JSONDecoder()
-                return try decoder.decode([Travel].self, from: data)
-                return travelList
-            } catch {
-                print("Unable to Decode travel object (\(error))")
-                return MockData.shared.travelMockData
-            }
-        }
-        return []
-    }
-}
-
-
-

@@ -11,10 +11,19 @@ class MockData {
     
     static let shared = MockData()
     
-    let travelMockData : [Travel] = [
-        Travel(title: "Tehran Trip", place: "Iran", date: "22.01.11", climate: "", budget: "0.0001 $", days: "6"),
-        Travel(title: "London Trip", place: "Iran", date: "21.11.21", climate: "", budget: "0.1.3 $", days: "30")
-    ]
+    class MockData {
+        
+        static let shared = MockData()
+        
+        let travelMockData : [Travel] = [
+            
+            Travel(title: "Tehran Trip", place: "Iran", budget: "0.001 $", days: "6", travelSubData: TravelSubData(essential: ["Charger", "Wallet"], note: "hmmmm", cost: [CostDetails(title: "Shampoo", price: "1200"), CostDetails(title: "Gas", price: "120")])),
+            
+            Travel(title: "London Trip", place: "Iran", budget: "0.1 $", days: "30", travelSubData: TravelSubData(essential: ["Books", "Lighter"], note: "Try to enjoy", cost: [CostDetails(title: "Shampoo", price: "1200"), CostDetails(title: "Hat", price: "99")]))
+        ]
+        
+    }
+
     
     
 }
