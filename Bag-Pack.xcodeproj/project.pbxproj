@@ -21,6 +21,8 @@
 		EB91DC4B27B7DA6600D094A0 /* EssentialTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EB91DC4927B7DA6600D094A0 /* EssentialTableViewCell.xib */; };
 		EB95016D27FAEBFE00AC10FA /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB95016C27FAEBFE00AC10FA /* NetworkManager.swift */; };
 		EBB058962802DFCD00743B1A /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBB058952802DFCD00743B1A /* SettingsViewController.swift */; };
+		EBCD4795280DA22B00069FEC /* EntryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBCD4794280DA22B00069FEC /* EntryTests.swift */; };
+		EBCD4797280DACC400069FEC /* SlideUpAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBCD4796280DACC400069FEC /* SlideUpAnimator.swift */; };
 		EBF1663E27FC368900D8AC4A /* TravelModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBF1663D27FC368900D8AC4A /* TravelModel.swift */; };
 		EBF1664027FC387E00D8AC4A /* DashboardTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBF1663F27FC387E00D8AC4A /* DashboardTests.swift */; };
 		EBF1664227FC46A300D8AC4A /* GlobalVariables.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBF1664127FC46A300D8AC4A /* GlobalVariables.swift */; };
@@ -68,6 +70,8 @@
 		EB95016227FADA8B00AC10FA /* Bag-PackTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Bag-PackTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EB95016C27FAEBFE00AC10FA /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		EBB058952802DFCD00743B1A /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		EBCD4794280DA22B00069FEC /* EntryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryTests.swift; sourceTree = "<group>"; };
+		EBCD4796280DACC400069FEC /* SlideUpAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SlideUpAnimator.swift; sourceTree = "<group>"; };
 		EBF1663D27FC368900D8AC4A /* TravelModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TravelModel.swift; sourceTree = "<group>"; };
 		EBF1663F27FC387E00D8AC4A /* DashboardTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardTests.swift; sourceTree = "<group>"; };
 		EBF1664127FC46A300D8AC4A /* GlobalVariables.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalVariables.swift; sourceTree = "<group>"; };
@@ -162,6 +166,7 @@
 			isa = PBXGroup;
 			children = (
 				EBF1664527FC4C5800D8AC4A /* AlertManager.swift */,
+				EBCD4796280DACC400069FEC /* SlideUpAnimator.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -201,6 +206,7 @@
 				EB0A818327FDBF1800314D58 /* NoteTests.swift */,
 				EB06254E2802FF8E001C248C /* CostTests.swift */,
 				EB062550280302B4001C248C /* SettingsTest.swift */,
+				EBCD4794280DA22B00069FEC /* EntryTests.swift */,
 			);
 			path = "Bag-PackTests";
 			sourceTree = "<group>";
@@ -429,6 +435,7 @@
 			files = (
 				EB0A818427FDBF1800314D58 /* NoteTests.swift in Sources */,
 				EB062551280302B4001C248C /* SettingsTest.swift in Sources */,
+				EBCD4795280DA22B00069FEC /* EntryTests.swift in Sources */,
 				EBF1664027FC387E00D8AC4A /* DashboardTests.swift in Sources */,
 				EB06254F2802FF8E001C248C /* CostTests.swift in Sources */,
 				EBF1664827FC8E3700D8AC4A /* EssentialTests.swift in Sources */,
@@ -448,6 +455,7 @@
 				EBF1664627FC4C5800D8AC4A /* AlertManager.swift in Sources */,
 				EBB058962802DFCD00743B1A /* SettingsViewController.swift in Sources */,
 				F700B54C27B3F51C00BDCD37 /* CostViewController.swift in Sources */,
+				EBCD4797280DACC400069FEC /* SlideUpAnimator.swift in Sources */,
 				F700B54827B3F48B00BDCD37 /* NoteViewController.swift in Sources */,
 				EB6468492805AF4A00CBB4C4 /* NewEntryViewController.swift in Sources */,
 				EBF1664227FC46A300D8AC4A /* GlobalVariables.swift in Sources */,

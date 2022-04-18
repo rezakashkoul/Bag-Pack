@@ -27,7 +27,6 @@ class SettingsViewController: UIViewController, SettingsTableViewCellDelegate {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
         navigationController?.setNavigationBarHidden(false, animated: false)
     }
     
@@ -208,12 +207,4 @@ extension SettingsViewController: UIColorPickerViewControllerDelegate {
             appdelegate.window?.makeKeyAndVisible()
         }
     }
-}
-
-extension UserDefaults {
-
-    static func exists(key: String) -> Bool {
-        return UserDefaults.standard.object(forKey: key) != nil
-    }
-
 }

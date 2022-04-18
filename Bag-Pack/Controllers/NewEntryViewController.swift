@@ -10,6 +10,7 @@ import UIKit
 protocol NewEntryViewControllerDelegate: AnyObject {
     func goForFillData(tripData: Travel)
 }
+
 class NewEntryViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var descriptionLabel: UILabel!
@@ -26,7 +27,6 @@ class NewEntryViewController: UIViewController, UITextFieldDelegate {
             budgetTextField.text != "" &&
             daysTextField.text != "" {
             currentTrip = Travel(title: titleTextField.text ?? "Trip", place: placeTextField.text ?? "Place", budget: budgetTextField.text ?? "Not specified", days: daysTextField.text ?? "Not specified", travelSubData: TravelSubData(essential: [], note: "", cost: []))
-            
             dismiss(animated: true) { [self] in
                 if let currentTrip = currentTrip {
                     delegate?.goForFillData(tripData: currentTrip)
@@ -49,14 +49,23 @@ class NewEntryViewController: UIViewController, UITextFieldDelegate {
         setupUI()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        view.slideUpViews(delay: 0.2)
+    }
+    
     func setupUI() {
         title = "New Trip"
         descriptionLabel.textColor = appGlobalTintColor ?? UIColor.systemBlue
-        confirmButton.layer.cornerRadius = 15
-        confirmButton.clipsToBounds = true
-        confirmButton.layer.borderWidth = 2.0
-        confirmButton.layer.cornerRadius = 15
+        
+        confirmButton.layer.masksToBounds = true
+        confirmButton.layer.cornerRadius = 12
+        confirmButton.clipsToBounds = false
+        confirmButton.layer.shadowOpacity=0.4
+        confirmButton.layer.shadowOffset = CGSize(width: 4, height: 4)
+        confirmButton.layer.shadowColor = UIColor.darkGray.cgColor
         confirmButton.backgroundColor = appGlobalTintColor
+        
         if #available(iOS 13.0, *) {
             confirmButton.setTitleColor(.systemBackground, for: .normal)
         } else {
@@ -68,8 +77,8 @@ class NewEntryViewController: UIViewController, UITextFieldDelegate {
         titleTextField.layer.cornerRadius = titleTextField.frame.size.height/2
         titleTextField.clipsToBounds = false
         titleTextField.layer.shadowOpacity=0.4
-        titleTextField.layer.shadowOffset = CGSize(width: 0, height: 0)
-        titleTextField.layer.shadowColor = appGlobalTintColor?.cgColor
+        titleTextField.layer.shadowOffset = CGSize(width: 2, height: 2)
+        titleTextField.layer.shadowColor = UIColor.darkGray.cgColor
         titleTextField.setPlaceHolderColor(color: .gray)
         
         placeTextField.borderStyle = .roundedRect
@@ -77,8 +86,8 @@ class NewEntryViewController: UIViewController, UITextFieldDelegate {
         placeTextField.layer.cornerRadius = titleTextField.frame.size.height/2
         placeTextField.clipsToBounds = false
         placeTextField.layer.shadowOpacity=0.4
-        placeTextField.layer.shadowOffset = CGSize(width: 0, height: 0)
-        placeTextField.layer.shadowColor = appGlobalTintColor?.cgColor
+        placeTextField.layer.shadowOffset = CGSize(width: 2, height: 2)
+        placeTextField.layer.shadowColor = UIColor.darkGray.cgColor
         placeTextField.setPlaceHolderColor(color: .gray)
         
         budgetTextField.borderStyle = .roundedRect
@@ -86,8 +95,8 @@ class NewEntryViewController: UIViewController, UITextFieldDelegate {
         budgetTextField.layer.cornerRadius = titleTextField.frame.size.height/2
         budgetTextField.clipsToBounds = false
         budgetTextField.layer.shadowOpacity=0.4
-        budgetTextField.layer.shadowOffset = CGSize(width: 0, height: 0)
-        budgetTextField.layer.shadowColor = appGlobalTintColor?.cgColor
+        budgetTextField.layer.shadowOffset = CGSize(width: 2, height: 2)
+        budgetTextField.layer.shadowColor = UIColor.darkGray.cgColor
         budgetTextField.setPlaceHolderColor(color: .gray)
         
         daysTextField.borderStyle = .roundedRect
@@ -95,8 +104,8 @@ class NewEntryViewController: UIViewController, UITextFieldDelegate {
         daysTextField.layer.cornerRadius = titleTextField.frame.size.height/2
         daysTextField.clipsToBounds = false
         daysTextField.layer.shadowOpacity=0.4
-        daysTextField.layer.shadowOffset = CGSize(width: 0, height: 0)
-        daysTextField.layer.shadowColor = appGlobalTintColor?.cgColor
+        daysTextField.layer.shadowOffset = CGSize(width: 2, height: 2)
+        daysTextField.layer.shadowColor = UIColor.darkGray.cgColor
         daysTextField.setPlaceHolderColor(color: .gray)
     }
     
@@ -110,6 +119,26 @@ class NewEntryViewController: UIViewController, UITextFieldDelegate {
         } else if textField == budgetTextField && budgetTextField.text != "" {
             textField.resignFirstResponder()
             daysTextField.becomeFirstResponder()
+        }
+        return true
+    }
+    
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        let aSet = NSCharacterSet(charactersIn:"0123456789").inverted
+        let compSepByCharInSet = string.components(separatedBy: aSet)
+        let numberFiltered = compSepByCharInSet.joined(separator: "")
+        
+        switch textField {
+        case titleTextField:
+            return true
+        case placeTextField:
+            return true
+        case daysTextField:
+            return string == numberFiltered
+        case budgetTextField:
+            return string == numberFiltered
+        default:
+            break
         }
         return true
     }

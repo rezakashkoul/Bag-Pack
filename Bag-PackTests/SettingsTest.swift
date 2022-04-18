@@ -40,7 +40,6 @@ class SettingsTest: XCTestCase {
     }
     
     func test_resetApplicationSettings() {
-        
         let settingKeys = ["color","unit","theme"]
         for i in 0..<settingKeys.count{
             UserDefaults.standard.set(nil, forKey: settingKeys[i])
