@@ -85,6 +85,7 @@ extension UserDefaults {
                 }
             } catch {
                 print("Error UserDefaults: colorForKey")
+                return nil
             }
         }
         return colorReturnded

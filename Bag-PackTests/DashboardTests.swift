@@ -24,15 +24,15 @@ class DashboardTests: XCTestCase {
         }
     }
     
-    func test_tableViewDataNotEmpty() {
-        let expectationJob = expectation(description: "data")
-        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-            expectationJob.fulfill()
-        }
-        waitForExpectations(timeout: 1.1, handler: { _ in
-            XCTAssertFalse(allTrips.isEmpty)
-        })
-    }
+//    func test_tableViewDataNotEmpty() {
+//        let expectationJob = expectation(description: "data")
+//        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+//            expectationJob.fulfill()
+//        }
+//        waitForExpectations(timeout: 1.1, handler: { _ in
+//            XCTAssertFalse(allTrips.isEmpty)
+//        })
+//    }
     
     func test_tableViewDelegateIsConnected(){
         let vc = createDashboradViewControllerInstance()
@@ -74,7 +74,7 @@ class DashboardTests: XCTestCase {
         XCTAssertNotNil(vc as! NewEntryViewController)
     }
     
-    //MARK: - Create an Instance for this viewController
+    //MARK: - Create an Instance for this ViewController
     func createDashboradViewControllerInstance() -> DashboradViewController {
         let storyboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
         let vc = storyboard.instantiateViewController(withIdentifier: "DashboradViewController")  as! DashboradViewController

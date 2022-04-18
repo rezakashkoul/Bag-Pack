@@ -38,7 +38,6 @@ class NewEntryViewController: UIViewController, UITextFieldDelegate {
         }
     }
     
-    //    var trip: Travel?
     weak var delegate: NewEntryViewControllerDelegate? = nil
     
     override func viewDidLoad() {
@@ -66,31 +65,38 @@ class NewEntryViewController: UIViewController, UITextFieldDelegate {
         
         titleTextField.borderStyle = .roundedRect
         titleTextField.layer.masksToBounds = true
-        titleTextField.layer.borderColor = appGlobalTintColor?.cgColor ?? UIColor.systemBlue.cgColor
-        titleTextField.layer.borderWidth = 2.0
-        titleTextField.layer.cornerRadius = 15
-        titleTextField.clipsToBounds = true
+        titleTextField.layer.cornerRadius = titleTextField.frame.size.height/2
+        titleTextField.clipsToBounds = false
+        titleTextField.layer.shadowOpacity=0.4
+        titleTextField.layer.shadowOffset = CGSize(width: 0, height: 0)
+        titleTextField.layer.shadowColor = appGlobalTintColor?.cgColor
         titleTextField.setPlaceHolderColor(color: .gray)
+        
         placeTextField.borderStyle = .roundedRect
         placeTextField.layer.masksToBounds = true
-        placeTextField.layer.borderColor = appGlobalTintColor?.cgColor ?? UIColor.systemBlue.cgColor
-        placeTextField.layer.borderWidth = 2.0
-        placeTextField.layer.cornerRadius = 15
-        placeTextField.clipsToBounds = true
+        placeTextField.layer.cornerRadius = titleTextField.frame.size.height/2
+        placeTextField.clipsToBounds = false
+        placeTextField.layer.shadowOpacity=0.4
+        placeTextField.layer.shadowOffset = CGSize(width: 0, height: 0)
+        placeTextField.layer.shadowColor = appGlobalTintColor?.cgColor
         placeTextField.setPlaceHolderColor(color: .gray)
+        
         budgetTextField.borderStyle = .roundedRect
         budgetTextField.layer.masksToBounds = true
-        budgetTextField.layer.borderColor = appGlobalTintColor?.cgColor ?? UIColor.systemBlue.cgColor
-        budgetTextField.layer.borderWidth = 2.0
-        budgetTextField.layer.cornerRadius = 15
-        budgetTextField.clipsToBounds = true
+        budgetTextField.layer.cornerRadius = titleTextField.frame.size.height/2
+        budgetTextField.clipsToBounds = false
+        budgetTextField.layer.shadowOpacity=0.4
+        budgetTextField.layer.shadowOffset = CGSize(width: 0, height: 0)
+        budgetTextField.layer.shadowColor = appGlobalTintColor?.cgColor
         budgetTextField.setPlaceHolderColor(color: .gray)
+        
         daysTextField.borderStyle = .roundedRect
         daysTextField.layer.masksToBounds = true
-        daysTextField.layer.borderColor = appGlobalTintColor?.cgColor ?? UIColor.systemBlue.cgColor
-        daysTextField.layer.borderWidth = 2.0
-        daysTextField.layer.cornerRadius = 15
-        daysTextField.clipsToBounds = true
+        daysTextField.layer.cornerRadius = titleTextField.frame.size.height/2
+        daysTextField.clipsToBounds = false
+        daysTextField.layer.shadowOpacity=0.4
+        daysTextField.layer.shadowOffset = CGSize(width: 0, height: 0)
+        daysTextField.layer.shadowColor = appGlobalTintColor?.cgColor
         daysTextField.setPlaceHolderColor(color: .gray)
     }
     
@@ -104,10 +110,8 @@ class NewEntryViewController: UIViewController, UITextFieldDelegate {
         } else if textField == budgetTextField && budgetTextField.text != "" {
             textField.resignFirstResponder()
             daysTextField.becomeFirstResponder()
-            
         }
         return true
     }
-    
     
 }

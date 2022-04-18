@@ -13,6 +13,7 @@ class SettingsViewController: UIViewController, SettingsTableViewCellDelegate {
     
     let items = ["Tint Color", "Dark Theme", "Common Currencies" , "Reset Application Data", "Reset Settings", "App Version"]
     var picker: Any?
+    var appVersion: String? = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -55,10 +56,10 @@ class SettingsViewController: UIViewController, SettingsTableViewCellDelegate {
     }
     
     func resetApplicationData() {
-        UserDefaults.standard.set(nil, forKey: "color")
-        UserDefaults.standard.set(nil, forKey: "unit")
-        UserDefaults.standard.set(nil, forKey: "theme")
-        UserDefaults.standard.set(nil, forKey: "travel")
+        let dataKeys = ["color","unit","theme","travel"]
+        for i in 0..<dataKeys.count {
+            UserDefaults.standard.set(nil, forKey: dataKeys[i])
+        }
         appGlobalTintColor = .systemBlue
         allTrips = []
         currentTrip = nil
@@ -77,9 +78,10 @@ class SettingsViewController: UIViewController, SettingsTableViewCellDelegate {
     }
     
     func resetAppSettings() {
-        UserDefaults.standard.set(nil, forKey: "color")
-        UserDefaults.standard.set(nil, forKey: "unit")
-        UserDefaults.standard.set(nil, forKey: "theme")
+        let settingKeys = ["color","unit","theme"]
+        for i in 0..<settingKeys.count{
+            UserDefaults.standard.set(nil, forKey: settingKeys[i])
+        }
         appGlobalTintColor = .systemBlue
         appCurrencyUnit = .dollar
         if #available(iOS 14.0, *) {
@@ -126,7 +128,7 @@ extension SettingsViewController: UITableViewDelegate, UITableViewDataSource {
             cell.themeSwitch.isHidden = true
             cell.versionLabel.isHidden = true
         case 5:
-            let appVersion = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String
+            appVersion = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String
             cell.versionLabel.isHidden = false
             cell.versionLabel.text = appVersion
             cell.colorView.isHidden = true
@@ -206,4 +208,12 @@ extension SettingsViewController: UIColorPickerViewControllerDelegate {
             appdelegate.window?.makeKeyAndVisible()
         }
     }
+}
+
+extension UserDefaults {
+
+    static func exists(key: String) -> Bool {
+        return UserDefaults.standard.object(forKey: key) != nil
+    }
+
 }
