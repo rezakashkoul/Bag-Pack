@@ -7,17 +7,6 @@
 
 import Foundation
 
-//struct Travel: Codable {
-//
-//    let title, place, date, climate, budget, days : String
-//}
-//
-//struct CostDetails: Codable {
-//    var title, price: String
-//}
-
-import Foundation
-
 struct Travel: Codable {
     
     let title, place, budget, days: String

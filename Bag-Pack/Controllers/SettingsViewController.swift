@@ -55,9 +55,6 @@ class SettingsViewController: UIViewController, SettingsTableViewCellDelegate {
     }
     
     func resetApplicationData() {
-        UserDefaults.standard.set(nil, forKey: "note")
-        UserDefaults.standard.set(nil, forKey: "cost")
-        UserDefaults.standard.set(nil, forKey: "essential")
         UserDefaults.standard.set(nil, forKey: "color")
         UserDefaults.standard.set(nil, forKey: "unit")
         UserDefaults.standard.set(nil, forKey: "theme")

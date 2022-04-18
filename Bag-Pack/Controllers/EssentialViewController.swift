@@ -21,6 +21,10 @@ class EssentialViewController: UIViewController {
         super.viewWillAppear(animated)
         setupUI()
         loadData()
+        DispatchQueue.main.async {[self] in
+            tableView.reloadData()
+            tableView.showNoDataIfNeeded()
+        }
     }
     
     func setupUI() {
@@ -56,8 +60,9 @@ class EssentialViewController: UIViewController {
                     }
                 }
                 saveData()
-                DispatchQueue.main.async {
-                    self.tableView.reloadData()
+                DispatchQueue.main.async {[self] in
+                    tableView.reloadData()
+                    tableView.showNoDataIfNeeded()
                 }
             }
         }
@@ -81,20 +86,10 @@ extension EssentialViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            tableView.beginUpdates()
             currentTrip?.travelSubData.essential.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .fade)
-            tableView.endUpdates()
             saveData()
-        }
-    }
-    
-    func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
-        
-        if tableView.isEditing == false {
-            return .delete
-        } else {
-            return .none
+            tableView.showNoDataIfNeeded()
         }
     }
 }

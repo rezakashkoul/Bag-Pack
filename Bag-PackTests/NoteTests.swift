@@ -11,22 +11,22 @@ import XCTest
 
 class NoteTests: XCTestCase {
     
-    var note = NoteViewController()
-    
-    func test_dataLoadsFromUserDefaultsSuccessfully() {
-        XCTAssertFalse(note.loadNote().isEmpty)
-    }
-    
-    func test_dataDecodesSuccessfully() {
-        if let data = UserDefaults.standard.data(forKey: "note") {
-            XCTAssertNoThrow(try JSONDecoder().decode(String.self, from: data))
-        }
-    }
-    
-    func test_userDefaultsInNotEmpty() {
-        if let data = UserDefaults.standard.data(forKey: "note") {
-            XCTAssertFalse(try JSONDecoder().decode(String.self, from: data).isEmpty)
-        }
-    }
+//    var note = NoteViewController()
+//    
+//    func test_dataLoadsFromUserDefaultsSuccessfully() {
+//        XCTAssertFalse(note.loadNote().isEmpty)
+//    }
+//    
+//    func test_dataDecodesSuccessfully() {
+//        if let data = UserDefaults.standard.data(forKey: "note") {
+//            XCTAssertNoThrow(try JSONDecoder().decode(String.self, from: data))
+//        }
+//    }
+//    
+//    func test_userDefaultsInNotEmpty() {
+//        if let data = UserDefaults.standard.data(forKey: "note") {
+//            XCTAssertFalse(try JSONDecoder().decode(String.self, from: data).isEmpty)
+//        }
+//    }
     
 }

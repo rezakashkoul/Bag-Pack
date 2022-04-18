@@ -22,7 +22,10 @@ class CostViewController: UIViewController {
         super.viewWillAppear(animated)
         setupUI()
         loadData()
-    }
+        DispatchQueue.main.async {[self] in
+            tableView.reloadData()
+            tableView.showNoDataIfNeeded()
+        }    }
     
     func setupUI() {
         navigationItem.title = "Costs"
@@ -53,8 +56,9 @@ class CostViewController: UIViewController {
                 if ((currentTrip?.travelSubData.cost.filter({$0.title.lowercased() == item.title.lowercased()}).isEmpty) != nil) {
                     currentTrip?.travelSubData.cost.append(item)
                     completion(currentTrip?.travelSubData.cost ?? [])
-                    DispatchQueue.main.async {
-                        self.tableView.reloadData()
+                    DispatchQueue.main.async {[self] in
+                        tableView.reloadData()
+                        tableView.showNoDataIfNeeded()
                     }
                     for i in 0..<allTrips.count {
                         if allTrips[i].title == currentTrip?.title && allTrips[i].place == currentTrip?.place {
@@ -86,21 +90,10 @@ extension CostViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            tableView.beginUpdates()
             currentTrip?.travelSubData.cost.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .fade)
-            tableView.endUpdates()
-            //            saveCostList(items)
-            loadData()
-        }
-    }
-    
-    func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
-        
-        if tableView.isEditing == false {
-            return .delete
-        } else {
-            return .none
+            saveData()
+            tableView.showNoDataIfNeeded()
         }
     }
 }

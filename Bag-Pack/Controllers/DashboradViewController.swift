@@ -8,7 +8,6 @@
 import UIKit
 import netfox
 
-@available(iOS 14.0, *)
 class DashboradViewController: UIViewController, NewEntryViewControllerDelegate {
     
     @IBOutlet weak var tableView: UITableView!
@@ -19,15 +18,16 @@ class DashboradViewController: UIViewController, NewEntryViewControllerDelegate 
         tableView.delegate = self
         tableView.dataSource = self
         setupUI()
-//        fetchTravelData()
+        //        fetchTravelData()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationController?.setNavigationBarHidden(false, animated: animated)
         loadData()
-        DispatchQueue.main.async {
-            self.tableView.reloadData()
+        DispatchQueue.main.async {[self] in
+            tableView.reloadData()
+            tableView.showNoDataIfNeeded()
         }
     }
     
@@ -36,9 +36,17 @@ class DashboradViewController: UIViewController, NewEntryViewControllerDelegate 
         
         view.window?.tintColor = appGlobalTintColor
         if isDarkMode {
-            view.window?.overrideUserInterfaceStyle = .dark
+            if #available(iOS 13.0, *) {
+                view.window?.overrideUserInterfaceStyle = .dark
+            } else {
+                // Fallback on earlier versions
+            }
         } else {
-            view.window?.overrideUserInterfaceStyle = .light
+            if #available(iOS 13.0, *) {
+                view.window?.overrideUserInterfaceStyle = .light
+            } else {
+                // Fallback on earlier versions
+            }
         }
     }
     
@@ -48,26 +56,28 @@ class DashboradViewController: UIViewController, NewEntryViewControllerDelegate 
         navigationController?.setNavigationBarHidden(true, animated: animated)
     }
     
-    func setupUI() {
+    func setupNavigationBarAndItems() {
         navigationItem.title = "BagPack"
-        navigationController?.navigationBar.prefersLargeTitles = true
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "New", style: .done, target: self, action: #selector(newButtonTapped))
         navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Settings", style: .done, target: self, action: #selector(goToSettings))
+    }
+    
+    func setupUI() {
+        setupNavigationBarAndItems()
         tableView.register(UINib(nibName: "DashboardTableViewCell", bundle: nil), forCellReuseIdentifier: "DashboardTableViewCell")
-        tableView.setNoDataInTableViewIFNotExists(tableView: tableView, data: allTrips)
         if appGlobalTintColor == nil {
             appGlobalTintColor = .systemBlue
         }
     }
     
-    @objc private func newButtonTapped () {
+    @objc func newButtonTapped () {
         let vc = storyboard?.instantiateViewController(withIdentifier: "NewEntryViewController") as! NewEntryViewController
         currentTrip = nil
         vc.delegate = self
         navigationController?.present(vc, animated: true)
     }
     
-    @objc private func goToSettings() {
+    @objc func goToSettings() {
         let vc = storyboard?.instantiateViewController(withIdentifier: "SettingsViewController") as! SettingsViewController
         navigationController?.pushViewController(vc, animated: true)
     }
@@ -80,26 +90,26 @@ class DashboradViewController: UIViewController, NewEntryViewControllerDelegate 
         }
         let vc = storyboard?.instantiateViewController(withIdentifier: "MainTabBarController")
         navigationController?.pushViewController(vc!, animated: true)
-//        if allTrips?.filter({
-//            $0.title.lowercased() == tripData.title.lowercased() &&
-//            $0.place.lowercased() == tripData.place.lowercased() &&
-//            $0.days.lowercased() == tripData.days.lowercased()
-//        }).count == 0 {
-//            allTrips?.append(tripData)
-//            saveData()
-//            DispatchQueue.main.async {
-//                self.tableView.reloadData()
-//            }
-//
-//            let vc = storyboard?.instantiateViewController(withIdentifier: "MainTabBarController")
-//            navigationController?.pushViewController(vc!, animated: true)
-//        } else {
-//            AlertManager.shared.showAlert(parent: self, title: "Dublicated trip", body: "The trip you entered is already exist", buttonTitles: ["Try again"], style: .alert, showCancelButton: true) { buttonIndex in
-//                if buttonIndex == 0 {
-//                    self.newButtonTapped()
-//                }
-//            }
-//        }
+        //        if allTrips?.filter({
+        //            $0.title.lowercased() == tripData.title.lowercased() &&
+        //            $0.place.lowercased() == tripData.place.lowercased() &&
+        //            $0.days.lowercased() == tripData.days.lowercased()
+        //        }).count == 0 {
+        //            allTrips?.append(tripData)
+        //            saveData()
+        //            DispatchQueue.main.async {
+        //                self.tableView.reloadData()
+        //            }
+        //
+        //            let vc = storyboard?.instantiateViewController(withIdentifier: "MainTabBarController")
+        //            navigationController?.pushViewController(vc!, animated: true)
+        //        } else {
+        //            AlertManager.shared.showAlert(parent: self, title: "Dublicated trip", body: "The trip you entered is already exist", buttonTitles: ["Try again"], style: .alert, showCancelButton: true) { buttonIndex in
+        //                if buttonIndex == 0 {
+        //                    self.newButtonTapped()
+        //                }
+        //            }
+        //        }
     }
     
     func fetchTravelData() {
@@ -148,16 +158,15 @@ class DashboradViewController: UIViewController, NewEntryViewControllerDelegate 
 }
 
 //MARK: Setup tableView
- 
-@available(iOS 14.0, *)
+
 extension DashboradViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = (tableView.dequeueReusableCell(withIdentifier: "DashboardTableViewCell", for: indexPath) as! DashboardTableViewCell)
         cell.travelTitleLabel.text = allTrips[indexPath.row].title
-//        cell.climateLabel.text = travelList[indexPath.row].climate
+        //        cell.climateLabel.text = travelList[indexPath.row].climate
         cell.currencyRateLabel.text = allTrips[indexPath.row].budget
-//        cell.dateLabel.text = travelList[indexPath.row].date
+        //        cell.dateLabel.text = travelList[indexPath.row].date
         cell.placeLabel.text = allTrips[indexPath.row].place
         cell.travelLengthLabel.text = allTrips[indexPath.row].days.description
         return cell
@@ -180,6 +189,7 @@ extension DashboradViewController: UITableViewDelegate, UITableViewDataSource {
             allTrips.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .fade)
             saveData()
+            tableView.showNoDataIfNeeded()
         }
     }
 }

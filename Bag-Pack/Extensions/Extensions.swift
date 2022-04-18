@@ -106,19 +106,17 @@ extension UserDefaults {
 
 extension UITableView {
     
-    func setNoDataInTableViewIFNotExists<T: Decodable>(tableView: UITableView, data: [T]) {
+    func showNoDataIfNeeded() {
         let noDataLabel : UILabel = UILabel()
-        noDataLabel.frame = CGRect(x: 0, y: 0 , width: (tableView.bounds.width), height: (tableView.bounds.height))
-        noDataLabel.text = "There's no record"
+        noDataLabel.frame = CGRect(x: 0, y: 0 , width: (bounds.width), height: (bounds.height))
+        noDataLabel.text = "There's no data"
         noDataLabel.textColor = appGlobalTintColor
         noDataLabel.textAlignment = .center
-        DispatchQueue.main.async {
-            if data.isEmpty {
-                tableView.backgroundView = noDataLabel
-                tableView.reloadData()
+        DispatchQueue.main.async { [self] in
+            if visibleCells.isEmpty {
+                backgroundView = noDataLabel
             } else {
-                tableView.backgroundView = nil
-                tableView.reloadData()
+                backgroundView = nil
             }
         }
     }
