@@ -41,18 +41,6 @@ class EssentialTests: XCTestCase {
         XCTAssertNotNil(travelData)
     }
     
-    func test_dataDecodesSuccessfully() {
-        if let data = UserDefaults.standard.data(forKey: "essential") {
-            XCTAssertNoThrow(try JSONDecoder().decode([String].self, from: data))
-        }
-    }
-    
-    func test_userDefaultsInNotEmpty() {
-        if let data = UserDefaults.standard.data(forKey: "essential") {
-            XCTAssertFalse(try JSONDecoder().decode([String].self, from: data).isEmpty)
-        }
-    }
-    
 //MARK: - Create an Instance for this ViewController
     func createEssentialViewControllerInstance() -> SettingsViewController {
         let storyboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)

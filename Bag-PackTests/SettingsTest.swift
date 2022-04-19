@@ -15,7 +15,7 @@ class SettingsTest: XCTestCase {
     
     func test_tableViewDataNotEmpty() {
         let vc = createSettingsViewControllerInstance()
-        let items = ["Tint Color", "Dark Theme", "Common Currencies" , "Reset Application Data", "Reset Settings", "App Version"]
+        let items = ["Tint Color", "Dark Theme", "Common Currencies", "Reset Application Data", "Reset Settings", "App Version"]
         XCTAssertEqual(vc.items, items)
     }
     
