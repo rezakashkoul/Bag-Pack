@@ -8,7 +8,7 @@
 import UIKit
 
 protocol NewEntryViewControllerDelegate: AnyObject {
-    func goForFillData(tripData: Travel)
+    func goForFillData()
 }
 
 class NewEntryViewController: UIViewController, UITextFieldDelegate {
@@ -28,9 +28,7 @@ class NewEntryViewController: UIViewController, UITextFieldDelegate {
             daysTextField.text != "" {
             currentTrip = Travel(title: titleTextField.text ?? "Trip", place: placeTextField.text ?? "Place", budget: budgetTextField.text ?? "Not specified", days: daysTextField.text ?? "Not specified", travelSubData: TravelSubData(essential: [], note: "", cost: []))
             dismiss(animated: true) { [self] in
-                if let currentTrip = currentTrip {
-                    delegate?.goForFillData(tripData: currentTrip)
-                }
+                delegate?.goForFillData()
             }
         } else {
             AlertManager.shared.showAlert(parent: self, title: "Error!", body: "Please fill every fields", buttonTitles: ["OK"], style: .alert, showCancelButton: false) { _ in

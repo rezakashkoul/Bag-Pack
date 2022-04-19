@@ -82,34 +82,24 @@ class DashboradViewController: UIViewController, NewEntryViewControllerDelegate 
         navigationController?.pushViewController(vc, animated: true)
     }
     
-    func goForFillData(tripData: Travel) {
-        allTrips.append(currentTrip!)
-        saveData()
-        DispatchQueue.main.async {
-            self.tableView.reloadData()
+    func goForFillData() {
+        guard let currentTrip = currentTrip else { return }
+        
+        if allTrips.filter({$0.title == currentTrip.title && $0.place == currentTrip.place}).isEmpty {
+            allTrips.append(currentTrip)
+            saveData()
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
+            let vc = storyboard?.instantiateViewController(withIdentifier: "MainTabBarController")
+            navigationController?.pushViewController(vc!, animated: true)
+        } else {
+            AlertManager.shared.showAlert(parent: self, title: "Dublicated trip", body: "The trip you entered is already exist", buttonTitles: ["Try again"], style: .alert, showCancelButton: true) { buttonIndex in
+                if buttonIndex == 0 {
+                    self.newButtonTapped()
+                }
+            }
         }
-        let vc = storyboard?.instantiateViewController(withIdentifier: "MainTabBarController")
-        navigationController?.pushViewController(vc!, animated: true)
-        //        if allTrips?.filter({
-        //            $0.title.lowercased() == tripData.title.lowercased() &&
-        //            $0.place.lowercased() == tripData.place.lowercased() &&
-        //            $0.days.lowercased() == tripData.days.lowercased()
-        //        }).count == 0 {
-        //            allTrips?.append(tripData)
-        //            saveData()
-        //            DispatchQueue.main.async {
-        //                self.tableView.reloadData()
-        //            }
-        //
-        //            let vc = storyboard?.instantiateViewController(withIdentifier: "MainTabBarController")
-        //            navigationController?.pushViewController(vc!, animated: true)
-        //        } else {
-        //            AlertManager.shared.showAlert(parent: self, title: "Dublicated trip", body: "The trip you entered is already exist", buttonTitles: ["Try again"], style: .alert, showCancelButton: true) { buttonIndex in
-        //                if buttonIndex == 0 {
-        //                    self.newButtonTapped()
-        //                }
-        //            }
-        //        }
     }
     
     func fetchTravelData() {

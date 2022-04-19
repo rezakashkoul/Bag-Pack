@@ -30,7 +30,7 @@ class CostViewController: UIViewController {
     func setupUI() {
         navigationItem.title = "Costs"
         navigationController?.navigationBar.prefersLargeTitles = true
-        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Home Page", style: .done, target: self, action: #selector(backButton))
+        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Home", style: .done, target: self, action: #selector(backButton))
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addNewItemToCostList))
         //        tableView.setNoDataInTableViewIFNotExists(tableView: tableView, data: items)
     }

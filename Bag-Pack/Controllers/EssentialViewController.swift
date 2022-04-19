@@ -33,7 +33,7 @@ class EssentialViewController: UIViewController {
         navigationItem.title = "Essential"
         navigationController?.navigationBar.prefersLargeTitles = true
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addNewItemToCheckList))
-        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Home Page", style: .done, target: self, action: #selector(backButton))
+        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Home", style: .done, target: self, action: #selector(backButton))
         //        tableView.setNoDataInTableViewIFNotExists(tableView: tableView, data: currentTrip?.travelSubData.essential)
         
     }

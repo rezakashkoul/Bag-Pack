@@ -42,7 +42,7 @@ class NoteViewController: UIViewController, UITextViewDelegate {
     func setupUI() {
         navigationItem.title = "Notes"
         navigationController?.navigationBar.prefersLargeTitles = true
-        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Home Page", style: .done, target: self, action: #selector(backButton))
+        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Home", style: .done, target: self, action: #selector(backButton))
     }
     
     @objc private func backButton() {
