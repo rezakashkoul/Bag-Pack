@@ -32,7 +32,6 @@ class CostViewController: UIViewController {
         navigationController?.navigationBar.prefersLargeTitles = true
         navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Home", style: .done, target: self, action: #selector(backButton))
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addNewItemToCostList))
-        //        tableView.setNoDataInTableViewIFNotExists(tableView: tableView, data: items)
     }
     
     @objc private func backButton() {

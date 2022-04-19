@@ -16,6 +16,7 @@
 		EB0A818627FDC8AB00314D58 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB0A818527FDC8AB00314D58 /* Extensions.swift */; };
 		EB0A818F27FDD00000314D58 /* CostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB0A818D27FDD00000314D58 /* CostTableViewCell.swift */; };
 		EB0A819027FDD00000314D58 /* CostTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EB0A818E27FDD00000314D58 /* CostTableViewCell.xib */; };
+		EB4EC2C2280EE81D0027243F /* GeneralTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB4EC2C1280EE81D0027243F /* GeneralTests.swift */; };
 		EB6468492805AF4A00CBB4C4 /* NewEntryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB6468482805AF4A00CBB4C4 /* NewEntryViewController.swift */; };
 		EB91DC4A27B7DA6600D094A0 /* EssentialTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB91DC4827B7DA6600D094A0 /* EssentialTableViewCell.swift */; };
 		EB91DC4B27B7DA6600D094A0 /* EssentialTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EB91DC4927B7DA6600D094A0 /* EssentialTableViewCell.xib */; };
@@ -64,6 +65,7 @@
 		EB0A818527FDC8AB00314D58 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		EB0A818D27FDD00000314D58 /* CostTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CostTableViewCell.swift; sourceTree = "<group>"; };
 		EB0A818E27FDD00000314D58 /* CostTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CostTableViewCell.xib; sourceTree = "<group>"; };
+		EB4EC2C1280EE81D0027243F /* GeneralTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralTests.swift; sourceTree = "<group>"; };
 		EB6468482805AF4A00CBB4C4 /* NewEntryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewEntryViewController.swift; sourceTree = "<group>"; };
 		EB91DC4827B7DA6600D094A0 /* EssentialTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EssentialTableViewCell.swift; sourceTree = "<group>"; };
 		EB91DC4927B7DA6600D094A0 /* EssentialTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EssentialTableViewCell.xib; sourceTree = "<group>"; };
@@ -207,6 +209,7 @@
 				EB06254E2802FF8E001C248C /* CostTests.swift */,
 				EB062550280302B4001C248C /* SettingsTest.swift */,
 				EBCD4794280DA22B00069FEC /* EntryTests.swift */,
+				EB4EC2C1280EE81D0027243F /* GeneralTests.swift */,
 			);
 			path = "Bag-PackTests";
 			sourceTree = "<group>";
@@ -439,6 +442,7 @@
 				EBF1664027FC387E00D8AC4A /* DashboardTests.swift in Sources */,
 				EB06254F2802FF8E001C248C /* CostTests.swift in Sources */,
 				EBF1664827FC8E3700D8AC4A /* EssentialTests.swift in Sources */,
+				EB4EC2C2280EE81D0027243F /* GeneralTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

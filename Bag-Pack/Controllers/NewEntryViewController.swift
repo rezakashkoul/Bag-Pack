@@ -26,7 +26,7 @@ class NewEntryViewController: UIViewController, UITextFieldDelegate {
             placeTextField.text != "" &&
             budgetTextField.text != "" &&
             daysTextField.text != "" {
-            currentTrip = Travel(title: titleTextField.text ?? "Trip", place: placeTextField.text ?? "Place", budget: budgetTextField.text ?? "Not specified", days: daysTextField.text ?? "Not specified", travelSubData: TravelSubData(essential: [], note: "", cost: []))
+            currentTrip = Travel(title: titleTextField.text ?? "Trip", place: placeTextField.text ?? "Place", budget: budgetTextField.text ?? "Not specified", days: daysTextField.text ?? "Not specified", date: Date().string(format: "EEEE, dd/MM/yyyy"), travelSubData: TravelSubData(essential: [], note: "", cost: []))
             dismiss(animated: true) { [self] in
                 delegate?.goForFillData()
             }

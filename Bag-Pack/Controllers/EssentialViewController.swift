@@ -15,6 +15,7 @@ class EssentialViewController: UIViewController {
         super.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
+        tableView.register(UINib(nibName: "EssentialTableViewCell", bundle: nil), forCellReuseIdentifier: "EssentialTableViewCell")
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -28,14 +29,11 @@ class EssentialViewController: UIViewController {
     }
     
     func setupUI() {
-        tableView.register(UINib(nibName: "EssentialTableViewCell", bundle: nil), forCellReuseIdentifier: "EssentialTableViewCell")
         setTabBarStyle()
         navigationItem.title = "Essential"
         navigationController?.navigationBar.prefersLargeTitles = true
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addNewItemToCheckList))
         navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Home", style: .done, target: self, action: #selector(backButton))
-        //        tableView.setNoDataInTableViewIFNotExists(tableView: tableView, data: currentTrip?.travelSubData.essential)
-        
     }
     
     @objc private func backButton() {
@@ -103,7 +101,7 @@ extension EssentialViewController {
         tabBarController?.tabBar.items![1].title = "Costs"
         tabBarController?.tabBar.items![1].image = UIImage(named: "cost")
         tabBarController?.tabBar.items![1].selectedImage = UIImage(named: "cost_filled")
-        tabBarController?.tabBar.items![2].title = "Note and Points"
+        tabBarController?.tabBar.items![2].title = "Note "
         tabBarController?.tabBar.items![2].image = UIImage(named: "notes")
         tabBarController?.tabBar.items![2].selectedImage = UIImage(named: "notes_filled")
     }

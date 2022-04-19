@@ -13,6 +13,11 @@ class CostTests: XCTestCase {
     
     var cost = CostViewController()
     
+    override func setUp() {
+        super.setUp()
+        currentTrip = nil
+    }
+    
     func test_showAlertFunctionality() {
         let storyboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
         let vc = storyboard.instantiateViewController(withIdentifier: "CostViewController")  as! CostViewController
@@ -33,12 +38,10 @@ class CostTests: XCTestCase {
 
     func test_tableViewShowsData() {
         let vc = createCostlViewControllerInstance()
-        XCTAssertNotNil(vc.tableView.visibleCells)
-    }
-    
-    func test_loadData() {
-        let travelData = UserDefaults.standard.data(forKey: "travel")
-        XCTAssertNotNil(travelData)
+        XCTAssertTrue(vc.tableView.visibleCells.isEmpty)
+        currentTrip = MockData.shared.travelMockData[0]
+        vc.tableView.reloadData()
+        XCTAssertFalse(vc.tableView.visibleCells.isEmpty)
     }
         
 //MARK: - Create an Instance for this ViewController

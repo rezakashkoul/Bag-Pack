@@ -11,6 +11,11 @@ import XCTest
 
 class EssentialTests: XCTestCase {
     
+    override func setUp() {
+        super.setUp()
+        currentTrip = nil
+    }
+    
     var essential = EssentialViewController()
     
     func test_showAlertFunctionality() {
@@ -33,18 +38,18 @@ class EssentialTests: XCTestCase {
 
     func test_tableViewShowsData() {
         let vc = createEssentialViewControllerInstance()
+        XCTAssertTrue(vc.tableView.visibleCells.isEmpty)
+        currentTrip = MockData.shared.travelMockData[0]
+        vc.tableView.reloadData()
+        XCTAssertNotNil(currentTrip)
         XCTAssertFalse(vc.tableView.visibleCells.isEmpty)
-    }
-    
-    func test_loadData() {
-        let travelData = UserDefaults.standard.data(forKey: "travel")
-        XCTAssertNotNil(travelData)
+//        currentTrip = nil
     }
     
 //MARK: - Create an Instance for this ViewController
-    func createEssentialViewControllerInstance() -> SettingsViewController {
+    func createEssentialViewControllerInstance() -> EssentialViewController {
         let storyboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-        let vc = storyboard.instantiateViewController(withIdentifier: "SettingsViewController")  as! SettingsViewController
+        let vc = storyboard.instantiateViewController(withIdentifier: "EssentialViewController")  as! EssentialViewController
         vc.view.layoutIfNeeded()
         return vc
     }

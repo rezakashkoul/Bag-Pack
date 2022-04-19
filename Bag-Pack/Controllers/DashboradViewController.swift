@@ -170,9 +170,10 @@ extension DashboradViewController: UITableViewDelegate, UITableViewDataSource {
         cell.travelTitleLabel.text = allTrips[indexPath.row].title
 //        cell.climateLabel.text = travelList[indexPath.row].climate
         cell.currencyRateLabel.text = allTrips[indexPath.row].budget
-//        cell.dateLabel.text = "\(Date())"
+        cell.dateLabel.text = allTrips[indexPath.row].date
         cell.placeLabel.text = allTrips[indexPath.row].place
-        cell.travelLengthLabel.text = allTrips[indexPath.row].days.description
+        let days = allTrips[indexPath.row].days == "1" ? (allTrips[indexPath.row].days + " " + "Day") :  (allTrips[indexPath.row].days + " " + "Days")
+        cell.travelLengthLabel.text = days
         return cell
     }
     
