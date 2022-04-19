@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -59,8 +59,14 @@
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1.2 $/€" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k4A-LP-acd">
-                        <rect key="frame" x="98.5" y="131.5" width="51" height="20.5"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1.2" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k4A-LP-acd">
+                        <rect key="frame" x="98.5" y="131" width="21.5" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hke-M1-mQh">
+                        <rect key="frame" x="128" y="131" width="11" height="21"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
@@ -72,6 +78,7 @@
                     <constraint firstItem="6Xm-Yq-OSJ" firstAttribute="centerY" secondItem="iu1-vF-GZE" secondAttribute="centerY" id="4mg-Pu-lsI"/>
                     <constraint firstItem="cEc-qQ-u65" firstAttribute="top" secondItem="Drm-zA-aQ1" secondAttribute="bottom" constant="8" id="Aad-lz-PxJ"/>
                     <constraint firstAttribute="trailing" secondItem="fqm-QU-f4e" secondAttribute="trailing" constant="16" id="Ecx-D4-5H5"/>
+                    <constraint firstItem="hke-M1-mQh" firstAttribute="leading" secondItem="k4A-LP-acd" secondAttribute="trailing" constant="8" id="HZC-Nv-1Zg"/>
                     <constraint firstItem="fqm-QU-f4e" firstAttribute="leading" secondItem="Drm-zA-aQ1" secondAttribute="trailing" constant="16" id="KEO-Jd-Kou"/>
                     <constraint firstItem="iu1-vF-GZE" firstAttribute="leading" secondItem="6Xm-Yq-OSJ" secondAttribute="trailing" constant="8" id="USI-Cj-XZp"/>
                     <constraint firstItem="k4A-LP-acd" firstAttribute="leading" secondItem="mXh-3V-kgl" secondAttribute="trailing" constant="8" id="VcL-ym-fZk"/>
@@ -87,6 +94,7 @@
                     <constraint firstItem="mXh-3V-kgl" firstAttribute="leading" secondItem="hOI-Na-qhv" secondAttribute="leading" id="mhW-dl-nb8"/>
                     <constraint firstItem="Drm-zA-aQ1" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="mn0-0r-p8e"/>
                     <constraint firstItem="k4A-LP-acd" firstAttribute="centerY" secondItem="mXh-3V-kgl" secondAttribute="centerY" id="q3H-Nx-sjI"/>
+                    <constraint firstItem="hke-M1-mQh" firstAttribute="centerY" secondItem="k4A-LP-acd" secondAttribute="centerY" id="qmw-dm-fwu"/>
                     <constraint firstItem="Drm-zA-aQ1" firstAttribute="width" secondItem="fqm-QU-f4e" secondAttribute="width" multiplier="0.962406" id="rOu-jL-DrD"/>
                     <constraint firstItem="6Xm-Yq-OSJ" firstAttribute="centerY" secondItem="mXh-3V-kgl" secondAttribute="centerY" id="sqm-V4-zlC"/>
                     <constraint firstItem="hOI-Na-qhv" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="yCS-wA-OD4"/>
@@ -97,6 +105,7 @@
             <connections>
                 <outlet property="climateLabel" destination="cEc-qQ-u65" id="2QB-Ec-07T"/>
                 <outlet property="currencyRateLabel" destination="k4A-LP-acd" id="ZWu-fb-vaS"/>
+                <outlet property="currencyUnitLabel" destination="hke-M1-mQh" id="rpE-mv-T7s"/>
                 <outlet property="dateLabel" destination="fqm-QU-f4e" id="40c-V6-K91"/>
                 <outlet property="placeLabel" destination="Drm-zA-aQ1" id="U8A-CY-beg"/>
                 <outlet property="travelLengthLabel" destination="iu1-vF-GZE" id="Yuk-gE-TCz"/>

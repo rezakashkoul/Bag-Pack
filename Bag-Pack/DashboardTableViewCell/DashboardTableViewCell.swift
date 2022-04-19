@@ -14,11 +14,13 @@ class DashboardTableViewCell: UITableViewCell {
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var climateLabel: UILabel!
     @IBOutlet weak var currencyRateLabel: UILabel!
+    @IBOutlet weak var currencyUnitLabel: UILabel!
     @IBOutlet weak var travelLengthLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        climateLabel.isHidden = true
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
