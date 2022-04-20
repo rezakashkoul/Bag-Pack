@@ -310,7 +310,7 @@
                                     <action selector="confirmButtonAction:" destination="iK4-IL-iVx" eventType="touchUpInside" id="Sld-I9-XZu"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please complete the fields" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0i6-qN-6xU">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please complete the fields" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0i6-qN-6xU">
                                 <rect key="frame" x="20" y="108" width="350" height="24"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                 <nil key="textColor"/>
@@ -372,7 +372,7 @@
         <!--Color Picker View Controller-->
         <scene sceneID="KMW-u3-aA2">
             <objects>
-                <viewController storyboardIdentifier="ColorPicker" useStoryboardIdentifierAsRestorationIdentifier="YES" id="9I3-SK-uxZ" customClass="ColorPickerViewController" customModule="Alerts_Pickers" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ColorPicker" useStoryboardIdentifierAsRestorationIdentifier="YES" id="9I3-SK-uxZ" customClass="ColorPickerViewController" customModule="Bag_Pack" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="MuD-hY-qQu"/>
                         <viewControllerLayoutGuide type="bottom" id="SLT-8g-h0x"/>
@@ -411,8 +411,8 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="vwO-lz-jwC">
                                         <rect key="frame" x="0.0" y="258" width="326" height="148"/>
                                         <subviews>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rfn-ia-afC" customClass="GradientSlider" customModule="Alerts_Pickers" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="0.0" width="326" height="36"/>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rfn-ia-afC" customClass="GradientSlider" customModule="Bag_Pack" customModuleProvider="target">
+                                                <rect key="frame" x="-2" y="-4" width="330" height="44"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="36" id="xVv-Fe-bJa"/>
                                                 </constraints>
@@ -431,8 +431,8 @@
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                             </view>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="djf-WL-U5b" customClass="GradientSlider" customModule="Alerts_Pickers" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="56" width="326" height="36"/>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="djf-WL-U5b" customClass="GradientSlider" customModule="Bag_Pack" customModuleProvider="target">
+                                                <rect key="frame" x="-2" y="52" width="330" height="44"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="36" id="wTK-Tx-mje"/>
                                                 </constraints>
@@ -452,8 +452,8 @@
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                             </view>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KHi-Iq-FBh" customClass="GradientSlider" customModule="Alerts_Pickers" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="112" width="326" height="36"/>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KHi-Iq-FBh" customClass="GradientSlider" customModule="Bag_Pack" customModuleProvider="target">
+                                                <rect key="frame" x="-2" y="108" width="330" height="44"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="36" id="Y1f-7j-Iba"/>
                                                 </constraints>
@@ -504,6 +504,17 @@
             <point key="canvasLocation" x="311" y="117"/>
         </scene>
     </scenes>
+    <designables>
+        <designable name="KHi-Iq-FBh">
+            <size key="intrinsicContentSize" width="-1" height="28"/>
+        </designable>
+        <designable name="djf-WL-U5b">
+            <size key="intrinsicContentSize" width="-1" height="28"/>
+        </designable>
+        <designable name="rfn-ia-afC">
+            <size key="intrinsicContentSize" width="-1" height="28"/>
+        </designable>
+    </designables>
     <resources>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

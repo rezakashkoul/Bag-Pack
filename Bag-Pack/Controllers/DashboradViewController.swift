@@ -35,19 +35,7 @@ class DashboradViewController: UIViewController, NewEntryViewControllerDelegate 
         super.viewDidAppear(animated)
         
         view.window?.tintColor = appGlobalTintColor
-        if isDarkMode {
-            if #available(iOS 13.0, *) {
-                view.window?.overrideUserInterfaceStyle = .dark
-            } else {
-                // Fallback on earlier versions
-            }
-        } else {
-            if #available(iOS 13.0, *) {
-                view.window?.overrideUserInterfaceStyle = .light
-            } else {
-                // Fallback on earlier versions
-            }
-        }
+        changeTheme()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -68,6 +56,17 @@ class DashboradViewController: UIViewController, NewEntryViewControllerDelegate 
         tableView.tableFooterView = UIView()
         if appGlobalTintColor == nil {
             appGlobalTintColor = .systemBlue
+        }
+    }
+    
+    func changeTheme() {
+        if #available(iOS 13.0, *) {
+            if isDarkMode {
+                view.window?.overrideUserInterfaceStyle = .dark
+            } else {
+                view.window?.overrideUserInterfaceStyle = .light
+            }
+        } else {
         }
     }
     
@@ -169,7 +168,7 @@ extension DashboradViewController: UITableViewDelegate, UITableViewDataSource {
             cell.currencyUnitLabel.text = "Not Specified"
         }
         cell.travelTitleLabel.text = allTrips[indexPath.row].title
-//        cell.climateLabel.text = travelList[indexPath.row].climate
+        //        cell.climateLabel.text = travelList[indexPath.row].climate
         cell.currencyRateLabel.text = allTrips[indexPath.row].budget
         cell.dateLabel.text = allTrips[indexPath.row].date
         cell.placeLabel.text = allTrips[indexPath.row].place

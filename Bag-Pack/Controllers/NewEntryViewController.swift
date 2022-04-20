@@ -40,20 +40,15 @@ class NewEntryViewController: UIViewController, UITextFieldDelegate {
         setupUI()
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        view.slideUpViews(delay: 0.2)
-    }
+//    override func viewWillAppear(_ animated: Bool) {
+//        super.viewWillAppear(animated)
+//        view.slideUpViews(delay: 0.2)
+//    }
     
     func setupUI() {
         navigationController?.navigationItem.rightBarButtonItem = self.cancelButton
 
-//        if #available(iOS 13, *) {
-//        } else {
-//        }
-
         descriptionLabel.textColor = appGlobalTintColor ?? UIColor.systemBlue
-        
         confirmButton.layer.masksToBounds = true
         confirmButton.layer.cornerRadius = 12
         confirmButton.clipsToBounds = false
@@ -61,53 +56,16 @@ class NewEntryViewController: UIViewController, UITextFieldDelegate {
         confirmButton.layer.shadowOffset = CGSize(width: 4, height: 4)
         confirmButton.layer.shadowColor = UIColor.darkGray.cgColor
         confirmButton.backgroundColor = appGlobalTintColor
-        
-        if #available(iOS 13.0, *) {
-            confirmButton.setTitleColor(.systemBackground, for: .normal)
-        } else {
-            // Fallback on earlier versions
-        }
-        
         titleTextField.setupUI()
         placeTextField.setupUI()
         budgetTextField.setupUI()
         daysTextField.setupUI()
-
-//        titleTextField.borderStyle = .roundedRect
-//        titleTextField.layer.masksToBounds = true
-//        titleTextField.layer.cornerRadius = titleTextField.frame.size.height/2
-//        titleTextField.clipsToBounds = false
-//        titleTextField.layer.shadowOpacity=0.2
-//        titleTextField.layer.shadowOffset = CGSize(width: 2, height: 2)
-//        titleTextField.layer.shadowColor = UIColor.darkGray.cgColor
-//        titleTextField.setPlaceHolderColor(color: .gray)
-//
-//        placeTextField.borderStyle = .roundedRect
-//        placeTextField.layer.masksToBounds = true
-//        placeTextField.layer.cornerRadius = titleTextField.frame.size.height/2
-//        placeTextField.clipsToBounds = false
-//        placeTextField.layer.shadowOpacity=0.2
-//        placeTextField.layer.shadowOffset = CGSize(width: 2, height: 2)
-//        placeTextField.layer.shadowColor = UIColor.darkGray.cgColor
-//        placeTextField.setPlaceHolderColor(color: .gray)
-//
-//        budgetTextField.borderStyle = .roundedRect
-//        budgetTextField.layer.masksToBounds = true
-//        budgetTextField.layer.cornerRadius = titleTextField.frame.size.height/2
-//        budgetTextField.clipsToBounds = false
-//        budgetTextField.layer.shadowOpacity=0.2
-//        budgetTextField.layer.shadowOffset = CGSize(width: 2, height: 2)
-//        budgetTextField.layer.shadowColor = UIColor.darkGray.cgColor
-//        budgetTextField.setPlaceHolderColor(color: .gray)
-//
-//        daysTextField.borderStyle = .roundedRect
-//        daysTextField.layer.masksToBounds = true
-//        daysTextField.layer.cornerRadius = titleTextField.frame.size.height/2
-//        daysTextField.clipsToBounds = false
-//        daysTextField.layer.shadowOpacity=0.2
-//        daysTextField.layer.shadowOffset = CGSize(width: 2, height: 2)
-//        daysTextField.layer.shadowColor = UIColor.darkGray.cgColor
-//        daysTextField.setPlaceHolderColor(color: .gray)
+        
+        if #available(iOS 13.0, *) {
+            confirmButton.setTitleColor(.systemBackground, for: .normal)
+        } else {
+            confirmButton.setTitleColor(.white, for: .normal)
+        }
     }
     
     func entryConfirmButtonAction() {
@@ -162,11 +120,5 @@ class NewEntryViewController: UIViewController, UITextFieldDelegate {
         }
         return true
     }
-    
-}
-
-extension UITextField {
-    
-
     
 }
