@@ -1,6 +1,6 @@
 import UIKit
 
-protocol PhotoLayoutDelegate: class {
+protocol PhotoLayoutDelegate: AnyObject {
     
     func collectionView(_ collectionView: UICollectionView, sizeForPhotoAtIndexPath indexPath: IndexPath) -> CGSize
 }
