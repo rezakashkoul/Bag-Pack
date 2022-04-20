@@ -19,21 +19,14 @@ class NewEntryViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var budgetTextField: UITextField!
     @IBOutlet weak var daysTextField: UITextField!
     @IBOutlet weak var confirmButton: UIButton!
+    @IBOutlet weak var cancelButton: UIBarButtonItem!
+    
+    @IBAction func cancelButtonAction(_ sender: Any) {
+        dismiss(animated: true)
+    }
     
     @IBAction func confirmButtonAction(_ sender: Any) {
-        
-        if titleTextField.text != "" &&
-            placeTextField.text != "" &&
-            budgetTextField.text != "" &&
-            daysTextField.text != "" {
-            currentTrip = Travel(title: titleTextField.text ?? "Trip", place: placeTextField.text ?? "Place", budget: budgetTextField.text ?? "Not specified", days: daysTextField.text ?? "Not specified", date: Date().string(format: "EEEE, dd/MM/yyyy"), travelSubData: TravelSubData(essential: [], note: "", cost: []))
-            dismiss(animated: true) { [self] in
-                delegate?.goForFillData()
-            }
-        } else {
-            AlertManager.shared.showAlert(parent: self, title: "Error!", body: "Please fill every fields", buttonTitles: ["OK"], style: .alert, showCancelButton: false) { _ in
-            }
-        }
+        entryConfirmButtonAction()
     }
     
     weak var delegate: NewEntryViewControllerDelegate? = nil
@@ -53,7 +46,12 @@ class NewEntryViewController: UIViewController, UITextFieldDelegate {
     }
     
     func setupUI() {
-        title = "New Trip"
+        navigationController?.navigationItem.rightBarButtonItem = self.cancelButton
+
+//        if #available(iOS 13, *) {
+//        } else {
+//        }
+
         descriptionLabel.textColor = appGlobalTintColor ?? UIColor.systemBlue
         
         confirmButton.layer.masksToBounds = true
@@ -70,41 +68,65 @@ class NewEntryViewController: UIViewController, UITextFieldDelegate {
             // Fallback on earlier versions
         }
         
-        titleTextField.borderStyle = .roundedRect
-        titleTextField.layer.masksToBounds = true
-        titleTextField.layer.cornerRadius = titleTextField.frame.size.height/2
-        titleTextField.clipsToBounds = false
-        titleTextField.layer.shadowOpacity=0.2
-        titleTextField.layer.shadowOffset = CGSize(width: 2, height: 2)
-        titleTextField.layer.shadowColor = UIColor.darkGray.cgColor
-        titleTextField.setPlaceHolderColor(color: .gray)
-        
-        placeTextField.borderStyle = .roundedRect
-        placeTextField.layer.masksToBounds = true
-        placeTextField.layer.cornerRadius = titleTextField.frame.size.height/2
-        placeTextField.clipsToBounds = false
-        placeTextField.layer.shadowOpacity=0.2
-        placeTextField.layer.shadowOffset = CGSize(width: 2, height: 2)
-        placeTextField.layer.shadowColor = UIColor.darkGray.cgColor
-        placeTextField.setPlaceHolderColor(color: .gray)
-        
-        budgetTextField.borderStyle = .roundedRect
-        budgetTextField.layer.masksToBounds = true
-        budgetTextField.layer.cornerRadius = titleTextField.frame.size.height/2
-        budgetTextField.clipsToBounds = false
-        budgetTextField.layer.shadowOpacity=0.2
-        budgetTextField.layer.shadowOffset = CGSize(width: 2, height: 2)
-        budgetTextField.layer.shadowColor = UIColor.darkGray.cgColor
-        budgetTextField.setPlaceHolderColor(color: .gray)
-        
-        daysTextField.borderStyle = .roundedRect
-        daysTextField.layer.masksToBounds = true
-        daysTextField.layer.cornerRadius = titleTextField.frame.size.height/2
-        daysTextField.clipsToBounds = false
-        daysTextField.layer.shadowOpacity=0.2
-        daysTextField.layer.shadowOffset = CGSize(width: 2, height: 2)
-        daysTextField.layer.shadowColor = UIColor.darkGray.cgColor
-        daysTextField.setPlaceHolderColor(color: .gray)
+        titleTextField.setupUI()
+        placeTextField.setupUI()
+        budgetTextField.setupUI()
+        daysTextField.setupUI()
+
+//        titleTextField.borderStyle = .roundedRect
+//        titleTextField.layer.masksToBounds = true
+//        titleTextField.layer.cornerRadius = titleTextField.frame.size.height/2
+//        titleTextField.clipsToBounds = false
+//        titleTextField.layer.shadowOpacity=0.2
+//        titleTextField.layer.shadowOffset = CGSize(width: 2, height: 2)
+//        titleTextField.layer.shadowColor = UIColor.darkGray.cgColor
+//        titleTextField.setPlaceHolderColor(color: .gray)
+//
+//        placeTextField.borderStyle = .roundedRect
+//        placeTextField.layer.masksToBounds = true
+//        placeTextField.layer.cornerRadius = titleTextField.frame.size.height/2
+//        placeTextField.clipsToBounds = false
+//        placeTextField.layer.shadowOpacity=0.2
+//        placeTextField.layer.shadowOffset = CGSize(width: 2, height: 2)
+//        placeTextField.layer.shadowColor = UIColor.darkGray.cgColor
+//        placeTextField.setPlaceHolderColor(color: .gray)
+//
+//        budgetTextField.borderStyle = .roundedRect
+//        budgetTextField.layer.masksToBounds = true
+//        budgetTextField.layer.cornerRadius = titleTextField.frame.size.height/2
+//        budgetTextField.clipsToBounds = false
+//        budgetTextField.layer.shadowOpacity=0.2
+//        budgetTextField.layer.shadowOffset = CGSize(width: 2, height: 2)
+//        budgetTextField.layer.shadowColor = UIColor.darkGray.cgColor
+//        budgetTextField.setPlaceHolderColor(color: .gray)
+//
+//        daysTextField.borderStyle = .roundedRect
+//        daysTextField.layer.masksToBounds = true
+//        daysTextField.layer.cornerRadius = titleTextField.frame.size.height/2
+//        daysTextField.clipsToBounds = false
+//        daysTextField.layer.shadowOpacity=0.2
+//        daysTextField.layer.shadowOffset = CGSize(width: 2, height: 2)
+//        daysTextField.layer.shadowColor = UIColor.darkGray.cgColor
+//        daysTextField.setPlaceHolderColor(color: .gray)
+    }
+    
+    func entryConfirmButtonAction() {
+        if titleTextField.text != "" &&
+            placeTextField.text != "" &&
+            budgetTextField.text != "" &&
+            daysTextField.text != "" {
+            currentTrip = Travel(title: titleTextField.text ?? "Trip", place: placeTextField.text ?? "Place", budget: budgetTextField.text ?? "Not specified", days: daysTextField.text ?? "Not specified", date: Date().string(format: "EEEE, dd/MM/yyyy"), travelSubData: TravelSubData(essential: [], note: "", cost: []))
+            dismiss(animated: true) { [self] in
+                delegate?.goForFillData()
+            }
+        } else {
+            AlertManager.shared.showAlert(parent: self, title: "Error!", body: "Please fill every fields", buttonTitles: ["OK"], style: .alert, showCancelButton: false) { _ in
+            }
+        }
+    }
+    
+    @objc func entryCancelAction() {
+        dismiss(animated: true)
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
@@ -122,7 +144,7 @@ class NewEntryViewController: UIViewController, UITextFieldDelegate {
     }
     
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-        let aSet = NSCharacterSet(charactersIn:"0123456789").inverted
+        let aSet = NSCharacterSet(charactersIn:"0123456789۰۱۲۳۴۵۶۷۸۹").inverted
         let compSepByCharInSet = string.components(separatedBy: aSet)
         let numberFiltered = compSepByCharInSet.joined(separator: "")
         
@@ -140,5 +162,11 @@ class NewEntryViewController: UIViewController, UITextFieldDelegate {
         }
         return true
     }
+    
+}
+
+extension UITextField {
+    
+
     
 }

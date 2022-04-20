@@ -64,13 +64,23 @@ extension UITextView: UITextViewDelegate {
         self.resizePlaceholder()
         self.delegate = self
     }
-    
 }
 
 extension UITextField {
     
     func setPlaceHolderColor(color: UIColor){
         self.attributedPlaceholder = NSAttributedString(string: self.placeholder!, attributes: [NSAttributedString.Key.foregroundColor : color])
+    }
+    
+    func setupUI(){
+        borderStyle = .roundedRect
+        layer.masksToBounds = true
+        layer.cornerRadius = frame.size.height/2
+        clipsToBounds = false
+        layer.shadowOpacity=0.2
+        layer.shadowOffset = CGSize(width: 2, height: 2)
+        layer.shadowColor = UIColor.darkGray.cgColor
+        setPlaceHolderColor(color: .gray)
     }
 }
 
@@ -124,7 +134,6 @@ extension UITableView {
         }
     }
 }
-
 
 extension Date {
     func string(format: String) -> String {

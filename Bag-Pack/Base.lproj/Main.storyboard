@@ -254,7 +254,13 @@
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="736-BC-uzV">
                                 <rect key="frame" x="0.0" y="44" width="390" height="44"/>
                                 <items>
-                                    <navigationItem title="New Entry" largeTitleDisplayMode="always" id="CBU-CD-eWv"/>
+                                    <navigationItem title="New Entry" largeTitleDisplayMode="always" id="CBU-CD-eWv">
+                                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="cancel" id="eoQ-1s-eTA">
+                                            <connections>
+                                                <action selector="cancelButtonAction:" destination="iK4-IL-iVx" id="efC-Ev-V9S"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
                                 </items>
                             </navigationBar>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="PtN-o6-gF9">
@@ -332,6 +338,7 @@
                     <navigationItem key="navigationItem" id="bIk-f7-Neb"/>
                     <connections>
                         <outlet property="budgetTextField" destination="8iX-Oc-VNw" id="jVJ-th-VP0"/>
+                        <outlet property="cancelButton" destination="eoQ-1s-eTA" id="E6o-IO-V1h"/>
                         <outlet property="confirmButton" destination="hnG-WR-Jma" id="4Tr-fG-8dp"/>
                         <outlet property="daysTextField" destination="cSa-qJ-ifG" id="TuR-nE-7P4"/>
                         <outlet property="descriptionLabel" destination="0i6-qN-6xU" id="9kz-Ot-eVY"/>
@@ -494,7 +501,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TgB-OR-9bB" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2080" y="75"/>
+            <point key="canvasLocation" x="311" y="117"/>
         </scene>
     </scenes>
     <resources>
