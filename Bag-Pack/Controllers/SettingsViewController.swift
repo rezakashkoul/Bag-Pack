@@ -39,14 +39,26 @@ class SettingsViewController: UIViewController, SettingsTableViewCellDelegate {
         title = "Settings"
     }
     
-//    func showOldColorPicker(){
-//        let alert = UIAlertController(style: .actionSheet)
-//        alert.addColorPicker(color: color) { color in
-//            // action with selected color
-//        }
-//        alert.addAction(title: "Done", style: .cancel)
-//        alert.show()
-//    }
+    func showOldColorPicker(){
+        let alert = UIAlertController(style: .alert)
+        alert.addColorPicker(color: (appGlobalTintColor ?? .systemBlue)) {[self] color in
+            appGlobalTintColor = color
+            changeSystemTintColor()
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
+        }
+        alert.addAction(title: "Cancel", style: .cancel)
+        alert.show()
+    }
+    
+    func changeSystemTintColor() {
+        view.window?.tintColor = appGlobalTintColor
+        if let appdelegate = UIApplication.shared.delegate as? AppDelegate {
+            appdelegate.window = view.window
+            appdelegate.window?.makeKeyAndVisible()
+        }
+    }
     
     func changeTheme() {
         if #available(iOS 13.0, *) {
@@ -163,7 +175,7 @@ extension SettingsViewController: UITableViewDelegate, UITableViewDataSource {
             if #available(iOS 14.0, *) {
                 openPicker()
             } else {
-                
+                showOldColorPicker()
             }
         case 3:
             AlertManager.shared.showAlert(parent: self, title: "Reset entire data", body: "By doing this you'll clean every data and entries", buttonTitles: ["Reset data"], style: .alert, showCancelButton: true) { buttonIndex in
@@ -208,13 +220,5 @@ extension SettingsViewController: UIColorPickerViewControllerDelegate {
     func openPicker() {
         (picker as! UIColorPickerViewController).selectedColor = appGlobalTintColor ?? .systemBlue
         self.present((picker as! UIColorPickerViewController), animated: true, completion: nil)
-    }
-    
-    func changeSystemTintColor() {
-        view.window?.tintColor = appGlobalTintColor
-        if let appdelegate = UIApplication.shared.delegate as? AppDelegate {
-            appdelegate.window = view.window
-            appdelegate.window?.makeKeyAndVisible()
-        }
     }
 }

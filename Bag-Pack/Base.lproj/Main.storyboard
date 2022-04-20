@@ -362,6 +362,140 @@
             </objects>
             <point key="canvasLocation" x="3840" y="1517.7725118483411"/>
         </scene>
+        <!--Color Picker View Controller-->
+        <scene sceneID="KMW-u3-aA2">
+            <objects>
+                <viewController storyboardIdentifier="ColorPicker" useStoryboardIdentifierAsRestorationIdentifier="YES" id="9I3-SK-uxZ" customClass="ColorPickerViewController" customModule="Alerts_Pickers" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="MuD-hY-qQu"/>
+                        <viewControllerLayoutGuide type="bottom" id="SLT-8g-h0x"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="gp3-1N-Ig4">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="58" translatesAutoresizingMaskIntoConstraints="NO" id="By6-vT-rwX">
+                                <rect key="frame" x="32" y="44" width="326" height="406"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="km9-oV-Dgh">
+                                        <rect key="frame" x="63" y="0.0" width="200" height="200"/>
+                                        <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="200" id="8DZ-Ce-ACM"/>
+                                            <constraint firstAttribute="width" constant="200" id="zSt-e8-IBg"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="circleCorner" value="YES"/>
+                                            <userDefinedRuntimeAttribute type="size" keyPath="shadowOffset">
+                                                <size key="value" width="1" height="5"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
+                                                <real key="value" value="0.40000000000000002"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="shadowShouldRasterize" value="YES"/>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
+                                                <real key="value" value="14"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
+                                                <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="vwO-lz-jwC">
+                                        <rect key="frame" x="0.0" y="258" width="326" height="148"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rfn-ia-afC" customClass="GradientSlider" customModule="Alerts_Pickers" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="326" height="36"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="36" id="xVv-Fe-bJa"/>
+                                                </constraints>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="maxColor">
+                                                        <color key="value" red="0.11780811099999999" green="0.92091393470000005" blue="0.90016001459999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="value">
+                                                        <real key="value" value="0.5"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="thickness">
+                                                        <real key="value" value="2"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="minColor">
+                                                        <color key="value" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="djf-WL-U5b" customClass="GradientSlider" customModule="Alerts_Pickers" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="56" width="326" height="36"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="36" id="wTK-Tx-mje"/>
+                                                </constraints>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="minColor">
+                                                        <color key="value" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="value">
+                                                        <real key="value" value="0.5"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="hasRainbow" value="NO"/>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="maxColor">
+                                                        <color key="value" red="0.11780811099999999" green="0.92091393470000005" blue="0.90016001459999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="thickness">
+                                                        <real key="value" value="2"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KHi-Iq-FBh" customClass="GradientSlider" customModule="Alerts_Pickers" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="112" width="326" height="36"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="36" id="Y1f-7j-Iba"/>
+                                                </constraints>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="minColor">
+                                                        <color key="value" red="0.1529411765" green="0.90980392160000001" blue="0.87843137250000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="value">
+                                                        <real key="value" value="0.5"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="hasRainbow" value="YES"/>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="thickness">
+                                                        <real key="value" value="2"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                            </view>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="djf-WL-U5b" firstAttribute="width" secondItem="vwO-lz-jwC" secondAttribute="width" id="0hq-0D-BFm"/>
+                                            <constraint firstItem="rfn-ia-afC" firstAttribute="width" secondItem="vwO-lz-jwC" secondAttribute="width" id="Zj8-Bn-7r2"/>
+                                            <constraint firstItem="KHi-Iq-FBh" firstAttribute="width" secondItem="vwO-lz-jwC" secondAttribute="width" id="ee8-gH-dNi"/>
+                                        </constraints>
+                                    </stackView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="vwO-lz-jwC" firstAttribute="width" secondItem="By6-vT-rwX" secondAttribute="width" id="uKL-sH-TMo"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="KdK-PK-URM"/>
+                        <constraints>
+                            <constraint firstItem="SLT-8g-h0x" firstAttribute="top" relation="greaterThanOrEqual" secondItem="By6-vT-rwX" secondAttribute="bottom" constant="32" id="Flo-HN-urQ"/>
+                            <constraint firstItem="By6-vT-rwX" firstAttribute="top" secondItem="gp3-1N-Ig4" secondAttribute="top" constant="44" id="J1m-xb-Tg8"/>
+                            <constraint firstAttribute="trailing" secondItem="By6-vT-rwX" secondAttribute="trailing" constant="32" id="iaE-Mz-8c2"/>
+                            <constraint firstItem="By6-vT-rwX" firstAttribute="leading" secondItem="gp3-1N-Ig4" secondAttribute="leading" constant="32" id="lJn-Kz-H1A"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="brightnessSlider" destination="djf-WL-U5b" id="uuR-WO-sjb"/>
+                        <outlet property="colorView" destination="km9-oV-Dgh" id="Ssw-1H-Dwt"/>
+                        <outlet property="hueSlider" destination="KHi-Iq-FBh" id="8Bh-sS-2nS"/>
+                        <outlet property="mainStackView" destination="By6-vT-rwX" id="yPD-sC-nqR"/>
+                        <outlet property="saturationSlider" destination="rfn-ia-afC" id="JLY-Lz-FxT"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="TgB-OR-9bB" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2080" y="75"/>
+        </scene>
     </scenes>
     <resources>
         <systemColor name="labelColor">
