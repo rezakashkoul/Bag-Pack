@@ -39,6 +39,15 @@ class SettingsViewController: UIViewController, SettingsTableViewCellDelegate {
         title = "Settings"
     }
     
+//    func showOldColorPicker(){
+//        let alert = UIAlertController(style: .actionSheet)
+//        alert.addColorPicker(color: color) { color in
+//            // action with selected color
+//        }
+//        alert.addAction(title: "Done", style: .cancel)
+//        alert.show()
+//    }
+    
     func changeTheme() {
         if #available(iOS 13.0, *) {
             if isDarkMode {
@@ -173,6 +182,7 @@ extension SettingsViewController: UITableViewDelegate, UITableViewDataSource {
         }
     }
 }
+
 
 @available(iOS 14.0, *)
 extension SettingsViewController: UIColorPickerViewControllerDelegate {

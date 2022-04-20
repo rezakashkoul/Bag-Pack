@@ -5,14 +5,14 @@
 //  Created by Reza Kashkoul on 17/1/1401 AP.
 //
 
-import Foundation
-import XCTest
-@testable import Bag_Pack
+//import Foundation
+//import XCTest
+//@testable import Bag_Pack
 //
 //class NoteTests: XCTestCase {
-//    
+//
 //    var note = NoteViewController()
-//    
+//
 //    func test_validateViewControllerTitle(){
 //        let esVC = createEssentialViewControllerInstance()
 //        esVC.setTabBarStyle()

@@ -74,7 +74,7 @@ class NewEntryViewController: UIViewController, UITextFieldDelegate {
         titleTextField.layer.masksToBounds = true
         titleTextField.layer.cornerRadius = titleTextField.frame.size.height/2
         titleTextField.clipsToBounds = false
-        titleTextField.layer.shadowOpacity=0.4
+        titleTextField.layer.shadowOpacity=0.2
         titleTextField.layer.shadowOffset = CGSize(width: 2, height: 2)
         titleTextField.layer.shadowColor = UIColor.darkGray.cgColor
         titleTextField.setPlaceHolderColor(color: .gray)
@@ -83,7 +83,7 @@ class NewEntryViewController: UIViewController, UITextFieldDelegate {
         placeTextField.layer.masksToBounds = true
         placeTextField.layer.cornerRadius = titleTextField.frame.size.height/2
         placeTextField.clipsToBounds = false
-        placeTextField.layer.shadowOpacity=0.4
+        placeTextField.layer.shadowOpacity=0.2
         placeTextField.layer.shadowOffset = CGSize(width: 2, height: 2)
         placeTextField.layer.shadowColor = UIColor.darkGray.cgColor
         placeTextField.setPlaceHolderColor(color: .gray)
@@ -92,7 +92,7 @@ class NewEntryViewController: UIViewController, UITextFieldDelegate {
         budgetTextField.layer.masksToBounds = true
         budgetTextField.layer.cornerRadius = titleTextField.frame.size.height/2
         budgetTextField.clipsToBounds = false
-        budgetTextField.layer.shadowOpacity=0.4
+        budgetTextField.layer.shadowOpacity=0.2
         budgetTextField.layer.shadowOffset = CGSize(width: 2, height: 2)
         budgetTextField.layer.shadowColor = UIColor.darkGray.cgColor
         budgetTextField.setPlaceHolderColor(color: .gray)
@@ -101,7 +101,7 @@ class NewEntryViewController: UIViewController, UITextFieldDelegate {
         daysTextField.layer.masksToBounds = true
         daysTextField.layer.cornerRadius = titleTextField.frame.size.height/2
         daysTextField.clipsToBounds = false
-        daysTextField.layer.shadowOpacity=0.4
+        daysTextField.layer.shadowOpacity=0.2
         daysTextField.layer.shadowOffset = CGSize(width: 2, height: 2)
         daysTextField.layer.shadowColor = UIColor.darkGray.cgColor
         daysTextField.setPlaceHolderColor(color: .gray)
