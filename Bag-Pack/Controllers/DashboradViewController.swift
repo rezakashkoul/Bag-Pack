@@ -65,6 +65,7 @@ class DashboradViewController: UIViewController, NewEntryViewControllerDelegate 
     func setupUI() {
         setupNavigationBarAndItems()
         tableView.register(UINib(nibName: "DashboardTableViewCell", bundle: nil), forCellReuseIdentifier: "DashboardTableViewCell")
+        tableView.tableFooterView = UIView()
         if appGlobalTintColor == nil {
             appGlobalTintColor = .systemBlue
         }

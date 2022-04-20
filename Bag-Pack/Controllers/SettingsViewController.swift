@@ -11,7 +11,7 @@ class SettingsViewController: UIViewController, SettingsTableViewCellDelegate {
     
     @IBOutlet weak var tableView: UITableView!
     
-    let items = ["Tint Color", "Dark Theme", "Common Currencies" , "Reset Application Data", "Reset Settings", "App Version"]
+    var items: [SettingItem] = []
     var picker: Any?
     var appVersion: String? = ""
     
@@ -19,9 +19,12 @@ class SettingsViewController: UIViewController, SettingsTableViewCellDelegate {
         super.viewDidLoad()
         
         setupUI()
+        setupSettingItems()
+        if #available(iOS 13.0, *) {
+            items.insert(SettingItem(title: "Dark Theme", type: .darkMode), at: 1)
+        }
         if #available(iOS 14.0, *) {
             setupPicker()
-        } else {
         }
     }
     
@@ -37,6 +40,16 @@ class SettingsViewController: UIViewController, SettingsTableViewCellDelegate {
         tableView.separatorStyle = .none
         navigationController?.navigationBar.prefersLargeTitles = false
         title = "Settings"
+    }
+    
+    func setupSettingItems() {
+        items = [
+            SettingItem(title: "Tint Color", type: .tintColor),
+            SettingItem(title: "Currency Unit", type: .currencyUnit),
+            SettingItem(title: "Reset Application Data", type: .resetAppData),
+            SettingItem(title: "Reset Settings", type: .resetSettings),
+            SettingItem(title: "App Version", type: .appVersion)
+        ]
     }
     
     func showOldColorPicker(){
@@ -84,17 +97,11 @@ class SettingsViewController: UIViewController, SettingsTableViewCellDelegate {
         allTrips = []
         currentTrip = nil
         appCurrencyUnit = .dollar
-        if #available(iOS 14.0, *) {
-            changeSystemTintColor()
-            changeTheme()
-            DispatchQueue.main.async {
-                self.tableView.reloadData()
-            }
-        } else {
-            // Fallback on earlier versions
+        changeSystemTintColor()
+        changeTheme()
+        DispatchQueue.main.async {
+            self.tableView.reloadData()
         }
-        
-        // and clean model data
     }
     
     func resetAppSettings() {
@@ -104,21 +111,14 @@ class SettingsViewController: UIViewController, SettingsTableViewCellDelegate {
         }
         appGlobalTintColor = .systemBlue
         appCurrencyUnit = .dollar
-        if #available(iOS 14.0, *) {
-            changeSystemTintColor()
-            changeTheme()
-            DispatchQueue.main.async {
-                self.tableView.reloadData()
-            }
-        } else {
-            // Fallback on earlier versions
+        changeSystemTintColor()
+        changeTheme()
+        DispatchQueue.main.async {
+            self.tableView.reloadData()
         }
-        
-        // and clean model data
     }
     
-    
-} 
+}
 
 //MARK: - Setup TableView
 extension SettingsViewController: UITableViewDelegate, UITableViewDataSource {
@@ -126,28 +126,28 @@ extension SettingsViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "SettingsTableViewCell", for: indexPath) as! SettingsTableViewCell
         cell.delegate = self
-        cell.titleLabel.text = items[indexPath.row]
+        cell.titleLabel.text = items[indexPath.row].title
         
-        switch indexPath.row {
-        case 0:
+        switch items[indexPath.row].type {
+        case .tintColor:
             cell.colorView.isHidden = false
             cell.colorView.backgroundColor = appGlobalTintColor ?? .systemBlue
             cell.themeSwitch.isHidden = true
             cell.currencySegment.isHidden = true
             cell.versionLabel.isHidden = true
-        case 1:
+        case .darkMode:
             cell.themeSwitch.isHidden = false
             cell.themeSwitch.isOn = isDarkMode
             cell.colorView.isHidden = true
             cell.currencySegment.isHidden = true
             cell.versionLabel.isHidden = true
-        case 2:
+        case .currencyUnit:
             cell.currencySegment.isHidden = false
             cell.currencySegment.selectedSegmentIndex = appCurrencyUnit?.rawValue ?? 0
             cell.colorView.isHidden = true
             cell.themeSwitch.isHidden = true
             cell.versionLabel.isHidden = true
-        case 5:
+        case .appVersion:
             appVersion = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String
             cell.versionLabel.isHidden = false
             cell.versionLabel.text = appVersion
@@ -170,20 +170,20 @@ extension SettingsViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         
-        switch indexPath.row {
-        case 0:
+        switch items[indexPath.row].type {
+        case .tintColor:
             if #available(iOS 14.0, *) {
-                openPicker()
+                showNewColorPicker()
             } else {
                 showOldColorPicker()
             }
-        case 3:
+        case .resetAppData:
             AlertManager.shared.showAlert(parent: self, title: "Reset entire data", body: "By doing this you'll clean every data and entries", buttonTitles: ["Reset data"], style: .alert, showCancelButton: true) { buttonIndex in
                 if buttonIndex == 0 {
                     self.resetApplicationData()
                 }
             }
-        case 4:
+        case .resetSettings:
             AlertManager.shared.showAlert(parent: self, title: "Reset application Settings", body: "You're about to reset app settings...", buttonTitles: ["Reset Settings"], style: .alert, showCancelButton: true) { buttonIndex in
                 if buttonIndex == 0 {
                     self.resetAppSettings()
@@ -195,7 +195,7 @@ extension SettingsViewController: UITableViewDelegate, UITableViewDataSource {
     }
 }
 
-
+ 
 @available(iOS 14.0, *)
 extension SettingsViewController: UIColorPickerViewControllerDelegate {
     
@@ -217,8 +217,9 @@ extension SettingsViewController: UIColorPickerViewControllerDelegate {
         (picker as! UIColorPickerViewController).delegate = self
     }
     
-    func openPicker() {
+    func showNewColorPicker() {
         (picker as! UIColorPickerViewController).selectedColor = appGlobalTintColor ?? .systemBlue
         self.present((picker as! UIColorPickerViewController), animated: true, completion: nil)
     }
 }
+

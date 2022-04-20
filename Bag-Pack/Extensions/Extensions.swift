@@ -116,8 +116,10 @@ extension UITableView {
         DispatchQueue.main.async { [self] in
             if visibleCells.isEmpty {
                 backgroundView = noDataLabel
+                separatorStyle = .none
             } else {
                 backgroundView = nil
+                separatorStyle = .singleLine
             }
         }
     }
