@@ -80,7 +80,7 @@
                             <constraint firstItem="bhu-KI-e6v" firstAttribute="leading" secondItem="5fq-gd-udU" secondAttribute="leading" id="gvE-Zy-zbw"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="ud2-bZ-zvE"/>
+                    <navigationItem key="navigationItem" largeTitleDisplayMode="never" id="ud2-bZ-zvE"/>
                     <connections>
                         <outlet property="tableView" destination="bhu-KI-e6v" id="O4g-iE-awJ"/>
                     </connections>
@@ -111,7 +111,7 @@
                             <constraint firstItem="PM7-z3-ZOF" firstAttribute="top" secondItem="HPe-5d-NNT" secondAttribute="top" id="bYt-cO-fvA"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="1kX-0n-4Wc"/>
+                    <navigationItem key="navigationItem" largeTitleDisplayMode="never" id="1kX-0n-4Wc"/>
                     <connections>
                         <outlet property="tableView" destination="PM7-z3-ZOF" id="TrA-5Y-3ml"/>
                     </connections>
@@ -145,14 +145,14 @@
                             <constraint firstItem="pp1-sq-D9c" firstAttribute="leading" secondItem="h7e-uV-j6D" secondAttribute="leading" id="uL2-SJ-xbV"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="aoO-gA-3gu"/>
+                    <navigationItem key="navigationItem" largeTitleDisplayMode="never" id="aoO-gA-3gu"/>
                     <connections>
                         <outlet property="textView" destination="pp1-sq-D9c" id="3SS-8h-vab"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="M34-Qb-d48" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4749.2307692307695" y="1508.5308056872036"/>
+            <point key="canvasLocation" x="3869" y="1505"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="t90-rR-hXI">
@@ -251,88 +251,117 @@
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="736-BC-uzV">
-                                <rect key="frame" x="0.0" y="44" width="390" height="44"/>
-                                <items>
-                                    <navigationItem title="New Entry" largeTitleDisplayMode="always" id="CBU-CD-eWv">
-                                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="cancel" id="eoQ-1s-eTA">
-                                            <connections>
-                                                <action selector="cancelButtonAction:" destination="iK4-IL-iVx" id="efC-Ev-V9S"/>
-                                            </connections>
-                                        </barButtonItem>
-                                    </navigationItem>
-                                </items>
-                            </navigationBar>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="PtN-o6-gF9">
-                                <rect key="frame" x="20" y="152" width="350" height="260"/>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="T4b-9o-z9l">
+                                <rect key="frame" x="0.0" y="44" width="390" height="766"/>
                                 <subviews>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Travel Title" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="UMD-Ov-96M">
-                                        <rect key="frame" x="0.0" y="0.0" width="350" height="50"/>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gAr-ww-0qY">
+                                        <rect key="frame" x="0.0" y="0.0" width="390" height="732"/>
+                                        <subviews>
+                                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="736-BC-uzV">
+                                                <rect key="frame" x="0.0" y="0.0" width="390" height="44"/>
+                                                <items>
+                                                    <navigationItem title="New Entry" largeTitleDisplayMode="always" id="CBU-CD-eWv">
+                                                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="cancel" id="eoQ-1s-eTA">
+                                                            <connections>
+                                                                <action selector="cancelButtonAction:" destination="iK4-IL-iVx" id="efC-Ev-V9S"/>
+                                                            </connections>
+                                                        </barButtonItem>
+                                                    </navigationItem>
+                                                </items>
+                                            </navigationBar>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please complete the fields" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0i6-qN-6xU">
+                                                <rect key="frame" x="20" y="64" width="350" height="24"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="PtN-o6-gF9">
+                                                <rect key="frame" x="20" y="108" width="350" height="260"/>
+                                                <subviews>
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Travel Title" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="UMD-Ov-96M">
+                                                        <rect key="frame" x="0.0" y="0.0" width="350" height="50"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="50" id="61r-mS-CUY"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="no" spellCheckingType="no" returnKeyType="next"/>
+                                                    </textField>
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Place Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Oaf-Oj-r4l">
+                                                        <rect key="frame" x="0.0" y="70" width="350" height="50"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="50" id="Ei2-qJ-URk"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="no" spellCheckingType="no" returnKeyType="next"/>
+                                                    </textField>
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Desired Budget" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8iX-Oc-VNw">
+                                                        <rect key="frame" x="0.0" y="140" width="350" height="50"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="50" id="0M9-Gz-P1W"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="no" spellCheckingType="no" keyboardType="numberPad" returnKeyType="next"/>
+                                                    </textField>
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Day(s)" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cSa-qJ-ifG">
+                                                        <rect key="frame" x="0.0" y="210" width="350" height="50"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="50" id="h6v-3N-m41"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="no" spellCheckingType="no" keyboardType="numberPad" returnKeyType="done"/>
+                                                    </textField>
+                                                </subviews>
+                                            </stackView>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hnG-WR-Jma">
+                                                <rect key="frame" x="21" y="388" width="350" height="50"/>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="50" id="KeE-Nk-cSn"/>
+                                                </constraints>
+                                                <color key="tintColor" systemColor="tintColor"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" title="Let's Go!"/>
+                                                <connections>
+                                                    <action selector="confirmButtonAction:" destination="iK4-IL-iVx" eventType="touchUpInside" id="Sld-I9-XZu"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="50" id="61r-mS-CUY"/>
+                                            <constraint firstItem="hnG-WR-Jma" firstAttribute="top" secondItem="PtN-o6-gF9" secondAttribute="bottom" constant="20" id="2d0-eG-xaq"/>
+                                            <constraint firstItem="PtN-o6-gF9" firstAttribute="top" secondItem="0i6-qN-6xU" secondAttribute="bottom" constant="20" id="8GL-Cp-MB0"/>
+                                            <constraint firstItem="736-BC-uzV" firstAttribute="top" secondItem="gAr-ww-0qY" secondAttribute="top" id="DN1-Rp-YdW"/>
+                                            <constraint firstItem="hnG-WR-Jma" firstAttribute="centerX" secondItem="PtN-o6-gF9" secondAttribute="centerX" constant="1" id="IN7-cg-bIu"/>
+                                            <constraint firstItem="0i6-qN-6xU" firstAttribute="leading" secondItem="gAr-ww-0qY" secondAttribute="leading" constant="20" id="S0y-P1-857"/>
+                                            <constraint firstAttribute="trailing" secondItem="0i6-qN-6xU" secondAttribute="trailing" constant="20" id="luN-Do-zqI"/>
+                                            <constraint firstItem="0i6-qN-6xU" firstAttribute="top" secondItem="736-BC-uzV" secondAttribute="bottom" constant="20" id="mcn-KK-r30"/>
+                                            <constraint firstItem="hnG-WR-Jma" firstAttribute="width" secondItem="PtN-o6-gF9" secondAttribute="width" id="mfZ-ZN-SGX"/>
+                                            <constraint firstItem="736-BC-uzV" firstAttribute="leading" secondItem="gAr-ww-0qY" secondAttribute="leading" id="nhM-8R-ZdX"/>
+                                            <constraint firstAttribute="trailing" secondItem="736-BC-uzV" secondAttribute="trailing" id="rxO-gw-lZm"/>
+                                            <constraint firstAttribute="trailing" secondItem="PtN-o6-gF9" secondAttribute="trailing" constant="20" id="tTb-Ki-b9s"/>
+                                            <constraint firstItem="PtN-o6-gF9" firstAttribute="leading" secondItem="gAr-ww-0qY" secondAttribute="leading" constant="20" id="uDF-rH-INq"/>
+                                            <constraint firstAttribute="height" constant="732" id="yXs-jz-1kI"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="no" spellCheckingType="no" returnKeyType="next"/>
-                                    </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Place Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Oaf-Oj-r4l">
-                                        <rect key="frame" x="0.0" y="70" width="350" height="50"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="50" id="Ei2-qJ-URk"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="no" spellCheckingType="no" returnKeyType="next"/>
-                                    </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Desired Budget" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8iX-Oc-VNw">
-                                        <rect key="frame" x="0.0" y="140" width="350" height="50"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="50" id="0M9-Gz-P1W"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="no" spellCheckingType="no" keyboardType="numberPad" returnKeyType="next"/>
-                                    </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Day(s)" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cSa-qJ-ifG">
-                                        <rect key="frame" x="0.0" y="210" width="350" height="50"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="50" id="h6v-3N-m41"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="no" spellCheckingType="no" keyboardType="numberPad" returnKeyType="done"/>
-                                    </textField>
+                                    </view>
                                 </subviews>
-                            </stackView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hnG-WR-Jma">
-                                <rect key="frame" x="20" y="432" width="350" height="50"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <color key="tintColor" systemColor="tintColor"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Let's Go!"/>
-                                <connections>
-                                    <action selector="confirmButtonAction:" destination="iK4-IL-iVx" eventType="touchUpInside" id="Sld-I9-XZu"/>
-                                </connections>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please complete the fields" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0i6-qN-6xU">
-                                <rect key="frame" x="20" y="108" width="350" height="24"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                                <constraints>
+                                    <constraint firstItem="gAr-ww-0qY" firstAttribute="width" secondItem="Llq-OT-Ep9" secondAttribute="width" id="Wsa-Z0-Dqv"/>
+                                    <constraint firstItem="gAr-ww-0qY" firstAttribute="trailing" secondItem="Mwi-ge-MFa" secondAttribute="trailing" constant="390" id="caj-Df-Iu6"/>
+                                    <constraint firstItem="gAr-ww-0qY" firstAttribute="leading" secondItem="Mwi-ge-MFa" secondAttribute="leading" id="fGJ-TL-2xJ"/>
+                                    <constraint firstItem="gAr-ww-0qY" firstAttribute="bottom" secondItem="Mwi-ge-MFa" secondAttribute="bottom" id="pU9-Js-XKb"/>
+                                    <constraint firstItem="gAr-ww-0qY" firstAttribute="top" secondItem="Mwi-ge-MFa" secondAttribute="top" id="uiU-uG-ecA"/>
+                                </constraints>
+                                <viewLayoutGuide key="contentLayoutGuide" id="Mwi-ge-MFa"/>
+                                <viewLayoutGuide key="frameLayoutGuide" id="Llq-OT-Ep9"/>
+                            </scrollView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="R6m-SN-zYO"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="736-BC-uzV" firstAttribute="leading" secondItem="R6m-SN-zYO" secondAttribute="leading" id="4PW-it-cO7"/>
-                            <constraint firstItem="R6m-SN-zYO" firstAttribute="trailing" secondItem="hnG-WR-Jma" secondAttribute="trailing" constant="20" id="7fF-Ds-d4u"/>
-                            <constraint firstItem="PtN-o6-gF9" firstAttribute="leading" secondItem="R6m-SN-zYO" secondAttribute="leading" constant="20" id="7qD-K3-qn5"/>
-                            <constraint firstItem="hnG-WR-Jma" firstAttribute="top" secondItem="PtN-o6-gF9" secondAttribute="bottom" constant="20" id="8Tf-Ul-a7z"/>
-                            <constraint firstItem="0i6-qN-6xU" firstAttribute="leading" secondItem="R6m-SN-zYO" secondAttribute="leading" constant="20" id="9yN-1x-l2C"/>
-                            <constraint firstItem="0i6-qN-6xU" firstAttribute="top" secondItem="736-BC-uzV" secondAttribute="bottom" constant="20" id="PVx-pk-di1"/>
-                            <constraint firstItem="736-BC-uzV" firstAttribute="centerX" secondItem="PtN-o6-gF9" secondAttribute="centerX" id="Pig-Mr-zDY"/>
-                            <constraint firstItem="736-BC-uzV" firstAttribute="top" secondItem="R6m-SN-zYO" secondAttribute="top" id="ncw-l0-bC0"/>
-                            <constraint firstItem="hnG-WR-Jma" firstAttribute="height" secondItem="cSa-qJ-ifG" secondAttribute="height" id="oNi-Fl-DZa"/>
-                            <constraint firstItem="PtN-o6-gF9" firstAttribute="top" secondItem="0i6-qN-6xU" secondAttribute="bottom" constant="20" id="ooW-KC-puc"/>
-                            <constraint firstItem="hnG-WR-Jma" firstAttribute="leading" secondItem="R6m-SN-zYO" secondAttribute="leading" constant="20" id="pQ1-iL-HeF"/>
-                            <constraint firstItem="R6m-SN-zYO" firstAttribute="trailing" secondItem="PtN-o6-gF9" secondAttribute="trailing" constant="20" id="vWq-Ub-Bfw"/>
-                            <constraint firstItem="R6m-SN-zYO" firstAttribute="trailing" secondItem="0i6-qN-6xU" secondAttribute="trailing" constant="20" id="vZ2-Ha-hFM"/>
+                            <constraint firstItem="T4b-9o-z9l" firstAttribute="top" secondItem="R6m-SN-zYO" secondAttribute="top" id="3vB-eD-QZ6"/>
+                            <constraint firstItem="T4b-9o-z9l" firstAttribute="trailing" secondItem="R6m-SN-zYO" secondAttribute="trailing" id="k20-eO-9WV"/>
+                            <constraint firstItem="T4b-9o-z9l" firstAttribute="bottom" secondItem="R6m-SN-zYO" secondAttribute="bottom" id="kyn-VL-S1A"/>
+                            <constraint firstItem="T4b-9o-z9l" firstAttribute="leading" secondItem="R6m-SN-zYO" secondAttribute="leading" id="pUE-FT-6km"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="bIk-f7-Neb"/>
@@ -343,12 +372,13 @@
                         <outlet property="daysTextField" destination="cSa-qJ-ifG" id="TuR-nE-7P4"/>
                         <outlet property="descriptionLabel" destination="0i6-qN-6xU" id="9kz-Ot-eVY"/>
                         <outlet property="placeTextField" destination="Oaf-Oj-r4l" id="4j6-OP-aoo"/>
+                        <outlet property="scrollView" destination="T4b-9o-z9l" id="QgW-DE-RNZ"/>
                         <outlet property="titleTextField" destination="UMD-Ov-96M" id="6uw-7a-udR"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eya-lj-Vm7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1088" y="1476"/>
+            <point key="canvasLocation" x="1087.6923076923076" y="1475.8293838862558"/>
         </scene>
         <!--Item-->
         <scene sceneID="yZj-Fj-d8l">
@@ -367,7 +397,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="C8N-t1-2g4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3840" y="1517.7725118483411"/>
+            <point key="canvasLocation" x="2960" y="1514"/>
         </scene>
         <!--Color Picker View Controller-->
         <scene sceneID="KMW-u3-aA2">

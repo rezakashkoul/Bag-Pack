@@ -74,6 +74,7 @@ class DashboradViewController: UIViewController, NewEntryViewControllerDelegate 
         let vc = storyboard?.instantiateViewController(withIdentifier: "NewEntryViewController") as! NewEntryViewController
         currentTrip = nil
         vc.delegate = self
+//        navigationController?.pushViewController(vc, animated: true)
         navigationController?.present(vc, animated: true)
     }
     

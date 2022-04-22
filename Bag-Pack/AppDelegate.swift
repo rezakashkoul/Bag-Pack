@@ -18,6 +18,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         NFX.sharedInstance().start()
         IQKeyboardManager.shared.enable = true
+        IQKeyboardManager.shared.toolbarTintColor = appGlobalTintColor
+//        IQKeyboardManager.shared.keyboardDistanceFromTextField = 0
+        
+        
         return true
     }
 }

@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import IQKeyboardManagerSwift
 
 class SettingsViewController: UIViewController, SettingsTableViewCellDelegate {
     
@@ -70,6 +71,7 @@ class SettingsViewController: UIViewController, SettingsTableViewCellDelegate {
         if let appdelegate = UIApplication.shared.delegate as? AppDelegate {
             appdelegate.window = view.window
             appdelegate.window?.makeKeyAndVisible()
+            IQKeyboardManager.shared.toolbarTintColor = appGlobalTintColor
         }
     }
     

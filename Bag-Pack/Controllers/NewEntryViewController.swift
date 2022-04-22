@@ -13,6 +13,7 @@ protocol NewEntryViewControllerDelegate: AnyObject {
 
 class NewEntryViewController: UIViewController, UITextFieldDelegate {
     
+    @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var titleTextField: UITextField!
     @IBOutlet weak var placeTextField: UITextField!
@@ -29,6 +30,7 @@ class NewEntryViewController: UIViewController, UITextFieldDelegate {
         entryConfirmButtonAction()
     }
     
+    var isExpand: Bool = false
     weak var delegate: NewEntryViewControllerDelegate? = nil
     
     override func viewDidLoad() {
@@ -38,16 +40,24 @@ class NewEntryViewController: UIViewController, UITextFieldDelegate {
         budgetTextField.delegate = self
         daysTextField.delegate = self
         setupUI()
+        setupKeyboard()
     }
     
-//    override func viewWillAppear(_ animated: Bool) {
-//        super.viewWillAppear(animated)
-//        view.slideUpViews(delay: 0.2)
-//    }
+    deinit {
+        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillHideNotification, object: nil)
+    }
+    
+    @objc func entryCancelAction() {
+        dismiss(animated: true)
+    }
     
     func setupUI() {
         navigationController?.navigationItem.rightBarButtonItem = self.cancelButton
-
+        titleTextField.setupUI()
+        placeTextField.setupUI()
+        budgetTextField.setupUI()
+        daysTextField.setupUI()
         descriptionLabel.textColor = appGlobalTintColor ?? UIColor.systemBlue
         confirmButton.layer.masksToBounds = true
         confirmButton.layer.cornerRadius = 12
@@ -56,10 +66,6 @@ class NewEntryViewController: UIViewController, UITextFieldDelegate {
         confirmButton.layer.shadowOffset = CGSize(width: 4, height: 4)
         confirmButton.layer.shadowColor = UIColor.darkGray.cgColor
         confirmButton.backgroundColor = appGlobalTintColor
-        titleTextField.setupUI()
-        placeTextField.setupUI()
-        budgetTextField.setupUI()
-        daysTextField.setupUI()
         
         if #available(iOS 13.0, *) {
             confirmButton.setTitleColor(.systemBackground, for: .normal)
@@ -83,9 +89,11 @@ class NewEntryViewController: UIViewController, UITextFieldDelegate {
         }
     }
     
-    @objc func entryCancelAction() {
-        dismiss(animated: true)
-    }
+    
+}
+
+//MARK: - TextFields Configurations
+extension NewEntryViewController {
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         if textField == titleTextField && titleTextField.text != "" {
@@ -119,6 +127,37 @@ class NewEntryViewController: UIViewController, UITextFieldDelegate {
             break
         }
         return true
+    }
+    
+}
+
+//MARK: - Handle Keyboard Events
+extension NewEntryViewController {
+    
+    func setupKeyboard() {
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
+        
+        view.addGestureRecognizer(UIGestureRecognizer(target: self, action: #selector(endKeyboard)))
+    }
+    
+    @objc func endKeyboard() {
+        view.endEditing(true)
+    }
+    
+    @objc func keyboardWillShow(){
+        if !isExpand {
+            scrollView.contentSize = CGSize(width: view.frame.width, height: scrollView.frame.height)
+            isExpand = true
+        }
+    }
+    
+    @objc func keyboardWillHide(){
+        if isExpand {
+            scrollView.contentSize = CGSize(width: view.frame.width, height: scrollView.frame.height)
+            isExpand = false
+        }
     }
     
 }
