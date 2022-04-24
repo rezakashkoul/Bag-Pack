@@ -17,11 +17,11 @@ class CostViewController: UIViewController {
         tableView.dataSource = self
         tableView.register(UINib(nibName: "CostTableViewCell", bundle: nil), forCellReuseIdentifier: "CostTableViewCell")
         tableView.tableFooterView = UIView()
+        setupUI()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        setupUI()
         loadData()
         DispatchQueue.main.async {[self] in
             tableView.reloadData()
@@ -33,6 +33,7 @@ class CostViewController: UIViewController {
         navigationController?.navigationBar.prefersLargeTitles = true
         navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Home", style: .done, target: self, action: #selector(backButton))
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addNewItemToCostList))
+        tableView.allowsSelection = false
     }
     
     @objc private func backButton() {
@@ -59,11 +60,6 @@ class CostViewController: UIViewController {
                     DispatchQueue.main.async {[self] in
                         tableView.reloadData()
                         tableView.showNoDataIfNeeded()
-                    }
-                    for i in 0..<allTrips.count {
-                        if allTrips[i].title == currentTrip?.title && allTrips[i].place == currentTrip?.place {
-                            allTrips[i] = currentTrip!
-                        }
                     }
                     saveData()
                 }
@@ -93,6 +89,7 @@ extension CostViewController: UITableViewDelegate, UITableViewDataSource {
             currentTrip?.travelSubData.cost.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .fade)
             saveData()
+            tableView.reloadData()
             tableView.showNoDataIfNeeded()
         }
     }

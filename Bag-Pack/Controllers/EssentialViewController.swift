@@ -17,11 +17,11 @@ class EssentialViewController: UIViewController {
         tableView.dataSource = self
         tableView.register(UINib(nibName: "EssentialTableViewCell", bundle: nil), forCellReuseIdentifier: "EssentialTableViewCell")
         tableView.tableFooterView = UIView()
+        setupUI()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        setupUI()
         loadData()
         DispatchQueue.main.async {[self] in
             tableView.reloadData()
@@ -32,9 +32,9 @@ class EssentialViewController: UIViewController {
     func setupUI() {
         setTabBarStyle()
         navigationItem.title = "Essential"
-        navigationController?.navigationBar.prefersLargeTitles = true
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addNewItemToCheckList))
         navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Home", style: .done, target: self, action: #selector(backButton))
+        tableView.allowsSelection = false
     }
     
     @objc private func backButton() {
@@ -88,7 +88,10 @@ extension EssentialViewController: UITableViewDelegate, UITableViewDataSource {
             currentTrip?.travelSubData.essential.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .fade)
             saveData()
-            tableView.showNoDataIfNeeded()
+            DispatchQueue.main.async {
+                tableView.reloadData()
+                tableView.showNoDataIfNeeded()
+            }
         }
     }
 }

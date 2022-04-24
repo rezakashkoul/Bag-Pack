@@ -51,7 +51,13 @@ var appGlobalTintColor: UIColor? {
 }
 
 func saveData() {
-    
+    if currentTrip != nil && allTrips.count > 0 {
+        for i in 0..<allTrips.count {
+            if allTrips[i].title == currentTrip?.title && allTrips[i].place == currentTrip?.place {
+                allTrips[i] = currentTrip!
+            }
+        }
+    }
     do {
         let encoder = JSONEncoder()
         let data = try encoder.encode(allTrips)

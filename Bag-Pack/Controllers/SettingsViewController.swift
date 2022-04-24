@@ -197,7 +197,7 @@ extension SettingsViewController: UITableViewDelegate, UITableViewDataSource {
     }
 }
 
- 
+
 @available(iOS 14.0, *)
 extension SettingsViewController: UIColorPickerViewControllerDelegate {
     
