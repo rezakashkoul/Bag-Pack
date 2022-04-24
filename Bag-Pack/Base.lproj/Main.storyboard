@@ -147,12 +147,13 @@
                     </view>
                     <navigationItem key="navigationItem" largeTitleDisplayMode="never" id="aoO-gA-3gu"/>
                     <connections>
+                        <outlet property="bottomConstraint" destination="heL-P9-bAy" id="V6z-Jb-ZW5"/>
                         <outlet property="textView" destination="pp1-sq-D9c" id="3SS-8h-vab"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="M34-Qb-d48" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3869" y="1505"/>
+            <point key="canvasLocation" x="3867.6923076923076" y="1504.9763033175354"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="t90-rR-hXI">

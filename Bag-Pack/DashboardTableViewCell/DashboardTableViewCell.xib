@@ -66,7 +66,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hke-M1-mQh">
-                        <rect key="frame" x="128" y="131" width="11" height="21"/>
+                        <rect key="frame" x="123" y="131" width="11" height="21"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
@@ -78,7 +78,7 @@
                     <constraint firstItem="6Xm-Yq-OSJ" firstAttribute="centerY" secondItem="iu1-vF-GZE" secondAttribute="centerY" id="4mg-Pu-lsI"/>
                     <constraint firstItem="cEc-qQ-u65" firstAttribute="top" secondItem="Drm-zA-aQ1" secondAttribute="bottom" constant="8" id="Aad-lz-PxJ"/>
                     <constraint firstAttribute="trailing" secondItem="fqm-QU-f4e" secondAttribute="trailing" constant="16" id="Ecx-D4-5H5"/>
-                    <constraint firstItem="hke-M1-mQh" firstAttribute="leading" secondItem="k4A-LP-acd" secondAttribute="trailing" constant="8" id="HZC-Nv-1Zg"/>
+                    <constraint firstItem="hke-M1-mQh" firstAttribute="leading" secondItem="k4A-LP-acd" secondAttribute="trailing" constant="3" id="HZC-Nv-1Zg"/>
                     <constraint firstItem="fqm-QU-f4e" firstAttribute="leading" secondItem="Drm-zA-aQ1" secondAttribute="trailing" constant="16" id="KEO-Jd-Kou"/>
                     <constraint firstItem="iu1-vF-GZE" firstAttribute="leading" secondItem="6Xm-Yq-OSJ" secondAttribute="trailing" constant="8" id="USI-Cj-XZp"/>
                     <constraint firstItem="k4A-LP-acd" firstAttribute="leading" secondItem="mXh-3V-kgl" secondAttribute="trailing" constant="8" id="VcL-ym-fZk"/>

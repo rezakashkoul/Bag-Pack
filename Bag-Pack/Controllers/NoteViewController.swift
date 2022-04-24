@@ -9,12 +9,19 @@ import UIKit
 
 class NoteViewController: UIViewController, UITextViewDelegate {
     
+    @IBOutlet weak var bottomConstraint: NSLayoutConstraint!
     @IBOutlet weak var textView: UITextView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         textView.delegate = self
         textView.keyboardDismissMode = .onDrag
+        setupKeyboard()
+    }
+    
+    deinit {
+        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillHideNotification, object: nil)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -31,11 +38,6 @@ class NoteViewController: UIViewController, UITextViewDelegate {
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         currentTrip?.travelSubData.note = textView.text
-        for i in 0..<allTrips.count {
-            if allTrips[i].title == currentTrip?.title && allTrips[i].place == currentTrip?.place {
-                allTrips[i] = currentTrip!
-            }
-        }
         saveData()
     }
     
@@ -49,4 +51,24 @@ class NoteViewController: UIViewController, UITextViewDelegate {
         tabBarController?.navigationController?.popViewController(animated: true)
     }
     
+}
+
+//MARK: - Handle Keyboard Events
+extension NoteViewController {
+    
+    func setupKeyboard() {
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
+    }
+    
+    @objc func keyboardWillShow(notification: NSNotification) {
+        if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
+            let keyboardHeight : Int = Int(keyboardSize.height)
+            bottomConstraint.constant = CGFloat(keyboardHeight)
+        }
+    }
+    
+    @objc func keyboardWillHide(){
+        bottomConstraint.constant = 0
+    }
 }

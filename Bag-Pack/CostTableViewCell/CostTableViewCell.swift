@@ -11,6 +11,7 @@ class CostTableViewCell: UITableViewCell {
 
     @IBOutlet weak var itemNameLabel: UILabel!
     @IBOutlet weak var itemCostLabel: UILabel!
+    @IBOutlet weak var currencyUnitLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()

@@ -77,6 +77,18 @@ extension CostViewController: UITableViewDelegate, UITableViewDataSource {
         
         cell.itemNameLabel?.text = currentTrip?.travelSubData.cost[indexPath.row].title
         cell.itemCostLabel?.text = currentTrip?.travelSubData.cost[indexPath.row].price
+        if let appCurrencyUnit = appCurrencyUnit {
+            switch appCurrencyUnit.rawValue{
+            case 0:
+                cell.currencyUnitLabel.text = "$"
+            case 1:
+                cell.currencyUnitLabel.text = "€"
+            case 2:
+                cell.currencyUnitLabel.text = "Rials"
+            default:
+                cell.currencyUnitLabel.text = "Not Specified"
+            }
+        }
         return cell
     }
     
