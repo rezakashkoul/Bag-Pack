@@ -11,6 +11,8 @@ class CostViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     
+    var totalAmount: Int?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.delegate = self
@@ -18,6 +20,7 @@ class CostViewController: UIViewController {
         tableView.register(UINib(nibName: "CostTableViewCell", bundle: nil), forCellReuseIdentifier: "CostTableViewCell")
         tableView.tableFooterView = UIView()
         setupUI()
+        calculateCostSum()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -26,11 +29,11 @@ class CostViewController: UIViewController {
         DispatchQueue.main.async {[self] in
             tableView.reloadData()
             tableView.showNoDataIfNeeded()
-        }    }
+        }
+    }
     
     func setupUI() {
         navigationItem.title = "Costs"
-        navigationController?.navigationBar.prefersLargeTitles = true
         navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Home", style: .done, target: self, action: #selector(backButton))
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addNewItemToCostList))
         tableView.allowsSelection = false
@@ -44,7 +47,6 @@ class CostViewController: UIViewController {
         showAddItemAlert(completion: {_ in
             return
         })
-        
     }
     
     func showAddItemAlert(completion: @escaping ([CostDetails]) -> ()) {
@@ -60,9 +62,20 @@ class CostViewController: UIViewController {
                     DispatchQueue.main.async {[self] in
                         tableView.reloadData()
                         tableView.showNoDataIfNeeded()
+                        calculateCostSum()
                     }
                     saveData()
                 }
+            }
+        }
+    }
+    
+    func calculateCostSum() {
+        if let currentTrip = currentTrip {
+            let tripCostArray = currentTrip.travelSubData.cost.compactMap({$0.price}).compactMap({Int($0)})
+            totalAmount = tripCostArray.reduce(0, +)
+            if let appCurrencyUnit = appCurrencyUnit {
+                navigationItem.titleView = setTitle(title: navigationItem.title!, subtitle: "\(totalAmount ?? 0) \(appCurrencyUnit.rawValue.convertToCurrencyUnit())")
             }
         }
     }
@@ -74,21 +87,10 @@ extension CostViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "CostTableViewCell", for: indexPath) as! CostTableViewCell
-        
         cell.itemNameLabel?.text = currentTrip?.travelSubData.cost[indexPath.row].title
         cell.itemCostLabel?.text = currentTrip?.travelSubData.cost[indexPath.row].price
-        if let appCurrencyUnit = appCurrencyUnit {
-            switch appCurrencyUnit.rawValue{
-            case 0:
-                cell.currencyUnitLabel.text = "$"
-            case 1:
-                cell.currencyUnitLabel.text = "€"
-            case 2:
-                cell.currencyUnitLabel.text = "Rials"
-            default:
-                cell.currencyUnitLabel.text = "Not Specified"
-            }
-        }
+        cell.currencyUnitLabel.text = appCurrencyUnit?.rawValue.convertToCurrencyUnit()
+        
         return cell
     }
     
@@ -100,6 +102,7 @@ extension CostViewController: UITableViewDelegate, UITableViewDataSource {
         if editingStyle == .delete {
             currentTrip?.travelSubData.cost.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .fade)
+            calculateCostSum()
             saveData()
             tableView.reloadData()
             tableView.showNoDataIfNeeded()

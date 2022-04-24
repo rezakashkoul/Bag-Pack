@@ -9,10 +9,9 @@ import Foundation
 
 struct Travel: Codable {
     
+    //    let date, climate: String
     let title, place, budget, days, date: String
-//    let date, climate: String
     var travelSubData: TravelSubData
-    
     
     init(title: String, place: String, budget: String, days: String, date: String, travelSubData: TravelSubData) {
         self.title = title
@@ -22,7 +21,6 @@ struct Travel: Codable {
         self.date = date
         self.travelSubData = travelSubData
     }
-    
 }
 
 struct TravelSubData: Codable {

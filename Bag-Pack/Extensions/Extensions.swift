@@ -8,6 +8,47 @@
 import Foundation
 import UIKit
 
+//MARK: - Setup Title For ViewController
+extension UIViewController {
+    
+    func setTitle(title:String, subtitle:String) -> UIView {
+        let titleLabel = UILabel(frame: CGRect(x: 0, y: -2, width: 0, height: 0))
+        let subtitleLabel = UILabel(frame: CGRect(x: 0, y: 18, width: 0, height: 0))
+        if #available(iOS 13.0, *) {
+            titleLabel.textColor = UIColor.label
+            subtitleLabel.textColor = UIColor.label
+        } else {
+            titleLabel.textColor = UIColor.black
+            subtitleLabel.textColor = UIColor.black
+        }
+        titleLabel.backgroundColor = UIColor.clear
+        subtitleLabel.backgroundColor = UIColor.clear
+        titleLabel.font = UIFont.boldSystemFont(ofSize: 17)
+        subtitleLabel.font = UIFont.systemFont(ofSize: 12)
+        titleLabel.text = title
+        subtitleLabel.text = subtitle
+        titleLabel.sizeToFit()
+        subtitleLabel.sizeToFit()
+        
+        let titleView = UIView(frame: CGRect(x: 0, y: 0, width: max(titleLabel.frame.size.width, subtitleLabel.frame.size.width), height: 30))
+        titleView.addSubview(titleLabel)
+        titleView.addSubview(subtitleLabel)
+        
+        let widthDiff = subtitleLabel.frame.size.width - titleLabel.frame.size.width
+        
+        if widthDiff < 0 {
+            let newX = widthDiff / 2
+            subtitleLabel.frame.origin.x = abs(newX)
+        } else {
+            let newX = widthDiff / 2
+            titleLabel.frame.origin.x = newX
+        }
+        
+        return titleView
+    }
+    
+}
+
 extension UITextView: UITextViewDelegate {
     
     override open var bounds: CGRect {
@@ -84,6 +125,26 @@ extension UITextField {
     }
 }
 
+extension UITableView {
+    
+    func showNoDataIfNeeded() {
+        let noDataLabel : UILabel = UILabel()
+        noDataLabel.frame = CGRect(x: 0, y: 0 , width: (bounds.width), height: (bounds.height))
+        noDataLabel.text = "There's no data"
+        noDataLabel.textColor = appGlobalTintColor
+        noDataLabel.textAlignment = .center
+        DispatchQueue.main.async { [self] in
+            if visibleCells.isEmpty {
+                backgroundView = noDataLabel
+                separatorStyle = .none
+            } else {
+                backgroundView = nil
+                separatorStyle = .singleLine
+            }
+        }
+    }
+}
+
 extension UserDefaults {
     
     func colorForKey(key: String) -> UIColor? {
@@ -115,30 +176,27 @@ extension UserDefaults {
     }
 }
 
-extension UITableView {
-    
-    func showNoDataIfNeeded() {
-        let noDataLabel : UILabel = UILabel()
-        noDataLabel.frame = CGRect(x: 0, y: 0 , width: (bounds.width), height: (bounds.height))
-        noDataLabel.text = "There's no data"
-        noDataLabel.textColor = appGlobalTintColor
-        noDataLabel.textAlignment = .center
-        DispatchQueue.main.async { [self] in
-            if visibleCells.isEmpty {
-                backgroundView = noDataLabel
-                separatorStyle = .none
-            } else {
-                backgroundView = nil
-                separatorStyle = .singleLine
-            }
-        }
-    }
-}
-
 extension Date {
     func string(format: String) -> String {
         let formatter = DateFormatter()
         formatter.dateFormat = format
         return formatter.string(from: self)
     }
+}
+
+extension Int {
+    
+    func convertToCurrencyUnit() -> String {
+        switch self {
+        case 0:
+            return "$"
+        case 1:
+            return "€"
+        case 2:
+            return "Rials"
+        default:
+            return "Not Specified"
+        }
+    }
+    
 }

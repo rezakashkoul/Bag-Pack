@@ -18,7 +18,7 @@ class DashboradViewController: UIViewController, NewEntryViewControllerDelegate 
         tableView.delegate = self
         tableView.dataSource = self
         setupUI()
-        //        fetchTravelData()
+//        fetchTravelData()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -153,22 +153,9 @@ extension DashboradViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = (tableView.dequeueReusableCell(withIdentifier: "DashboardTableViewCell", for: indexPath) as! DashboardTableViewCell)
-        if let appCurrencyUnit = appCurrencyUnit {
-            switch appCurrencyUnit.rawValue{
-            case 0:
-                cell.currencyUnitLabel.text = "$"
-            case 1:
-                cell.currencyUnitLabel.text = "€"
-            case 2:
-                cell.currencyUnitLabel.text = "Rials"
-            default:
-                cell.currencyUnitLabel.text = "Not Specified"
-            }
-        } else {
-            cell.currencyUnitLabel.text = "Not Specified"
-        }
-        cell.travelTitleLabel.text = allTrips[indexPath.row].title
         //        cell.climateLabel.text = travelList[indexPath.row].climate
+        cell.currencyUnitLabel.text = appCurrencyUnit?.rawValue.convertToCurrencyUnit()
+        cell.travelTitleLabel.text = allTrips[indexPath.row].title
         cell.currencyRateLabel.text = allTrips[indexPath.row].budget
         cell.dateLabel.text = allTrips[indexPath.row].date
         cell.placeLabel.text = allTrips[indexPath.row].place
