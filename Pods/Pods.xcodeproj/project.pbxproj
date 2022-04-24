@@ -7,67 +7,67 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		01F49C5409E13D755EEEF609C28ACF65 /* NFXImageBodyDetailsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F68D61E95DC63A34DB7D1E9AB057BFA1 /* NFXImageBodyDetailsController.swift */; };
 		03A3C6313E9B3F808CE58B8E59C60A8B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 79CF7D56C5D50C18B2EA0ED106D998C7 /* Foundation.framework */; };
 		041B655D7F5932F03A65C154BC02BDAA /* IQInvocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = C062C1057EAC2F4125FA1ED1B1237680 /* IQInvocation.swift */; };
 		04B0884964D9592302CA654E0B67E80E /* IQUIView+Hierarchy.swift in Sources */ = {isa = PBXBuildFile; fileRef = C05B376DA47BC0DF0393F6931C8A1CB0 /* IQUIView+Hierarchy.swift */; };
-		05F58074CA58FAAB4D73F760EA4A720C /* NFXAuthenticationChallengeSender.swift in Sources */ = {isa = PBXBuildFile; fileRef = B298F66EE58E7F373E512EC9AB496308 /* NFXAuthenticationChallengeSender.swift */; };
 		08B185E08278AE7EC55F8BBB19693AC5 /* IQKeyboardManager+OrientationNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = B97AE25C83CF6FC21C0911557C6917B2 /* IQKeyboardManager+OrientationNotification.swift */; };
-		0B1D134E63D8AC5BB8DA03EFD8E275B7 /* NFXListCell_iOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CE46567C5ED4AF50DA419643320F298 /* NFXListCell_iOS.swift */; };
-		0B30E555275EE33F2687F6E53E9BB607 /* NFXRawBodyDetailsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A82707DF26CB2E6C790D7B616AB9206 /* NFXRawBodyDetailsController.swift */; };
 		0B8D31CBDBAB08F6A6E68BA67A2597DC /* Pods-Bag-Pack-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 62655BF4EE187A0C88018A454327072D /* Pods-Bag-Pack-dummy.m */; };
 		0F94B2449CA1ADA76AE79C0BF6A08549 /* IQKeyboardManagerConstantsInternal.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF4761D202F71BCB61FC61A91ADC8A98 /* IQKeyboardManagerConstantsInternal.swift */; };
+		128CE09CD1B5963378F625E4C96C42FF /* NFXStatisticsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 763D74D19AFFD6D61D8B8D8B341444D8 /* NFXStatisticsController.swift */; };
 		1740CBB33D469AEDD5D7291A9268FA97 /* IQToolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 119F3FD97F634C76CB148AEA5897D6EF /* IQToolbar.swift */; };
 		1A9B9579E46EFBA63C5F57A6B17B5ECA /* IQKeyboardManagerSwift-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = A47EEAECB2E74ACC48D73F0B864460BA /* IQKeyboardManagerSwift-dummy.m */; };
 		1D8031C86A94D32E00ED55B80428A0F3 /* IQKeyboardManager+Toolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EBFFA1877BCB9430715DD75AC70A7FD /* IQKeyboardManager+Toolbar.swift */; };
 		20616A47873318F80BFFEABAC9730122 /* IQTitleBarButtonItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2221E10952DF1F7E907607EEB11D02C /* IQTitleBarButtonItem.swift */; };
-		2243734875956C8AACB62C7F4CF0BAE2 /* NFXProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CF14C6FE88491F894516E0FDB37AEEA /* NFXProtocol.swift */; };
-		235D4AC0385EB689286CF73FD2322DDE /* NFXSettingsController_iOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = F646AAC5BCB6CCBEE3C133B0FFE615A1 /* NFXSettingsController_iOS.swift */; };
 		24EC44FF102C2635A476CEF7567F89DA /* IQPreviousNextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FF62A366000B22D1C116C385E51FC19 /* IQPreviousNextView.swift */; };
-		28DE4996A11689C813E9390FCA3E42F3 /* netfox-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 07FD74BDED8732D1C5D29C2E250283B4 /* netfox-dummy.m */; };
+		26A29E1970F9BB29B3C8DF42C7892BD9 /* NFXHelper_iOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 767A8FC491E6AD18E19164FA77BB549E /* NFXHelper_iOS.swift */; };
 		2CA0B3B43A972DF3AD79F58092E3403E /* IQKeyboardManager+Internal.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA1F873739BF40B6846D4E75AA86E01E /* IQKeyboardManager+Internal.swift */; };
-		2E2D822DE6E67FEA76286FAE9829D0ED /* NFXGenericController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D69593CC4CCC71A57881D3B26706988B /* NFXGenericController.swift */; };
+		2CEC993669E1B2A01DEDE716B8287C68 /* NFXSettingsController_iOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = E10A68675CA82BC50A1E4911F871AA4C /* NFXSettingsController_iOS.swift */; };
 		2E5138271A6C79BDA3C0835F2596219B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04D60AC13D33197690A05C641925DDDA /* UIKit.framework */; };
 		2EC96162DD6740ECE67FF38B8400A7C5 /* IQKeyboardManager+Debug.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1F4182C70A37E94217C75FB05FC7FED /* IQKeyboardManager+Debug.swift */; };
-		31C9FADE6F92F6F4ADE5F62CBF2240C4 /* NFXInfoController_iOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55DB3F4694C1E3289617EA2B55D450BB /* NFXInfoController_iOS.swift */; };
-		33095A0332AACCF0414E8BCD28D2E3DA /* NFXConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6492A5E14281047ED44760323653018 /* NFXConstants.swift */; };
+		31212EE57AA39C409AF4C6D3AD801B1A /* NFXInfoController_iOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D353455A5CAFEA4D1CF7EAEDB7FCDE /* NFXInfoController_iOS.swift */; };
 		34C39BDBFE7A2CC585787F5AFCA39FDE /* IQUIView+IQKeyboardToolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED1039FF2CB297156F5C60DA1DD438D5 /* IQUIView+IQKeyboardToolbar.swift */; };
-		358C6D72298D99A8ECED1B139AD4ED44 /* NFXWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33A227F059A61941D9198F04B610C192 /* NFXWindowController.swift */; };
-		361D98B58CAEB16830FE0752A45C4139 /* NFXStatisticsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAA04E7416F28D78CAF17F700792F571 /* NFXStatisticsController.swift */; };
-		397AD3CF956066DA9EBA562EA66EA484 /* NFXAssets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54923EC1C2011F585E620BCE237BF7A1 /* NFXAssets.swift */; };
+		3574700CB4882DD22F2B6E45E071E01D /* NFXGenericBodyDetailsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC888A5EE2E501CF621101EB88C6DDD /* NFXGenericBodyDetailsController.swift */; };
 		3F01EED6380B596E1D0C1497CBCF9B95 /* IQUITextFieldView+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFDAB7316E988AE52A6E4D0461A65CA5 /* IQUITextFieldView+Additions.swift */; };
 		41CD40F5713CD71AD5AB1471E81C97E1 /* IQBarButtonItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EA66651E6BBEEB965E9FC5BFDE73332 /* IQBarButtonItem.swift */; };
-		4204E981117688B0E01EEA0F1FE87DAE /* netfox-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 40B05C6BC919FE2862D15E6C8771154D /* netfox-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		5F29FF949F392A77247B52BC94B4AD6E /* NFXStatisticsController_iOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4643145D2D13B365DBD53DCD02E2A99 /* NFXStatisticsController_iOS.swift */; };
+		4204E981117688B0E01EEA0F1FE87DAE /* netfox-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 790E14472D2380B63EBC67532F96F41D /* netfox-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		48481D11F19F6F4CAC62800613A49F27 /* NFXAssets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D977EA23D5E1C388593FBF1AAB1DCA8 /* NFXAssets.swift */; };
+		55BCF3E6AF495AED09D1E4B856D7E38B /* NFXInfoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCDB0EDDCA613EA7D6EBDF44A56B083E /* NFXInfoController.swift */; };
+		5815697429E348EC76907DC972098DB0 /* NFXAuthenticationChallengeSender.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3286A0892DA65CEB20F3378400137F37 /* NFXAuthenticationChallengeSender.swift */; };
+		58D07C314EB9F7838A8CB3562B9767C2 /* NFXConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E419F7EF07EDD38817B0CAEFA7BAAD6A /* NFXConstants.swift */; };
 		60C6606FF8176EE5A38870CFD9F649C8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 79CF7D56C5D50C18B2EA0ED106D998C7 /* Foundation.framework */; };
-		74FFFBA8C689977F5C4E6ECC1F2F60DB /* NFXListController_iOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EC355830C03BD5600F8490998EBDA1F /* NFXListController_iOS.swift */; };
+		691193D4939AF2BE59C3782E1D0BC81A /* NFXRawBodyDetailsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F9E9D32427750DBF3AAA385FBEBDC19 /* NFXRawBodyDetailsController.swift */; };
+		7358B9EBDDC8C1A425EB5702739B4DA2 /* NFXURLDetailsControllerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 980789384A95ADB6A70319F1282F69EA /* NFXURLDetailsControllerViewController.swift */; };
+		74229E1865DD1520975E777775B80BB1 /* NFXProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E3488949D0F4573F5AC88DE6FD48840 /* NFXProtocol.swift */; };
+		761C78E0E1256C52E8A351F9428FA902 /* NFXListCell_iOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = F74FC578D462C6C3336CF2AF9DB01741 /* NFXListCell_iOS.swift */; };
 		7AC995F567A776FC1A80A9FA0733F3D1 /* IQNSArray+Sort.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E9F052BF51E0A5F35CA7CFCE4F29E46 /* IQNSArray+Sort.swift */; };
-		82297B407F0256EBB4D63B4B5CF78B68 /* NFXHTTPModelManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 828852F2FEB8006622B3F9C8993052EA /* NFXHTTPModelManager.swift */; };
-		82A3B4F3F92D3BB41998B1377A180004 /* NFXHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F60AE7C3369E3B9BD1ED389DF642851 /* NFXHelper.swift */; };
+		8338498A37A0E552818CB72FA9EDB996 /* NFXHTTPModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10AAE594B7187340C6BF5A3BC1CF3D82 /* NFXHTTPModel.swift */; };
 		85F13B069B06ADF2B6DCA622E4645110 /* IQKeyboardManagerConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1793E3D414B28352D55961DFFB06D3B /* IQKeyboardManagerConstants.swift */; };
 		86A03DE9366D1BE94EB99AA387EACD1F /* IQKeyboardManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 506C31B870E922A629DA67F1CE2538CF /* IQKeyboardManager.swift */; };
-		92B6D0A72C3E0135A176930935DDF598 /* NFXInfoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28CA07826C6E1A44AB73347240CE2033 /* NFXInfoController.swift */; };
-		95C0BFD1E62093CBDBE11079CF9C6F69 /* NFXListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F62E2A0A0544921CE41C6F36607CDCF /* NFXListController.swift */; };
-		965C12EDC497629220F40ADA2D18ECF5 /* NFXHelper_iOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1A88EFEED77CDEB205991A4B688C959 /* NFXHelper_iOS.swift */; };
-		9E378D16D186C796F69C8FBAB04B78F5 /* NFXSettingsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60746E31C4DAF61E9DE447CE0C4CBC15 /* NFXSettingsController.swift */; };
+		8AB42E959E8F7F2B75841D73A507BAD6 /* NFXWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A11C32F8447813965B2FBED2A615574E /* NFXWindowController.swift */; };
+		9334E518B0185C5F6235BC843B7F8A27 /* NFXDetailsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF874FFFEE4FF0C58C7F56FAE7D2D50 /* NFXDetailsController.swift */; };
 		A4BAEE317BFF650DCC888FC67BFBF7EF /* IQKeyboardManager+UIKeyboardNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C83913E1738F51B4B6A389FA0CD18F /* IQKeyboardManager+UIKeyboardNotification.swift */; };
 		A74384F92A7D2AC5243C4061ABDE6169 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 79CF7D56C5D50C18B2EA0ED106D998C7 /* Foundation.framework */; };
+		B05C6FC0332B40E5092FFA97827C76C9 /* NFXListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A56D698086F336E9C2DEAC3F885C7AB9 /* NFXListController.swift */; };
 		B1B6A2491AC437909DABE20C71BECDBC /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 840FA0B75AF62912A30DDC66B647ED98 /* CoreGraphics.framework */; };
-		B6B1FEC65DA50FF7E3DDB3AF3CAE5B65 /* NFXDetailsController_iOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69B4C62F6989868359D3EE035CA339CC /* NFXDetailsController_iOS.swift */; };
+		B529041E4C15D801791215F8E311FF47 /* NFXSettingsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C56C96122A415B28D640ADE7FCDC6605 /* NFXSettingsController.swift */; };
 		B6B43B1B78EC0E52CC08F82841A22A31 /* IQKeyboardManagerSwift-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 2BCBF5A94EEA4EC529F67EC8C164A8CF /* IQKeyboardManagerSwift-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B6EC6D40823E66D5B389ACEAC9FD7AAE /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A42DBD2F42D55606EEBA514009498B87 /* QuartzCore.framework */; };
+		B85218C188A0342EC73ECEFD1CB43F8D /* NFXHTTPModelManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CE3D19794FF5172E2ABD7E233F6DA73 /* NFXHTTPModelManager.swift */; };
+		B88E75160457951F03BA84516B672B05 /* NFXGenericController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9EB3E111CD6851E2C5A3543F62858DF /* NFXGenericController.swift */; };
+		BCEA9245D650D5153C9A0FD9F18DD4AC /* NFXListController_iOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADE23EB903D0EC5EABFF44D7E3761670 /* NFXListController_iOS.swift */; };
 		C81CB3B5D25BDBCB6D3A3632BE408229 /* IQKeyboardReturnKeyHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81C2CD1D2565ACE69BE1CC6A28C7CBED /* IQKeyboardReturnKeyHandler.swift */; };
+		D21459EB156B909DAB65DC64B8256C3B /* NFXHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FB1C5B65C8883D8D56908952B3DA7BA /* NFXHelper.swift */; };
 		D31356D54A39420DB91C892502CFFD57 /* IQUIViewController+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F992B8953F0351748D6B25CD4618DD6 /* IQUIViewController+Additions.swift */; };
+		D477756D27AD85A8C3C5F169BE218B76 /* NFXDetailsController_iOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 167B64229FC77CF663BAEDE41C52B387 /* NFXDetailsController_iOS.swift */; };
 		D6516B5451008BF1ABA150E6482F6325 /* IQKeyboardManager+UITextFieldViewNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A12EFD3A0136BE5BC1E05D48FF4A9F /* IQKeyboardManager+UITextFieldViewNotification.swift */; };
+		D7EC5FF54630FE4D546D546E22304CD0 /* NFXImageBodyDetailsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CA1A1CBC960A3CFC1379A84A5ED60F8 /* NFXImageBodyDetailsController.swift */; };
 		DCAC42CFDAA3D95D40DC3B9F94AD6F77 /* Pods-Bag-Pack-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 5C5C12A9635331D31683D0B5C472945F /* Pods-Bag-Pack-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		DF33C3DE068D6116B3F551B0453ACD23 /* IQUIScrollView+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 431BAFE16A85CB5E3ADD593618E39059 /* IQUIScrollView+Additions.swift */; };
-		E2C68BF5D75267037FD0D835E748C12C /* NFX.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20E7F1BC927F7F4D5CB598D58355707D /* NFX.swift */; };
 		E72E1BDDFF31003BD089544FC112FAAC /* IQTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1ED621F50109FF71430D16B3383D4E6 /* IQTextView.swift */; };
-		EAF937C5ABD7BCF6581C643A3164B751 /* NFXHTTPModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05043CA2FD7B68D8FDE8116F01A33FE3 /* NFXHTTPModel.swift */; };
+		E87444DCDB53BC7FA5BEB0316E97E34F /* NFX.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94780B5E707445A90E4F9BA38E72272D /* NFX.swift */; };
+		EC4867F2D2D1D8ACB4818BD39B3DC6A8 /* netfox-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 25DB03945095B572AAD509EE5AA6F147 /* netfox-dummy.m */; };
 		F2B1C1D70C629AE19C0D5121B1BBA891 /* IQKeyboardManager+Position.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A1E0E4B8BC9CD3704191A5B45754983 /* IQKeyboardManager+Position.swift */; };
-		F406EF4522F88320606CB252EFE548D1 /* NFXDetailsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7ABC342EEB66E82C80D67750876C25E /* NFXDetailsController.swift */; };
-		F59D154EC8F5725EE0A74F08AA829223 /* NFXGenericBodyDetailsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D8D1DF3692C9F641AD60E31E63539B9 /* NFXGenericBodyDetailsController.swift */; };
-		F941F3B34E489A8A9B7AE1E3BA29CB8F /* NFXURLDetailsControllerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD714AFD583FA3743E38DB39329E08BA /* NFXURLDetailsControllerViewController.swift */; };
+		FA7EFA6CCA3D70907B15CCE8E3A4FBEE /* NFXStatisticsController_iOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 539F5506F61E7905EFFE41083BB1FA97 /* NFXStatisticsController_iOS.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -89,85 +89,85 @@
 
 /* Begin PBXFileReference section */
 		04D60AC13D33197690A05C641925DDDA /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
-		05043CA2FD7B68D8FDE8116F01A33FE3 /* NFXHTTPModel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NFXHTTPModel.swift; path = netfox/Core/NFXHTTPModel.swift; sourceTree = "<group>"; };
-		074AB25F09A848BF5F816318B2B6BD73 /* netfox.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = netfox.debug.xcconfig; sourceTree = "<group>"; };
-		07FD74BDED8732D1C5D29C2E250283B4 /* netfox-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "netfox-dummy.m"; sourceTree = "<group>"; };
 		09067346D6E8AB8031DF35566C30A9F7 /* IQKeyboardManagerSwift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = IQKeyboardManagerSwift.release.xcconfig; sourceTree = "<group>"; };
-		0A82707DF26CB2E6C790D7B616AB9206 /* NFXRawBodyDetailsController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NFXRawBodyDetailsController.swift; path = netfox/Core/NFXRawBodyDetailsController.swift; sourceTree = "<group>"; };
+		0C7A4D245693E9C20F9D788196E5FF20 /* netfox-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "netfox-Info.plist"; sourceTree = "<group>"; };
 		0FF6816FB0A64DEA04D7773DF0295432 /* Pods-Bag-Pack */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "Pods-Bag-Pack"; path = Pods_Bag_Pack.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		10AAE594B7187340C6BF5A3BC1CF3D82 /* NFXHTTPModel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NFXHTTPModel.swift; path = netfox/Core/NFXHTTPModel.swift; sourceTree = "<group>"; };
 		119F3FD97F634C76CB148AEA5897D6EF /* IQToolbar.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = IQToolbar.swift; path = IQKeyboardManagerSwift/IQToolbar/IQToolbar.swift; sourceTree = "<group>"; };
-		1CE46567C5ED4AF50DA419643320F298 /* NFXListCell_iOS.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NFXListCell_iOS.swift; path = netfox/iOS/NFXListCell_iOS.swift; sourceTree = "<group>"; };
-		20E7F1BC927F7F4D5CB598D58355707D /* NFX.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NFX.swift; path = netfox/Core/NFX.swift; sourceTree = "<group>"; };
-		28CA07826C6E1A44AB73347240CE2033 /* NFXInfoController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NFXInfoController.swift; path = netfox/Core/NFXInfoController.swift; sourceTree = "<group>"; };
+		1230C2AE8101960A95604502EED38EC3 /* netfox.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = netfox.debug.xcconfig; sourceTree = "<group>"; };
+		167B64229FC77CF663BAEDE41C52B387 /* NFXDetailsController_iOS.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NFXDetailsController_iOS.swift; path = netfox/iOS/NFXDetailsController_iOS.swift; sourceTree = "<group>"; };
+		25DB03945095B572AAD509EE5AA6F147 /* netfox-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "netfox-dummy.m"; sourceTree = "<group>"; };
+		26D353455A5CAFEA4D1CF7EAEDB7FCDE /* NFXInfoController_iOS.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NFXInfoController_iOS.swift; path = netfox/iOS/NFXInfoController_iOS.swift; sourceTree = "<group>"; };
 		2BCBF5A94EEA4EC529F67EC8C164A8CF /* IQKeyboardManagerSwift-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "IQKeyboardManagerSwift-umbrella.h"; sourceTree = "<group>"; };
 		2FF62A366000B22D1C116C385E51FC19 /* IQPreviousNextView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = IQPreviousNextView.swift; path = IQKeyboardManagerSwift/IQToolbar/IQPreviousNextView.swift; sourceTree = "<group>"; };
-		33A227F059A61941D9198F04B610C192 /* NFXWindowController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NFXWindowController.swift; path = netfox/Core/NFXWindowController.swift; sourceTree = "<group>"; };
+		3286A0892DA65CEB20F3378400137F37 /* NFXAuthenticationChallengeSender.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NFXAuthenticationChallengeSender.swift; path = netfox/Core/NFXAuthenticationChallengeSender.swift; sourceTree = "<group>"; };
 		3B1A8F3768C7692C84AC4AABFD9B157A /* IQKeyboardManagerSwift-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "IQKeyboardManagerSwift-prefix.pch"; sourceTree = "<group>"; };
-		3CF14C6FE88491F894516E0FDB37AEEA /* NFXProtocol.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NFXProtocol.swift; path = netfox/Core/NFXProtocol.swift; sourceTree = "<group>"; };
-		3F60AE7C3369E3B9BD1ED389DF642851 /* NFXHelper.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NFXHelper.swift; path = netfox/Core/NFXHelper.swift; sourceTree = "<group>"; };
-		40B05C6BC919FE2862D15E6C8771154D /* netfox-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "netfox-umbrella.h"; sourceTree = "<group>"; };
+		3F9E9D32427750DBF3AAA385FBEBDC19 /* NFXRawBodyDetailsController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NFXRawBodyDetailsController.swift; path = netfox/iOS/NFXRawBodyDetailsController.swift; sourceTree = "<group>"; };
 		431BAFE16A85CB5E3ADD593618E39059 /* IQUIScrollView+Additions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "IQUIScrollView+Additions.swift"; path = "IQKeyboardManagerSwift/Categories/IQUIScrollView+Additions.swift"; sourceTree = "<group>"; };
+		4DC888A5EE2E501CF621101EB88C6DDD /* NFXGenericBodyDetailsController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NFXGenericBodyDetailsController.swift; path = netfox/Core/NFXGenericBodyDetailsController.swift; sourceTree = "<group>"; };
 		4F491E8EB86E6FBE11F409FEDA9C12DE /* Pods-Bag-Pack-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Bag-Pack-acknowledgements.markdown"; sourceTree = "<group>"; };
 		506C31B870E922A629DA67F1CE2538CF /* IQKeyboardManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = IQKeyboardManager.swift; path = IQKeyboardManagerSwift/IQKeyboardManager.swift; sourceTree = "<group>"; };
-		54923EC1C2011F585E620BCE237BF7A1 /* NFXAssets.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NFXAssets.swift; path = netfox/Core/NFXAssets.swift; sourceTree = "<group>"; };
-		55DB3F4694C1E3289617EA2B55D450BB /* NFXInfoController_iOS.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NFXInfoController_iOS.swift; path = netfox/iOS/NFXInfoController_iOS.swift; sourceTree = "<group>"; };
+		50E8DD43088093145757FF3256CA1312 /* netfox-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "netfox-prefix.pch"; sourceTree = "<group>"; };
+		539F5506F61E7905EFFE41083BB1FA97 /* NFXStatisticsController_iOS.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NFXStatisticsController_iOS.swift; path = netfox/iOS/NFXStatisticsController_iOS.swift; sourceTree = "<group>"; };
 		5C5C12A9635331D31683D0B5C472945F /* Pods-Bag-Pack-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Bag-Pack-umbrella.h"; sourceTree = "<group>"; };
 		5EA66651E6BBEEB965E9FC5BFDE73332 /* IQBarButtonItem.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = IQBarButtonItem.swift; path = IQKeyboardManagerSwift/IQToolbar/IQBarButtonItem.swift; sourceTree = "<group>"; };
-		5F62E2A0A0544921CE41C6F36607CDCF /* NFXListController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NFXListController.swift; path = netfox/Core/NFXListController.swift; sourceTree = "<group>"; };
-		60746E31C4DAF61E9DE447CE0C4CBC15 /* NFXSettingsController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NFXSettingsController.swift; path = netfox/Core/NFXSettingsController.swift; sourceTree = "<group>"; };
 		62655BF4EE187A0C88018A454327072D /* Pods-Bag-Pack-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Bag-Pack-dummy.m"; sourceTree = "<group>"; };
-		69B4C62F6989868359D3EE035CA339CC /* NFXDetailsController_iOS.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NFXDetailsController_iOS.swift; path = netfox/iOS/NFXDetailsController_iOS.swift; sourceTree = "<group>"; };
-		6B90A0EC0364481C8DB65AC90BE4911C /* netfox.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = netfox.release.xcconfig; sourceTree = "<group>"; };
+		6D977EA23D5E1C388593FBF1AAB1DCA8 /* NFXAssets.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NFXAssets.swift; path = netfox/Core/NFXAssets.swift; sourceTree = "<group>"; };
 		6E9F052BF51E0A5F35CA7CFCE4F29E46 /* IQNSArray+Sort.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "IQNSArray+Sort.swift"; path = "IQKeyboardManagerSwift/Categories/IQNSArray+Sort.swift"; sourceTree = "<group>"; };
 		6F992B8953F0351748D6B25CD4618DD6 /* IQUIViewController+Additions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "IQUIViewController+Additions.swift"; path = "IQKeyboardManagerSwift/Categories/IQUIViewController+Additions.swift"; sourceTree = "<group>"; };
 		70671C7268AAC276E6D12C7311675E31 /* Pods-Bag-Pack-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Bag-Pack-acknowledgements.plist"; sourceTree = "<group>"; };
+		763D74D19AFFD6D61D8B8D8B341444D8 /* NFXStatisticsController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NFXStatisticsController.swift; path = netfox/Core/NFXStatisticsController.swift; sourceTree = "<group>"; };
+		767A8FC491E6AD18E19164FA77BB549E /* NFXHelper_iOS.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NFXHelper_iOS.swift; path = netfox/iOS/NFXHelper_iOS.swift; sourceTree = "<group>"; };
+		790E14472D2380B63EBC67532F96F41D /* netfox-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "netfox-umbrella.h"; sourceTree = "<group>"; };
 		79CF7D56C5D50C18B2EA0ED106D998C7 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		7EBFFA1877BCB9430715DD75AC70A7FD /* IQKeyboardManager+Toolbar.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "IQKeyboardManager+Toolbar.swift"; path = "IQKeyboardManagerSwift/IQKeyboardManager+Toolbar.swift"; sourceTree = "<group>"; };
+		7FB1C5B65C8883D8D56908952B3DA7BA /* NFXHelper.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NFXHelper.swift; path = netfox/Core/NFXHelper.swift; sourceTree = "<group>"; };
 		81C2CD1D2565ACE69BE1CC6A28C7CBED /* IQKeyboardReturnKeyHandler.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = IQKeyboardReturnKeyHandler.swift; path = IQKeyboardManagerSwift/IQKeyboardReturnKeyHandler.swift; sourceTree = "<group>"; };
-		828852F2FEB8006622B3F9C8993052EA /* NFXHTTPModelManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NFXHTTPModelManager.swift; path = netfox/Core/NFXHTTPModelManager.swift; sourceTree = "<group>"; };
 		840FA0B75AF62912A30DDC66B647ED98 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/CoreGraphics.framework; sourceTree = DEVELOPER_DIR; };
 		8A1E0E4B8BC9CD3704191A5B45754983 /* IQKeyboardManager+Position.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "IQKeyboardManager+Position.swift"; path = "IQKeyboardManagerSwift/IQKeyboardManager+Position.swift"; sourceTree = "<group>"; };
 		8C3256A7802988717549E04D8B79223F /* Pods-Bag-Pack.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Bag-Pack.debug.xcconfig"; sourceTree = "<group>"; };
+		8CA1A1CBC960A3CFC1379A84A5ED60F8 /* NFXImageBodyDetailsController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NFXImageBodyDetailsController.swift; path = netfox/Core/NFXImageBodyDetailsController.swift; sourceTree = "<group>"; };
+		8CE3D19794FF5172E2ABD7E233F6DA73 /* NFXHTTPModelManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NFXHTTPModelManager.swift; path = netfox/Core/NFXHTTPModelManager.swift; sourceTree = "<group>"; };
 		8D23922FE3C9A7C4BD82FFC505970B9D /* Pods-Bag-Pack-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Bag-Pack-Info.plist"; sourceTree = "<group>"; };
-		8D8D1DF3692C9F641AD60E31E63539B9 /* NFXGenericBodyDetailsController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NFXGenericBodyDetailsController.swift; path = netfox/Core/NFXGenericBodyDetailsController.swift; sourceTree = "<group>"; };
-		8F245751511C1FFAD0557D393372370D /* netfox.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = netfox.modulemap; sourceTree = "<group>"; };
+		94780B5E707445A90E4F9BA38E72272D /* NFX.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NFX.swift; path = netfox/Core/NFX.swift; sourceTree = "<group>"; };
+		980789384A95ADB6A70319F1282F69EA /* NFXURLDetailsControllerViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NFXURLDetailsControllerViewController.swift; path = netfox/iOS/NFXURLDetailsControllerViewController.swift; sourceTree = "<group>"; };
 		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		9EC355830C03BD5600F8490998EBDA1F /* NFXListController_iOS.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NFXListController_iOS.swift; path = netfox/iOS/NFXListController_iOS.swift; sourceTree = "<group>"; };
+		9E3488949D0F4573F5AC88DE6FD48840 /* NFXProtocol.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NFXProtocol.swift; path = netfox/Core/NFXProtocol.swift; sourceTree = "<group>"; };
 		A07E28E74CD423D3B85EB1094D9F56A1 /* Pods-Bag-Pack.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Bag-Pack.release.xcconfig"; sourceTree = "<group>"; };
 		A0A12EFD3A0136BE5BC1E05D48FF4A9F /* IQKeyboardManager+UITextFieldViewNotification.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "IQKeyboardManager+UITextFieldViewNotification.swift"; path = "IQKeyboardManagerSwift/IQKeyboardManager+UITextFieldViewNotification.swift"; sourceTree = "<group>"; };
-		A2DEB74B9CC9AE3153BD0DAB3374DCC0 /* netfox-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "netfox-Info.plist"; sourceTree = "<group>"; };
-		A31D32D2F6BA3A28F92132B3E42BB792 /* netfox-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "netfox-prefix.pch"; sourceTree = "<group>"; };
+		A11C32F8447813965B2FBED2A615574E /* NFXWindowController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NFXWindowController.swift; path = netfox/Core/NFXWindowController.swift; sourceTree = "<group>"; };
 		A42DBD2F42D55606EEBA514009498B87 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/QuartzCore.framework; sourceTree = DEVELOPER_DIR; };
 		A47EEAECB2E74ACC48D73F0B864460BA /* IQKeyboardManagerSwift-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "IQKeyboardManagerSwift-dummy.m"; sourceTree = "<group>"; };
-		A7ABC342EEB66E82C80D67750876C25E /* NFXDetailsController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NFXDetailsController.swift; path = netfox/Core/NFXDetailsController.swift; sourceTree = "<group>"; };
+		A56D698086F336E9C2DEAC3F885C7AB9 /* NFXListController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NFXListController.swift; path = netfox/Core/NFXListController.swift; sourceTree = "<group>"; };
 		A8E950A16D00F649C54FFB30F81D7842 /* IQKeyboardManagerSwift */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = IQKeyboardManagerSwift; path = IQKeyboardManagerSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		ACCA47E0D24A125E2A492503728F56E1 /* netfox.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = netfox.release.xcconfig; sourceTree = "<group>"; };
+		ADE23EB903D0EC5EABFF44D7E3761670 /* NFXListController_iOS.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NFXListController_iOS.swift; path = netfox/iOS/NFXListController_iOS.swift; sourceTree = "<group>"; };
 		B2221E10952DF1F7E907607EEB11D02C /* IQTitleBarButtonItem.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = IQTitleBarButtonItem.swift; path = IQKeyboardManagerSwift/IQToolbar/IQTitleBarButtonItem.swift; sourceTree = "<group>"; };
-		B298F66EE58E7F373E512EC9AB496308 /* NFXAuthenticationChallengeSender.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NFXAuthenticationChallengeSender.swift; path = netfox/Core/NFXAuthenticationChallengeSender.swift; sourceTree = "<group>"; };
-		B4643145D2D13B365DBD53DCD02E2A99 /* NFXStatisticsController_iOS.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NFXStatisticsController_iOS.swift; path = netfox/iOS/NFXStatisticsController_iOS.swift; sourceTree = "<group>"; };
+		B2828D1A4D788BA708CA0491F6A554A4 /* netfox.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = netfox.modulemap; sourceTree = "<group>"; };
 		B97AE25C83CF6FC21C0911557C6917B2 /* IQKeyboardManager+OrientationNotification.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "IQKeyboardManager+OrientationNotification.swift"; path = "IQKeyboardManagerSwift/IQKeyboardManager+OrientationNotification.swift"; sourceTree = "<group>"; };
+		B9EB3E111CD6851E2C5A3543F62858DF /* NFXGenericController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NFXGenericController.swift; path = netfox/Core/NFXGenericController.swift; sourceTree = "<group>"; };
 		BA7B8540B15B50675F397FEB8C44C1CC /* Pods-Bag-Pack.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-Bag-Pack.modulemap"; sourceTree = "<group>"; };
 		BF1952EA0085A4CE36B4AE041BE60B82 /* netfox */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = netfox; path = netfox.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C05B376DA47BC0DF0393F6931C8A1CB0 /* IQUIView+Hierarchy.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "IQUIView+Hierarchy.swift"; path = "IQKeyboardManagerSwift/Categories/IQUIView+Hierarchy.swift"; sourceTree = "<group>"; };
 		C062C1057EAC2F4125FA1ED1B1237680 /* IQInvocation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = IQInvocation.swift; path = IQKeyboardManagerSwift/IQToolbar/IQInvocation.swift; sourceTree = "<group>"; };
+		C56C96122A415B28D640ADE7FCDC6605 /* NFXSettingsController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NFXSettingsController.swift; path = netfox/Core/NFXSettingsController.swift; sourceTree = "<group>"; };
+		CCDB0EDDCA613EA7D6EBDF44A56B083E /* NFXInfoController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NFXInfoController.swift; path = netfox/Core/NFXInfoController.swift; sourceTree = "<group>"; };
 		CFDAB7316E988AE52A6E4D0461A65CA5 /* IQUITextFieldView+Additions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "IQUITextFieldView+Additions.swift"; path = "IQKeyboardManagerSwift/Categories/IQUITextFieldView+Additions.swift"; sourceTree = "<group>"; };
 		D1ED621F50109FF71430D16B3383D4E6 /* IQTextView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = IQTextView.swift; path = IQKeyboardManagerSwift/IQTextView/IQTextView.swift; sourceTree = "<group>"; };
 		D375F2BC3921C96663AF179B2FA59811 /* IQKeyboardManagerSwift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = IQKeyboardManagerSwift.debug.xcconfig; sourceTree = "<group>"; };
 		D3C83913E1738F51B4B6A389FA0CD18F /* IQKeyboardManager+UIKeyboardNotification.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "IQKeyboardManager+UIKeyboardNotification.swift"; path = "IQKeyboardManagerSwift/IQKeyboardManager+UIKeyboardNotification.swift"; sourceTree = "<group>"; };
 		D68209B3250ADD085B4DBBEAD5375A17 /* IQKeyboardManagerSwift-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "IQKeyboardManagerSwift-Info.plist"; sourceTree = "<group>"; };
-		D69593CC4CCC71A57881D3B26706988B /* NFXGenericController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NFXGenericController.swift; path = netfox/Core/NFXGenericController.swift; sourceTree = "<group>"; };
 		D7B02FA31929EA2A1AF211FE98EBBE16 /* Pods-Bag-Pack-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Bag-Pack-frameworks.sh"; sourceTree = "<group>"; };
 		D8FAFA447BD9AA0B1E6D931287182ED1 /* IQKeyboardManagerSwift.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = IQKeyboardManagerSwift.modulemap; sourceTree = "<group>"; };
 		DA1F873739BF40B6846D4E75AA86E01E /* IQKeyboardManager+Internal.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "IQKeyboardManager+Internal.swift"; path = "IQKeyboardManagerSwift/IQKeyboardManager+Internal.swift"; sourceTree = "<group>"; };
+		DEF874FFFEE4FF0C58C7F56FAE7D2D50 /* NFXDetailsController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NFXDetailsController.swift; path = netfox/Core/NFXDetailsController.swift; sourceTree = "<group>"; };
 		DF4761D202F71BCB61FC61A91ADC8A98 /* IQKeyboardManagerConstantsInternal.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = IQKeyboardManagerConstantsInternal.swift; path = IQKeyboardManagerSwift/Constants/IQKeyboardManagerConstantsInternal.swift; sourceTree = "<group>"; };
+		E10A68675CA82BC50A1E4911F871AA4C /* NFXSettingsController_iOS.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NFXSettingsController_iOS.swift; path = netfox/iOS/NFXSettingsController_iOS.swift; sourceTree = "<group>"; };
 		E1793E3D414B28352D55961DFFB06D3B /* IQKeyboardManagerConstants.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = IQKeyboardManagerConstants.swift; path = IQKeyboardManagerSwift/Constants/IQKeyboardManagerConstants.swift; sourceTree = "<group>"; };
 		E1F4182C70A37E94217C75FB05FC7FED /* IQKeyboardManager+Debug.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "IQKeyboardManager+Debug.swift"; path = "IQKeyboardManagerSwift/IQKeyboardManager+Debug.swift"; sourceTree = "<group>"; };
-		E6492A5E14281047ED44760323653018 /* NFXConstants.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NFXConstants.swift; path = netfox/Core/NFXConstants.swift; sourceTree = "<group>"; };
-		EAA04E7416F28D78CAF17F700792F571 /* NFXStatisticsController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NFXStatisticsController.swift; path = netfox/Core/NFXStatisticsController.swift; sourceTree = "<group>"; };
+		E419F7EF07EDD38817B0CAEFA7BAAD6A /* NFXConstants.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NFXConstants.swift; path = netfox/Core/NFXConstants.swift; sourceTree = "<group>"; };
 		ED1039FF2CB297156F5C60DA1DD438D5 /* IQUIView+IQKeyboardToolbar.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "IQUIView+IQKeyboardToolbar.swift"; path = "IQKeyboardManagerSwift/IQToolbar/IQUIView+IQKeyboardToolbar.swift"; sourceTree = "<group>"; };
-		F1A88EFEED77CDEB205991A4B688C959 /* NFXHelper_iOS.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NFXHelper_iOS.swift; path = netfox/iOS/NFXHelper_iOS.swift; sourceTree = "<group>"; };
-		F646AAC5BCB6CCBEE3C133B0FFE615A1 /* NFXSettingsController_iOS.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NFXSettingsController_iOS.swift; path = netfox/iOS/NFXSettingsController_iOS.swift; sourceTree = "<group>"; };
-		F68D61E95DC63A34DB7D1E9AB057BFA1 /* NFXImageBodyDetailsController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NFXImageBodyDetailsController.swift; path = netfox/Core/NFXImageBodyDetailsController.swift; sourceTree = "<group>"; };
-		FD714AFD583FA3743E38DB39329E08BA /* NFXURLDetailsControllerViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NFXURLDetailsControllerViewController.swift; path = netfox/iOS/NFXURLDetailsControllerViewController.swift; sourceTree = "<group>"; };
+		F74FC578D462C6C3336CF2AF9DB01741 /* NFXListCell_iOS.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NFXListCell_iOS.swift; path = netfox/iOS/NFXListCell_iOS.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -216,16 +216,16 @@
 			path = "../Target Support Files/IQKeyboardManagerSwift";
 			sourceTree = "<group>";
 		};
-		3623DFE9DE2E3BA67AA51FEDFCDEFE0B /* Support Files */ = {
+		23D8194E41D326941F1B1B4CBA1702E0 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				8F245751511C1FFAD0557D393372370D /* netfox.modulemap */,
-				07FD74BDED8732D1C5D29C2E250283B4 /* netfox-dummy.m */,
-				A2DEB74B9CC9AE3153BD0DAB3374DCC0 /* netfox-Info.plist */,
-				A31D32D2F6BA3A28F92132B3E42BB792 /* netfox-prefix.pch */,
-				40B05C6BC919FE2862D15E6C8771154D /* netfox-umbrella.h */,
-				074AB25F09A848BF5F816318B2B6BD73 /* netfox.debug.xcconfig */,
-				6B90A0EC0364481C8DB65AC90BE4911C /* netfox.release.xcconfig */,
+				B2828D1A4D788BA708CA0491F6A554A4 /* netfox.modulemap */,
+				25DB03945095B572AAD509EE5AA6F147 /* netfox-dummy.m */,
+				0C7A4D245693E9C20F9D788196E5FF20 /* netfox-Info.plist */,
+				50E8DD43088093145757FF3256CA1312 /* netfox-prefix.pch */,
+				790E14472D2380B63EBC67532F96F41D /* netfox-umbrella.h */,
+				1230C2AE8101960A95604502EED38EC3 /* netfox.debug.xcconfig */,
+				ACCA47E0D24A125E2A492503728F56E1 /* netfox.release.xcconfig */,
 			);
 			name = "Support Files";
 			path = "../Target Support Files/netfox";
@@ -262,7 +262,7 @@
 			isa = PBXGroup;
 			children = (
 				B7EC18D6DECF8D95AE46C826EBFAC9EB /* IQKeyboardManagerSwift */,
-				D46DD675E71EBE7E53F103FECF43BDB3 /* netfox */,
+				F28949AA9AAC466359B3C17FCDFB75F7 /* netfox */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -318,36 +318,36 @@
 			);
 			sourceTree = "<group>";
 		};
-		D46DD675E71EBE7E53F103FECF43BDB3 /* netfox */ = {
+		F28949AA9AAC466359B3C17FCDFB75F7 /* netfox */ = {
 			isa = PBXGroup;
 			children = (
-				20E7F1BC927F7F4D5CB598D58355707D /* NFX.swift */,
-				54923EC1C2011F585E620BCE237BF7A1 /* NFXAssets.swift */,
-				B298F66EE58E7F373E512EC9AB496308 /* NFXAuthenticationChallengeSender.swift */,
-				E6492A5E14281047ED44760323653018 /* NFXConstants.swift */,
-				A7ABC342EEB66E82C80D67750876C25E /* NFXDetailsController.swift */,
-				69B4C62F6989868359D3EE035CA339CC /* NFXDetailsController_iOS.swift */,
-				8D8D1DF3692C9F641AD60E31E63539B9 /* NFXGenericBodyDetailsController.swift */,
-				D69593CC4CCC71A57881D3B26706988B /* NFXGenericController.swift */,
-				3F60AE7C3369E3B9BD1ED389DF642851 /* NFXHelper.swift */,
-				F1A88EFEED77CDEB205991A4B688C959 /* NFXHelper_iOS.swift */,
-				05043CA2FD7B68D8FDE8116F01A33FE3 /* NFXHTTPModel.swift */,
-				828852F2FEB8006622B3F9C8993052EA /* NFXHTTPModelManager.swift */,
-				F68D61E95DC63A34DB7D1E9AB057BFA1 /* NFXImageBodyDetailsController.swift */,
-				28CA07826C6E1A44AB73347240CE2033 /* NFXInfoController.swift */,
-				55DB3F4694C1E3289617EA2B55D450BB /* NFXInfoController_iOS.swift */,
-				1CE46567C5ED4AF50DA419643320F298 /* NFXListCell_iOS.swift */,
-				5F62E2A0A0544921CE41C6F36607CDCF /* NFXListController.swift */,
-				9EC355830C03BD5600F8490998EBDA1F /* NFXListController_iOS.swift */,
-				3CF14C6FE88491F894516E0FDB37AEEA /* NFXProtocol.swift */,
-				0A82707DF26CB2E6C790D7B616AB9206 /* NFXRawBodyDetailsController.swift */,
-				60746E31C4DAF61E9DE447CE0C4CBC15 /* NFXSettingsController.swift */,
-				F646AAC5BCB6CCBEE3C133B0FFE615A1 /* NFXSettingsController_iOS.swift */,
-				EAA04E7416F28D78CAF17F700792F571 /* NFXStatisticsController.swift */,
-				B4643145D2D13B365DBD53DCD02E2A99 /* NFXStatisticsController_iOS.swift */,
-				FD714AFD583FA3743E38DB39329E08BA /* NFXURLDetailsControllerViewController.swift */,
-				33A227F059A61941D9198F04B610C192 /* NFXWindowController.swift */,
-				3623DFE9DE2E3BA67AA51FEDFCDEFE0B /* Support Files */,
+				94780B5E707445A90E4F9BA38E72272D /* NFX.swift */,
+				6D977EA23D5E1C388593FBF1AAB1DCA8 /* NFXAssets.swift */,
+				3286A0892DA65CEB20F3378400137F37 /* NFXAuthenticationChallengeSender.swift */,
+				E419F7EF07EDD38817B0CAEFA7BAAD6A /* NFXConstants.swift */,
+				DEF874FFFEE4FF0C58C7F56FAE7D2D50 /* NFXDetailsController.swift */,
+				167B64229FC77CF663BAEDE41C52B387 /* NFXDetailsController_iOS.swift */,
+				4DC888A5EE2E501CF621101EB88C6DDD /* NFXGenericBodyDetailsController.swift */,
+				B9EB3E111CD6851E2C5A3543F62858DF /* NFXGenericController.swift */,
+				7FB1C5B65C8883D8D56908952B3DA7BA /* NFXHelper.swift */,
+				767A8FC491E6AD18E19164FA77BB549E /* NFXHelper_iOS.swift */,
+				10AAE594B7187340C6BF5A3BC1CF3D82 /* NFXHTTPModel.swift */,
+				8CE3D19794FF5172E2ABD7E233F6DA73 /* NFXHTTPModelManager.swift */,
+				8CA1A1CBC960A3CFC1379A84A5ED60F8 /* NFXImageBodyDetailsController.swift */,
+				CCDB0EDDCA613EA7D6EBDF44A56B083E /* NFXInfoController.swift */,
+				26D353455A5CAFEA4D1CF7EAEDB7FCDE /* NFXInfoController_iOS.swift */,
+				F74FC578D462C6C3336CF2AF9DB01741 /* NFXListCell_iOS.swift */,
+				A56D698086F336E9C2DEAC3F885C7AB9 /* NFXListController.swift */,
+				ADE23EB903D0EC5EABFF44D7E3761670 /* NFXListController_iOS.swift */,
+				9E3488949D0F4573F5AC88DE6FD48840 /* NFXProtocol.swift */,
+				3F9E9D32427750DBF3AAA385FBEBDC19 /* NFXRawBodyDetailsController.swift */,
+				C56C96122A415B28D640ADE7FCDC6605 /* NFXSettingsController.swift */,
+				E10A68675CA82BC50A1E4911F871AA4C /* NFXSettingsController_iOS.swift */,
+				763D74D19AFFD6D61D8B8D8B341444D8 /* NFXStatisticsController.swift */,
+				539F5506F61E7905EFFE41083BB1FA97 /* NFXStatisticsController_iOS.swift */,
+				980789384A95ADB6A70319F1282F69EA /* NFXURLDetailsControllerViewController.swift */,
+				A11C32F8447813965B2FBED2A615574E /* NFXWindowController.swift */,
+				23D8194E41D326941F1B1B4CBA1702E0 /* Support Files */,
 			);
 			name = netfox;
 			path = netfox;
@@ -407,7 +407,7 @@
 			buildConfigurationList = 14A279E0E52265F9827871C7B385FECF /* Build configuration list for PBXNativeTarget "netfox" */;
 			buildPhases = (
 				65291404637D07A5ED182E253AD0F838 /* Headers */,
-				A523093938D8319B6178E9E35BB18477 /* Sources */,
+				1C26D5BA4615AB19B5D967FD06A2D1DA /* Sources */,
 				5103A0C004E78246B9C76DF2426B3108 /* Frameworks */,
 				1A6389CB6438FF76B4F60C2F69618033 /* Resources */,
 			);
@@ -512,45 +512,45 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		1C26D5BA4615AB19B5D967FD06A2D1DA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EC4867F2D2D1D8ACB4818BD39B3DC6A8 /* netfox-dummy.m in Sources */,
+				E87444DCDB53BC7FA5BEB0316E97E34F /* NFX.swift in Sources */,
+				48481D11F19F6F4CAC62800613A49F27 /* NFXAssets.swift in Sources */,
+				5815697429E348EC76907DC972098DB0 /* NFXAuthenticationChallengeSender.swift in Sources */,
+				58D07C314EB9F7838A8CB3562B9767C2 /* NFXConstants.swift in Sources */,
+				9334E518B0185C5F6235BC843B7F8A27 /* NFXDetailsController.swift in Sources */,
+				D477756D27AD85A8C3C5F169BE218B76 /* NFXDetailsController_iOS.swift in Sources */,
+				3574700CB4882DD22F2B6E45E071E01D /* NFXGenericBodyDetailsController.swift in Sources */,
+				B88E75160457951F03BA84516B672B05 /* NFXGenericController.swift in Sources */,
+				D21459EB156B909DAB65DC64B8256C3B /* NFXHelper.swift in Sources */,
+				26A29E1970F9BB29B3C8DF42C7892BD9 /* NFXHelper_iOS.swift in Sources */,
+				8338498A37A0E552818CB72FA9EDB996 /* NFXHTTPModel.swift in Sources */,
+				B85218C188A0342EC73ECEFD1CB43F8D /* NFXHTTPModelManager.swift in Sources */,
+				D7EC5FF54630FE4D546D546E22304CD0 /* NFXImageBodyDetailsController.swift in Sources */,
+				55BCF3E6AF495AED09D1E4B856D7E38B /* NFXInfoController.swift in Sources */,
+				31212EE57AA39C409AF4C6D3AD801B1A /* NFXInfoController_iOS.swift in Sources */,
+				761C78E0E1256C52E8A351F9428FA902 /* NFXListCell_iOS.swift in Sources */,
+				B05C6FC0332B40E5092FFA97827C76C9 /* NFXListController.swift in Sources */,
+				BCEA9245D650D5153C9A0FD9F18DD4AC /* NFXListController_iOS.swift in Sources */,
+				74229E1865DD1520975E777775B80BB1 /* NFXProtocol.swift in Sources */,
+				691193D4939AF2BE59C3782E1D0BC81A /* NFXRawBodyDetailsController.swift in Sources */,
+				B529041E4C15D801791215F8E311FF47 /* NFXSettingsController.swift in Sources */,
+				2CEC993669E1B2A01DEDE716B8287C68 /* NFXSettingsController_iOS.swift in Sources */,
+				128CE09CD1B5963378F625E4C96C42FF /* NFXStatisticsController.swift in Sources */,
+				FA7EFA6CCA3D70907B15CCE8E3A4FBEE /* NFXStatisticsController_iOS.swift in Sources */,
+				7358B9EBDDC8C1A425EB5702739B4DA2 /* NFXURLDetailsControllerViewController.swift in Sources */,
+				8AB42E959E8F7F2B75841D73A507BAD6 /* NFXWindowController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		94B777EB57ED971AB93B2F7AA54B7ADA /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				0B8D31CBDBAB08F6A6E68BA67A2597DC /* Pods-Bag-Pack-dummy.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		A523093938D8319B6178E9E35BB18477 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				28DE4996A11689C813E9390FCA3E42F3 /* netfox-dummy.m in Sources */,
-				E2C68BF5D75267037FD0D835E748C12C /* NFX.swift in Sources */,
-				397AD3CF956066DA9EBA562EA66EA484 /* NFXAssets.swift in Sources */,
-				05F58074CA58FAAB4D73F760EA4A720C /* NFXAuthenticationChallengeSender.swift in Sources */,
-				33095A0332AACCF0414E8BCD28D2E3DA /* NFXConstants.swift in Sources */,
-				F406EF4522F88320606CB252EFE548D1 /* NFXDetailsController.swift in Sources */,
-				B6B1FEC65DA50FF7E3DDB3AF3CAE5B65 /* NFXDetailsController_iOS.swift in Sources */,
-				F59D154EC8F5725EE0A74F08AA829223 /* NFXGenericBodyDetailsController.swift in Sources */,
-				2E2D822DE6E67FEA76286FAE9829D0ED /* NFXGenericController.swift in Sources */,
-				82A3B4F3F92D3BB41998B1377A180004 /* NFXHelper.swift in Sources */,
-				965C12EDC497629220F40ADA2D18ECF5 /* NFXHelper_iOS.swift in Sources */,
-				EAF937C5ABD7BCF6581C643A3164B751 /* NFXHTTPModel.swift in Sources */,
-				82297B407F0256EBB4D63B4B5CF78B68 /* NFXHTTPModelManager.swift in Sources */,
-				01F49C5409E13D755EEEF609C28ACF65 /* NFXImageBodyDetailsController.swift in Sources */,
-				92B6D0A72C3E0135A176930935DDF598 /* NFXInfoController.swift in Sources */,
-				31C9FADE6F92F6F4ADE5F62CBF2240C4 /* NFXInfoController_iOS.swift in Sources */,
-				0B1D134E63D8AC5BB8DA03EFD8E275B7 /* NFXListCell_iOS.swift in Sources */,
-				95C0BFD1E62093CBDBE11079CF9C6F69 /* NFXListController.swift in Sources */,
-				74FFFBA8C689977F5C4E6ECC1F2F60DB /* NFXListController_iOS.swift in Sources */,
-				2243734875956C8AACB62C7F4CF0BAE2 /* NFXProtocol.swift in Sources */,
-				0B30E555275EE33F2687F6E53E9BB607 /* NFXRawBodyDetailsController.swift in Sources */,
-				9E378D16D186C796F69C8FBAB04B78F5 /* NFXSettingsController.swift in Sources */,
-				235D4AC0385EB689286CF73FD2322DDE /* NFXSettingsController_iOS.swift in Sources */,
-				361D98B58CAEB16830FE0752A45C4139 /* NFXStatisticsController.swift in Sources */,
-				5F29FF949F392A77247B52BC94B4AD6E /* NFXStatisticsController_iOS.swift in Sources */,
-				F941F3B34E489A8A9B7AE1E3BA29CB8F /* NFXURLDetailsControllerViewController.swift in Sources */,
-				358C6D72298D99A8ECED1B139AD4ED44 /* NFXWindowController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -839,7 +839,7 @@
 		};
 		BD05C31B9C4C10943E8FE140E37311A6 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 074AB25F09A848BF5F816318B2B6BD73 /* netfox.debug.xcconfig */;
+			baseConfigurationReference = 1230C2AE8101960A95604502EED38EC3 /* netfox.debug.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -911,7 +911,7 @@
 		};
 		FE417CB1982DDFAA8AD674217609A905 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6B90A0EC0364481C8DB65AC90BE4911C /* netfox.release.xcconfig */;
+			baseConfigurationReference = ACCA47E0D24A125E2A492503728F56E1 /* netfox.release.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";

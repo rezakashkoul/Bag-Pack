@@ -17,9 +17,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         NFX.sharedInstance().start()
-        IQKeyboardManager.shared.enable = true
         IQKeyboardManager.shared.toolbarTintColor = appGlobalTintColor
-//        IQKeyboardManager.shared.keyboardDistanceFromTextField = 0
+        IQKeyboardManager.shared.keyboardDistanceFromTextField = 0
+        IQKeyboardManager.shared.enableAutoToolbar = true
         return true
     }
     

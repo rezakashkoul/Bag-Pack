@@ -1,6 +1,6 @@
 PODS:
   - IQKeyboardManagerSwift (6.5.9)
-  - netfox (1.20.0)
+  - netfox (1.21.0)
 
 DEPENDENCIES:
   - IQKeyboardManagerSwift
@@ -13,7 +13,7 @@ SPEC REPOS:
 
 SPEC CHECKSUMS:
   IQKeyboardManagerSwift: 6e839c575c4aa1078d58a596e41244e77abe918f
-  netfox: 6b5c9724304b0cd99ca8515ac732a9f710e4ea5f
+  netfox: 9d5cc727fe7576c4c7688a2504618a156b7d44b7
 
 PODFILE CHECKSUM: fc662bad3eee2bf6556b5335d90b687d3dcef818
 

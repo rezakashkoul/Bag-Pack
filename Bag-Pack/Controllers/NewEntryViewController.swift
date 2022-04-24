@@ -12,8 +12,8 @@ protocol NewEntryViewControllerDelegate: AnyObject {
 }
 
 class NewEntryViewController: UIViewController, UITextFieldDelegate {
-    
-    @IBOutlet weak var scrollView: UIScrollView!
+        
+    @IBOutlet weak var bottomConstraint: NSLayoutConstraint!
     @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var titleTextField: UITextField!
     @IBOutlet weak var placeTextField: UITextField!
@@ -137,25 +137,16 @@ extension NewEntryViewController {
     func setupKeyboard() {
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
-        view.addGestureRecognizer(UIGestureRecognizer(target: self, action: #selector(endKeyboard)))
     }
     
-    @objc func endKeyboard() {
-        view.endEditing(true)
-    }
-    
-    @objc func keyboardWillShow(){
-        if !isExpand {
-            scrollView.contentSize = CGSize(width: view.frame.width, height: scrollView.frame.height)
-            isExpand = true
+    @objc func keyboardWillShow(notification: NSNotification) {
+        if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
+            let keyboardHeight : Int = Int(keyboardSize.height)
+            bottomConstraint.constant = CGFloat(keyboardHeight + 30)
         }
     }
     
     @objc func keyboardWillHide(){
-        if isExpand {
-            scrollView.contentSize = CGSize(width: view.frame.width, height: scrollView.frame.height)
-            isExpand = false
-        }
+        bottomConstraint.constant = CGFloat(20)
     }
-    
 }
