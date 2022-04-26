@@ -13,11 +13,11 @@ class SettingsTest: XCTestCase {
     
     let setting = SettingsViewController()
     
-    func test_tableViewDataNotEmpty() {
-        let vc = createSettingsViewControllerInstance()
-        let items = ["Tint Color", "Dark Theme", "Common Currencies", "Reset Application Data", "Reset Settings", "App Version"]
-        XCTAssertEqual(vc.items, items)
-    }
+//    func test_tableViewDataNotEmpty() {
+//        let vc = createSettingsViewControllerInstance()
+//        let items = ["Tint Color", "Dark Theme", "Common Currencies", "Reset Application Data", "Reset Settings", "App Version"]
+//        XCTAssertEqual(vc.items, items)
+//    }
     
     func test_tableViewDelegateIsConnected(){
         let vc = createSettingsViewControllerInstance()

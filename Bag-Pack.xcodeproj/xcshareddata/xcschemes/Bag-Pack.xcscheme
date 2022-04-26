@@ -39,6 +39,16 @@
                ReferencedContainer = "container:Bag-Pack.xcodeproj">
             </BuildableReference>
          </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "EBF3F36A2817D82E0023F509"
+               BuildableName = "Bag-PackUITests.xctest"
+               BlueprintName = "Bag-PackUITests"
+               ReferencedContainer = "container:Bag-Pack.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
    </TestAction>
    <LaunchAction

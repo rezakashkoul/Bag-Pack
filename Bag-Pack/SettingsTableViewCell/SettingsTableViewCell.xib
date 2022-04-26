@@ -60,6 +60,7 @@
                             </view>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="87f-7S-bz3">
                                 <rect key="frame" x="563" y="62" width="51" height="31"/>
+                                <accessibility key="accessibilityConfiguration" identifier="ThemeSwitch"/>
                                 <connections>
                                     <action selector="themeSwitchAction:" destination="KGk-i7-Jjw" eventType="valueChanged" id="EjN-7Y-1ac"/>
                                 </connections>

@@ -84,6 +84,8 @@
 		EBF1664427FC481A00D8AC4A /* MockData.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBF1664327FC481A00D8AC4A /* MockData.swift */; };
 		EBF1664627FC4C5800D8AC4A /* AlertManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBF1664527FC4C5800D8AC4A /* AlertManager.swift */; };
 		EBF1664827FC8E3700D8AC4A /* EssentialTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBF1664727FC8E3700D8AC4A /* EssentialTests.swift */; };
+		EBF3F36E2817D82E0023F509 /* Bag_PackUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBF3F36D2817D82E0023F509 /* Bag_PackUITests.swift */; };
+		EBF3F3702817D82E0023F509 /* Bag_PackUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBF3F36F2817D82E0023F509 /* Bag_PackUITestsLaunchTests.swift */; };
 		F700B53427B3F22900BDCD37 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F700B53327B3F22900BDCD37 /* AppDelegate.swift */; };
 		F700B53627B3F22900BDCD37 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F700B53527B3F22900BDCD37 /* SceneDelegate.swift */; };
 		F700B53827B3F22900BDCD37 /* DashboradViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F700B53727B3F22900BDCD37 /* DashboradViewController.swift */; };
@@ -99,6 +101,13 @@
 
 /* Begin PBXContainerItemProxy section */
 		EB95016627FADA8B00AC10FA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F700B52827B3F22900BDCD37 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F700B52F27B3F22900BDCD37;
+			remoteInfo = "Bag-Pack";
+		};
+		EBF3F3712817D82E0023F509 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = F700B52827B3F22900BDCD37 /* Project object */;
 			proxyType = 1;
@@ -188,6 +197,9 @@
 		EBF1664327FC481A00D8AC4A /* MockData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockData.swift; sourceTree = "<group>"; };
 		EBF1664527FC4C5800D8AC4A /* AlertManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertManager.swift; sourceTree = "<group>"; };
 		EBF1664727FC8E3700D8AC4A /* EssentialTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EssentialTests.swift; sourceTree = "<group>"; };
+		EBF3F36B2817D82E0023F509 /* Bag-PackUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Bag-PackUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		EBF3F36D2817D82E0023F509 /* Bag_PackUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bag_PackUITests.swift; sourceTree = "<group>"; };
+		EBF3F36F2817D82E0023F509 /* Bag_PackUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bag_PackUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		F700B53027B3F22900BDCD37 /* Bag-Pack.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Bag-Pack.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F700B53327B3F22900BDCD37 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F700B53527B3F22900BDCD37 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -205,6 +217,13 @@
 
 /* Begin PBXFrameworksBuildPhase section */
 		EB95015F27FADA8B00AC10FA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EBF3F3682817D82E0023F509 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -615,11 +634,21 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
+		EBF3F36C2817D82E0023F509 /* Bag-PackUITests */ = {
+			isa = PBXGroup;
+			children = (
+				EBF3F36D2817D82E0023F509 /* Bag_PackUITests.swift */,
+				EBF3F36F2817D82E0023F509 /* Bag_PackUITestsLaunchTests.swift */,
+			);
+			path = "Bag-PackUITests";
+			sourceTree = "<group>";
+		};
 		F700B52727B3F22900BDCD37 = {
 			isa = PBXGroup;
 			children = (
 				F700B53227B3F22900BDCD37 /* Bag-Pack */,
 				EB95016327FADA8B00AC10FA /* Bag-PackTests */,
+				EBF3F36C2817D82E0023F509 /* Bag-PackUITests */,
 				F700B53127B3F22900BDCD37 /* Products */,
 				13656AA0F399AD0135DA84E4 /* Pods */,
 				BEAF0A9504136E5668CFC69C /* Frameworks */,
@@ -631,6 +660,7 @@
 			children = (
 				F700B53027B3F22900BDCD37 /* Bag-Pack.app */,
 				EB95016227FADA8B00AC10FA /* Bag-PackTests.xctest */,
+				EBF3F36B2817D82E0023F509 /* Bag-PackUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -702,6 +732,24 @@
 			productReference = EB95016227FADA8B00AC10FA /* Bag-PackTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		EBF3F36A2817D82E0023F509 /* Bag-PackUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EBF3F3752817D82E0023F509 /* Build configuration list for PBXNativeTarget "Bag-PackUITests" */;
+			buildPhases = (
+				EBF3F3672817D82E0023F509 /* Sources */,
+				EBF3F3682817D82E0023F509 /* Frameworks */,
+				EBF3F3692817D82E0023F509 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				EBF3F3722817D82E0023F509 /* PBXTargetDependency */,
+			);
+			name = "Bag-PackUITests";
+			productName = "Bag-PackUITests";
+			productReference = EBF3F36B2817D82E0023F509 /* Bag-PackUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 		F700B52F27B3F22900BDCD37 /* Bag-Pack */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = F700B54427B3F22A00BDCD37 /* Build configuration list for PBXNativeTarget "Bag-Pack" */;
@@ -735,6 +783,10 @@
 						CreatedOnToolsVersion = 13.3;
 						TestTargetID = F700B52F27B3F22900BDCD37;
 					};
+					EBF3F36A2817D82E0023F509 = {
+						CreatedOnToolsVersion = 13.3;
+						TestTargetID = F700B52F27B3F22900BDCD37;
+					};
 					F700B52F27B3F22900BDCD37 = {
 						CreatedOnToolsVersion = 13.2.1;
 					};
@@ -755,12 +807,20 @@
 			targets = (
 				F700B52F27B3F22900BDCD37 /* Bag-Pack */,
 				EB95016127FADA8B00AC10FA /* Bag-PackTests */,
+				EBF3F36A2817D82E0023F509 /* Bag-PackUITests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
 		EB95016027FADA8B00AC10FA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EBF3F3692817D82E0023F509 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -838,6 +898,15 @@
 				EB06254F2802FF8E001C248C /* CostTests.swift in Sources */,
 				EBF1664827FC8E3700D8AC4A /* EssentialTests.swift in Sources */,
 				EB4EC2C2280EE81D0027243F /* GeneralTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EBF3F3672817D82E0023F509 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EBF3F3702817D82E0023F509 /* Bag_PackUITestsLaunchTests.swift in Sources */,
+				EBF3F36E2817D82E0023F509 /* Bag_PackUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -928,6 +997,11 @@
 			target = F700B52F27B3F22900BDCD37 /* Bag-Pack */;
 			targetProxy = EB95016627FADA8B00AC10FA /* PBXContainerItemProxy */;
 		};
+		EBF3F3722817D82E0023F509 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F700B52F27B3F22900BDCD37 /* Bag-Pack */;
+			targetProxy = EBF3F3712817D82E0023F509 /* PBXContainerItemProxy */;
+		};
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
@@ -985,6 +1059,42 @@
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Bag-Pack.app/Bag-Pack";
+			};
+			name = Release;
+		};
+		EBF3F3732817D82E0023F509 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 8U9S422V4H;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "rezakashkoul.Bag-Pack.Bag-PackUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Bag-Pack";
+			};
+			name = Debug;
+		};
+		EBF3F3742817D82E0023F509 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 8U9S422V4H;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "rezakashkoul.Bag-Pack.Bag-PackUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Bag-Pack";
 			};
 			name = Release;
 		};
@@ -1174,6 +1284,15 @@
 			buildConfigurations = (
 				EB95016827FADA8B00AC10FA /* Debug */,
 				EB95016927FADA8B00AC10FA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EBF3F3752817D82E0023F509 /* Build configuration list for PBXNativeTarget "Bag-PackUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EBF3F3732817D82E0023F509 /* Debug */,
+				EBF3F3742817D82E0023F509 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
