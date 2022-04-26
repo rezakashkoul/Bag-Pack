@@ -244,10 +244,10 @@
             </objects>
             <point key="canvasLocation" x="357" y="1476"/>
         </scene>
-        <!--New Entry View Controller-->
+        <!--New Entry-->
         <scene sceneID="VyE-y9-Yiq">
             <objects>
-                <viewController storyboardIdentifier="NewEntryViewController" id="iK4-IL-iVx" customClass="NewEntryViewController" customModule="Bag_Pack" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="NewEntryViewController" title="New Entry" id="iK4-IL-iVx" customClass="NewEntryViewController" customModule="Bag_Pack" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="yVT-U0-s5O">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -447,7 +447,7 @@
                                         <rect key="frame" x="0.0" y="258" width="326" height="148"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rfn-ia-afC" customClass="GradientSlider" customModule="Bag_Pack" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="0.0" width="326" height="36"/>
+                                                <rect key="frame" x="-2" y="-4" width="330" height="44"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="36" id="xVv-Fe-bJa"/>
                                                 </constraints>
@@ -467,7 +467,7 @@
                                                 </userDefinedRuntimeAttributes>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="djf-WL-U5b" customClass="GradientSlider" customModule="Bag_Pack" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="56" width="326" height="36"/>
+                                                <rect key="frame" x="-2" y="52" width="330" height="44"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="36" id="wTK-Tx-mje"/>
                                                 </constraints>
@@ -488,7 +488,7 @@
                                                 </userDefinedRuntimeAttributes>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KHi-Iq-FBh" customClass="GradientSlider" customModule="Bag_Pack" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="112" width="326" height="36"/>
+                                                <rect key="frame" x="-2" y="108" width="330" height="44"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="36" id="Y1f-7j-Iba"/>
                                                 </constraints>
@@ -539,6 +539,17 @@
             <point key="canvasLocation" x="311" y="117"/>
         </scene>
     </scenes>
+    <designables>
+        <designable name="KHi-Iq-FBh">
+            <size key="intrinsicContentSize" width="-1" height="28"/>
+        </designable>
+        <designable name="djf-WL-U5b">
+            <size key="intrinsicContentSize" width="-1" height="28"/>
+        </designable>
+        <designable name="rfn-ia-afC">
+            <size key="intrinsicContentSize" width="-1" height="28"/>
+        </designable>
+    </designables>
     <resources>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

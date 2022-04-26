@@ -52,8 +52,7 @@ class Bag_PackUITestsLaunchTests: XCTestCase {
         app.alerts["Reset application Settings"].scrollViews.otherElements.buttons["Reset Settings"].tap()
         tablesQuery/*@START_MENU_TOKEN@*/.staticTexts["Reset Application Data"]/*[[".cells.staticTexts[\"Reset Application Data\"]",".staticTexts[\"Reset Application Data\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
         app.alerts["Reset entire data"].scrollViews.otherElements.buttons["Reset data"].tap()
-                        
-
+        settings.tap()
     }
     
     func addingAnewEntry(_ app: XCUIApplication) {
@@ -64,13 +63,15 @@ class Bag_PackUITestsLaunchTests: XCTestCase {
         let elementsQuery = app.scrollViews.otherElements
         elementsQuery.textFields["Travel Title"].tap()
         
-        let strings = ["A", "B", "C", "D","E", "F", "G", "H"]
+//        let strings = ["A", "B", "C", "D","E", "F", "G", "H"]
         
-        let aKey = app.keys[strings.randomElement()!]
+//        let aKey = app.keys[strings.randomElement()!]
+        let aKey = app.keys["A"]
         aKey.tap()
         elementsQuery.textFields["Place Name"].tap()
         
-        let bKey = app.keys[strings.randomElement()!]
+//        let bKey = app.keys[strings.randomElement()!]
+        let bKey = app.keys["B"]
         bKey.tap()
         elementsQuery.textFields["Desired Budget"].tap()
         
@@ -93,68 +94,77 @@ class Bag_PackUITestsLaunchTests: XCTestCase {
         tablesQuery/*@START_MENU_TOKEN@*/.buttons["Delete"]/*[[".cells.buttons[\"Delete\"]",".buttons[\"Delete\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
     }
     
-    //    func test_completeTripDetails() {
-    //
-    //        let app = XCUIApplication()
-    //        app.launch()
-    //        addingAnewEntry(app)
-    //
-    //        let addEntryButton = app.navigationBars.buttons.element(boundBy: 1)
-    //        addEntryButton.tap()
-    //
-    //
-    //        let alertQuery = app.alerts["Add new item"].scrollViews.otherElements
-    //
+    
+    
+    
+    
+    
+    
+    
+    
+//        func test_completeTripDetails() {
+//
+//            let app = XCUIApplication()
+//            app.launch()
+//            addingAnewEntry(app)
+//
+//            let addEntryButton = app.navigationBars.buttons.element(boundBy: 1)
+//            addEntryButton.tap()
+//
+//            let alertQuery = app.alerts["Add new item"].scrollViews.otherElements
+//            alertQuery.textFields["Write an item to remember"].tap()
+//            alertQuery.textFields.keys["f"].tap()
+//            app.alerts["Add new item"].scrollViews.otherElements.buttons["Add"].tap()
+//
+    
 
-    //        addUIInterruptionMonitor(withDescription: "Alert Dialog") { (alert) -> Bool in
+//            addUIInterruptionMonitor(withDescription: "Alert Dialog") { (alert) -> Bool in
+//
+//                app.children(matching: .window).element(boundBy: 1).tap()
+//                return false
+//            }
+    
+    //        //            alert.buttons["Add"].tap()
+    //        let addButt = NSPredicate(format: "Add")
+    //        app.alerts.buttons.element(matching: addButt).tap()
     //
-    //            alertQuery.textFields["Write an item to remember"].tap()
-    //            alertQuery.keys["f"].tap()
-    //            app.children(matching: .window).element(boundBy: 1).tap()
-    //            return false
-    //        }
+    
+    
+    
+    //        alertQuery.buttons["Add"].tap()
+    //        app.buttons["Return"].tap()
+    
+    
+    
+    
+    
+    
     //
-    ////        //            alert.buttons["Add"].tap()
-    ////        let addButt = NSPredicate(format: "Add")
-    ////        app.alerts.buttons.element(matching: addButt).tap()
-    ////
+    //        let tabBar = app.tabBars["Tab Bar"]
+    //        tabBar.buttons["Costs"].tap()
+    //        app.navigationBars["Costs"].buttons["Add"].tap()
+    //
+    //        let collectionViewsQuery = app.alerts["Add items"].scrollViews.otherElements.collectionViews
+    //        collectionViewsQuery/*@START_MENU_TOKEN@*/.textFields["Title of purchase"]/*[[".cells.textFields[\"Title of purchase\"]",".textFields[\"Title of purchase\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
+    //
+    //        let bKey = app/*@START_MENU_TOKEN@*/.keys["b"]/*[[".keyboards.keys[\"b\"]",".keys[\"b\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/
+    //        bKey.tap()
+    //        collectionViewsQuery/*@START_MENU_TOKEN@*/.textFields["Price"]/*[[".cells.textFields[\"Price\"]",".textFields[\"Price\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
+    //
+    //        let key = app/*@START_MENU_TOKEN@*/.keys["2"]/*[[".keyboards.keys[\"2\"]",".keys[\"2\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/
+    //        key.tap()
+    ////        app.alerts["Add items"].scrollViews.otherElements.buttons["Add"].tap()
+    //        app.buttons["Return"].tap()
+    //
+    //        tabBar.buttons["Note "].tap()
+    //        app.textViews.containing(.staticText, identifier:"Type here...").element.tap()
+    //
+    //        let gKey = app/*@START_MENU_TOKEN@*/.keys["G"]/*[[".keyboards.keys[\"G\"]",".keys[\"G\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/
+    //        gKey.tap()
+    //        app.toolbars["Toolbar"].buttons["Done"].tap()
     //
     //
-    //
-    ////        alertQuery.buttons["Add"].tap()
-    ////        app.buttons["Return"].tap()
-    //
-    //
-    //
-    //
-    //
-    //
-    ////
-    ////        let tabBar = app.tabBars["Tab Bar"]
-    ////        tabBar.buttons["Costs"].tap()
-    ////        app.navigationBars["Costs"].buttons["Add"].tap()
-    ////
-    ////        let collectionViewsQuery = app.alerts["Add items"].scrollViews.otherElements.collectionViews
-    ////        collectionViewsQuery/*@START_MENU_TOKEN@*/.textFields["Title of purchase"]/*[[".cells.textFields[\"Title of purchase\"]",".textFields[\"Title of purchase\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
-    ////
-    ////        let bKey = app/*@START_MENU_TOKEN@*/.keys["b"]/*[[".keyboards.keys[\"b\"]",".keys[\"b\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/
-    ////        bKey.tap()
-    ////        collectionViewsQuery/*@START_MENU_TOKEN@*/.textFields["Price"]/*[[".cells.textFields[\"Price\"]",".textFields[\"Price\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
-    ////
-    ////        let key = app/*@START_MENU_TOKEN@*/.keys["2"]/*[[".keyboards.keys[\"2\"]",".keys[\"2\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/
-    ////        key.tap()
-    //////        app.alerts["Add items"].scrollViews.otherElements.buttons["Add"].tap()
-    ////        app.buttons["Return"].tap()
-    ////
-    ////        tabBar.buttons["Note "].tap()
-    ////        app.textViews.containing(.staticText, identifier:"Type here...").element.tap()
-    ////
-    ////        let gKey = app/*@START_MENU_TOKEN@*/.keys["G"]/*[[".keyboards.keys[\"G\"]",".keys[\"G\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/
-    ////        gKey.tap()
-    ////        app.toolbars["Toolbar"].buttons["Done"].tap()
-    ////
-    ////
-    ////        deleteEntry(app)
-    //
-    //    }
+    //        deleteEntry(app)
+    
+//        }
 }

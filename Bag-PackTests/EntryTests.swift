@@ -13,7 +13,7 @@ class EntryTests: XCTestCase {
 
     func test_navigationTitleHasSet() {
         let vc = createNewEntryViewControllerInstance()
-        XCTAssertEqual(vc.title, "New Trip")
+        XCTAssertEqual(vc.title, "New Entry")
     }
     
     //MARK: - Create an Instance for this ViewController
