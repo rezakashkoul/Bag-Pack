@@ -39,13 +39,13 @@ class Bag_PackUITestsLaunchTests: XCTestCase {
 //
 //    }
     
-    func test_addingANewTrip() {
-        
-        let app = XCUIApplication()
-        app.launch()
-        addingAnewEntry(app)
-        deleteEntry(app)
-    }
+//    func test_addingANewTrip() {
+//
+//        let app = XCUIApplication()
+//        app.launch()
+//        addingAnewEntry(app)
+//        deleteEntry(app)
+//    }
     
     func test_completeTripDetails() {
 
@@ -74,20 +74,13 @@ class Bag_PackUITestsLaunchTests: XCTestCase {
         
         let costAddButton = app.alerts["Add items"].scrollViews.otherElements.buttons["Add"]
         costAddButton.tap()
-
+        
         tabBar.buttons["Note"].tap()
         app.textViews.containing(.staticText, identifier:"Type here...").element.tap()
-
-        app.keys["F"].tap()
-        app.keys["a"].tap()
-        app.keys["n"].tap()
-        app.keys["t"].tap()
-        app.keys["a"].tap()
-        app.keys["s"].tap()
-        app.keys["t"].tap()
-        app.keys["i"].tap()
-        app.keys["c"].tap()
-        
+        let text = """
+                        This time it was wonderful. We went to some beautiful places, like \"Motel Qou\", \"Namak Abroud" etc. It was not an expensive experiance so we plann the same trip for someday soooooon. Oh I forgot to tell, I rided a hourse for the very first time close to beach!
+                   """
+        app.textViews.containing(.staticText, identifier:"Type here...").element.typeText(text)
         app.toolbars["Toolbar"].buttons["Done"].tap()
 
         deleteEntry(app)
@@ -104,18 +97,17 @@ class Bag_PackUITestsLaunchTests: XCTestCase {
         let tablesQuery = app.tables
         tablesQuery/*@START_MENU_TOKEN@*/.staticTexts["Reset Settings"]/*[[".cells.staticTexts[\"Reset Settings\"]",".staticTexts[\"Reset Settings\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
         app.alerts["Reset application Settings"].scrollViews.otherElements.buttons["Reset Settings"].tap()
-        
-        tablesQuery.switches["ThemeSwitch"].tap()
-        
+                
         tablesQuery/*@START_MENU_TOKEN@*/.buttons["Rials"]/*[[".cells",".segmentedControls.buttons[\"Rials\"]",".buttons[\"Rials\"]"],[[[-1,2],[-1,1],[-1,0,1]],[[-1,2],[-1,1]]],[0]]@END_MENU_TOKEN@*/.tap()
         tablesQuery/*@START_MENU_TOKEN@*/.buttons["€"]/*[[".cells",".segmentedControls.buttons[\"€\"]",".buttons[\"€\"]"],[[[-1,2],[-1,1],[-1,0,1]],[[-1,2],[-1,1]]],[0]]@END_MENU_TOKEN@*/.tap()
         tablesQuery/*@START_MENU_TOKEN@*/.buttons["$"]/*[[".cells",".segmentedControls.buttons[\"$\"]",".buttons[\"$\"]"],[[[-1,2],[-1,1],[-1,0,1]],[[-1,2],[-1,1]]],[0]]@END_MENU_TOKEN@*/.tap()
         
+        tablesQuery.switches["ThemeSwitch"].tap()
+
         tablesQuery/*@START_MENU_TOKEN@*/.staticTexts["Tint Color"]/*[[".cells.staticTexts[\"Tint Color\"]",".staticTexts[\"Tint Color\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
         let elementsQuery = app.scrollViews.otherElements
         elementsQuery.otherElements["green 54"].tap()
         elementsQuery.buttons["close"].tap()
-        
         
         tablesQuery/*@START_MENU_TOKEN@*/.staticTexts["Reset Application Data"]/*[[".cells.staticTexts[\"Reset Application Data\"]",".staticTexts[\"Reset Application Data\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
         app.alerts["Reset entire data"].scrollViews.otherElements.buttons["Reset data"].tap()
@@ -149,7 +141,6 @@ class Bag_PackUITestsLaunchTests: XCTestCase {
         elementsQuery.textFields["Desired Budget"].tap()
         
         app.keys["1"].tap()
-        app.keys["0"].tap()
         app.keys["0"].tap()
         app.keys["0"].tap()
         app.keys["0"].tap()
