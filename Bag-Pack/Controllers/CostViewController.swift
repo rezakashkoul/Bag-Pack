@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import WhatsNewKit
 
 class CostViewController: UIViewController {
     
@@ -21,6 +22,7 @@ class CostViewController: UIViewController {
         tableView.tableFooterView = UIView()
         setupUI()
         calculateCostSum()
+        showWelcomeToCost()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -78,6 +80,15 @@ class CostViewController: UIViewController {
                 navigationItem.titleView = setTitle(title: navigationItem.title!, subtitle: "\(totalAmount ?? 0) \(appCurrencyUnit.rawValue.convertToCurrencyUnit())")
             }
         }
+    }
+    
+    func showWelcomeToCost() {
+        let detailVc = WhatsNewViewController(
+            whatsNew:
+                WhatsNew(title: "Add a New Item with the Payment Price!", items: [
+                    WhatsNew.Item(title: "To add a new item, press the \"New\" button on the top right corner", subtitle: "This section is also helpful for you to to have an eye on the trip's costs.You can see the total amount at top in a real time", image: UIImage(named: "budget")),
+                ]))
+        present(detailVc, animated: true)
     }
     
 }

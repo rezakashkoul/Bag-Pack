@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import WhatsNewKit
 
 class NoteViewController: UIViewController, UITextViewDelegate {
     
@@ -17,6 +18,7 @@ class NoteViewController: UIViewController, UITextViewDelegate {
         textView.delegate = self
         textView.keyboardDismissMode = .onDrag
         setupKeyboard()
+        showWelcomeToNote()
     }
     
     deinit {
@@ -49,6 +51,15 @@ class NoteViewController: UIViewController, UITextViewDelegate {
     
     @objc private func backButton() {
         tabBarController?.navigationController?.popViewController(animated: true)
+    }
+    
+    func showWelcomeToNote() {
+        let detailVc = WhatsNewViewController(
+            whatsNew:
+                WhatsNew(title: "Add a New Note!", items: [
+                    WhatsNew.Item(title: "Write your ideas, comments or any notes for this trip. ", subtitle: "This will help you never miss anything or happenings in the trip.This really can effect on your future trips.", image: UIImage(named: "noteItem")),
+                ]))
+        present(detailVc, animated: true)
     }
     
 }

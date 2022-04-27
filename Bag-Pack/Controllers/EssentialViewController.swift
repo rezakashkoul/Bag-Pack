@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import WhatsNewKit
 
 class EssentialViewController: UIViewController {
     
@@ -18,6 +19,7 @@ class EssentialViewController: UIViewController {
         tableView.register(UINib(nibName: "EssentialTableViewCell", bundle: nil), forCellReuseIdentifier: "EssentialTableViewCell")
         tableView.tableFooterView = UIView()
         setupUI()
+        showWelcomeToEssential()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -65,6 +67,15 @@ class EssentialViewController: UIViewController {
                 }
             }
         }
+    }
+    
+    func showWelcomeToEssential() {
+        let detailVc = WhatsNewViewController(
+            whatsNew:
+                WhatsNew(title: "Add a New Essential Item!", items: [
+                    WhatsNew.Item(title: "To add a new item, press the \"New\" button on the top right corner", subtitle: "This section Will help you to list your importnant stuff to bring with you in the trip", image: UIImage(named: "essentialItem")),
+                ]))
+        present(detailVc, animated: true)
     }
     
 }

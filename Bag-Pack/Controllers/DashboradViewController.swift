@@ -7,10 +7,20 @@
 
 import UIKit
 import netfox
+import WhatsNewKit
 
 class DashboradViewController: UIViewController, NewEntryViewControllerDelegate {
     
     @IBOutlet weak var tableView: UITableView!
+    
+    var showWelcomeToAppIsShown = false {
+        didSet{
+                if showWelcomeToAppIsShown {
+                    showWelcomeToDashBoard()
+                    showWelcomeToAppIsShown = false
+                }
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -18,7 +28,8 @@ class DashboradViewController: UIViewController, NewEntryViewControllerDelegate 
         tableView.delegate = self
         tableView.dataSource = self
         setupUI()
-//        fetchTravelData()
+        //        fetchTravelData()
+        showWelcomeToApp()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -36,6 +47,7 @@ class DashboradViewController: UIViewController, NewEntryViewControllerDelegate 
         
         view.window?.tintColor = appGlobalTintColor
         changeTheme()
+
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -143,6 +155,38 @@ class DashboradViewController: UIViewController, NewEntryViewControllerDelegate 
         case .noData:
             print("No data ", error)
         }
+    }
+    
+    func showWelcomeToDashBoard() {
+        let detailVc = WhatsNewViewController(
+            whatsNew:
+                WhatsNew(title: "Add a New Entry!", items: [
+                    WhatsNew.Item(title: "To add a new entry, press the \"New\" button on the top right corner", subtitle: "", image: UIImage(named: "new")),
+                ]))
+        present(detailVc, animated: true)
+        showWelcomeToAppIsShown = false
+    }
+    
+    func showWelcomeToApp() {
+        let vc = WhatsNewViewController(
+            whatsNew:
+                WhatsNew(title: "Welcome to BagPack!", items: [
+                    WhatsNew.Item(title: "You can add manage your trips by", subtitle: "", image: UIImage(named: "manage")),
+                    WhatsNew.Item(title: "Adding a trip, you can easily", subtitle: "", image: UIImage(named: "add")),
+                    WhatsNew.Item(title: "Set a name for it", subtitle: "", image: UIImage(named: "easy")),
+                    WhatsNew.Item(title: "Specify the distenation", subtitle: "", image: UIImage(named: "destination")),
+                    WhatsNew.Item(title: "Set your desired budget", subtitle: "", image: UIImage(named: "budget")),
+                    WhatsNew.Item(title: "The period of the travel days", subtitle: "", image: UIImage(named: "days")),
+                    WhatsNew.Item(title: "Write down your essential items", subtitle: "", image: UIImage(named: "essential")),
+                    WhatsNew.Item(title: "Keep your total spending by details", subtitle: "", image: UIImage(named: "spending")),
+                    WhatsNew.Item(title: "Note your comments freely", subtitle: "", image: UIImage(named: "noteItem")),
+                    WhatsNew.Item(title: "And finaly save them easily with the date", subtitle: "", image: UIImage(named: "ok")),
+                ])
+        )
+//        vc.configuration.tintColor = appGlobalTintColor
+        //        vc.configuration.itemsView.autoTintImage = false
+        showWelcomeToAppIsShown = true
+        present(vc, animated: true)
     }
     
 }
