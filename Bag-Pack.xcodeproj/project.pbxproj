@@ -12,7 +12,6 @@
 		EB062551280302B4001C248C /* SettingsTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB062550280302B4001C248C /* SettingsTest.swift */; };
 		EB0625542803033D001C248C /* SettingsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB0625522803033D001C248C /* SettingsTableViewCell.swift */; };
 		EB0625552803033D001C248C /* SettingsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EB0625532803033D001C248C /* SettingsTableViewCell.xib */; };
-		EB0A818427FDBF1800314D58 /* NoteTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB0A818327FDBF1800314D58 /* NoteTests.swift */; };
 		EB0A818627FDC8AB00314D58 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB0A818527FDC8AB00314D58 /* Extensions.swift */; };
 		EB0A818F27FDD00000314D58 /* CostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB0A818D27FDD00000314D58 /* CostTableViewCell.swift */; };
 		EB0A819027FDD00000314D58 /* CostTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EB0A818E27FDD00000314D58 /* CostTableViewCell.xib */; };
@@ -124,7 +123,6 @@
 		EB062550280302B4001C248C /* SettingsTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTest.swift; sourceTree = "<group>"; };
 		EB0625522803033D001C248C /* SettingsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewCell.swift; sourceTree = "<group>"; };
 		EB0625532803033D001C248C /* SettingsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingsTableViewCell.xib; sourceTree = "<group>"; };
-		EB0A818327FDBF1800314D58 /* NoteTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteTests.swift; sourceTree = "<group>"; };
 		EB0A818527FDC8AB00314D58 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		EB0A818D27FDD00000314D58 /* CostTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CostTableViewCell.swift; sourceTree = "<group>"; };
 		EB0A818E27FDD00000314D58 /* CostTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CostTableViewCell.xib; sourceTree = "<group>"; };
@@ -333,7 +331,6 @@
 				EBF1663F27FC387E00D8AC4A /* DashboardTests.swift */,
 				EBF1664727FC8E3700D8AC4A /* EssentialTests.swift */,
 				EB06254E2802FF8E001C248C /* CostTests.swift */,
-				EB0A818327FDBF1800314D58 /* NoteTests.swift */,
 				EB062550280302B4001C248C /* SettingsTest.swift */,
 				EBCD4794280DA22B00069FEC /* EntryTests.swift */,
 				EB4EC2C1280EE81D0027243F /* GeneralTests.swift */,
@@ -891,7 +888,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EB0A818427FDBF1800314D58 /* NoteTests.swift in Sources */,
 				EB062551280302B4001C248C /* SettingsTest.swift in Sources */,
 				EBCD4795280DA22B00069FEC /* EntryTests.swift in Sources */,
 				EBF1664027FC387E00D8AC4A /* DashboardTests.swift in Sources */,

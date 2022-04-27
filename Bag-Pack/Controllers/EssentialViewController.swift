@@ -105,7 +105,7 @@ extension EssentialViewController {
         tabBarController?.tabBar.items![1].title = "Costs"
         tabBarController?.tabBar.items![1].image = UIImage(named: "cost")
         tabBarController?.tabBar.items![1].selectedImage = UIImage(named: "cost_filled")
-        tabBarController?.tabBar.items![2].title = "Note "
+        tabBarController?.tabBar.items![2].title = "Note"
         tabBarController?.tabBar.items![2].image = UIImage(named: "notes")
         tabBarController?.tabBar.items![2].selectedImage = UIImage(named: "notes_filled")
     }
