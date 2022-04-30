@@ -1,12 +1,12 @@
 {
   "pins" : [
     {
-      "identity" : "whatsnewkit",
+      "identity" : "applewelcomescreen",
       "kind" : "remoteSourceControl",
-      "location" : "https://github.com/SvenTiigi/WhatsNewKit.git",
+      "location" : "https://github.com/WilsonGramer/AppleWelcomeScreen.git",
       "state" : {
-        "revision" : "92a9d6f5f6754aba0df972514fd7686f1de03bcc",
-        "version" : "1.3.7"
+        "revision" : "86034118ff532aefa588275db8c057dc67297787",
+        "version" : "2.1.0"
       }
     }
   ],

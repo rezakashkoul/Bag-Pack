@@ -6,7 +6,7 @@
 //
 
 import UIKit
-import WhatsNewKit
+import AppleWelcomeScreen
 
 class CostViewController: UIViewController {
     
@@ -22,7 +22,7 @@ class CostViewController: UIViewController {
         tableView.tableFooterView = UIView()
         setupUI()
         calculateCostSum()
-        showWelcomeToCost()
+        showWelcome()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -82,13 +82,22 @@ class CostViewController: UIViewController {
         }
     }
     
-    func showWelcomeToCost() {
-        let detailVc = WhatsNewViewController(
-            whatsNew:
-                WhatsNew(title: "Add a New Item with the Payment Price!", items: [
-                    WhatsNew.Item(title: "To add a new item, press the \"New\" button on the top right corner", subtitle: "This section is also helpful for you to to have an eye on the trip's costs.You can see the total amount at top in a real time", image: UIImage(named: "budget")),
-                ]))
-        present(detailVc, animated: true)
+    func showWelcome() {
+        
+        var configuration = WelcomeScreenConfiguration(
+            appName: "budget",
+            appDescription: "Add a New Item with the Payment Price!",
+            features: [
+                WelcomeScreenFeature(
+                    image: UIImage(named: "essentialItem")!,
+                    title: "To add a new item, press the \"New\" button on the top right corner",
+                    description: "This section is also helpful for you to to have an eye on the trip's costs.You can see the total amount at top in a real time"
+                )
+            ]
+        )
+        configuration.welcomeString = ""
+        configuration.tintColor = appGlobalTintColor
+        present(WelcomeScreenViewController(configuration: configuration), animated: true)
     }
     
 }

@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import AppleWelcomeScreen
 
 protocol NewEntryViewControllerDelegate: AnyObject {
     func goForFillData()
@@ -41,6 +42,10 @@ class NewEntryViewController: UIViewController, UITextFieldDelegate {
         daysTextField.delegate = self
         setupUI()
         setupKeyboard()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        showWelcome()
     }
     
     deinit {
@@ -87,6 +92,23 @@ class NewEntryViewController: UIViewController, UITextFieldDelegate {
             AlertManager.shared.showAlert(parent: self, title: "Error!", body: "Please fill every fields", buttonTitles: ["OK"], style: .alert, showCancelButton: false) { _ in
             }
         }
+    }
+    
+    func showWelcome() {
+        var configuration = WelcomeScreenConfiguration(
+            appName: "New Entry",
+            appDescription: "Add a trip by filling information",
+            features: [
+                WelcomeScreenFeature(
+                    image: UIImage(named: "essentialItem")!,
+                    title: "Please fill every fields",
+                    description: ""
+                )
+            ]
+        )
+        configuration.welcomeString = ""
+        configuration.tintColor = appGlobalTintColor
+        present(WelcomeScreenViewController(configuration: configuration), animated: true)
     }
     
     

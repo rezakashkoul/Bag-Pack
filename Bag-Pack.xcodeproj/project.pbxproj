@@ -16,8 +16,8 @@
 		EB0A818F27FDD00000314D58 /* CostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB0A818D27FDD00000314D58 /* CostTableViewCell.swift */; };
 		EB0A819027FDD00000314D58 /* CostTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EB0A818E27FDD00000314D58 /* CostTableViewCell.xib */; };
 		EB4EC2C2280EE81D0027243F /* GeneralTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB4EC2C1280EE81D0027243F /* GeneralTests.swift */; };
+		EB553382281D5E5F007A8BDC /* AppleWelcomeScreen in Frameworks */ = {isa = PBXBuildFile; productRef = EB553381281D5E5F007A8BDC /* AppleWelcomeScreen */; };
 		EB6468492805AF4A00CBB4C4 /* NewEntryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB6468482805AF4A00CBB4C4 /* NewEntryViewController.swift */; };
-		EB8DAEB0281967E300BF06E2 /* WhatsNewKit in Frameworks */ = {isa = PBXBuildFile; productRef = EB8DAEAF281967E300BF06E2 /* WhatsNewKit */; };
 		EB91DC4A27B7DA6600D094A0 /* EssentialTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB91DC4827B7DA6600D094A0 /* EssentialTableViewCell.swift */; };
 		EB91DC4B27B7DA6600D094A0 /* EssentialTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EB91DC4927B7DA6600D094A0 /* EssentialTableViewCell.xib */; };
 		EB95016D27FAEBFE00AC10FA /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB95016C27FAEBFE00AC10FA /* NetworkManager.swift */; };
@@ -233,7 +233,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EB8DAEB0281967E300BF06E2 /* WhatsNewKit in Frameworks */,
+				EB553382281D5E5F007A8BDC /* AppleWelcomeScreen in Frameworks */,
 				B0B09B917CE347EF839FB5E5 /* Pods_Bag_Pack.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -765,7 +765,7 @@
 			);
 			name = "Bag-Pack";
 			packageProductDependencies = (
-				EB8DAEAF281967E300BF06E2 /* WhatsNewKit */,
+				EB553381281D5E5F007A8BDC /* AppleWelcomeScreen */,
 			);
 			productName = "Bag-Pack";
 			productReference = F700B53027B3F22900BDCD37 /* Bag-Pack.app */;
@@ -804,7 +804,7 @@
 			);
 			mainGroup = F700B52727B3F22900BDCD37;
 			packageReferences = (
-				EB8DAEAE281967E300BF06E2 /* XCRemoteSwiftPackageReference "WhatsNewKit" */,
+				EB553380281D5E5F007A8BDC /* XCRemoteSwiftPackageReference "AppleWelcomeScreen" */,
 			);
 			productRefGroup = F700B53127B3F22900BDCD37 /* Products */;
 			projectDirPath = "";
@@ -1322,21 +1322,21 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		EB8DAEAE281967E300BF06E2 /* XCRemoteSwiftPackageReference "WhatsNewKit" */ = {
+		EB553380281D5E5F007A8BDC /* XCRemoteSwiftPackageReference "AppleWelcomeScreen" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/SvenTiigi/WhatsNewKit.git";
+			repositoryURL = "https://github.com/WilsonGramer/AppleWelcomeScreen.git";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 1.3.1;
+				minimumVersion = 2.0.0;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		EB8DAEAF281967E300BF06E2 /* WhatsNewKit */ = {
+		EB553381281D5E5F007A8BDC /* AppleWelcomeScreen */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = EB8DAEAE281967E300BF06E2 /* XCRemoteSwiftPackageReference "WhatsNewKit" */;
-			productName = WhatsNewKit;
+			package = EB553380281D5E5F007A8BDC /* XCRemoteSwiftPackageReference "AppleWelcomeScreen" */;
+			productName = AppleWelcomeScreen;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

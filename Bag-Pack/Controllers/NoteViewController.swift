@@ -6,7 +6,7 @@
 //
 
 import UIKit
-import WhatsNewKit
+import AppleWelcomeScreen
 
 class NoteViewController: UIViewController, UITextViewDelegate {
     
@@ -18,7 +18,7 @@ class NoteViewController: UIViewController, UITextViewDelegate {
         textView.delegate = self
         textView.keyboardDismissMode = .onDrag
         setupKeyboard()
-        showWelcomeToNote()
+        showWelcome()
     }
     
     deinit {
@@ -53,13 +53,21 @@ class NoteViewController: UIViewController, UITextViewDelegate {
         tabBarController?.navigationController?.popViewController(animated: true)
     }
     
-    func showWelcomeToNote() {
-        let detailVc = WhatsNewViewController(
-            whatsNew:
-                WhatsNew(title: "Add a New Note!", items: [
-                    WhatsNew.Item(title: "Write your ideas, comments or any notes for this trip. ", subtitle: "This will help you never miss anything or happenings in the trip.This really can effect on your future trips.", image: UIImage(named: "noteItem")),
-                ]))
-        present(detailVc, animated: true)
+    func showWelcome() {
+        var configuration = WelcomeScreenConfiguration(
+            appName: "Add a New Note!",
+            appDescription: "Add a New Note!",
+            features: [
+                WelcomeScreenFeature(
+                    image: UIImage(named: "noteItem")!,
+                    title: "Write your ideas, comments or any notes for this trip.",
+                    description: "This will help you never miss anything or happenings in the trip.This really can effect on your future trips."
+                )
+            ]
+        )
+        configuration.welcomeString = ""
+        configuration.tintColor = appGlobalTintColor
+        present(WelcomeScreenViewController(configuration: configuration), animated: true)
     }
     
 }

@@ -6,7 +6,7 @@
 //
 
 import UIKit
-import WhatsNewKit
+import AppleWelcomeScreen
 
 class EssentialViewController: UIViewController {
     
@@ -19,7 +19,7 @@ class EssentialViewController: UIViewController {
         tableView.register(UINib(nibName: "EssentialTableViewCell", bundle: nil), forCellReuseIdentifier: "EssentialTableViewCell")
         tableView.tableFooterView = UIView()
         setupUI()
-        showWelcomeToEssential()
+        showWelcome()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -69,13 +69,21 @@ class EssentialViewController: UIViewController {
         }
     }
     
-    func showWelcomeToEssential() {
-        let detailVc = WhatsNewViewController(
-            whatsNew:
-                WhatsNew(title: "Add a New Essential Item!", items: [
-                    WhatsNew.Item(title: "To add a new item, press the \"New\" button on the top right corner", subtitle: "This section Will help you to list your importnant stuff to bring with you in the trip", image: UIImage(named: "essentialItem")),
-                ]))
-        present(detailVc, animated: true)
+    func showWelcome() {
+        var configuration = WelcomeScreenConfiguration(
+            appName: "Essential",
+            appDescription: "Add a New Essential Item!",
+            features: [
+                WelcomeScreenFeature(
+                    image: UIImage(named: "essentialItem")!,
+                    title: "To add a new item, press the \"New\" button on the top right corner",
+                    description: "This section Will help you to list your importnant stuff to bring with you in the trip"
+                )
+            ]
+        )
+        configuration.welcomeString = ""
+        configuration.tintColor = appGlobalTintColor
+        present(WelcomeScreenViewController(configuration: configuration), animated: true)
     }
     
 }
