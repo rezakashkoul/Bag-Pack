@@ -185,8 +185,8 @@ class DashboradViewController: UIViewController, NewEntryViewControllerDelegate 
                 )
             ]
         )
-        configuration.tintColor = appGlobalTintColor
         appWelcomeDidShow = true
+        configuration.tintColor = appGlobalTintColor
         present(WelcomeScreenViewController(configuration: configuration), animated: true)
     }
         

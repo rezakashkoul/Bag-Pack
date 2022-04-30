@@ -65,7 +65,7 @@ class NoteViewController: UIViewController, UITextViewDelegate {
                 WelcomeScreenFeature(
                     image: UIImage(named: "noteItem")!,
                     title: "Write your ideas, comments or any notes for this trip.",
-                    description: "This will help you never miss anything or happenings in the trip.This really can effect on your future trips."
+                    description: "This will help you never miss anything or happenings in the trip. This really can effect on your future trips."
                 )
             ]
         )

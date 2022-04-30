@@ -81,8 +81,8 @@ class EssentialViewController: UIViewController {
             features: [
                 WelcomeScreenFeature(
                     image: UIImage(named: "essentialItem")!,
-                    title: "To add a new item, press the \"New\" button on the top right corner",
-                    description: "This section Will help you to list your importnant stuff to bring with you in the trip"
+                    title: "To add a new item, press the \"+\" button on the top right corner",
+                    description: "This section Will help you to list your importnant stuff to bring with you in the trip."
                 )
             ]
         )

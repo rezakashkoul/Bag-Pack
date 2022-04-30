@@ -95,8 +95,8 @@ class CostViewController: UIViewController {
             features: [
                 WelcomeScreenFeature(
                     image: UIImage(named: "money")!,
-                    title: "To add a new item, press the \"New\" button on the top right corner",
-                    description: "This section is also helpful for you to to have an eye on the trip's costs.You can see the total amount at top in a real time"
+                    title: "To add a new item, press the \"+\" button on the top right corner",
+                    description: "This section is also helpful for you to to have an eye on the trip's costs. You can see the total amount at top in a real time."
                 )
             ]
         )
