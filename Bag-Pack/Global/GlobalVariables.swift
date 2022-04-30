@@ -50,6 +50,15 @@ var appGlobalTintColor: UIColor? {
     }
 }
 
+var appWelcomeDidShow: Bool {
+    get {
+        UserDefaults.standard.bool(forKey: "welcome") 
+    }
+    set {
+        UserDefaults.standard.set(newValue, forKey: "welcome")
+    }
+}
+
 func saveData() {
     if currentTrip != nil && allTrips.count > 0 {
         for i in 0..<allTrips.count {

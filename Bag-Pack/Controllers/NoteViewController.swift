@@ -18,7 +18,6 @@ class NoteViewController: UIViewController, UITextViewDelegate {
         textView.delegate = self
         textView.keyboardDismissMode = .onDrag
         setupKeyboard()
-        showWelcome()
     }
     
     deinit {
@@ -47,15 +46,20 @@ class NoteViewController: UIViewController, UITextViewDelegate {
         navigationItem.title = "Notes"
         navigationController?.navigationBar.prefersLargeTitles = true
         navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Home", style: .done, target: self, action: #selector(backButton))
+        navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named: "help"), style: .plain, target: self, action: #selector(showGuideAction))
+    }
+    
+    @objc private func showGuideAction() {
+        showGuide()
     }
     
     @objc private func backButton() {
         tabBarController?.navigationController?.popViewController(animated: true)
     }
     
-    func showWelcome() {
+    func showGuide() {
         var configuration = WelcomeScreenConfiguration(
-            appName: "Add a New Note!",
+            appName: "Note",
             appDescription: "Add a New Note!",
             features: [
                 WelcomeScreenFeature(

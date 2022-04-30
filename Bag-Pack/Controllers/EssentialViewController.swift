@@ -19,7 +19,6 @@ class EssentialViewController: UIViewController {
         tableView.register(UINib(nibName: "EssentialTableViewCell", bundle: nil), forCellReuseIdentifier: "EssentialTableViewCell")
         tableView.tableFooterView = UIView()
         setupUI()
-        showWelcome()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -34,7 +33,9 @@ class EssentialViewController: UIViewController {
     func setupUI() {
         setTabBarStyle()
         navigationItem.title = "Essential"
-        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addNewItemToCheckList))
+        let newItemsButton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addNewItemToCheckList))
+        let showGuideButton = UIBarButtonItem(image: UIImage(named: "help"), style: .plain, target: self, action: #selector(showGuideAction))
+        navigationItem.rightBarButtonItems = [newItemsButton,showGuideButton]
         navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Home", style: .done, target: self, action: #selector(backButton))
         tableView.allowsSelection = false
     }
@@ -47,6 +48,10 @@ class EssentialViewController: UIViewController {
         showAlertWithTextFieldToAddItems { text in
             print(text)
         }
+    }
+    
+    @objc private func showGuideAction() {
+        showGuide()
     }
     
     func showAlertWithTextFieldToAddItems(completion: @escaping (String) -> ()) {
@@ -69,7 +74,7 @@ class EssentialViewController: UIViewController {
         }
     }
     
-    func showWelcome() {
+    func showGuide() {
         var configuration = WelcomeScreenConfiguration(
             appName: "Essential",
             appDescription: "Add a New Essential Item!",

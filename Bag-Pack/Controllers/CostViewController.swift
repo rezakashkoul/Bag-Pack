@@ -22,7 +22,6 @@ class CostViewController: UIViewController {
         tableView.tableFooterView = UIView()
         setupUI()
         calculateCostSum()
-        showWelcome()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -37,7 +36,10 @@ class CostViewController: UIViewController {
     func setupUI() {
         navigationItem.title = "Costs"
         navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Home", style: .done, target: self, action: #selector(backButton))
-        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addNewItemToCostList))
+        let addItemsButton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addNewItemToCostList))
+        let showGuideButton = UIBarButtonItem(image: UIImage(named: "help"), style: .plain, target: self, action: #selector(showGuideAction))
+        navigationItem.rightBarButtonItems = [addItemsButton,showGuideButton]
+        
         tableView.allowsSelection = false
     }
     
@@ -49,6 +51,10 @@ class CostViewController: UIViewController {
         showAddItemAlert(completion: {_ in
             return
         })
+    }
+    
+    @objc private func showGuideAction() {
+        showGuide()
     }
     
     func showAddItemAlert(completion: @escaping ([CostDetails]) -> ()) {
@@ -82,14 +88,13 @@ class CostViewController: UIViewController {
         }
     }
     
-    func showWelcome() {
-        
+    func showGuide() {
         var configuration = WelcomeScreenConfiguration(
-            appName: "budget",
+            appName: "Costs",
             appDescription: "Add a New Item with the Payment Price!",
             features: [
                 WelcomeScreenFeature(
-                    image: UIImage(named: "essentialItem")!,
+                    image: UIImage(named: "money")!,
                     title: "To add a new item, press the \"New\" button on the top right corner",
                     description: "This section is also helpful for you to to have an eye on the trip's costs.You can see the total amount at top in a real time"
                 )

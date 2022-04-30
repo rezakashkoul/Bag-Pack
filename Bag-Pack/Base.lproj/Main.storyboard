@@ -256,6 +256,11 @@
                                 <rect key="frame" x="0.0" y="44" width="390" height="44"/>
                                 <items>
                                     <navigationItem title="New Entry" largeTitleDisplayMode="always" id="CBU-CD-eWv">
+                                        <barButtonItem key="leftBarButtonItem" image="help" id="BSb-sf-zWz">
+                                            <connections>
+                                                <action selector="showGuideAction:" destination="iK4-IL-iVx" id="ziY-iO-acf"/>
+                                            </connections>
+                                        </barButtonItem>
                                         <barButtonItem key="rightBarButtonItem" style="plain" systemItem="cancel" id="eoQ-1s-eTA">
                                             <connections>
                                                 <action selector="cancelButtonAction:" destination="iK4-IL-iVx" id="efC-Ev-V9S"/>
@@ -551,6 +556,7 @@
         </designable>
     </designables>
     <resources>
+        <image name="help" width="23.333333969116211" height="23.333333969116211"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

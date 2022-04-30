@@ -13,7 +13,7 @@ protocol NewEntryViewControllerDelegate: AnyObject {
 }
 
 class NewEntryViewController: UIViewController, UITextFieldDelegate {
-        
+    
     @IBOutlet weak var bottomConstraint: NSLayoutConstraint!
     @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var titleTextField: UITextField!
@@ -25,6 +25,10 @@ class NewEntryViewController: UIViewController, UITextFieldDelegate {
     
     @IBAction func cancelButtonAction(_ sender: Any) {
         dismiss(animated: true)
+    }
+    
+    @IBAction func showGuideAction(_ sender: Any) {
+        showGuide()
     }
     
     @IBAction func confirmButtonAction(_ sender: Any) {
@@ -42,10 +46,6 @@ class NewEntryViewController: UIViewController, UITextFieldDelegate {
         daysTextField.delegate = self
         setupUI()
         setupKeyboard()
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        showWelcome()
     }
     
     deinit {
@@ -94,15 +94,15 @@ class NewEntryViewController: UIViewController, UITextFieldDelegate {
         }
     }
     
-    func showWelcome() {
+    func showGuide() {
         var configuration = WelcomeScreenConfiguration(
             appName: "New Entry",
             appDescription: "Add a trip by filling information",
             features: [
                 WelcomeScreenFeature(
-                    image: UIImage(named: "essentialItem")!,
+                    image: UIImage(named: "new")!,
                     title: "Please fill every fields",
-                    description: ""
+                    description: "Travel title, Place name, Desired Budget and Days"
                 )
             ]
         )

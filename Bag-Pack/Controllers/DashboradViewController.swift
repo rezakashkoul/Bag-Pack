@@ -22,7 +22,6 @@ class DashboradViewController: UIViewController, NewEntryViewControllerDelegate 
         tableView.dataSource = self
         setupUI()
         //        fetchTravelData()
-        appleWelcome()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -40,6 +39,9 @@ class DashboradViewController: UIViewController, NewEntryViewControllerDelegate 
         
         view.window?.tintColor = appGlobalTintColor
         changeTheme()
+        if !appWelcomeDidShow {
+            showGuide()
+        }
 
     }
     
@@ -51,7 +53,9 @@ class DashboradViewController: UIViewController, NewEntryViewControllerDelegate 
     
     func setupNavigationBarAndItems() {
         navigationItem.title = "BagPack"
-        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "New", style: .done, target: self, action: #selector(newButtonTapped))
+        let newItemsButton = UIBarButtonItem(title: "New", style: .done, target: self, action: #selector(newButtonTapped))
+        let showGuideButton = UIBarButtonItem(image: UIImage(named: "help"), style: .plain, target: self, action: #selector(showGuideAction))
+        navigationItem.rightBarButtonItems = [newItemsButton,showGuideButton]
         navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Settings", style: .done, target: self, action: #selector(goToSettings))
     }
     
@@ -80,6 +84,10 @@ class DashboradViewController: UIViewController, NewEntryViewControllerDelegate 
         currentTrip = nil
         vc.delegate = self
         navigationController?.present(vc, animated: true)
+    }
+    
+    @objc private func showGuideAction() {
+        showGuide()
     }
     
     @objc func goToSettings() {
@@ -150,7 +158,7 @@ class DashboradViewController: UIViewController, NewEntryViewControllerDelegate 
         }
     }
     
-    func appleWelcome() {
+    func showGuide() {
         var configuration = WelcomeScreenConfiguration(
             appName: "BagPack!",
             appDescription: "A good travel manager helps you to keep track of:",
@@ -178,6 +186,7 @@ class DashboradViewController: UIViewController, NewEntryViewControllerDelegate 
             ]
         )
         configuration.tintColor = appGlobalTintColor
+        appWelcomeDidShow = true
         present(WelcomeScreenViewController(configuration: configuration), animated: true)
     }
         
@@ -221,3 +230,4 @@ extension DashboradViewController: UITableViewDelegate, UITableViewDataSource {
         }
     }
 }
+

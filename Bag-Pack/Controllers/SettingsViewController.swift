@@ -91,6 +91,7 @@ class SettingsViewController: UIViewController, SettingsTableViewCellDelegate {
     }
     
     func resetApplicationData() {
+        UserDefaults.standard.set(false, forKey: "welcome")
         let dataKeys = ["color","unit","theme","travel"]
         for i in 0..<dataKeys.count {
             UserDefaults.standard.set(nil, forKey: dataKeys[i])
@@ -101,6 +102,7 @@ class SettingsViewController: UIViewController, SettingsTableViewCellDelegate {
         appCurrencyUnit = .dollar
         changeSystemTintColor()
         changeTheme()
+        
         DispatchQueue.main.async {
             self.tableView.reloadData()
         }
@@ -111,6 +113,7 @@ class SettingsViewController: UIViewController, SettingsTableViewCellDelegate {
         for i in 0..<settingKeys.count{
             UserDefaults.standard.set(nil, forKey: settingKeys[i])
         }
+        UserDefaults.standard.set(false, forKey: "welcome")
         appGlobalTintColor = .systemBlue
         appCurrencyUnit = .dollar
         changeSystemTintColor()
