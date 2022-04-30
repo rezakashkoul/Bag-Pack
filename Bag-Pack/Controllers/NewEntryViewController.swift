@@ -73,7 +73,7 @@ class NewEntryViewController: UIViewController, UITextFieldDelegate {
         confirmButton.backgroundColor = appGlobalTintColor
         
         if #available(iOS 13.0, *) {
-            confirmButton.setTitleColor(.systemBackground, for: .normal)
+            confirmButton.setTitleColor(.white, for: .normal)
         } else {
             confirmButton.setTitleColor(.white, for: .normal)
         }

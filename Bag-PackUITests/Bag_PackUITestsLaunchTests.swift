@@ -30,30 +30,31 @@ class Bag_PackUITestsLaunchTests: XCTestCase {
 //    func test_shit(){
 //
 //        let app = XCUIApplication()
-//        app.navigationBars["BagPack"].buttons["Settings"].tap()
-//        app.tables/*@START_MENU_TOKEN@*/.staticTexts["Tint Color"]/*[[".cells.staticTexts[\"Tint Color\"]",".staticTexts[\"Tint Color\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
+//        app.scrollViews.otherElements.buttons["Let's Go!"].tap()
+//        app.alerts["Error!"].scrollViews.otherElements.buttons["OK"].tap()
+//        app.navigationBars["New Entry"].buttons["Cancel"].tap()
+//        app.navigationBars["BagPack"].buttons["Add"].tap()
 //
-//        let elementsQuery = app.scrollViews.otherElements
-//        elementsQuery.otherElements["green 54"].tap()
-//        elementsQuery.buttons["close"].tap()
 //
 //    }
     
 //    func test_addingANewTrip() {
 //
+//
 //        let app = XCUIApplication()
-//        app.launch()
-//        addingAnewEntry(app)
-//        deleteEntry(app)
+//        app.alerts["Add new item"].scrollViews.otherElements.buttons["Add"].tap()
+//        app.tabBars["Tab Bar"].buttons["Costs"].tap()
+//
 //    }
     
     func test_completeTripDetails() {
 
         let app = XCUIApplication()
         app.launch()
+//        XCUIApplication()/*@START_MENU_TOKEN@*/.staticTexts["Continue"]/*[[".buttons[\"Continue\"].staticTexts[\"Continue\"]",".staticTexts[\"Continue\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
         addingAnewEntry(app)
 
-        let addEntryButton = app.navigationBars.buttons.element(boundBy: 1)
+        let addEntryButton = app.navigationBars.buttons.element(boundBy: 2)
         addEntryButton.tap()
         
         let alertQuery = app.alerts["Add new item"].scrollViews.otherElements.collectionViews.textFields["Write an item to remember"]
@@ -112,11 +113,13 @@ class Bag_PackUITestsLaunchTests: XCTestCase {
         tablesQuery/*@START_MENU_TOKEN@*/.staticTexts["Reset Application Data"]/*[[".cells.staticTexts[\"Reset Application Data\"]",".staticTexts[\"Reset Application Data\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
         app.alerts["Reset entire data"].scrollViews.otherElements.buttons["Reset data"].tap()
         settings.tap()
+        XCUIApplication()/*@START_MENU_TOKEN@*/.staticTexts["Continue"]/*[[".buttons[\"Continue\"].staticTexts[\"Continue\"]",".staticTexts[\"Continue\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
+
     }
     
     func addingAnewEntry(_ app: XCUIApplication) {
         
-        let newEntryButton = app.navigationBars["BagPack"].buttons["New"]
+        let newEntryButton = app.navigationBars["BagPack"].buttons["Add"]
         newEntryButton.tap()
         
         let elementsQuery = app.scrollViews.otherElements

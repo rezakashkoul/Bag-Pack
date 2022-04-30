@@ -53,7 +53,7 @@ class DashboradViewController: UIViewController, NewEntryViewControllerDelegate 
     
     func setupNavigationBarAndItems() {
         navigationItem.title = "BagPack"
-        let newItemsButton = UIBarButtonItem(title: "New", style: .done, target: self, action: #selector(newButtonTapped))
+        let newItemsButton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(newButtonTapped))
         let showGuideButton = UIBarButtonItem(image: UIImage(named: "help"), style: .plain, target: self, action: #selector(showGuideAction))
         navigationItem.rightBarButtonItems = [newItemsButton,showGuideButton]
         navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Settings", style: .done, target: self, action: #selector(goToSettings))
