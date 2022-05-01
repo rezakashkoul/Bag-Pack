@@ -276,7 +276,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="390" height="414"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please complete the fields" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0i6-qN-6xU">
-                                                <rect key="frame" x="20" y="20" width="350" height="24"/>
+                                                <rect key="frame" x="30" y="20" width="330" height="24"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="24" id="vUd-Vq-TkU"/>
                                                 </constraints>
@@ -285,10 +285,10 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="PtN-o6-gF9">
-                                                <rect key="frame" x="20" y="64" width="350" height="260"/>
+                                                <rect key="frame" x="30" y="64" width="330" height="260"/>
                                                 <subviews>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Travel Title" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="UMD-Ov-96M">
-                                                        <rect key="frame" x="0.0" y="0.0" width="350" height="50"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="330" height="50"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="50" id="61r-mS-CUY"/>
                                                         </constraints>
@@ -296,7 +296,7 @@
                                                         <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="no" spellCheckingType="no" returnKeyType="next"/>
                                                     </textField>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Place Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Oaf-Oj-r4l">
-                                                        <rect key="frame" x="0.0" y="70" width="350" height="50"/>
+                                                        <rect key="frame" x="0.0" y="70" width="330" height="50"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="50" id="Ei2-qJ-URk"/>
                                                         </constraints>
@@ -304,7 +304,7 @@
                                                         <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="no" spellCheckingType="no" returnKeyType="next"/>
                                                     </textField>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Desired Budget" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8iX-Oc-VNw">
-                                                        <rect key="frame" x="0.0" y="140" width="350" height="50"/>
+                                                        <rect key="frame" x="0.0" y="140" width="330" height="50"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="50" id="0M9-Gz-P1W"/>
                                                         </constraints>
@@ -312,7 +312,7 @@
                                                         <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="no" spellCheckingType="no" keyboardType="numberPad" returnKeyType="next"/>
                                                     </textField>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Day(s)" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cSa-qJ-ifG">
-                                                        <rect key="frame" x="0.0" y="210" width="350" height="50"/>
+                                                        <rect key="frame" x="0.0" y="210" width="330" height="50"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="50" id="h6v-3N-m41"/>
                                                         </constraints>
@@ -325,7 +325,7 @@
                                                 </constraints>
                                             </stackView>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hnG-WR-Jma">
-                                                <rect key="frame" x="20" y="344" width="350" height="50"/>
+                                                <rect key="frame" x="30" y="344" width="330" height="50"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="50" id="KeE-Nk-cSn"/>
@@ -340,15 +340,15 @@
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
-                                            <constraint firstAttribute="trailing" secondItem="hnG-WR-Jma" secondAttribute="trailing" constant="20" id="2pn-0Q-sbt"/>
-                                            <constraint firstItem="0i6-qN-6xU" firstAttribute="leading" secondItem="gAr-ww-0qY" secondAttribute="leading" constant="20" id="2rf-1g-872"/>
-                                            <constraint firstAttribute="trailing" secondItem="0i6-qN-6xU" secondAttribute="trailing" constant="20" id="9LP-g4-3nH"/>
+                                            <constraint firstAttribute="trailing" secondItem="hnG-WR-Jma" secondAttribute="trailing" constant="30" id="2pn-0Q-sbt"/>
+                                            <constraint firstItem="0i6-qN-6xU" firstAttribute="leading" secondItem="gAr-ww-0qY" secondAttribute="leading" constant="30" id="2rf-1g-872"/>
+                                            <constraint firstAttribute="trailing" secondItem="0i6-qN-6xU" secondAttribute="trailing" constant="30" id="9LP-g4-3nH"/>
                                             <constraint firstItem="PtN-o6-gF9" firstAttribute="top" secondItem="0i6-qN-6xU" secondAttribute="bottom" constant="20" id="CVS-ki-W8z"/>
-                                            <constraint firstItem="PtN-o6-gF9" firstAttribute="leading" secondItem="gAr-ww-0qY" secondAttribute="leading" constant="20" id="IyW-c6-Zb0"/>
+                                            <constraint firstItem="PtN-o6-gF9" firstAttribute="leading" secondItem="gAr-ww-0qY" secondAttribute="leading" constant="30" id="IyW-c6-Zb0"/>
                                             <constraint firstItem="hnG-WR-Jma" firstAttribute="top" secondItem="PtN-o6-gF9" secondAttribute="bottom" constant="20" id="Qfg-7H-wPF"/>
-                                            <constraint firstAttribute="trailing" secondItem="PtN-o6-gF9" secondAttribute="trailing" constant="20" id="TVt-Mw-lQs"/>
+                                            <constraint firstAttribute="trailing" secondItem="PtN-o6-gF9" secondAttribute="trailing" constant="30" id="TVt-Mw-lQs"/>
                                             <constraint firstAttribute="bottom" secondItem="hnG-WR-Jma" secondAttribute="bottom" constant="20" id="ZGF-zJ-hCF"/>
-                                            <constraint firstItem="hnG-WR-Jma" firstAttribute="leading" secondItem="gAr-ww-0qY" secondAttribute="leading" constant="20" id="fxl-7c-rPK"/>
+                                            <constraint firstItem="hnG-WR-Jma" firstAttribute="leading" secondItem="gAr-ww-0qY" secondAttribute="leading" constant="30" id="fxl-7c-rPK"/>
                                             <constraint firstItem="0i6-qN-6xU" firstAttribute="top" secondItem="gAr-ww-0qY" secondAttribute="top" constant="20" id="yzF-P4-NCT"/>
                                         </constraints>
                                     </view>
@@ -452,7 +452,7 @@
                                         <rect key="frame" x="0.0" y="258" width="326" height="148"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rfn-ia-afC" customClass="GradientSlider" customModule="Bag_Pack" customModuleProvider="target">
-                                                <rect key="frame" x="-2" y="-4" width="330" height="44"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="326" height="36"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="36" id="xVv-Fe-bJa"/>
                                                 </constraints>
@@ -472,7 +472,7 @@
                                                 </userDefinedRuntimeAttributes>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="djf-WL-U5b" customClass="GradientSlider" customModule="Bag_Pack" customModuleProvider="target">
-                                                <rect key="frame" x="-2" y="52" width="330" height="44"/>
+                                                <rect key="frame" x="0.0" y="56" width="326" height="36"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="36" id="wTK-Tx-mje"/>
                                                 </constraints>
@@ -493,7 +493,7 @@
                                                 </userDefinedRuntimeAttributes>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KHi-Iq-FBh" customClass="GradientSlider" customModule="Bag_Pack" customModuleProvider="target">
-                                                <rect key="frame" x="-2" y="108" width="330" height="44"/>
+                                                <rect key="frame" x="0.0" y="112" width="326" height="36"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="36" id="Y1f-7j-Iba"/>
                                                 </constraints>
