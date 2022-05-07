@@ -29,13 +29,6 @@ class Bag_PackUITestsLaunchTests: XCTestCase {
     
 //    func test_shit(){
 //
-//        let app = XCUIApplication()
-//        app.scrollViews.otherElements.buttons["Let's Go!"].tap()
-//        app.alerts["Error!"].scrollViews.otherElements.buttons["OK"].tap()
-//        app.navigationBars["New Entry"].buttons["Cancel"].tap()
-//        app.navigationBars["BagPack"].buttons["Add"].tap()
-//
-//
 //    }
     
 //    func test_addingANewTrip() {
@@ -107,9 +100,9 @@ class Bag_PackUITestsLaunchTests: XCTestCase {
 
         tablesQuery/*@START_MENU_TOKEN@*/.staticTexts["Tint Color"]/*[[".cells.staticTexts[\"Tint Color\"]",".staticTexts[\"Tint Color\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
         let elementsQuery = app.scrollViews.otherElements
+        elementsQuery/*@START_MENU_TOKEN@*/.buttons["Grid"]/*[[".segmentedControls.buttons[\"Grid\"]",".buttons[\"Grid\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
         elementsQuery.otherElements["green 54"].tap()
         elementsQuery.buttons["close"].tap()
-        
         tablesQuery/*@START_MENU_TOKEN@*/.staticTexts["Reset Application Data"]/*[[".cells.staticTexts[\"Reset Application Data\"]",".staticTexts[\"Reset Application Data\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
         app.alerts["Reset entire data"].scrollViews.otherElements.buttons["Reset data"].tap()
         settings.tap()
