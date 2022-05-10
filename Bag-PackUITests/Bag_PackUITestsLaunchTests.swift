@@ -27,9 +27,14 @@ class Bag_PackUITestsLaunchTests: XCTestCase {
 //        add(attachment)
 //    }
     
-//    func test_shit(){
-//
-//    }
+    func test_shit(){
+        
+//        let elementsQuery = XCUIApplication().scrollViews.otherElements
+//        elementsQuery.otherElements["dark red ۲۹"].tap()
+//        elementsQuery.buttons["close"].tap()
+                
+                                        
+    }
     
 //    func test_addingANewTrip() {
 //
